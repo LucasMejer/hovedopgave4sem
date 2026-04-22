@@ -5,15 +5,16 @@
     <div class="footerdiv">
         <div class="footer-content">
             <h2>CONTACT</h2>
-        
-            <p>Scangrip A/S</p>
-            <p>Rytterhaven 9</p>
-            <p>DK-5700 Svendborg</p>
-            <p>TEL:(+45)6320 6320</p>
-            <p><b>scangrip@scangrip.com</b></p>
-            <p><b>scangrip.com</b></p><br>
-            <p>Delivery address: Rytterskoven 12,</p>
-            <p>DK5700 Svendborg</p>
+            <address>
+                <p>Scangrip A/S</p>
+                <p>Rytterhaven 9</p>
+                <p>DK-5700 Svendborg</p>
+                <a href="tel:+4563206320">TEL:(+45)6320 6320</a>
+                <a href="mailto:scangrip.com"><b>scangrip@scangrip.com</b></a>
+                <a href="https://www.scangrip.com/da-dk"><b>scangrip.com</b></a><br>
+                <p>Delivery address: Rytterskoven 12,</p>
+                <p>DK5700 Svendborg</p>
+            </address>
         </div>
         <div class="footer-content">
             <H2>PARTNER SUPPORT</H2>
