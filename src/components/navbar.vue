@@ -1,16 +1,15 @@
 <script setup>
-    import '../assets/_colors.scss'
 
 </script>
 
 <template>
 
     <nav>
-        
-            <img src="../assets/icons/burgermenu.png" alt="Burgermenu">
-        
-        
+        <button id="burgermenu"><img src="../assets/icons/burgermenu.png" alt="Burgermenu"></img></button>
+            
         <router-link to="/"><img src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+
+        <input type="text">
     </nav>
 
     <h1>dette er en h1</h1>
@@ -20,8 +19,17 @@
 
 </template>
 
-<style>
-    body{ 
-        background-color: c.$red-color-icon;
+<style lang="scss">
+    @use '../assets/colors' as c;
+
+    #burgermenu {
+        border: none;
+        background-color: #fff;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
     }
+
 </style>
