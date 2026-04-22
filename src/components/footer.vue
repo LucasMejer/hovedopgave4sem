@@ -38,9 +38,13 @@
     </div>
 </template>
 <style lang="scss">
+@use '../assets/colors' as c;
 /*.footerdiv{
     background-color: c.$footer-background-color;
 }*/
+body{
+    background-color: blue;
+}
 .footer-content{
 margin: 20px 0px 10px 50px;
 max-width: 300px;
@@ -48,5 +52,11 @@ max-width: 300px;
 p{
     margin: 5px 0px 5px 0px;
 }
-
+button{
+  background-color: c.$hover-state-inactive;
+  border: 0;
+  &:hover{
+    background-color: c.$hover-state-active;
+  }
+}
 </style>
