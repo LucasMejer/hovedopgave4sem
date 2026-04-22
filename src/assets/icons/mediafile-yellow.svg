@@ -1,0 +1,8 @@
+<svg width="282" height="282" viewBox="0 0 282 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M246.75 82.85V246.15C246.75 246.481 246.481 246.75 246.15 246.75H82.85C82.5186 246.75 82.25 246.481 82.25 246.15V82.85C82.25 82.5186 82.5186 82.25 82.85 82.25H246.15C246.481 82.25 246.75 82.5186 246.75 82.85Z" stroke="#CE7809" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M211.5 47H47.6C47.2686 47 47 47.2686 47 47.6V211.5" stroke="#CE7809" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M82.25 197.4L146.222 176.25L246.75 211.5" stroke="#CE7809" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M193.875 152.75C184.141 152.75 176.25 144.859 176.25 135.125C176.25 125.391 184.141 117.5 193.875 117.5C203.609 117.5 211.5 125.391 211.5 135.125C211.5 144.859 203.609 152.75 193.875 152.75Z" stroke="#CE7809" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M255 209H219L211 201H191C186.6 201 183 204.6 183 209V225H263V217C263 212.6 259.4 209 255 209Z" fill="#DD9C47"/>
+<path d="M255 209H191C186.6 209 183 212.6 183 217V257C183 261.4 186.6 265 191 265H255C259.4 265 263 261.4 263 257V217C263 212.6 259.4 209 255 209Z" fill="#F8B762"/>
+</svg>
