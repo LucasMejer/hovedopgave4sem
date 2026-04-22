@@ -28,39 +28,56 @@
             <p>Cookie policy</p>
         </div>
         <div class="footer-content">
-            <h3>MAILING LIST</h3>
+            <h2>MAILING LIST</h2>
             <p>Sign up if you would like to recieve occassional treats from us.</p>
             <button>Go</button>
         </div>
         <div class="footer-content">
             <h2>SOCIAL LINKS</h2>
-            <a href="https://www.instagram.com/scangrip_official/"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
-            <a href="https://www.facebook.com/scangrip"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
-            <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
-            <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
+            <div class="some-icons">
+                <a href="https://www.instagram.com/scangrip_official/"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
+                <a href="https://www.facebook.com/scangrip"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
+                <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
+                <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
+            </div>
         </div>
+        <p>Copyright © 2026 SCANGRIP A/S. All Rights Reserved</p>
     </div>
 </template>
 <style lang="scss">
 @use '../assets/colors' as c;
-/*.footerdiv{
+.footerdiv{
     background-color: c.$footer-background-color;
-}*/
-body{
-    background-color: blue;
 }
 .footer-content{
 margin: 20px 0px 10px 50px;
 max-width: 300px;
 }
+h2{
+    color: c.$font-color-secondary;
+}
 p{
+    color: c.$font-color-secondary;
     margin: 5px 0px 5px 0px;
 }
+
+a{
+    color: c.$font-color-primary;
+    text-decoration: none;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 button{
   background-color: c.$hover-state-inactive;
   border: 0;
   &:hover{
     background-color: c.$hover-state-active;
   }
+}
+
+.some-icons{
+    font-size: small;
 }
 </style>
