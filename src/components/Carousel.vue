@@ -2,9 +2,9 @@
 import { ref } from "vue"
 
 const CarouselImages = [
-    {scr:"/ikoner/index-masterdata-ikon.svg", text:"NEW LED ROPE LIGHTS" },
-    {scr:"/ikoner/index-mediafile-ikon.svg", text:"Overskrift 2" },
-    {scr:"/ikoner/index-pricelist-ikon.svg", text:"Overskrift 3" }
+    {scr:"index-carousel-billede1.Jpg", text:"NEW LED ROPE LIGHTS" },
+    {scr:"index-carousel-billede2.Jpg", text:"LIGHT + BUILDING 2026" },
+    {scr:"index-carousel-billede3.Jpg", text:"ATTRACTIVE PROMOTION PACKAGES" }
 ]
 
 let currentImage = ref(0);
@@ -61,7 +61,6 @@ function UpdateBottomButtons(){
         <button class="CarouselButtonNext" @click="next"><img src="/ikoner/index-carousel-arrowright.svg" alt=""></button>
         <div class="CarouselItem" >
             <img :src="CarouselImages[currentImage].scr" alt="">
-            
         </div>
         <h1 class="CarouselText">{{ CarouselImages[currentImage].text }}</h1>
         <div class="CarouselBottomNav">
@@ -73,6 +72,9 @@ function UpdateBottomButtons(){
 </template>
 
 <style lang="scss" scoped>
+
+    @use '../assets/_colors' as c;
+
     .CarouselDiv{
         position: relative;
         display: flex;
@@ -80,7 +82,7 @@ function UpdateBottomButtons(){
         height: 350px;
         justify-content: center;
         align-items: center;
-        background-color: red;
+        background-color: black;
         .CarouselItem{
             position: absolute;
             inset: 0;
@@ -90,6 +92,7 @@ function UpdateBottomButtons(){
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
+                opacity: 0.5;
             }
         }
         .CarouselText{
@@ -97,6 +100,7 @@ function UpdateBottomButtons(){
             display: block;
             position: absolute;
             text-align: center;
+            color: c.$font-color-secondary;
         }
         .CarouselButtonPrev{
            display: none;
