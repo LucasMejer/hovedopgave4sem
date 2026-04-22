@@ -33,7 +33,10 @@
         </div>
         <div class="footer-content">
             <h2>SOCIAL LINKS</h2>
-            <img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram">
+            <a href="https://www.instagram.com/scangrip_official/"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
+            <a href="https://www.facebook.com/scangrip"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
+            <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
+            <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
         </div>
     </div>
 </template>
