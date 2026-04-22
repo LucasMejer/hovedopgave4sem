@@ -64,7 +64,7 @@ p{
 a{
     color: c.$font-color-primary;
     text-decoration: none;
-    font-family: $font-primary;
+    /*font-family: $font-primary;*/
     font-weight: 400;
     font-size: 14px;
 }
