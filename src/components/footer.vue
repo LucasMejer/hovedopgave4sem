@@ -3,19 +3,20 @@
 </script>
 <template>
     <div class="footerdiv">
-        <div>
-            <h3>CONTACT</h3>
+        <div class="footer-content">
+            <h2>CONTACT</h2>
+        
             <p>Scangrip A/S</p>
             <p>Rytterhaven 9</p>
             <p>DK-5700 Svendborg</p>
             <p>TEL:(+45)6320 6320</p>
             <p><b>scangrip@scangrip.com</b></p>
-            <p><b>scangrip.com</b></p>
+            <p><b>scangrip.com</b></p><br>
             <p>Delivery address: Rytterskoven 12,</p>
             <p>DK5700 Svendborg</p>
         </div>
-        <div>
-            <H3>PARTNER SUPPORT</H3>
+        <div class="footer-content">
+            <H2>PARTNER SUPPORT</H2>
             <p>Productinformation</p>
             <p>Brochures</p>
             <p>Price List</p>
@@ -25,13 +26,13 @@
             <p>Privacy policy</p>
             <p>Cookie policy</p>
         </div>
-        <div>
+        <div class="footer-content">
             <h3>MAILING LIST</h3>
             <p>Sign up if you would like to recieve occassional treats from us.</p>
             <button>Go</button>
         </div>
-        <div>
-            <h3>SOCIAL LINKS</h3>
+        <div class="footer-content">
+            <h2>SOCIAL LINKS</h2>
             <img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram">
         </div>
     </div>
@@ -40,4 +41,12 @@
 /*.footerdiv{
     background-color: c.$footer-background-color;
 }*/
+.footer-content{
+margin: 20px 0px 10px 50px;
+max-width: 300px;
+}
+p{
+    margin: 5px 0px 5px 0px;
+}
+
 </style>
