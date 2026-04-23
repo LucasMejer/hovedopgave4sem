@@ -52,6 +52,7 @@
 @use '../assets/colors' as c;
 footer{
     background-color: c.$footer-background-color;
+    padding: 10px 0px 5px 0px;
 }
 .footer-content{
 margin: 20px 0px 10px 50px;
@@ -93,6 +94,7 @@ button{
     .footer-main{
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
 
     img{
