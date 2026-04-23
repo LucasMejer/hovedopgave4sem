@@ -5,7 +5,7 @@
 <template>
 
     <nav>
-        <div>
+        <div class="logo-line">
             <button id="burgermenu"><img src="../assets/icons/burgermenu.png" alt="Burgermenu"></img></button>
             
             <router-link to="/"><img class="partner-logo" src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
@@ -31,18 +31,30 @@
 <style lang="scss">
     @use '../assets/colors' as c;
 
+    .logo-line {
+        display: flex;
+        min-width: 350px;
+        padding: 10px;
+        justify-content: space-evenly;
+    }
+
     #burgermenu {
+        padding: 0;
         border: none;
         background-color: #fff;
+        padding-right: 10px;
+        
 
         img {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
         }
     }
 
     .partner-logo {
-        height: 50px;
+        max-width: 100%;
+        height: auto;
+        
     }
 
     .search-icon {
