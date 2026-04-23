@@ -5,46 +5,53 @@
 <template>
 
     <nav>
-        <div class="logo-line">
-            <button id="burgermenu"><img src="../assets/icons/burgermenu.png" alt="Burgermenu"></img></button>
+        <div class="mobile-nav">
+            <div class="logo-line">
+                <button id="burgermenu"><img src="../assets/icons/burgermenu.png" alt="Burgermenu"></img></button>
+                
+                <router-link to="/"><img class="partner-logo" src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+            </div>
             
+            <div class="search-bar">
+                <input class="search-input" type="text">
+                <img class="search-icon" src="../assets/icons/search.png" alt="">
+            </div>
+            
+            <div class="nav-burgermenu">
+                <hr class="thick-line">
+                <div class="partnersite">
+                    <p>Scangrip.com</p>
+                    <hr class="thick-line-vertical">
+                    <p class="marked">Partner</p>
+                </div>
+                <hr class="thick-line">
+
+                <div class="nav-icons">
+                    <img src="../assets/icons/info.png" alt="">
+                    <img src="../assets/icons/english-flag.png" alt="">
+                    <img src="../assets/icons/profile.svg" alt="">
+                </div>
+
+                <div class="nav-menu-items">
+                    <hr>
+                    <div class="menu-item">
+                        <p>Product Information</p>
+                        <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                    </div>
+                    <hr>
+                    <div class="menu-item">
+                        <p>Marketing Items</p>
+                        <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        
+        <div class="desktop-nav">
             <router-link to="/"><img class="partner-logo" src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
         </div>
         
-        <div class="search-bar">
-            <input class="search-input" type="text">
-            <img class="search-icon" src="../assets/icons/search.png" alt="">
-        </div>
-        
-        <div class="nav-burgermenu">
-            <hr class="thick-line">
-            <div class="partnersite">
-                <p>Scangrip.com</p>
-                <hr class="thick-line-vertical">
-                <p class="marked">Partner</p>
-            </div>
-            <hr class="thick-line">
-
-            <div class="nav-icons">
-                <img src="../assets/icons/info.png" alt="">
-                <img src="../assets/icons/english-flag.png" alt="">
-                <img src="../assets/icons/profile.svg" alt="">
-            </div>
-
-            <div class="nav-menu-items">
-                <hr>
-                <div class="menu-item">
-                    <p>Product Information</p>
-                    <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
-                </div>
-                <hr>
-                <div class="menu-item">
-                    <p>Marketing Items</p>
-                    <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
-                </div>
-                <hr>
-            </div>
-        </div>
 
     </nav>
 
@@ -60,6 +67,14 @@
 
 <style lang="scss">
     @use '../assets/colors' as c;
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
 
     .logo-line {
         display: flex;
@@ -162,6 +177,19 @@
 
     .arrows {
         height: 30px;
+    }
+
+
+    @media (min-width: 768px) {
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .desktop-nav {
+            display: block;
+        }
+
     }
 
 </style>
