@@ -18,7 +18,7 @@
                 </address>
             </div>
             <div class="footer-content">
-                <H2>PARTNER SUPPORT</H2>
+                <h2>PARTNER SUPPORT</h2>
                 <p>Productinformation</p>
                 <p>Brochures</p>
                 <p>Price List</p>
@@ -30,25 +30,25 @@
             </div>
             <div class="footer-content">
                 <h2>MAILING LIST</h2>
-                <p>Sign up if you would like to recieve occassional treats from us.</p>
+                <p>Sign up if you would like to receive occassional treats from us.</p>
                 <button>Go</button>
             </div>
             <div class="footer-content">
                 <h2>SOCIAL LINKS</h2>
                 <div class="some-icons">
-                    <a href="https://www.instagram.com/scangrip_official/"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
-                    <a href="https://www.facebook.com/scangrip"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
-                    <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
-                    <a href="https://www.linkedin.com/company/scangrip"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
+                    <a href="https://www.instagram.com/scangrip_official/" aria-label="instagram"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
+                    <a href="https://www.facebook.com/scangrip" aria-label="facebook"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
+                    <a href="https://www.linkedin.com/company/scangrip" aria-label="linkedin"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
+                    <a href="https://www.linkedin.com/company/scangrip" aria-label="youtubekanal"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
                 </div>
             </div>
         </div>
-        <div class="coopyright-notice">
+        <div class="copyright-notice">
             <p>Copyright © 2026 SCANGRIP A/S. All Rights Reserved</p>
         </div>
     </footer>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../assets/colors' as c;
 footer{
     background-color: c.$footer-background-color;
@@ -103,7 +103,7 @@ button{
         margin: 5px;
     }
 
-    .coopyright-notice{
+    .copyright-notice{
         display: flex;
         justify-content: center;
     }
