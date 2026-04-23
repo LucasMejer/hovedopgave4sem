@@ -90,14 +90,20 @@ button{
 }
 
 @media only screen and (min-width: 768px){
-.footer-main{
-    display: flex;
-    flex-direction: row;
-}
+    .footer-main{
+        display: flex;
+        flex-direction: row;
+    }
 
-.coopyright-notice{
-    display: flex;
-    justify-content: center;
-}
+    img{
+        height: 40px;
+        width: 40px;
+        margin: 5px;
+    }
+
+    .coopyright-notice{
+        display: flex;
+        justify-content: center;
+    }
 }
 </style>
