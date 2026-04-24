@@ -4,6 +4,7 @@ import Footer from '@/components/footer.vue';
 import Header from '@/components/Header.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
 import navbar from '@/components/navbar.vue';
+import Videosection from '@/components/videosection.vue';
 
 </script>
 
@@ -27,7 +28,8 @@ import navbar from '@/components/navbar.vue';
             CardText="Download SCANGRIP's price lists for all products/markets." 
             CardImg="/ikoner/index-pricelist-ikon.svg" 
         />
-    </div> 
+    </div>
+    <Videosection/>
     <Footer/>
 </template>
 <style lang="scss" scoped>
