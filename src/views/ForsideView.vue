@@ -1,6 +1,4 @@
 <script setup>
-import Bigiconcard from '@/components/bigiconcard.vue';
-import bigiconcard from '@/components/bigiconcard.vue';
 import Carousel from '@/components/Carousel.vue';
 import Footer from '@/components/footer.vue';
 import Header from '@/components/Header.vue';
@@ -13,7 +11,6 @@ import navbar from '@/components/navbar.vue';
     <navbar/>
     <Header />
     <Carousel />
-    <Bigiconcard />
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
             CardHeading="Master data" 
