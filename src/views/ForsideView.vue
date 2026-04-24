@@ -8,10 +8,10 @@ import navbar from '@/components/navbar.vue';
 </script>
 
 <template>
-    <navbar />
-    <Header />
-    <bigiconcard />
-    <Carousel />
+    <navbar/>
+    <Header/>
+    <bigiconcard/>
+    <Carousel/>
     <Footer/>
 </template>
 
