@@ -27,7 +27,7 @@ import navbar from '@/components/navbar.vue';
             CardText="Download SCANGRIP's price lists for all products/markets." 
             CardImg="/ikoner/index-pricelist-ikon.svg" 
         />
-    </div> 
+    </div>
     <Footer/>
 </template>
 <style lang="scss" scoped>
