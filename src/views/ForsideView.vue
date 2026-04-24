@@ -30,7 +30,6 @@ import navbar from '@/components/navbar.vue';
     </div> 
     <Footer/>
 </template>
-
 <style lang="scss" scoped>
     .LargeIndexCardsDiv{
         display: flex;
