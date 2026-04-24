@@ -15,5 +15,4 @@ const cards =[
 
 <style lang="scss" scoped>
 @use '../assets/colors' as c;
-
 </style>
