@@ -79,7 +79,7 @@ function UpdateBottomButtons(){
         position: relative;
         display: flex;
         width: 100%;
-        height: 350px;
+        height: 300px;
         justify-content: center;
         align-items: center;
         background-color: black;
@@ -101,6 +101,7 @@ function UpdateBottomButtons(){
             position: absolute;
             text-align: center;
             color: c.$font-color-secondary;
+            width: 85%;
         }
         .CarouselButtonPrev{
            display: none;
@@ -147,6 +148,9 @@ function UpdateBottomButtons(){
 
     @media only screen and (min-width: 768px){
         .CarouselDiv{
+            width: 90%;
+            margin: 0px 5%;
+            height: 350px;
             .CarouselButtonPrev{
                 display: block;
                 left: 1rem; 
