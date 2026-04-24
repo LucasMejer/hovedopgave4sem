@@ -1,15 +1,32 @@
 <script setup>
+import iconMaster from'../assets/icons/masterdata-green.svg'
+import iconMedia from'../assets/icons/mediafile-yellow.svg'
+import iconPrice from'../assets/icons/pricelist-green.svg'
+
 const cards =[
-    {title:'prodctitle', items:
-        ['svg', 'bodytext', 'button']}
+    {title:'Master data',
+    icon: iconMaster,
+    bodytext:'Find master data for all available SCANGRIP products.',
+    button: 'download',
+    },
+    {title:'Media file',
+    icon: iconMedia,
+    bodytext:'Find master data for all available SCANGRIP products.',
+    button: 'download',
+    },
+    {title:'Price list',
+    icon: iconPrice, 
+    bodytext:'Find master data for all available SCANGRIP products.',
+    button: 'download',
+    }
 ]
 </script>
 <template>
-    <div v-for="card in cards" :key="defaultServerConditions.title">
+    <div v-for="card in cards" :key="card.title">
+        <svg>{{ card.svg }}</svg>
         <h2>{{ card.title }}</h2>
-    </div>
-    <div>
-        <p>virker dette?</p>
+        <p>{{ card.bodytext }}</p>
+        <button>{{ card.button }}</button>
     </div>
 </template>
 
