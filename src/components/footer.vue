@@ -10,7 +10,7 @@
                     <p>Scangrip A/S</p>
                     <p>Rytterhaven 9</p>
                     <p>DK-5700 Svendborg</p>
-                    <a href="tel:+4563206320">TEL:(+45)6320 6320</a>
+                    <a href="tel:+4563206320">TEL:(+45)63206320</a><br>
                     <a href="mailto:scangrip.com"><b>scangrip@scangrip.com</b></a>
                     <a href="https://www.scangrip.com/da-dk"><b>scangrip.com</b></a><br>
                     <p>Delivery address: Rytterskoven 12,</p>
@@ -50,6 +50,7 @@
 </template>
 <style lang="scss" scoped>
 @use '../assets/colors' as c;
+@use '../assets/headings' as h;
 footer{
     background-color: c.$footer-background-color;
     padding: 10px 0px 5px 0px;
@@ -67,9 +68,9 @@ p{
 }
 
 a{
-    color: c.$font-color-primary;
+    color: c.$font-color-secondary;
     text-decoration: none;
-    /*font-family: $font-primary;*/
+    font-family: h.$font-primary;
     font-weight: 400;
     font-size: 14px;
 }
@@ -92,11 +93,15 @@ button{
 
 @media only screen and (min-width: 768px){
     .footer-main{
+        width: 90%;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
+        margin: auto;
     }
-
+    .footer-content{
+        margin: 20px 0px;
+    }
     img{
         height: 40px;
         width: 40px;

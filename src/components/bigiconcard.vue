@@ -23,7 +23,7 @@ const cards =[
 </script>
 <template>
     <div v-for="card in cards" :key="card.title">
-        <svg>{{ card.svg }}</svg>
+        <img :src="card.icon"></img>
         <h2>{{ card.title }}</h2>
         <p>{{ card.bodytext }}</p>
         <button>{{ card.button }}</button>
