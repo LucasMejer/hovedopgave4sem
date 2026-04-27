@@ -59,6 +59,12 @@ const cardInfo = defineProps({
             h3{
                 margin: 0px 5px;
                 color: c.$font-color-secondary;
+                &:hover{
+                    color: c.$hover-state-active;
+                }
+            }
+            &:hover{
+                border-color: c.$hover-state-active;
             }
         }
     }
