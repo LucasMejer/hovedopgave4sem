@@ -6,9 +6,6 @@ const cardInfo = defineProps({
             CardImg:String,
             CardDownload:String,
         })
-
-
-
 </script>
 
 <template>
