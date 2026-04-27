@@ -20,12 +20,14 @@ import Videosection from '@/components/videosection.vue';
         <LargeIndexCard
             CardHeading="Media file" 
             CardText="Download the complete file 'Media' containing pictures, manuals, energy labels, MSDS and DoC info." 
-            CardImg="/ikoner/index-mediafile-ikon.svg" 
+            CardImg="/ikoner/index-mediafile-ikon.svg"
+            CardDownload="https://partner.scangrip.com/Files/Images/00-Website-pictures/Partner/Marketing%20items/Price%20and%20data/Pictures_Manuals_EnergyLabels_MSDS_DOC_ProductSheet.zip"
         />
         <LargeIndexCard 
             CardHeading="Pricelist" 
             CardText="Download SCANGRIP's price lists for all products/markets." 
-            CardImg="/ikoner/index-pricelist-ikon.svg" 
+            CardImg="/ikoner/index-pricelist-ikon.svg"
+            CardDownload="/download/price-list.xlsx"
         />
     </div>
     <Videosection/>
