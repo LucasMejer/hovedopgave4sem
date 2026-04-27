@@ -132,8 +132,8 @@ function UpdateBottomButtons(){
             left: 0;
             text-align: center;
             .CarouselBottomButton{
-                width: 20px;
-                height: 20px;
+                width: 24px;
+                height: 24px;
                 display: inline-block;
                 background-color: rgba(255, 255, 255, 0.409);
                 border-radius: 50px;

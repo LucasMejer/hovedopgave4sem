@@ -53,11 +53,11 @@
 @use '../assets/headings' as h;
 footer{
     background-color: c.$footer-background-color;
-    padding: 10px 0px 5px 0px;
+    padding: 20px 0px 10px 0px;
 }
 .footer-content{
-margin: 20px 0px 10px 50px;
-max-width: 300px;
+margin: 20px auto 10px auto;
+max-width: 90%;
 }
 h2{
     color: c.$font-color-secondary;
@@ -89,6 +89,16 @@ button{
 
 .some-icons{
     font-size: small;
+}
+
+img{
+    height: 30px;
+    width: 30px;
+    margin: 4px;
+}
+.copyright-notice{
+    display: flex;
+    justify-content: center;
 }
 
 @media only screen and (min-width: 768px){
