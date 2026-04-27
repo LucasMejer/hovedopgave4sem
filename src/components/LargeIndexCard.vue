@@ -1,9 +1,13 @@
 <script setup>
+
 const cardInfo = defineProps({
             CardHeading:String,
             CardText:String,
-            CardImg:String  
+            CardImg:String,
+            CardDownload:String,
         })
+
+
 
 </script>
 
@@ -11,10 +15,10 @@ const cardInfo = defineProps({
     <div class="CardDiv" :style="{backgroundImage: `url(${cardInfo.CardImg})`}">
         <h2 class="CardText">{{ CardHeading }}</h2>
         <h3 class="CardText CardDesc">{{ CardText }}</h3>
-        <div class="DownloadButton">
+        <a class="DownloadButton" :href="cardInfo.CardDownload">
             <h3>Download</h3>
             <img src="/ikoner/download-ikon.svg" alt="">
-        </div> 
+        </a> 
     </div>
 </template>
 
@@ -47,6 +51,7 @@ const cardInfo = defineProps({
             padding: 10px;
             align-items: center;
             text-align: center;
+            text-decoration: none;
             border: 1px;
             border-color: c.$font-color-secondary;
             border-style: solid;

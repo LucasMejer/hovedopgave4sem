@@ -14,9 +14,10 @@ import Videosection from '@/components/videosection.vue';
         <LargeIndexCard 
             CardHeading="Master data" 
             CardText="Find master data for all available SCANGRIP products - in a single file" 
-            CardImg="/ikoner/index-masterdata-ikon.svg" 
+            CardImg="/ikoner/index-masterdata-ikon.svg"
+            CardDownload="/download/master-data.xlsx"
         />
-        <LargeIndexCard 
+        <LargeIndexCard
             CardHeading="Media file" 
             CardText="Download the complete file 'Media' containing pictures, manuals, energy labels, MSDS and DoC info." 
             CardImg="/ikoner/index-mediafile-ikon.svg" 
