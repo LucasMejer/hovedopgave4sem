@@ -2,13 +2,13 @@
 import Carousel from '@/components/Carousel.vue';
 import Footer from '@/components/Footer.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
-import navbar from '@/components/navbar.vue';
+import Navbar from '@/components/Navbar.vue';
 import Videosection from '@/components/videosection.vue';
 
 </script>
 
 <template>
-    <navbar/>
+    <Navbar/>
     <Carousel />
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
