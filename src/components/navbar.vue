@@ -1,4 +1,11 @@
 <script setup>
+import { ref } from 'vue'
+
+const toggle = ref(false);
+
+const toggleButton = () => {
+    toggle.value = !toggle.value;
+};
 
 </script>
 
@@ -7,7 +14,7 @@
     <nav>
         <div class="mobile-nav">
             <div class="logo-line">
-                <button id="burgermenu"><img src="../assets/icons/burgermenu.png" alt="Burgermenu"></img></button>
+                <button @click="toggleButton" id="burgermenu"><img src="../assets/icons/burgermenu.png" alt="Burgermenu"></img></button>
                 
                 <router-link to="/"><img class="partner-logo" src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             </div>
@@ -50,6 +57,26 @@
         
         <div class="desktop-nav">
             <router-link to="/"><img class="partner-logo" src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+            
+            <div class="nav-menu-items">
+                <div class="menu-item">
+                    <p>Product Information</p>
+                    <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                </div>
+                <div class="menu-item">
+                    <p>Marketing Items</p>
+                    <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                </div>
+                <div class="search-bar">
+                    <input class="search-input" type="text">
+                    <img class="search-icon" src="../assets/icons/search.png" alt="">
+                </div>
+                <div class="nav-icons">
+                    <img src="../assets/icons/info.png" alt="">
+                    <img src="../assets/icons/english-flag.png" alt="">
+                    <img src="../assets/icons/profile.svg" alt="">
+                </div>
+            </div>
         </div>
         
 
@@ -58,10 +85,7 @@
     <br>
     <br>
 
-    <h1>dette er en h1</h1>
-    <h2>dette er en h2</h2>
-    <h3>dette er en h3</h3>
-    <p>dette er en paragraf</p>
+
 
 </template>
 
@@ -78,8 +102,10 @@
 
     .logo-line {
         display: flex;
-        min-width: 350px;
-        padding: 10px;
+        width: 90%;
+        margin: auto;
+        min-width: 325px;
+        padding: 10px 0;
         justify-content: space-evenly;
     }
 
@@ -105,11 +131,15 @@
     .search-bar {
         display: flex;
         justify-content: center;
+        margin: auto;
         padding: 15px 0 25px 0;
+        width: 90%;
 
         .search-input {
             height: 30px;
-            width: 200px;
+            width: 100%;
+            min-width: 200px;
+            
             margin: 0 10px 0 0;
             padding: 0;
         }
@@ -156,13 +186,13 @@
         justify-content: center;
 
         img {
-            height: 40px;
+            height: 30px;
             padding: 20px;
         }
     }
 
     .nav-menu-items {
-        max-width: 80%;
+        max-width: 90%;
         display: flex;
         margin: auto;
         flex-direction: column;
@@ -187,8 +217,57 @@
         }
 
         .desktop-nav {
-            display: block;
+            display: flex;
+            align-items: center;
+            width: 90%;
+            margin: 30px auto 0 auto;
+
+
+            .partner-logo {
+                padding: 0;
+            }
         }
+
+
+        .nav-menu-items {
+            max-width: none;
+            width: 100vw;
+            margin: 0 0 0 50px;
+            flex-direction: row;
+            align-items: center;
+            
+
+            .menu-item {
+                margin: 0;
+                justify-content: center;
+                width: 100%;
+
+                p {
+                    font-size: 20px;
+                }
+            }
+
+            .search-bar {
+
+                padding: 0 20px;
+
+                .search-input {
+                    min-width: 150px;
+                    max-width: 500px;
+                }
+            }
+
+            .nav-icons {
+                justify-content: space-between;
+                min-width: 120px;
+
+                img {
+                    padding: 0;
+                }
+            }
+        }
+
+
 
     }
 
