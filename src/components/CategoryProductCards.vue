@@ -1,9 +1,10 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
-let productArray = ref();
+let productArray = ref([]);
+let activeFilters = ref([]);
 
-async function FecthProducts(){
+async function FetchProducts(){
   try {
     const Res = await fetch(
         `https://hovedopgave4sem-default-rtdb.europe-west1.firebasedatabase.app/products.json`
@@ -21,44 +22,86 @@ async function FecthProducts(){
   }
 }
 
+    const filteredProducts = computed(() => {
+        if(!activeFilters.value) return productArray.value;
+
+        return productArray.value.filter(product => {
+            return activeFilters.value.every(filter =>
+                product.ProduktTags?.[filter]
+            );
+        });
+    });
+
+    // function toggleFilter(filter) {
+    //     const index = activeFilters.value.indexOf(filter);
+
+    //     if (index === -1) {
+    //         activeFilters.value.push(filter);
+    //     } else {
+    //         activeFilters.value.splice(index, 1);
+    //     }
+    // }
+
 onMounted(() => {
-    FecthProducts();
+    FetchProducts();
 });
 
 </script>
 
 <template>
-    <div class="ProductGrid">
-        <div v-for="item in productArray" class="ProductDiv">
-            <div  class="ProductTags">
-                <span v-for="(value, key) in item.ProduktTags" >
-                    <p v-if="value" :class="[key + 'Class']">
-                        {{ key }}
-                    </p>
-                </span>
-            </div> 
-            <img :src=item.ProduktBillede alt="">
-            <h2>
-                {{ item.ProduktTitel }}
-            </h2>
-            <p>
-                {{item.ProduktNummer}}
-            </p>
-            <p>
-                {{item.ProduktBeskrivelse}}
-            </p>
+    <div class="FullProductsDiv">
+        <div class="FilterDiv">
+            <h3>
+                Filters
+            </h3>
+            <input type="checkbox" id="DiscontinuedBox" value="Discontinued" v-model="activeFilters">
+            <label for="DiscontinuedBox">Discontinued</label>
+            <input type="checkbox" id="ConstructionBox" value="Construction" v-model="activeFilters">
+            <label for="Construction">Construction</label>
+            <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters">
+            <label for="Electrician">Electrician</label>
+        </div>
+        <div class="ProductGrid">
+            <div v-for="item in filteredProducts" :key="item.ProduktNummer" class="ProductDiv">
+                <div class="ProductTags">
+                    <span v-for="(value, key) in item.ProduktTags" >
+                        <p v-if="value" :class="[key + 'Class']">
+                            {{ key }}
+                        </p>
+                    </span>
+                </div> 
+                <img :src=item.ProduktBillede alt="">
+                <h2>
+                    {{ item.ProduktTitel }}
+                </h2>
+                <p>
+                    {{item.ProduktNummer}}
+                </p>
+                <p>
+                    {{item.ProduktBeskrivelse}}
+                </p>
+            </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 
+
+    .FullProductsDiv{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+
+
     .ProductGrid{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 47.5% 47.5%;
         column-gap: 5%;
         row-gap: 5%;
-        margin: 10% 5%;
+        margin: 10% 0%;
 
         img{
             width: 90%;
@@ -70,6 +113,7 @@ onMounted(() => {
             flex-direction: column;
             align-items: center;
             width: auto;
+            box-sizing: border-box;
             border-color: black;
             border: 1px;
             border-style: solid ;
