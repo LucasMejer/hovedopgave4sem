@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 
 const toggle = ref(false);
+const burgerMenu = ref(null);
 
 const toggleButton = () => {
     toggle.value = !toggle.value;
@@ -14,7 +15,9 @@ const toggleButton = () => {
     <nav>
         <div class="mobile-nav">
             <div class="logo-line">
-                <button @click="toggleButton" id="burgermenu"><img src="../../public/ikoner/burgermenu.png" alt="Burgermenu"></img></button>
+                <button @click="toggleButton" id="burgermenu" ref="burgermenu">
+                    <img src="../../public/ikoner/burgermenu.png" alt="Burgermenu"></img>
+                </button>
                 
                 <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             </div>
@@ -24,7 +27,7 @@ const toggleButton = () => {
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="">
             </div>
             
-            <div class="nav-burgermenu">
+            <div class="nav-burgermenu" v-if="toggle">
                 <hr class="thick-line">
                 <div class="partnersite">
                     <p>Scangrip.com</p>
