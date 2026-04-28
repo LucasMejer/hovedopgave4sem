@@ -14,8 +14,8 @@ function toggleAccordion() {
 </script>
 <template>
     <div class="accordion">
-       <div class="header" @click="toggleAccordion">
-        <button @click="openAccordion">
+       <div class="header" >
+        <button @click="toggleAccordion">
             <p><b>
                 {{ overskrift }}
             </b></p>
@@ -42,7 +42,6 @@ function toggleAccordion() {
     border-color: c.$font-color-primary;
     color: c.$font-color-primary;
     margin: 20px auto;
-    display: flex;
     padding: 10px 5px;
 }
 
@@ -60,5 +59,15 @@ button{
     background-color: #00000000;
     border: none;
     color: none;
+    display: flex;
 }
+
+@media only screen and (min-width: 768px){
+    button{
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    }
+
 </style>
