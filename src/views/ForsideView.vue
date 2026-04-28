@@ -2,7 +2,7 @@
 import Carousel from '@/components/Carousel.vue';
 import Footer from '@/components/Footer.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
-import Navbar from '@/components/Navbar.vue';
+import Navbar from '@/components/Navbar.vue'
 import VideoSection from '@/components/VideoSection.vue';
 
 </script>
