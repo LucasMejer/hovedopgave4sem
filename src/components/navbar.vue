@@ -244,6 +244,7 @@ const toggleButton = () => {
 
                 p {
                     font-size: 20px;
+                    white-space: nowrap;
                 }
             }
 
