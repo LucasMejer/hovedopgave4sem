@@ -33,7 +33,7 @@ import FAQAccordion from '@/components/FAQAccordion.vue';
         />
     </div>
     <FAQAccordion 
-    overskrift="Where can I find how many lumen the lamps illuminate?"
+    overskrift="Where can I find how many lumen the lamps illuminate?" skjulttekst="Dette er den skjulte tekst"
     />
     <FAQAccordion 
     overskrift="Which file formats are available for download?"

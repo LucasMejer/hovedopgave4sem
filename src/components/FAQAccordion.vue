@@ -1,14 +1,18 @@
 <script setup>
 const accordionFaq = defineProps({
-            overskrift:String,
-            skjulttekst:String,
-        })
+    overskrift:String,
+    skjulttekst:String,
+})
+
 
 </script>
 <template>
     <div class="accordion">
         <p>
             {{ overskrift }}
+        </p>
+        <p>
+            {{ skjulttekst }}
         </p>
         <button @click="openAccordion"><img src="/ikoner/arrow-down.png" alt="" class="arrows"></button>
     </div>
