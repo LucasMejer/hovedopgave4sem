@@ -1,11 +1,21 @@
 <script setup>
 import { ref } from 'vue'
 
-const toggle = ref(false);
+const toggleBM = ref(false);
+const togglePI = ref(false);
+const toggleMI = ref(false);
 const burgerMenu = ref(null);
 
-const toggleButton = () => {
-    toggle.value = !toggle.value;
+const toggleBurger = () => {
+    toggleBM.value = !toggleBM.value;
+};
+
+const toggleProductInformation = () => {
+    togglePI.value = !togglePI.value;
+};
+
+const toggleMarketingItems = () => {
+    toggleMI.value = !toggleMI.value;
 };
 
 </script>
@@ -15,7 +25,7 @@ const toggleButton = () => {
     <nav>
         <div class="mobile-nav">
             <div class="logo-line">
-                <button @click="toggleButton" id="burgermenu" ref="burgermenu">
+                <button @click="toggleBurger" id="burgermenu" ref="burgermenu">
                     <img src="../../public/ikoner/burgermenu.png" alt="Burgermenu"></img>
                 </button>
                 
@@ -27,7 +37,7 @@ const toggleButton = () => {
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="">
             </div>
             
-            <div class="nav-burgermenu" v-if="toggle">
+            <div class="nav-burgermenu" v-if="toggleBM">
                 <hr class="thick-line">
                 <div class="partnersite">
                     <p>Scangrip.com</p>
@@ -44,12 +54,12 @@ const toggleButton = () => {
 
                 <div class="nav-menu-items">
                     <hr>
-                    <div class="menu-item">
+                    <button @click="toggleProductInformation" class="menu-item">
                         <p>Product Information</p>
                         <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                    </div>
+                    </button>
                     <hr>
-                    <ul class="dropdown">
+                    <ul class="dropdown" v-if="togglePI">
                         <li>Work lights</li>
                         <hr>
                         <li>CONNECT</li>
@@ -73,12 +83,12 @@ const toggleButton = () => {
                         <li>Discontinued products</li>
                     </ul>
                     <hr>
-                    <div class="menu-item">
+                    <button @click="toggleMarketingItems" class="menu-item">
                         <p>Marketing Items</p>
                         <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                    </div>
+                    </button>
                     <hr>
-                    <ul class="dropdown">
+                    <ul class="dropdown" v-if="toggleMI">
                         <li>Prices and product data</li>
                         <hr>
                         <li>Sales guides</li>
@@ -256,6 +266,9 @@ const toggleButton = () => {
         flex-direction: column;
 
         .menu-item {
+            border: none;
+            background-color: #fff;
+            padding: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
