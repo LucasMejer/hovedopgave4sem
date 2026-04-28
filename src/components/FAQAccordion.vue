@@ -15,10 +15,12 @@ function toggleAccordion() {
 <template>
     <div class="accordion">
        <div class="header" @click="toggleAccordion">
-        <p>
-            {{ overskrift }}
-        </p>
-        <button @click="openAccordion"><img src="/ikoner/arrow-down.png" alt="" class="arrows"></button>
+        <button @click="openAccordion">
+            <p><b>
+                {{ overskrift }}
+            </b></p>
+            <img src="/ikoner/arrow-down.png" alt="" class="arrows">
+        </button>
         <div v-if="Open" class="content">
             <p>
                 {{ skjulttekst }}
@@ -46,6 +48,7 @@ function toggleAccordion() {
 
 p{
     color: c.$font-color-primary;
+    text-align: left;
 }
 
 .arrows {
