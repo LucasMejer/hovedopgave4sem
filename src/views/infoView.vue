@@ -2,6 +2,7 @@
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
+import FAQAccordion from '@/components/FAQAccordion.vue';
 </script>
 <template>
     <Navbar/>
@@ -31,6 +32,21 @@ import LargeIndexCard from '@/components/LargeIndexCard.vue';
             CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20certificates%20and%20documentation.pdf"
         />
     </div>
+    <FAQAccordion 
+    overskrift="Where can I find how many lumen the lamps illuminate?"
+    />
+    <FAQAccordion 
+    overskrift="Which file formats are available for download?"
+    />
+    <FAQAccordion 
+    overskrift="Where can I find marketing material for specific trades"
+    />
+        <FAQAccordion 
+    overskrift="Can I download the marketing material in other languages?"
+    />
+        <FAQAccordion 
+    overskrift="Where can I finde the EAN number of a product?"
+    />
     <Footer/>
 </template>
 <style lang="scss" scoped>
