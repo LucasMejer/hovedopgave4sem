@@ -125,14 +125,43 @@ const toggleMarketingItems = () => {
             <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             
             <div class="nav-menu-items">
-                <div class="menu-item">
+                <button @click="toggleProductInformation" class="menu-item">
                     <p>Product Information</p>
                     <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                </div>
-                <div class="menu-item">
+                </button>
+                <ul class="dropdown" v-if="togglePI">
+                    <li>Work lights</li>
+                    <li>CONNECT</li>
+                    <li>Paint industry</li>
+                    <li>UV curing</li>
+                    <li>Explosion proof</li>
+                    <li>Vice jaws</li>
+                    <li>Coil spring compressors</li>
+                    <li>Accessories</li>
+                    <li>Spare parts</li>
+                    <li>Products for campaings</li>
+                    <li>Discontinued products</li>
+                </ul>
+                <button @click="toggleMarketingItems" class="menu-item">
                     <p>Marketing Items</p>
                     <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                </div>
+                </button>
+                <ul class="dropdown" v-if="toggleMI">
+                    <li>Prices and product data</li>
+                    <li>Sales guides</li>
+                    <li>Campaign material</li>
+                    <li>Videos</li>
+                    <li>Points of sales</li>
+                    <li>Branding</li>
+                    <li>Social media</li>
+                    <li>Pictures</li>
+                    <li>Energy labels</li>
+                    <li>Brochures</li>
+                    <li>Company profile</li>
+                    <li>Logos and symbols</li>
+                    <li>Customized logo engraving</li>
+                    <li>Press releases</li>
+                </ul>
                 <div class="search-bar">
                     <input class="search-input" type="text">
                     <img class="search-icon" src="../../public/ikoner/search.png" alt="">
@@ -305,7 +334,7 @@ const toggleMarketingItems = () => {
     }
 
 
-    @media (min-width: 768px) {
+    @media (min-width: 1280px) {
 
         .mobile-nav {
             display: none;
@@ -327,15 +356,16 @@ const toggleMarketingItems = () => {
         .nav-menu-items {
             max-width: none;
             width: 100vw;
-            margin: 0 0 0 50px;
+            margin: 0 0 0 30px;
             flex-direction: row;
             align-items: center;
             
 
             .menu-item {
                 margin: 0;
-                justify-content: center;
-                width: 100%;
+                justify-content: flex-start;
+                margin: 0 20px;
+                cursor: pointer;
 
                 p {
                     font-size: 20px;
@@ -344,9 +374,30 @@ const toggleMarketingItems = () => {
                 }
             }
 
+            .dropdown {
+                /*list-style-type: none;
+                margin: 10px auto;
+                width: 80%;
+                padding: 0;*/
+
+                position: absolute;
+                z-index: 5;
+                width: 100%;
+
+
+                li {
+                    font-size: 16px;
+                    margin: 10px 0;
+
+                    &hover {
+                        text-decoration: dashed;
+                    }
+                }
+            }
+
             .search-bar {
 
-                padding: 0 20px;
+                padding: 0 30px;
 
                 .search-input {
                     min-width: 150px;
@@ -357,9 +408,11 @@ const toggleMarketingItems = () => {
             .nav-icons {
                 justify-content: space-between;
                 min-width: 120px;
+                margin: 0 0 0 30px;
 
                 img {
                     padding: 0;
+                    cursor: pointer;
                 }
             }
         }
