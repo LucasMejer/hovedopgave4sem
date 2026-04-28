@@ -1,20 +1,31 @@
 <script setup>
+import { ref } from 'vue';
 const accordionFaq = defineProps({
-    overskrift:String,
-    skjulttekst:String,
+    overskrift: String,
+    skjulttekst: String,
 })
 
+const Open = ref(false)
+
+function toggleAccordion() {
+    Open.value = !Open.value
+}
 
 </script>
 <template>
     <div class="accordion">
+       <div class="header" @click="toggleAccordion">
         <p>
             {{ overskrift }}
         </p>
-        <p>
-            {{ skjulttekst }}
-        </p>
         <button @click="openAccordion"><img src="/ikoner/arrow-down.png" alt="" class="arrows"></button>
+        <div v-if="Open" class="content">
+            <p>
+                {{ skjulttekst }}
+            </p>
+        </div>
+        
+        </div>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -39,5 +50,12 @@ p{
 
 .arrows {
     height: 30px;
+}
+
+button{
+    text-decoration: none;
+    background-color: #00000000;
+    border: none;
+    color: none;
 }
 </style>

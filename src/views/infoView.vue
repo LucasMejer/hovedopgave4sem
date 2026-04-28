@@ -33,19 +33,24 @@ import FAQAccordion from '@/components/FAQAccordion.vue';
         />
     </div>
     <FAQAccordion 
-    overskrift="Where can I find how many lumen the lamps illuminate?" skjulttekst="Dette er den skjulte tekst"
+    overskrift="Where can I find how many lumen the lamps illuminate?" 
+    skjulttekst="You can either find the lumen output for the product by finding the product under ‘Product Information’, or by downloading the ‘Master data’ file."
     />
     <FAQAccordion 
     overskrift="Which file formats are available for download?"
+    skjulttekst="You can export  the material in either CSV, Json or XML."
     />
     <FAQAccordion 
     overskrift="Where can I find marketing material for specific trades"
+    skjulttekst="You can choose your trade from the filter on the left hand side of the product overview."
     />
-        <FAQAccordion 
+    <FAQAccordion 
     overskrift="Can I download the marketing material in other languages?"
+    skjulttekst="Yes. You can choose between english, german, french or danish by clickling on the flag in the upper right of the website."
     />
-        <FAQAccordion 
-    overskrift="Where can I finde the EAN number of a product?"
+    <FAQAccordion 
+    overskrift="Where can I finde the EAN number of a product?" 
+    skjulttekst="You can find the EAN number of a product right under the products name. The number has the following structure: 00.0000"
     />
     <Footer/>
 </template>
