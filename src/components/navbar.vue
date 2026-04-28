@@ -14,14 +14,14 @@ const toggleButton = () => {
     <nav>
         <div class="mobile-nav">
             <div class="logo-line">
-                <button @click="toggleButton" id="burgermenu"><img src="../assets/icons/burgermenu.png" alt="Burgermenu"></img></button>
+                <button @click="toggleButton" id="burgermenu"><img src="../../public/ikoner/burgermenu.png" alt="Burgermenu"></img></button>
                 
-                <router-link to="/"><img class="partner-logo" src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+                <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             </div>
             
             <div class="search-bar">
                 <input class="search-input" type="text">
-                <img class="search-icon" src="../assets/icons/search.png" alt="">
+                <img class="search-icon" src="../../public/ikoner/search.png" alt="">
             </div>
             
             <div class="nav-burgermenu">
@@ -34,47 +34,100 @@ const toggleButton = () => {
                 <hr class="thick-line">
 
                 <div class="nav-icons">
-                    <img src="../assets/icons/info.png" alt="">
-                    <img src="../assets/icons/english-flag.png" alt="">
-                    <img src="../assets/icons/profile.svg" alt="">
+                    <img src="../../public/ikoner/info.png" alt="">
+                    <img src="../../public/ikoner/english-flag.png" alt="">
+                    <img src="../../public/ikoner/profile.svg" alt="">
                 </div>
 
                 <div class="nav-menu-items">
                     <hr>
                     <div class="menu-item">
                         <p>Product Information</p>
-                        <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </div>
+                    <hr>
+                    <ul class="dropdown">
+                        <li>Work lights</li>
+                        <hr>
+                        <li>CONNECT</li>
+                        <hr>
+                        <li>Paint industry</li>
+                        <hr>
+                        <li>UV curing</li>
+                        <hr>
+                        <li>Explosion proof</li>
+                        <hr>
+                        <li>Vice jaws</li>
+                        <hr>
+                        <li>Coil spring compressors</li>
+                        <hr>
+                        <li>Accessories</li>
+                        <hr>
+                        <li>Spare parts</li>
+                        <hr>
+                        <li>Products for campaings</li>
+                        <hr>
+                        <li>Discontinued products</li>
+                    </ul>
                     <hr>
                     <div class="menu-item">
                         <p>Marketing Items</p>
-                        <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </div>
                     <hr>
+                    <ul class="dropdown">
+                        <li>Prices and product data</li>
+                        <hr>
+                        <li>Sales guides</li>
+                        <hr>
+                        <li>Campaign material</li>
+                        <hr>
+                        <li>Videos</li>
+                        <hr>
+                        <li>Points of sales</li>
+                        <hr>
+                        <li>Branding</li>
+                        <hr>
+                        <li>Social media</li>
+                        <hr>
+                        <li>Pictures</li>
+                        <hr>
+                        <li>Energy labels</li>
+                        <hr>
+                        <li>Brochures</li>
+                        <hr>
+                        <li>Company profile</li>
+                        <hr>
+                        <li>Logos and symbols</li>
+                        <hr>
+                        <li>Customized logo engraving</li>
+                        <hr>
+                        <li>Press releases</li>
+                    </ul>
                 </div>
             </div>
         </div>
         
         <div class="desktop-nav">
-            <router-link to="/"><img class="partner-logo" src="../assets/icons/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+            <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             
             <div class="nav-menu-items">
                 <div class="menu-item">
                     <p>Product Information</p>
-                    <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                    <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                 </div>
                 <div class="menu-item">
                     <p>Marketing Items</p>
-                    <img class="arrows" src="../assets/icons/arrow-down.png" alt="">
+                    <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                 </div>
                 <div class="search-bar">
                     <input class="search-input" type="text">
-                    <img class="search-icon" src="../assets/icons/search.png" alt="">
+                    <img class="search-icon" src="../../public/ikoner/search.png" alt="">
                 </div>
                 <div class="nav-icons">
-                    <img src="../assets/icons/info.png" alt="">
-                    <img src="../assets/icons/english-flag.png" alt="">
-                    <img src="../assets/icons/profile.svg" alt="">
+                    <img src="../../public/ikoner/info.png" alt="">
+                    <img src="../../public/ikoner/english-flag.png" alt="">
+                    <img src="../../public/ikoner/profile.svg" alt="">
                 </div>
             </div>
         </div>
@@ -90,7 +143,8 @@ const toggleButton = () => {
 </template>
 
 <style lang="scss">
-    @use '../assets/colors' as c;
+    @use '../assets/_colors.scss' as c;
+    @use '../assets/_headings.scss' as f;
 
     .mobile-nav {
         display: block;
@@ -153,6 +207,7 @@ const toggleButton = () => {
     .nav-burgermenu {
 
 
+
         .thick-line {
             border: none;
             height: 1px;
@@ -201,6 +256,30 @@ const toggleButton = () => {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            p {
+                font-size: 16px;
+                margin: 10px 0;
+            }
+            
+        }
+
+        .dropdown {
+            list-style-type: none;
+            margin: 10px auto;
+            width: 80%;
+            padding: 0;
+
+
+            li {
+                color: c.$font-color-primary;
+                font-family: f.$font-primary;
+                font-weight: 400;
+                font-size: 14px;
+
+                text-decoration: none;
+                margin: 10px 0;
+            }
         }
         
     }
@@ -245,6 +324,7 @@ const toggleButton = () => {
                 p {
                     font-size: 20px;
                     white-space: nowrap;
+                    margin: 0;
                 }
             }
 
