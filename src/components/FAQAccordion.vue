@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, Transition } from 'vue';
 const accordionFaq = defineProps({
     overskrift: String,
     skjulttekst: String,
@@ -19,7 +19,7 @@ function toggleAccordion() {
             <p><b>
                 {{ overskrift }}
             </b></p>
-            <img src="/ikoner/arrow-down.png" alt="" class="arrows">
+            <img src="/ikoner/arrow-down.png" alt="" class="arrows" :class="{open:Open}">
         </button>
         <div v-if="Open" class="content">
             <p>
@@ -52,6 +52,10 @@ p{
 
 .arrows {
     height: 30px;
+}
+
+.arrows.open{
+    transform: rotate(180deg);
 }
 
 button{
