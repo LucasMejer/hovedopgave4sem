@@ -56,7 +56,7 @@ const toggleMarketingItems = () => {
                     <hr>
                     <button @click="toggleProductInformation" class="menu-item">
                         <p>Product Information</p>
-                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrows rotate" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="togglePI">
@@ -85,7 +85,7 @@ const toggleMarketingItems = () => {
                     <hr>
                     <button @click="toggleMarketingItems" class="menu-item">
                         <p>Marketing Items</p>
-                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrows rotate" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="toggleMI">
@@ -125,43 +125,48 @@ const toggleMarketingItems = () => {
             <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             
             <div class="nav-menu-items">
-                <button @click="toggleProductInformation" class="menu-item">
-                    <p>Product Information</p>
-                    <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                </button>
-                <ul class="dropdown" v-if="togglePI">
-                    <li>Work lights</li>
-                    <li>CONNECT</li>
-                    <li>Paint industry</li>
-                    <li>UV curing</li>
-                    <li>Explosion proof</li>
-                    <li>Vice jaws</li>
-                    <li>Coil spring compressors</li>
-                    <li>Accessories</li>
-                    <li>Spare parts</li>
-                    <li>Products for campaings</li>
-                    <li>Discontinued products</li>
-                </ul>
-                <button @click="toggleMarketingItems" class="menu-item">
-                    <p>Marketing Items</p>
-                    <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                </button>
-                <ul class="dropdown" v-if="toggleMI">
-                    <li>Prices and product data</li>
-                    <li>Sales guides</li>
-                    <li>Campaign material</li>
-                    <li>Videos</li>
-                    <li>Points of sales</li>
-                    <li>Branding</li>
-                    <li>Social media</li>
-                    <li>Pictures</li>
-                    <li>Energy labels</li>
-                    <li>Brochures</li>
-                    <li>Company profile</li>
-                    <li>Logos and symbols</li>
-                    <li>Customized logo engraving</li>
-                    <li>Press releases</li>
-                </ul>
+                <div>
+                    <button @click="toggleProductInformation" class="menu-item">
+                        <p>Product Information</p>
+                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                    </button>
+                    <ul class="dropdown" v-if="togglePI">
+                        <li>Work lights</li>
+                        <li>CONNECT</li>
+                        <li>Paint industry</li>
+                        <li>UV curing</li>
+                        <li>Explosion proof</li>
+                        <li>Vice jaws</li>
+                        <li>Coil spring compressors</li>
+                        <li>Accessories</li>
+                        <li>Spare parts</li>
+                        <li>Products for campaings</li>
+                        <li>Discontinued products</li>
+                    </ul>
+                </div>
+                <div>
+                    <button @click="toggleMarketingItems" class="menu-item">
+                        <p>Marketing Items</p>
+                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                    </button>
+                    <ul class="dropdown" v-if="toggleMI">
+                        <li>Prices and product data</li>
+                        <li>Sales guides</li>
+                        <li>Campaign material</li>
+                        <li>Videos</li>
+                        <li>Points of sales</li>
+                        <li>Branding</li>
+                        <li>Social media</li>
+                        <li>Pictures</li>
+                        <li>Energy labels</li>
+                        <li>Brochures</li>
+                        <li>Company profile</li>
+                        <li>Logos and symbols</li>
+                        <li>Customized logo engraving</li>
+                        <li>Press releases</li>
+                    </ul>
+                </div>
+                
                 <div class="search-bar">
                     <input class="search-input" type="text">
                     <img class="search-icon" src="../../public/ikoner/search.png" alt="">
@@ -302,6 +307,13 @@ const toggleMarketingItems = () => {
             justify-content: space-between;
             align-items: center;
 
+            &:active {
+
+                .rotate {
+                    transform: rotate(180deg);
+                }
+            }
+
             p {
                 font-size: 16px;
                 margin: 10px 0;
@@ -367,6 +379,11 @@ const toggleMarketingItems = () => {
                 margin: 0 20px;
                 cursor: pointer;
 
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 8px;
+                }
+
                 p {
                     font-size: 20px;
                     white-space: nowrap;
@@ -382,15 +399,23 @@ const toggleMarketingItems = () => {
 
                 position: absolute;
                 z-index: 5;
-                width: 100%;
+                width: auto;
+                top: 10%;
+                margin: 0 0 0 20px;
+                
+                
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                background-color: #fff;
 
 
                 li {
                     font-size: 16px;
-                    margin: 10px 0;
+                    margin: 15px 15px;
+                    cursor: pointer;
 
-                    &hover {
-                        text-decoration: dashed;
+                    &:hover {
+                        text-decoration: underline;
+                        text-underline-offset: 6px;
                     }
                 }
             }
