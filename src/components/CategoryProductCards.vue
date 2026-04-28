@@ -50,16 +50,21 @@ onMounted(() => {
 
 <template>
     <div class="FullProductsDiv">
-        <div class="FilterDiv">
-            <h3>
+        <h3>
                 Filters
-            </h3>
+        </h3>
+        <div class="FilterDiv">
+            <label for="DiscontinuedBox">Discontinued
             <input type="checkbox" id="DiscontinuedBox" value="Discontinued" v-model="activeFilters">
-            <label for="DiscontinuedBox">Discontinued</label>
+            </label>
+
+            <label for="ConstructionBox">Construction
             <input type="checkbox" id="ConstructionBox" value="Construction" v-model="activeFilters">
-            <label for="Construction">Construction</label>
-            <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters">
-            <label for="Electrician">Electrician</label>
+            </label>
+
+            <label for="ElectricianBox">Electrician
+                <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters">  
+            </label>
         </div>
         <div class="ProductGrid">
             <div v-for="item in filteredProducts" :key="item.ProduktNummer" class="ProductDiv">
@@ -87,12 +92,36 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 
+    @use '../assets/_headings.scss' as h;
 
     .FullProductsDiv{
         display: flex;
         flex-direction: column;
         width: 90%;
         margin: auto;
+        .FilterDiv{
+            display: flex;
+            gap: 15px;
+            label{
+                font-family: h.$font-primary;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                gap: 2px;
+                text-align: center;
+                input{
+                // appearance: none;
+                // height: 25px;
+                // width: 25px;
+                // border: 1px;
+                // border-color: black;
+                // border-style: solid;
+                // cursor: pointer;
+                margin-bottom: auto;
+                }
+            }
+            
+        }
     }
 
 
