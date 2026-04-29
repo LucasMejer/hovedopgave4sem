@@ -25,19 +25,27 @@
     </div>
 </template>
 <style lang="scss" scoped>
-.smallindexcardsection{
+.smallindexcard{
+    display: flex;
+    flex-direction: column;
+    
+}
+@media only screen and (min-width: 768px){
+    .smallindexcardsection{
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: 5% auto;
-}
+    }
 
-.smallindexcard{
+    .smallindexcard{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 
-}
+    }
+    }
+
 </style>
