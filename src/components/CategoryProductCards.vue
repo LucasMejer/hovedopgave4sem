@@ -32,39 +32,74 @@ async function FetchProducts(){
         });
     });
 
-    // function toggleFilter(filter) {
-    //     const index = activeFilters.value.indexOf(filter);
+    const filterToggles = ref({
+        industry: false,
+        discontinued: false
+    })
 
-    //     if (index === -1) {
-    //         activeFilters.value.push(filter);
-    //     } else {
-    //         activeFilters.value.splice(index, 1);
-    //     }
-    // }
+    const OpenFilterDropDown = (FilterRef) =>{
+        Object.keys(filterToggles.value).forEach(filter => {
+            filterToggles.value[filter] = (filter === FilterRef)
+            ? !filterToggles.value[filter]
+            : false;
+        })
+    }
+
+    function clickOutside(event) {
+        if (!event.target.closest(".FilterButtons")) {
+            Object.keys(filterToggles.value).forEach(filter => {
+                filterToggles.value[filter] = false
+            });
+        }
+    }
 
 onMounted(() => {
     FetchProducts();
+    window.addEventListener("click", clickOutside);
 });
 
 </script>
 
 <template>
     <div class="FullProductsDiv">
-        <h3>
+        <h3 class="FiltersHeading">
                 Filters
         </h3>
-        <div class="FilterDiv">
-            <label for="DiscontinuedBox">Discontinued
-            <input type="checkbox" id="DiscontinuedBox" value="Discontinued" v-model="activeFilters">
-            </label>
+        <div class="FilterMainDiv">
 
-            <label for="ConstructionBox">Construction
-            <input type="checkbox" id="ConstructionBox" value="Construction" v-model="activeFilters">
-            </label>
+            <button class="FilterButtons">
+                <h3 @click="OpenFilterDropDown('industry')">
+                    Industry
+                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                </h3>
+                <div class="AllIndustryFilter" id="MainDropdown" v-if="filterToggles.industry">
+                    <label for="ConstructionBox">
+                        <p class="ConstructionFilter">Construction</p>
+                    <input type="checkbox" id="ConstructionBox" value="Construction" v-model="activeFilters">
+                    </label>
 
-            <label for="ElectricianBox">Electrician
-                <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters">  
-            </label>
+                    <label for="ElectricianBox">
+                        <p class="ElectricianFilter">Electrician</p>
+                        <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters">  
+                    </label>
+                </div>
+            </button>
+            
+
+            <button class="FilterButtons">
+                <h3 @click="OpenFilterDropDown('discontinued')">
+                    Discontinued
+                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                </h3>
+                <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.discontinued">
+                    <label for="DiscontinuedBox">
+                        <p class="DiscontinuedFilter">Discontinued</p>
+                    <input type="checkbox" id="DiscontinuedBox" value="Discontinued" v-model="activeFilters">
+                    </label>
+                </div>
+            </button>
+            
+
         </div>
         <div class="ProductGrid">
             <div v-for="item in filteredProducts" :key="item.ProduktNummer" class="ProductDiv">
@@ -99,28 +134,76 @@ onMounted(() => {
         flex-direction: column;
         width: 90%;
         margin: auto;
-        .FilterDiv{
+        .FiltersHeading{
+            margin-bottom: 15px;
+        }
+        .FilterMainDiv{
             display: flex;
+            gap: 10px;
+            button{
+                padding: 2px 0px;
+                background-color: #ffffff00;
+                border-style: none;
+                cursor: pointer;
+                h3{
+                    display: flex;
+                    align-items: center;
+                    .ArrowDown{
+                        height: 30px;
+                        margin: 0px;
+                    }
+                }
+                
+            }
+        }
+        #MainDropdown{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
             gap: 15px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px;
+            border-color: #000000;
+            border-style: solid;
+            width: 250px;
             label{
+                position: relative;
                 font-family: h.$font-primary;
                 display: flex;
                 flex-direction: row-reverse;
-                justify-content: center;
+                justify-content: flex-end;
                 gap: 2px;
                 text-align: center;
+                cursor: pointer;
                 input{
-                // appearance: none;
-                // height: 25px;
-                // width: 25px;
-                // border: 1px;
-                // border-color: black;
-                // border-style: solid;
-                // cursor: pointer;
-                margin-bottom: auto;
-                }
+                    cursor: pointer;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    }
+                p{
+                    padding: 3px;
+                    width: max-content;
+                    text-transform: uppercase;
+                    }
             }
             
+              
+        }
+        .AllIndustryFilter{
+            .ConstructionFilter{
+                color: #000000;   
+            }
+            .ElectricianFilter{
+                color: #07775B;   
+            } 
+        }
+
+        .AllDiscontinuedFilter{
+            .DiscontinuedFilter{
+                color: #B91215;   
+            }
         }
     }
 
@@ -128,7 +211,7 @@ onMounted(() => {
     .ProductGrid{
         display: grid;
         grid-template-columns: 47.5% 47.5%;
-        column-gap: 5%;
+        column-gap: 5%; 
         row-gap: 5%;
         margin: 10% 0%;
 
