@@ -75,7 +75,7 @@ const cardInfo = defineProps({
             justify-content: flex-end;
             width: 100%;
             height: 30vw;
-            min-height: 350px;
+            min-height: 400px;
             max-height: 450px;
             margin: 0px;
             .CardText{

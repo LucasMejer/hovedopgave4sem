@@ -6,6 +6,7 @@ import FAQAccordion from '@/components/FAQAccordion.vue';
 </script>
 <template>
     <Navbar/>
+    <h1>INFO AND GUIDES</h1>
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
             CardHeading="Product data and prices" 
@@ -32,6 +33,7 @@ import FAQAccordion from '@/components/FAQAccordion.vue';
             CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20certificates%20and%20documentation.pdf"
         />
     </div>
+    <h1>FAQ</h1>
     <FAQAccordion 
     overskrift="Where can I find how many lumen the lamps illuminate?" 
     skjulttekst="You can either find the lumen output for the product by finding the product under ‘Product Information’, or by downloading the ‘Master data’ file."
@@ -55,6 +57,11 @@ import FAQAccordion from '@/components/FAQAccordion.vue';
     <Footer/>
 </template>
 <style lang="scss" scoped>
+h1{
+    display: flex;
+    justify-content: center;
+}
+
 .LargeIndexCardsDiv{
         display: flex;
         flex-direction: column;

@@ -31,7 +31,7 @@
             <div class="footer-content">
                 <h2>MAILING LIST</h2>
                 <p>Sign up if you would like to receive occassional treats from us.</p>
-                <button>Go</button>
+                <button aria-label="">Go</button>
             </div>
             <div class="footer-content">
                 <h2>SOCIAL LINKS</h2>
