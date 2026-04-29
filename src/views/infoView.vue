@@ -3,6 +3,7 @@ import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
 import FAQAccordion from '@/components/FAQAccordion.vue';
+import FAQAccordionTest from '@/components/FAQAccordionTest.vue';
 </script>
 <template>
     <Navbar/>
@@ -54,6 +55,33 @@ import FAQAccordion from '@/components/FAQAccordion.vue';
     overskrift="Where can I finde the EAN number of a product?" 
     skjulttekst="You can find the EAN number of a product right under the products name. The number has the following structure: 00.0000"
     />
+    <h1>FAQ</h1>
+    <div class="FAQAccordionTest">
+        <FAQAccordionTest
+        overskrift="Where can I find how many lumen the lamps illuminate?" 
+        skjulttekst="You can either find the lumen output for the product by finding the product under ‘Product Information’, or by downloading the ‘Master data’ file."
+        />
+        <FAQAccordionTest
+        overskrift="Where can I find how many lumen the lamps illuminate?" 
+        skjulttekst="You can either find the lumen output for the product by finding the product under ‘Product Information’, or by downloading the ‘Master data’ file."
+        />
+        <FAQAccordionTest
+        overskrift="Which file formats are available for download?"
+        skjulttekst="You can export  the material in either CSV, Json or XML."
+        />
+        <FAQAccordionTest
+        overskrift="Where can I find marketing material for specific trades"
+        skjulttekst="You can choose your trade from the filter on the left hand side of the product overview."
+        />
+        <FAQAccordionTest
+        overskrift="Can I download the marketing material in other languages?"
+        skjulttekst="Yes. You can choose between english, german, french or danish by clickling on the flag in the upper right of the website."
+        />
+        <FAQAccordionTest
+        overskrift="Where can I finde the EAN number of a product?" 
+        skjulttekst="You can either find the lumen output for the product by finding the product under ‘Product Information’, or by downloading the ‘Master data’ file."
+        />
+    </div>
     <Footer/>
 </template>
 <style lang="scss" scoped>
@@ -67,12 +95,24 @@ h1{
         flex-direction: column;
     }
 
+.FAQAccordionTest{
+    display: grid;
+    grid-template-columns: auto;
+    width: 90%;
+    margin: auto;
+    gap: 5%;
+}
+
     @media only screen and (min-width: 768px){
         .LargeIndexCardsDiv{
         display: flex;
         flex-direction: row;
         gap: 5%;
         margin: 2.5% 5%;
+        }
+        .FAQAccordionTest{
+            grid-template-columns: 47.5% 47.5%;
+            row-gap: 10%;
         }
     }
 </style>

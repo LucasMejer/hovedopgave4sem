@@ -32,13 +32,13 @@ function toggleAccordion() {
 
 .accordion{
     box-sizing: border-box;
-    width: 90%;
+    width: 100%;
     border: 1px;
     border-style: solid;
     border-color: c.$font-color-primary;
     color: c.$font-color-primary;
-    margin: 20px auto;
     padding: 10px 5px;
+    height: fit-content;
 }
 h3{
     text-align: left;
