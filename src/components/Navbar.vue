@@ -50,6 +50,7 @@ onBeforeUnmount(() => {
 <template>
 
     <nav>
+        <div class="dark-background" v-if="toggleBM"></div>
         <div class="mobile-nav" ref="mobileNav">
             <div class="logo-line">
                 <button @click="toggleBurger" id="burgermenu" ref="burgerMenu">
@@ -221,8 +222,21 @@ onBeforeUnmount(() => {
     @use '../assets/_colors.scss' as c;
     @use '../assets/_headings.scss' as f;
 
+    nav {
+        margin-bottom: 120px;
+    }
+
     .mobile-nav {
         display: block;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+        background-color: #fff;
+        width: 100vw;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+
+
     }
 
     .desktop-nav {
@@ -287,9 +301,24 @@ onBeforeUnmount(() => {
         }
     }
 
+    .dark-background {
+        z-index: 3;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+    }
+
     .nav-burgermenu {
-
-
+        position: absolute;
+        z-index: 5;
+        width: 100vw;
+        background-color: #fff;
+        padding-bottom: 30px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        overflow-y: auto;
+        max-height: 70vh;
+        
 
         .thick-line {
             border: none;

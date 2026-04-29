@@ -34,7 +34,10 @@ async function FetchProducts(){
 
     const filterToggles = ref({
         industry: false,
-        discontinued: false
+        discontinued: false,
+        producttype: false,
+        powersource: false,
+        plugtype: false
     })
 
     const OpenFilterDropDown = (FilterRef) =>{
@@ -66,6 +69,45 @@ onMounted(() => {
                 Filters
         </h3>
         <div class="FilterMainDiv">
+
+            <button class="FilterButtons">
+                <h3 @click="OpenFilterDropDown('producttype')">
+                    Product type
+                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                </h3>
+                <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.producttype">
+                    <label for="ProductTypeBox">
+                        <p class="DiscontinuedFilter">Discontinued</p>
+                    <input type="checkbox" id="ProductTypeBox" value="Discontinued" v-model="activeFilters">
+                    </label>
+                </div>
+            </button>
+
+            <button class="FilterButtons">
+                <h3 @click="OpenFilterDropDown('powersource')">
+                    Power source
+                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                </h3>
+                <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.powersource">
+                    <label for="PowerSourceBox">
+                        <p class="DiscontinuedFilter">Discontinued</p>
+                    <input type="checkbox" id="PowerSourceBox" value="Discontinued" v-model="activeFilters">
+                    </label>
+                </div>
+            </button>
+
+            <button class="FilterButtons">
+                <h3 @click="OpenFilterDropDown('plugtype')">
+                    Plug type
+                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                </h3>
+                <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.plugtype">
+                    <label for="PlugTypeBox">
+                        <p class="DiscontinuedFilter">Discontinued</p>
+                    <input type="checkbox" id="PlugTypeBox" value="Discontinued" v-model="activeFilters">
+                    </label>
+                </div>
+            </button>
 
             <button class="FilterButtons">
                 <h3 @click="OpenFilterDropDown('industry')">
@@ -139,7 +181,9 @@ onMounted(() => {
         }
         .FilterMainDiv{
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-right: 50px;
             button{
                 padding: 2px 0px;
                 background-color: #ffffff00;
@@ -166,7 +210,7 @@ onMounted(() => {
             border: 1px;
             border-color: #000000;
             border-style: solid;
-            width: 250px;
+            width: 175px;
             label{
                 position: relative;
                 font-family: h.$font-primary;
