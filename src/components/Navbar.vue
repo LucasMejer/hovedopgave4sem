@@ -56,7 +56,7 @@ const toggleMarketingItems = () => {
                     <hr>
                     <button @click="toggleProductInformation" class="menu-item">
                         <p>Product Information</p>
-                        <img class="arrows rotate" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="togglePI">
@@ -82,10 +82,10 @@ const toggleMarketingItems = () => {
                         <hr>
                         <li>Discontinued products</li>
                     </ul>
-                    <hr>
+                    <hr v-if="togglePI">
                     <button @click="toggleMarketingItems" class="menu-item">
                         <p>Marketing Items</p>
-                        <img class="arrows rotate" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img :class="{'rotate': toggleMI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="toggleMI">
@@ -128,7 +128,7 @@ const toggleMarketingItems = () => {
                 <div>
                     <button @click="toggleProductInformation" class="menu-item">
                         <p>Product Information</p>
-                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
                     <ul class="dropdown" v-if="togglePI">
                         <li>Work lights</li>
@@ -147,7 +147,7 @@ const toggleMarketingItems = () => {
                 <div>
                     <button @click="toggleMarketingItems" class="menu-item">
                         <p>Marketing Items</p>
-                        <img class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img :class="{'rotate': toggleMI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
                     <ul class="dropdown" v-if="toggleMI">
                         <li>Prices and product data</li>
@@ -307,12 +307,12 @@ const toggleMarketingItems = () => {
             justify-content: space-between;
             align-items: center;
 
-            &:active {
-
+            
                 .rotate {
                     transform: rotate(180deg);
+                    transition: transform 0.3s ease;
                 }
-            }
+            
 
             p {
                 font-size: 16px;
