@@ -1,10 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { onMounted } from 'vue';
+import { onBeforeUnmount } from 'vue';  
 
 const toggleBM = ref(false);
 const togglePI = ref(false);
 const toggleMI = ref(false);
 const burgerMenu = ref(null);
+const mobileNav = ref(null);
+const menuItemPI = ref(null);
+const menuItemMI = ref(null);
 
 const toggleBurger = () => {
     toggleBM.value = !toggleBM.value;
@@ -18,14 +23,36 @@ const toggleMarketingItems = () => {
     toggleMI.value = !toggleMI.value;
 };
 
+function clickOutside(click) {
+    if (toggleBM.value && !burgerMenu.value.contains(click.target) && !mobileNav.value.contains(click.target)) {
+        toggleBM.value = false;
+    }
+    else if (!toggleBM.value && togglePI.value && !menuItemPI.value.contains(click.target)) {
+        togglePI.value = false;
+    }
+    else if (!toggleBM.value && toggleMI.value && !menuItemMI.value.contains(click.target)) {
+        toggleMI.value = false;
+    }
+
+    else return;
+};
+
+onMounted( () => {
+    window.addEventListener("click", clickOutside);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener("click", clickOutside);
+});
+
 </script>
 
 <template>
 
     <nav>
-        <div class="mobile-nav">
+        <div class="mobile-nav" ref="mobileNav">
             <div class="logo-line">
-                <button @click="toggleBurger" id="burgermenu" ref="burgermenu">
+                <button @click="toggleBurger" id="burgermenu" ref="burgerMenu">
                     <img src="../../public/ikoner/burgermenu.png" alt="Burgermenu"></img>
                 </button>
                 
@@ -126,7 +153,7 @@ const toggleMarketingItems = () => {
             
             <div class="nav-menu-items">
                 <div>
-                    <button @click="toggleProductInformation" class="menu-item">
+                    <button @click="toggleProductInformation" class="menu-item" ref="menuItemPI">
                         <p>Product Information</p>
                         <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
@@ -145,7 +172,7 @@ const toggleMarketingItems = () => {
                     </ul>
                 </div>
                 <div>
-                    <button @click="toggleMarketingItems" class="menu-item">
+                    <button @click="toggleMarketingItems" class="menu-item" ref="menuItemMI">
                         <p>Marketing Items</p>
                         <img :class="{'rotate': toggleMI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
@@ -326,6 +353,7 @@ const toggleMarketingItems = () => {
             margin: 10px auto;
             width: 80%;
             padding: 0;
+            
 
 
             li {
