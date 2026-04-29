@@ -36,10 +36,10 @@
             <div class="footer-content">
                 <h2>SOCIAL LINKS</h2>
                 <div class="some-icons">
-                    <a href="https://www.instagram.com/scangrip_official/" aria-label="instagram"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
-                    <a href="https://www.facebook.com/scangrip" aria-label="facebook"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
-                    <a href="https://www.linkedin.com/company/scangrip" aria-label="linkedin"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
-                    <a href="https://www.linkedin.com/company/scangrip" aria-label="youtubekanal"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
+                    <a href="https://www.instagram.com/scangrip_official/" aria-label="instagram" target="_blank"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
+                    <a href="https://www.facebook.com/scangrip" aria-label="facebook" target="_blank"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
+                    <a href="https://www.linkedin.com/company/scangrip" aria-label="linkedin" target="_blank"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
+                    <a href="https://www.linkedin.com/company/scangrip" aria-label="youtubekanal" target="_blank"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
                 </div>
             </div>
         </div>
