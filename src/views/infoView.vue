@@ -3,7 +3,6 @@ import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
 import FAQAccordion from '@/components/FAQAccordion.vue';
-import FAQAccordionTest from '@/components/FAQAccordionTest.vue';
 </script>
 <template>
     <Navbar/>
@@ -35,7 +34,7 @@ import FAQAccordionTest from '@/components/FAQAccordionTest.vue';
         />
     </div>
     <h1>FAQ</h1>
-        <div class="faq-grid">
+        <div class="FAQAccordioncard">
         <FAQAccordion 
         overskrift="Where can I find how many lumen the lamps illuminate?" 
         skjulttekst="You can either find the lumen output for the product by finding the product under ‘Product Information’, or by downloading the ‘Master data’ file."
@@ -70,20 +69,12 @@ h1{
         flex-direction: column;
     }
 
-.FAQAccordionTest{
-    display: grid;
-    grid-template-columns: auto;
-    width: 90%;
-    margin: auto;
-    gap: 5%;
-}
-
-.faq-grid {
+.FAQAccordioncard {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     width: 90%;
-    margin: auto;
+    margin: 10px auto 20px;
 }
 
 @media only screen and (min-width: 768px){
@@ -97,7 +88,7 @@ h1{
         gap: 5%;
         margin: 2.5% 5%;
         }
-    .faq-grid {
+    .FAQAccordioncard {
         grid-template-columns: 1fr 1fr;
     }
 }
