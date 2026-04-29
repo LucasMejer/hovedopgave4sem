@@ -47,7 +47,7 @@ const toggleMarketingItems = () => {
                 <hr class="thick-line">
 
                 <div class="nav-icons">
-                    <img src="../../public/ikoner/info.png" alt="">
+                    <router-link to="/info"><img src="../../public/ikoner/info.png" alt=""></router-link>
                     <img src="../../public/ikoner/english-flag.png" alt="">
                     <img src="../../public/ikoner/profile.svg" alt="">
                 </div>
@@ -172,7 +172,7 @@ const toggleMarketingItems = () => {
                     <img class="search-icon" src="../../public/ikoner/search.png" alt="">
                 </div>
                 <div class="nav-icons">
-                    <img src="../../public/ikoner/info.png" alt="">
+                    <router-link to="/info"><img src="../../public/ikoner/info.png" alt=""></router-link>
                     <img src="../../public/ikoner/english-flag.png" alt="">
                     <img src="../../public/ikoner/profile.svg" alt="">
                 </div>
