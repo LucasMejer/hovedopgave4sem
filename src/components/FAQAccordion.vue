@@ -1,32 +1,29 @@
 <script setup>
-import { ref, Transition } from 'vue';
-const accordionFaq = defineProps({
+import { ref } from 'vue';
+defineProps({
     overskrift: String,
     skjulttekst: String,
 })
 
-const Open = ref(false)
+const isOpen = ref(false)
 
 function toggleAccordion() {
-    Open.value = !Open.value
+    isOpen.value = !isOpen.value
 }
 
 </script>
 <template>
     <div class="accordion">
-       <div class="header" >
-        <button @click="toggleAccordion">
+        <button @click="toggleAccordion" :aria-expanded="isOpen">
             <p><b>
                 {{ overskrift }}
             </b></p>
-            <img src="/ikoner/arrow-down.png" alt="" class="arrows" :class="{open:Open}">
+            <img src="/ikoner/arrow-down.png" alt="" class="arrows" :class="{open:isOpen}">
         </button>
-        <div v-if="Open" class="content">
+        <div v-show="isOpen" class="content">
             <p>
                 {{ skjulttekst }}
             </p>
-        </div>
-        
         </div>
     </div>
 </template>
