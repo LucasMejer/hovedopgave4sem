@@ -10,7 +10,6 @@ const isOpen = ref(false)
 function toggleAccordion() {
     isOpen.value = !isOpen.value
 }
-
 </script>
 <template>
     <div class="accordion">
@@ -61,6 +60,7 @@ button{
     border: none;
     color: none;
     display: flex;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px){
@@ -70,5 +70,4 @@ button{
         align-items: center;
     }
     }
-
 </style>
