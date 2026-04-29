@@ -3,6 +3,7 @@ import Carousel from '@/components/Carousel.vue';
 import Footer from '@/components/Footer.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
 import Navbar from '@/components/Navbar.vue';
+import SmallIndexCard from '@/components/SmallIndexCard.vue';
 import VideoSection from '@/components/VideoSection.vue';
 
 </script>
@@ -30,6 +31,7 @@ import VideoSection from '@/components/VideoSection.vue';
             CardDownload="/download/price-list.xlsx"
         />
     </div>
+    <SmallIndexCard/>
     <VideoSection/>
     <Footer/>
 </template>
