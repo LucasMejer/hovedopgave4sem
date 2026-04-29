@@ -3,7 +3,7 @@
 <template>
     <div class="backgroundcolor">
         <div class="videosection">
-            <iframe src="https://youtu.be/Cpjg4pIZbGU?si=5AvbNqBE5jZOzIci" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Cpjg4pIZbGU?si=68dTU7Dq3vqH_EQ2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <p>Unsure how to use the partner site? Learn how to navigate througt the  partner site by watching our guide video.</p>
         </div>
     </div>
