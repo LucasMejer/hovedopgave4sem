@@ -53,7 +53,8 @@ onBeforeUnmount(() => {
         <div class="mobile-nav" ref="mobileNav">
             <div class="logo-line">
                 <button @click="toggleBurger" id="burgermenu" ref="burgerMenu">
-                    <img src="../../public/ikoner/burgermenu.png" alt="Burgermenu"></img>
+                    <img :class="{'hidden': toggleBM}" src="../../public/ikoner/burgermenu.png" alt=""></img>
+                    <img :class="{'visible': toggleBM}" class="hidden" src="../../public/ikoner/close.png" alt=""></img>
                 </button>
                 
                 <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
@@ -247,6 +248,14 @@ onBeforeUnmount(() => {
         img {
             width: 40px;
             height: 40px;
+        }
+
+        .hidden {
+                display: none;
+            }
+
+        .visible {
+            display: block;
         }
     }
 
