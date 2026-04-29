@@ -343,6 +343,7 @@ const toggleMarketingItems = () => {
 
     .arrows {
         height: 30px;
+        transition: transform 0.3s ease;
     }
 
 
