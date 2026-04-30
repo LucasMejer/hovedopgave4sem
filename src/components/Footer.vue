@@ -11,7 +11,7 @@
                     <p>Rytterhaven 9</p>
                     <p>DK-5700 Svendborg</p>
                     <a href="tel:+4563206320">TEL:(+45)63206320</a><br>
-                    <a href="mailto:scangrip.com"><b>scangrip@scangrip.com</b></a>
+                    <a href="mailto:scangrip.com"><b>scangrip@scangrip.com</b></a><br>
                     <a href="https://www.scangrip.com/da-dk"><b>scangrip.com</b></a><br>
                     <p>Delivery address: Rytterskoven 12,</p>
                     <p>DK5700 Svendborg</p>
@@ -19,7 +19,7 @@
             </div>
             <div class="footer-content">
                 <h2>PARTNER SUPPORT</h2>
-                <p>Productinformation</p>
+                <p>Product Information</p>
                 <p>Brochures</p>
                 <p>Price List</p>
                 <p>Sales Guides</p>

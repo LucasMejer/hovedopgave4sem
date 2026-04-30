@@ -66,9 +66,9 @@ onBeforeUnmount(() => {
                 <input class="search-input" type="text">
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="">
             </div>
+            <hr class="thick-line" v-if="toggleBM">
             
             <div class="nav-burgermenu" v-if="toggleBM">
-                <hr class="thick-line">
                 <div class="partnersite">
                     <p>Scangrip.com</p>
                     <hr class="thick-line-vertical">
@@ -224,7 +224,7 @@ onBeforeUnmount(() => {
     @use '../assets/_headings.scss' as f;
 
     nav {
-        margin-bottom: 120px;
+        margin-bottom: 130px;
     }
 
     .mobile-nav {
@@ -235,6 +235,7 @@ onBeforeUnmount(() => {
         background-color: #fff;
         width: 100vw;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        
 
 
 
@@ -287,6 +288,7 @@ onBeforeUnmount(() => {
         padding: 15px 0 25px 0;
         width: 90%;
 
+
         .search-input {
             height: 30px;
             width: 100%;
@@ -310,22 +312,24 @@ onBeforeUnmount(() => {
         background-color: rgba($color: #000000, $alpha: 0.4);
     }
 
+    .thick-line {
+        border: none;
+        height: 1px;
+        background-color: #000;
+    }
+
     .nav-burgermenu {
         position: absolute;
         z-index: 5;
         width: 100vw;
-        background-color: #fff;
+        background-color: #fafafa;
         padding-bottom: 30px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         overflow-y: auto;
         max-height: 70vh;
         
 
-        .thick-line {
-            border: none;
-            height: 1px;
-            background-color: #000;
-        }
+        
 
         .thick-line-vertical {
             border: none;
@@ -367,7 +371,7 @@ onBeforeUnmount(() => {
 
         .menu-item {
             border: none;
-            background-color: #fff;
+            background-color: #fafafa;
             padding: 0;
             display: flex;
             justify-content: space-between;
