@@ -10,6 +10,7 @@ const burgerMenu = ref(null);
 const mobileNav = ref(null);
 const menuItemPI = ref(null);
 const menuItemMI = ref(null);
+const dropdown = ref(null);
 
 const toggleBurger = () => {
     toggleBM.value = !toggleBM.value;
@@ -27,10 +28,10 @@ function clickOutside(click) {
     if (toggleBM.value && !burgerMenu.value.contains(click.target) && !mobileNav.value.contains(click.target)) {
         toggleBM.value = false;
     }
-    else if (!toggleBM.value && togglePI.value && !menuItemPI.value.contains(click.target)) {
+    else if (!toggleBM.value && togglePI.value && !dropdown.value.contains(click.target) && !menuItemPI.value.contains(click.target)) {
         togglePI.value = false;
     }
-    else if (!toggleBM.value && toggleMI.value && !menuItemMI.value.contains(click.target)) {
+    else if (!toggleBM.value && toggleMI.value && !dropdown.value.contains(click.target) && !menuItemMI.value.contains(click.target)) {
         toggleMI.value = false;
     }
 
@@ -159,7 +160,7 @@ onBeforeUnmount(() => {
                         <p>Product Information</p>
                         <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
-                    <ul class="dropdown" v-if="togglePI">
+                    <ul class="dropdown" v-if="togglePI" ref="dropdown">
                         <li>Work lights</li>
                         <li>CONNECT</li>
                         <li>Paint industry</li>
@@ -178,7 +179,7 @@ onBeforeUnmount(() => {
                         <p>Marketing Items</p>
                         <img :class="{'rotate': toggleMI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
-                    <ul class="dropdown" v-if="toggleMI">
+                    <ul class="dropdown" v-if="toggleMI" ref="dropdown">
                         <li>Prices and product data</li>
                         <li>Sales guides</li>
                         <li>Campaign material</li>
@@ -414,6 +415,10 @@ onBeforeUnmount(() => {
 
 
     @media (min-width: 1280px) {
+
+        nav {
+            margin-bottom: 0;
+        }
 
         .mobile-nav {
             display: none;
