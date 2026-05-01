@@ -89,7 +89,7 @@ onBeforeUnmount(() => {
             
             <div class="nav-burgermenu" v-if="toggleBM">
                 <div class="partnersite">
-                    <p>Scangrip.com</p>
+                    <p><a href="https://www.scangrip.com/da-dk">Scangrip.com</a></p>
                     <hr class="thick-line-vertical">
                     <p class="marked">Partner</p>
                 </div>
@@ -109,7 +109,7 @@ onBeforeUnmount(() => {
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="togglePI">
-                        <li>Work lights</li>
+                        <li><router-link to="/category" class="link">Work lights</router-link></li>
                         <hr>
                         <li>CONNECT</li>
                         <hr>
@@ -180,7 +180,7 @@ onBeforeUnmount(() => {
                         <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                     </button>
                     <ul class="dropdown" v-if="togglePI" ref="dropdown">
-                        <li>Work lights</li>
+                        <li><router-link to="/category" class="link">Work lights</router-link></li>
                         <li>CONNECT</li>
                         <li>Paint industry</li>
                         <li>UV curing</li>
@@ -244,7 +244,7 @@ onBeforeUnmount(() => {
 
 
     nav {
-        margin-bottom: 130px;
+        margin-bottom: 140px;
     }
 
     .nav-hidden {
@@ -261,6 +261,7 @@ onBeforeUnmount(() => {
         width: 100vw;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         transition: 0.3s ease;
+        max-height: 100vh;
 
     }
 
@@ -275,6 +276,12 @@ onBeforeUnmount(() => {
         min-width: 325px;
         padding: 10px 0;
         justify-content: space-evenly;
+    }
+
+    .link {
+        text-decoration: none;
+        color: c.$font-color-primary;
+            
     }
 
     #burgermenu {
@@ -350,7 +357,7 @@ onBeforeUnmount(() => {
         padding-bottom: 30px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         overflow-y: auto;
-        max-height: 100vh;
+        max-height: 75vh;
 
         
 
@@ -368,6 +375,11 @@ onBeforeUnmount(() => {
 
         p {
             margin: 5px 10px 5px 10px;
+            
+            a {
+                text-decoration: none;
+                color: c.$font-color-primary;
+            }
         }
 
         .marked {
@@ -477,6 +489,7 @@ onBeforeUnmount(() => {
                 justify-content: flex-start;
                 margin: 0 20px;
                 cursor: pointer;
+                background-color: #fff;
 
                 &:hover {
                     text-decoration: underline;
