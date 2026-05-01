@@ -1,4 +1,5 @@
 <script setup>
+import CarouselProduct from '@/components/CarouselProduct.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 </script>
@@ -16,7 +17,7 @@ import Navbar from '@/components/Navbar.vue';
     </div>
     <h3>NOVA MINI</h3>
     <p>03.6200</p>
-    <img src="/novamini.png" alt="">
+    <CarouselProduct/>
     <Footer/>
 </template>
 <style lang="scss" scoped>
