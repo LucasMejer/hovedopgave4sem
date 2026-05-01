@@ -242,6 +242,7 @@ onBeforeUnmount(() => {
     @use '../assets/_colors.scss' as c;
     @use '../assets/_headings.scss' as f;
 
+
     nav {
         margin-bottom: 130px;
     }
