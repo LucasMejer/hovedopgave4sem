@@ -38,12 +38,31 @@ function clickOutside(click) {
     else return;
 };
 
+
+let lastScrollY = 0
+let navHidden = ref(false);
+
+function onScroll() {
+    const currentScrollY = window.scrollY
+    if (currentScrollY > lastScrollY && currentScrollY >= 150) {
+        navHidden.value = true;
+    }
+    else {
+        navHidden.value = false;
+    }
+    lastScrollY = currentScrollY;
+}
+
+
+
 onMounted( () => {
     window.addEventListener("click", clickOutside);
+    window.addEventListener("scroll", onScroll);
 });
 
 onBeforeUnmount(() => {
     window.removeEventListener("click", clickOutside);
+    window.removeEventListener("scroll", onScroll);
 });
 
 </script>
@@ -52,7 +71,7 @@ onBeforeUnmount(() => {
 
     <nav>
         <div class="dark-background" v-if="toggleBM"></div>
-        <div class="mobile-nav" ref="mobileNav">
+        <div :class="{'nav-hidden': navHidden}" class="mobile-nav" ref="mobileNav">
             <div class="logo-line">
                 <button @click="toggleBurger" id="burgermenu" ref="burgerMenu">
                     <img :class="{'hidden': toggleBM}" src="../../public/ikoner/burgermenu.png" alt=""></img>
@@ -227,6 +246,11 @@ onBeforeUnmount(() => {
         margin-bottom: 130px;
     }
 
+    .nav-hidden {
+        transform: translateY(-100%);
+        transition: 0.3s ease;
+    }
+
     .mobile-nav {
         display: block;
         position: fixed;
@@ -235,9 +259,7 @@ onBeforeUnmount(() => {
         background-color: #fff;
         width: 100vw;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        
-
-
+        transition: 0.3s ease;
 
     }
 
@@ -264,6 +286,7 @@ onBeforeUnmount(() => {
         img {
             width: 40px;
             height: 40px;
+            display: block;
         }
 
         .hidden {
@@ -284,7 +307,7 @@ onBeforeUnmount(() => {
     .search-bar {
         display: flex;
         justify-content: center;
-        margin: auto;
+        margin: 5px auto;
         padding: 15px 0 25px 0;
         width: 90%;
 
@@ -305,7 +328,7 @@ onBeforeUnmount(() => {
     }
 
     .dark-background {
-        z-index: 3;
+        z-index: 4;
         width: 100vw;
         height: 100vh;
         position: fixed;
@@ -326,8 +349,7 @@ onBeforeUnmount(() => {
         padding-bottom: 30px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         overflow-y: auto;
-        max-height: 70vh;
-        
+        max-height: 100vh;
 
         
 
