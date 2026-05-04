@@ -32,20 +32,24 @@
     width: 90%;
     margin: auto;
     display: flex;
-    flex-direction: column;
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .smallindexcard{
     display: flex;
     flex-direction: column;
-    padding: 40px 0;
     justify-content: center;
     align-items: center;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    text-align: center;
     
     img {
         width: 100%;
-        max-width: 250px;
+        max-width: 100px;
         height: auto;
         margin-bottom: 10px;
     }
@@ -54,14 +58,11 @@
 @media only screen and (min-width: 768px){
 
     .smallindexcardsection{
-        flex-direction: row;
         justify-content: space-between;
         margin: 5% auto;
     }
 
     .smallindexcard{
-        
-        width: 200px;
         flex-direction: column;
         cursor: pointer;
         margin: 0 20px;
@@ -69,7 +70,7 @@
         padding: 20px 0;
 
         img {
-            max-width: 150px;
+            max-width: 100px;
             
             
         }
