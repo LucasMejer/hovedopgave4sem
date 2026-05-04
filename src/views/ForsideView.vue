@@ -5,11 +5,13 @@ import LargeIndexCard from '@/components/LargeIndexCard.vue';
 import Navbar from '@/components/Navbar.vue';
 import SmallIndexCard from '@/components/SmallIndexCard.vue';
 import VideoSection from '@/components/VideoSection.vue';
+import BackToTop from '@/components/BackToTop.vue';
 
 </script>
 
 <template>
     <Navbar/>
+    <BackToTop/>
     <Carousel />
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 

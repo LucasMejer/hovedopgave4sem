@@ -3,9 +3,12 @@ import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import LargeIndexCard from '@/components/LargeIndexCard.vue';
 import FAQAccordion from '@/components/FAQAccordion.vue';
+import BackToTop from '@/components/BackToTop.vue';
+
 </script>
 <template>
     <Navbar/>
+    <BackToTop/>
     <h1>INFO AND GUIDES</h1>
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
