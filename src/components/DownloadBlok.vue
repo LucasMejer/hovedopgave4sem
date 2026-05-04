@@ -2,9 +2,11 @@
 import { ref } from 'vue';
 
 
-const currentCounter = ref (0)
-const totalcounts = ref (6)
 const selected = ref([])
+
+const imagesshown = ref(true)
+
+const filesshown = ref(false)
 
 const counterplus = () => {
     currentCounter.value = (currentCounter.value + 1) % totalcounts.value
@@ -21,8 +23,9 @@ const clearAll = () => {
 
 <template>
     <div class="downloadblok">
-        <button>files</button>
-        <div class="scroll">
+        <button @click="filesshown = true, imagesshown = false">files</button>
+        <button @click="imagesshown = true, filesshown = false">images</button>
+        <div class="scroll" v-if="filesshown">
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
                 <input type="checkbox" value="manual" v-model="selected">
@@ -57,17 +60,52 @@ const clearAll = () => {
                 <span class="checkmark"></span>
             </div>
         </div>
-
-    <div class="overlay">
-        <div class="amount-selected-counter">
-            <p>{{ selected.length }} filer valgt</p>
+        <div class="overlay">
+            <div class="amount-selected-counter">
+                <p>{{ selected.length }} filer valgt</p>
+            </div>
+            <p @click="clearAll">ryd alle</p>
+            <button>Download
+                <img src="/public/ikoner/download-ikon.svg" alt="">
+            </button>
         </div>
-        <p @click="clearAll">ryd alle</p>
-        <button>Download
-            <img src="/public/ikoner/download-ikon.svg" alt="">
-        </button>
     </div>
-    </div>
+
+    <div class="scrollimage" v-if="imagesshown">
+            <div class="scroll-blok-card">
+                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <input type="checkbox" value="manual" v-model="selected">
+                <span class="checkmark"></span>
+                <p>NOVA MINI Manual</p>
+            </div>
+            <div class="scroll-blok-card">
+                <img src="/public/ikoner/mp4-ikon.svg" alt="">
+                <input type="checkbox" value="video" v-model="selected">
+                <span class="checkmark"></span>
+                <p>NOVA MINI Product img</p>
+            </div>
+            <div class="scroll-blok-card">
+                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <input type="checkbox" value="nightview" v-model="selected">
+                <span class="checkmark"></span>
+                <p>Work Lights Night img</p>
+            </div>
+            <div class="scroll-blok-card">
+                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <input type="checkbox" value="pdf" v-model="selected">
+                <span class="checkmark"></span>
+            </div>
+              <div class="scroll-blok-card" v-if="test">
+                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <input type="checkbox" value="newpdf" v-model="selected">
+                <span class="checkmark"></span> 
+            </div>
+            <div class="scroll-blok-card">
+                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <input type="checkbox" value="cunstructiondocument" v-model="selected">
+                <span class="checkmark"></span>
+            </div>
+        </div>
 </template>
 
 <style scoped lang="scss">
@@ -84,6 +122,16 @@ button{
     display: grid;
     grid-template-columns: auto auto;
     background-color: c.$hover-state-active;
+    position: absolute;
+}
+
+.scrollimage{
+    overflow: scroll;
+    height: 200px;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: c.$hover-state-active;
+    position: absolute;
 }
 
 .scroll-blok-card{
@@ -93,6 +141,15 @@ button{
 .overlay{
     display: flex;
     justify-content: space-between;
+    position: fixed;
 }
 
+@media only screen and (min-width: 768px){
+    .scroll{
+        grid-template-columns: auto auto auto auto;
+    }
+    .scrollimage{
+        grid-template-columns: auto auto auto auto;
+    }
+}
 </style>
