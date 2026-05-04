@@ -93,8 +93,14 @@ onMounted(() => {
 </script>
 
 <template>
+
+    <div class="CategoryHeading">
+        <h1>
+            WORK LIGHTS
+        </h1>
+    </div>
+
     <div class="FullProductsDiv">
-        
         
         <div class="FilterMainDiv">
 
@@ -188,25 +194,30 @@ onMounted(() => {
             </div>
 
         </div>
-        <div class="ProductGrid">
-            <div v-for="item in filteredProducts" :key="item.ProduktNummer" class="ProductDiv">
-                <div class="ProductTags">
-                    <span v-for="(value, key) in item.ProduktTags" >
-                        <p v-if="value" :class="[key + 'Class']">
-                            {{ key }}
-                        </p>
-                    </span>
-                </div> 
-                <img :src=item.ProduktBillede alt="">
-                <h2>
-                    {{ item.ProduktTitel }}
-                </h2>
-                <p>
-                    {{item.ProduktNummer}}
-                </p>
-                <p>
-                    {{item.ProduktBeskrivelse}}
-                </p>
+        <div>
+            <div class="ProductGridHeadings">
+                <h3>Resultater: {{filteredProducts.length}}</h3>
+            </div>
+            <div class="ProductGrid">
+                <div v-for="item in filteredProducts" :key="item.ProduktNummer" class="ProductDiv">
+                    <div class="ProductTags">
+                        <span v-for="(value, key) in item.ProduktTags" >
+                            <p v-if="value" :class="[key + 'Class']">
+                                {{ key }}
+                            </p>
+                        </span>
+                    </div> 
+                    <img :src=item.ProduktBillede alt="">
+                    <h2>
+                        {{ item.ProduktTitel }}
+                    </h2>
+                    <p>
+                        {{item.ProduktNummer}}
+                    </p>
+                    <p>
+                        {{item.ProduktBeskrivelse}}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -216,11 +227,25 @@ onMounted(() => {
 
     @use '../assets/_headings.scss' as h;
 
+    .CategoryHeading{
+        display: flex;
+        width: 90%;
+        justify-content: left;
+        margin: auto;
+        h1{
+            margin: 35px 0px;
+        }
+    }
+
     .FullProductsDiv{
         display: flex;
         flex-direction: column;
         width: 90%;
         margin: auto;
+
+        .ProductGridHeadings{
+            display: none;
+        }
         
         .FilterMainDiv{
             .FiltersHeading{
@@ -378,21 +403,34 @@ onMounted(() => {
 
     @media only screen and (min-width: 768px){
 
+        .CategoryHeading{
+            justify-content: center;
+            text-align: center;
+            h1{
+                margin: 65px;
+            }
+        }
+
         .FullProductsDiv{
             display: grid;
             grid-template-columns: 25% auto;
-          //  flex-direction: row;
+
+            .ProductGridHeadings{
+                display: block;
+                margin-bottom: 10px;
+            }
+
             .FilterMainDiv{
                 padding-right: 10%;
                 align-content: flex-start;
                 button{
+                    margin-top: 10px;
                     hr{
                         display: block;
                         border-color: black;
                         border-style: solid;
                         border-width: 1px;
                         margin-bottom: 5px;
-                        margin-top: 5px;
                     }
                     h3{
                         display: flex;
