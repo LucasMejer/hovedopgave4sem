@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
             </div>
             
             <div class="search-bar">
-                <input class="search-input" type="text">
+                <input class="search-input" type="text" placeholder="Search...">
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="">
             </div>
             <hr class="thick-line" v-if="toggleBM">
@@ -217,7 +217,7 @@ onBeforeUnmount(() => {
                 </div>
                 
                 <div class="search-bar">
-                    <input class="search-input" type="text">
+                    <input class="search-input" type="text" placeholder="Search...">
                     <img class="search-icon" src="../../public/ikoner/search.png" alt="">
                 </div>
                 <div class="nav-icons">
@@ -248,9 +248,8 @@ onBeforeUnmount(() => {
     }
 
     .nav-hidden {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
         transition: 0.3s ease;
-        box-shadow: none;
     }
 
     .mobile-nav {
@@ -327,7 +326,7 @@ onBeforeUnmount(() => {
             min-width: 200px;
             
             margin: 0 10px 0 0;
-            padding: 0;
+            padding: 0 10px;
         }
 
         .search-icon {
