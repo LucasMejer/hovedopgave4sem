@@ -4,6 +4,8 @@ import { computed, onMounted, ref } from 'vue';
 let productArray = ref([]);
 let activeFilters = ref([]);
 
+const mediaQuery = window.matchMedia("(max-width: 768px)");
+
 async function FetchProducts(){
   try {
     const Res = await fetch(
@@ -41,6 +43,13 @@ async function FetchProducts(){
     })
 
     const OpenFilterDropDown = (FilterRef) =>{
+
+        //Dont close all other filters when on desktop
+        if (window.innerWidth >= 768){
+            filterToggles.value[FilterRef] = !filterToggles.value[FilterRef]
+            return
+        }
+
         Object.keys(filterToggles.value).forEach(filter => {
             filterToggles.value[filter] = (filter === FilterRef)
             ? !filterToggles.value[filter]
@@ -49,6 +58,10 @@ async function FetchProducts(){
     }
 
     function clickOutside(event) {
+
+        //Dont run code if on desktop
+        if (window.innerWidth >= 768) return;
+
         if (!event.target.closest(".FilterButtons")) {
             Object.keys(filterToggles.value).forEach(filter => {
                 filterToggles.value[filter] = false
@@ -56,21 +69,48 @@ async function FetchProducts(){
         }
     }
 
+    function resetFilters(){
+        activeFilters.value = [];
+    }
+
+    function ScreenSizeCheck(size){
+
+        //Runs if screen goes to mobile size
+        if(size.matches){
+            Object.keys(filterToggles.value).forEach(filter => {
+                filterToggles.value[filter] = false
+            });
+        }
+    }
+
+
 onMounted(() => {
     FetchProducts();
     window.addEventListener("click", clickOutside);
+    mediaQuery.addEventListener("change", ScreenSizeCheck);
 });
 
 </script>
 
 <template>
     <div class="FullProductsDiv">
-        <h3 class="FiltersHeading">
-                Filters
-        </h3>
+        
+        
         <div class="FilterMainDiv">
 
+            <h3 class="FiltersHeading">
+                Filters
+                <button class="NulstilButton" @click="resetFilters">
+                    <p>
+                        Nulstil
+                    </p>
+                </button>
+            </h3>
+            
+            <div class="AllFilterDropdowns">
+
             <button class="FilterButtons">
+                <hr>
                 <h3 @click="OpenFilterDropDown('producttype')">
                     Product type
                     <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
@@ -83,7 +123,9 @@ onMounted(() => {
                 </div>
             </button>
 
+            
             <button class="FilterButtons">
+                <hr>
                 <h3 @click="OpenFilterDropDown('powersource')">
                     Power source
                     <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
@@ -97,6 +139,7 @@ onMounted(() => {
             </button>
 
             <button class="FilterButtons">
+                <hr>
                 <h3 @click="OpenFilterDropDown('plugtype')">
                     Plug type
                     <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
@@ -110,6 +153,7 @@ onMounted(() => {
             </button>
 
             <button class="FilterButtons">
+                <hr>
                 <h3 @click="OpenFilterDropDown('industry')">
                     Industry
                     <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
@@ -129,6 +173,7 @@ onMounted(() => {
             
 
             <button class="FilterButtons">
+                <hr>
                 <h3 @click="OpenFilterDropDown('discontinued')">
                     Discontinued
                     <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
@@ -140,7 +185,7 @@ onMounted(() => {
                     </label>
                 </div>
             </button>
-            
+            </div>
 
         </div>
         <div class="ProductGrid">
@@ -176,10 +221,23 @@ onMounted(() => {
         flex-direction: column;
         width: 90%;
         margin: auto;
-        .FiltersHeading{
-            margin-bottom: 15px;
-        }
+        
         .FilterMainDiv{
+            .FiltersHeading{
+                margin-bottom: 15px;
+                .NulstilButton{
+                    position: absolute;
+                    right: 5%;
+                    align-self: flex-end;
+                    width: fit-content;
+                    padding: 2px 0px;
+                    background-color: #ffffff00;
+                    border-style: none;
+                    cursor: pointer;
+                    color: #7d7d7d;
+                    text-decoration: underline;
+                }
+            }
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
@@ -189,6 +247,10 @@ onMounted(() => {
                 background-color: #ffffff00;
                 border-style: none;
                 cursor: pointer;
+                font-family: h.$font-primary;
+                hr{
+                    display: none;
+                }
                 h3{
                     display: flex;
                     align-items: center;
@@ -315,6 +377,65 @@ onMounted(() => {
     }
 
     @media only screen and (min-width: 768px){
+
+        .FullProductsDiv{
+            display: grid;
+            grid-template-columns: 25% auto;
+          //  flex-direction: row;
+            .FilterMainDiv{
+                padding-right: 10%;
+                align-content: flex-start;
+                button{
+                    hr{
+                        display: block;
+                        border-color: black;
+                        border-style: solid;
+                        border-width: 1px;
+                        margin-bottom: 5px;
+                        margin-top: 5px;
+                    }
+                    h3{
+                        display: flex;
+                        justify-content: space-between;
+                        text-align: left;
+                    }
+                }
+                .FiltersHeading{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: baseline;
+                justify-content: space-between;
+                height: fit-content;
+                    .NulstilButton{
+                        position: static;
+                        align-self: auto;
+                    }
+                }
+                .AllFilterDropdowns{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    .FilterButtons{
+                        #MainDropdown{
+                            position: relative;
+                            display: flex;
+                            padding: 10px 0px;
+                            border: 0px;
+                            border-style: none;
+                            width: 175px;
+                        }
+                    }
+                }
+            } 
+            
+            
+        }
+
+        .ProductGrid{
+            margin: 0px 0px 10% 0px;
+        }
+
         .ProductGrid{
             grid-template-columns: 30% 30% 30%;
             .ProductDiv{
