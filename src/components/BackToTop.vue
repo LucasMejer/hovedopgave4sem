@@ -51,12 +51,12 @@ onBeforeUnmount(() => {
         background-color: c.$font-color-primary;
         display: flex;
         justify-content: center;
-        padding: 10px;
         border-radius: 15px;
         position: fixed;
         z-index: 5;
         bottom: 10px;
         right: 10px;
+        transition: 0.3s ease;
         /*border: 2px solid c.$font-color-primary;*/
         
 
@@ -65,6 +65,7 @@ onBeforeUnmount(() => {
             white-space: nowrap;
             text-decoration: none;
             align-items: center;
+            padding: 10px;
 
             p {
                 font-size: 14px;
@@ -104,7 +105,8 @@ onBeforeUnmount(() => {
     }
 
     .button-hidden {
-        display: none;
+        transform: translateY(150%);
+        transition: 0.3s ease;
     }
 }
 
