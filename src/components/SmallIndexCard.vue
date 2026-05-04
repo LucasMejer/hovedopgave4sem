@@ -74,7 +74,8 @@
         }
 
         &:hover {
-            border: 1px solid #000;
+            outline: 1px solid #000;
+            
         }
         /*
         &:hover {
