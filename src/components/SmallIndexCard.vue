@@ -40,7 +40,7 @@
 .smallindexcard{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 150px;
     height: 150px;
@@ -64,16 +64,32 @@
 
     .smallindexcard{
         flex-direction: column;
+        justify-content: flex-start;
         cursor: pointer;
-        margin: 0 20px;
         text-align: center;
-        padding: 20px 0;
+        padding: 10px;
 
         img {
             max-width: 100px;
-            
-            
         }
+
+        &:hover {
+            border: 1px solid #000;
+        }
+        /*
+        &:hover {
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+            border-radius: 5px;
+            transition: ease 0.3s;
+            width: 175px;
+            height: 175px;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 200px;
+            }
+        }*/
     }
 }
 
