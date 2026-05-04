@@ -250,6 +250,7 @@ onBeforeUnmount(() => {
     .nav-hidden {
         transform: translateY(-100%);
         transition: 0.3s ease;
+        box-shadow: none;
     }
 
     .mobile-nav {
@@ -259,7 +260,7 @@ onBeforeUnmount(() => {
         z-index: 5;
         background-color: #fff;
         width: 100vw;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
         transition: 0.3s ease;
         max-height: 100vh;
 
@@ -355,7 +356,7 @@ onBeforeUnmount(() => {
         width: 100vw;
         background-color: #fafafa;
         padding-bottom: 30px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
         overflow-y: auto;
         max-height: 75vh;
 
@@ -516,7 +517,7 @@ onBeforeUnmount(() => {
                 margin: 0 0 0 20px;
                 
                 
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
                 background-color: #fff;
 
 
