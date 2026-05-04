@@ -70,39 +70,38 @@ const clearAll = () => {
             </button>
         </div>
     </div>
-
     <div class="scrollimage" v-if="imagesshown">
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="manual" v-model="selected">
+                <input type="checkbox" value="manuala" v-model="selected">
                 <span class="checkmark"></span>
                 <p>NOVA MINI Manual</p>
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/mp4-ikon.svg" alt="">
-                <input type="checkbox" value="video" v-model="selected">
+                <input type="checkbox" value="videoa" v-model="selected">
                 <span class="checkmark"></span>
                 <p>NOVA MINI Product img</p>
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="nightview" v-model="selected">
+                <input type="checkbox" value="nightviewa" v-model="selected">
                 <span class="checkmark"></span>
                 <p>Work Lights Night img</p>
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="pdf" v-model="selected">
+                <input type="checkbox" value="pdfa" v-model="selected">
                 <span class="checkmark"></span>
             </div>
               <div class="scroll-blok-card" v-if="test">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="newpdf" v-model="selected">
+                <input type="checkbox" value="newpdfa" v-model="selected">
                 <span class="checkmark"></span> 
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="cunstructiondocument" v-model="selected">
+                <input type="checkbox" value="cunstructiondocumenta" v-model="selected">
                 <span class="checkmark"></span>
             </div>
         </div>

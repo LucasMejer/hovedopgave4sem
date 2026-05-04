@@ -31,14 +31,6 @@ const prev = () => {
     </div>
     <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt=""></button>
     <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt=""></button>
-    <div class='carousel-dots'>
-      <span
-        v-for='(_, index) in slides'
-        :key='index'
-        :class='{ active: index === currentIndex }'
-        @click='currentIndex = index'
-      ></span>
-    </div>
   </div>
 </template>
 
