@@ -15,6 +15,7 @@ import BackToTop from '@/components/BackToTop.vue';
                 <router-link to="/">
                     <p>Forside</p>
                 </router-link>
+                <p>></p>
                 <router-link to="/category">
                     <p>Worklights</p>
                 </router-link>
@@ -33,8 +34,13 @@ import BackToTop from '@/components/BackToTop.vue';
     margin: auto;
 }
 
-li{
+li p{
     list-style: none;
+    padding: 10px 10px;
+}
+
+.breadcrumb li{
+    display: flex;
 }
 
 img{
