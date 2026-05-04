@@ -22,9 +22,9 @@ const clearAll = () => {
 </script>
 
 <template>
-    <div class="downloadblok">
-        <button @click="filesshown = true, imagesshown = false">files</button>
-        <button @click="imagesshown = true, filesshown = false">images</button>
+ <div class="downloadblok">
+        <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">files</button>
+        <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">images</button>
         <div class="scroll" v-if="filesshown">
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
@@ -60,17 +60,7 @@ const clearAll = () => {
                 <span class="checkmark"></span>
             </div>
         </div>
-        <div class="overlay">
-            <div class="amount-selected-counter">
-                <p>{{ selected.length }} filer valgt</p>
-            </div>
-            <p @click="clearAll">ryd alle</p>
-            <button>Download
-                <img src="/public/ikoner/download-ikon.svg" alt="">
-            </button>
-        </div>
-    </div>
-    <div class="scrollimage" v-if="imagesshown">
+         <div class="scrollimage" v-if="imagesshown">
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
                 <input type="checkbox" value="manuala" v-model="selected">
@@ -94,7 +84,7 @@ const clearAll = () => {
                 <input type="checkbox" value="pdfa" v-model="selected">
                 <span class="checkmark"></span>
             </div>
-              <div class="scroll-blok-card" v-if="test">
+              <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
                 <input type="checkbox" value="newpdfa" v-model="selected">
                 <span class="checkmark"></span> 
@@ -105,6 +95,18 @@ const clearAll = () => {
                 <span class="checkmark"></span>
             </div>
         </div>
+        <div class="overlay">
+            <div class="amount-selected-counter">
+                <p>{{ selected.length }} filer valgt</p>
+            </div>
+            <div class="clearAll">
+                <p @click="clearAll">ryd alle</p>
+            </div>
+            <button>Download
+                <img src="/public/ikoner/download-ikon.svg" alt="">
+            </button>
+        </div>
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -121,16 +123,18 @@ button{
     display: grid;
     grid-template-columns: auto auto;
     background-color: c.$hover-state-active;
-    position: absolute;
+    padding: 10px auto;
 }
 
 .scrollimage{
     overflow: scroll;
+    scrollbar-width: auto;
     height: 200px;
     display: grid;
     grid-template-columns: auto auto;
     background-color: c.$hover-state-active;
-    position: absolute;
+    object-fit: cover;
+    padding: 10px auto;
 }
 
 .scroll-blok-card{
@@ -140,7 +144,16 @@ button{
 .overlay{
     display: flex;
     justify-content: space-between;
-    position: fixed;
+    align-items: baseline;
+}
+
+.valgt{
+    text-decoration: underline;
+}
+
+.clearAll p:hover {
+  color: red;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px){
