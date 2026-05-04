@@ -21,8 +21,8 @@ import Navbar from '@/components/Navbar.vue';
         <p>03.6200</p>
         <CarouselProduct/>
         <DownloadBlok/>
-        <Footer/>
     </div>
+    <Footer/>
 </template>
 <style lang="scss" scoped>
 .view-width{
