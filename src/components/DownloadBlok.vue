@@ -14,6 +14,9 @@ const counterminus = () => {
     currentCounter.value = (currentCounter.value === 0 ? totalcounts.value -1 : currentCounter.value -1 )
 }
 
+const clearAll = () => {
+    selected.value = []
+}
 </script>
 
 <template>
@@ -22,8 +25,6 @@ const counterminus = () => {
         <div class="scroll">
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <button @click="counterplus">+</button>
-                <button @click="counterminus">-</button>
                 <input type="checkbox" value="manual" v-model="selected">
                 <span class="checkmark"></span>
                 <p>NOVA MINI Manual</p>
@@ -36,32 +37,32 @@ const counterminus = () => {
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox">
+                <input type="checkbox" value="nightview" v-model="selected">
                 <span class="checkmark"></span>
                 <p>Work Lights Night View</p>
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox">
+                <input type="checkbox" value="pdf" v-model="selected">
                 <span class="checkmark"></span>
             </div>
               <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox">
+                <input type="checkbox" value="newpdf" v-model="selected">
                 <span class="checkmark"></span> 
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox">
+                <input type="checkbox" value="cunstructiondocument" v-model="selected">
                 <span class="checkmark"></span>
             </div>
         </div>
 
     <div class="overlay">
         <div class="amount-selected-counter">
-            <p>0 filter valgt</p>
+            <p>{{ selected.length }} filer valgt</p>
         </div>
-        <p>ryd alle</p>
+        <p @click="clearAll">ryd alle</p>
         <button>Download
             <img src="/public/ikoner/download-ikon.svg" alt="">
         </button>
@@ -82,6 +83,7 @@ button{
     height: 200px;
     display: grid;
     grid-template-columns: auto auto;
+    background-color: c.$hover-state-active;
 }
 
 .scroll-blok-card{
