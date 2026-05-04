@@ -29,8 +29,8 @@ const prev = () => {
         <img :src='slide.image' :alt='slide.title'>
       </div>
     </div>
-    <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-up.png" alt=""></button>
-    <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-down.png" alt=""></button>
+    <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt=""></button>
+    <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt=""></button>
     <div class='carousel-dots'>
       <span
         v-for='(_, index) in slides'
@@ -42,7 +42,11 @@ const prev = () => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+
+@use '../assets/_headings.scss' as f;
+@use '../assets/_colors.scss' as c;
+
 .carousel {
   position: relative;
   overflow: hidden;
@@ -85,10 +89,10 @@ const prev = () => {
   top: 10px;
   right: 15px;
   background: rgba(0,0,0,0.5);
-  color: white;
+  color: c.$font-color-secondary;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 14px;
+  font-family: f.$font-primary;
   z-index: 2;
 }
 </style>
