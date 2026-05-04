@@ -9,3 +9,7 @@
 body:has(.nav-burgermenu) {
   overflow: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}

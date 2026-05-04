@@ -1,9 +1,35 @@
 <script setup>
+import { ref } from 'vue';
+import { onMounted } from 'vue';
+import { onBeforeUnmount } from 'vue';  
+
+
+let buttonHidden = ref(true);
+
+function backToTop() {
+    const currentScrollY = window.scrollY
+    if (currentScrollY <= 400) {
+        buttonHidden.value = true;
+    }
+    else {
+        buttonHidden.value = false;
+    }
+}
+
+
+onMounted( () => {
+    window.addEventListener("scroll", backToTop);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener("scroll", backToTop);
+});
 </script>
 
 <template>
-    <div class="back-to-top">
+    <div :class="{'button-hidden': buttonHidden}" class="back-to-top">
             <a href="#top">
+                <p>Back to Top</p>
                 <img class="white" src="../../public/ikoner/up-arrow-hvid.png" alt="">
                 <img class="black" src="../../public/ikoner/up-arrow.png" alt="">
             </a>
@@ -23,7 +49,6 @@
 
     .back-to-top {
         background-color: c.$font-color-primary;
-        width: 30px;
         display: flex;
         justify-content: center;
         padding: 10px;
@@ -32,12 +57,25 @@
         z-index: 5;
         bottom: 10px;
         right: 10px;
-        scroll-behavior: smooth;
-        border: 2px solid c.$font-color-primary;
+        /*border: 2px solid c.$font-color-primary;*/
+        
+
+        a {
+            display: flex;
+            white-space: nowrap;
+            text-decoration: none;
+            align-items: center;
+
+            p {
+                font-size: 14px;
+                color: c.$font-color-secondary;
+                margin-right: 5px;
+            }
+        }
 
 
         img {
-            height: 30px;
+            height: 20px;
         }
 
         .black {
@@ -49,7 +87,11 @@
         }
 
         &:hover {
-            background-color: c.$background-color-primary;
+            background-color: c.$red-color-icon;
+/*
+            p {
+                color: c.$font-color-primary;
+            }
 
             .black {
                 display: block;
@@ -57,8 +99,12 @@
 
             .white {
                 display: none;
-            }
+            }*/
         }
+    }
+
+    .button-hidden {
+        display: none;
     }
 }
 
