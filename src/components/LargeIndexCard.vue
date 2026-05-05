@@ -19,7 +19,7 @@ const cardInfo = defineProps({
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     @use '../assets/_colors' as c; 
  

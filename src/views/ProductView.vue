@@ -5,6 +5,7 @@ import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import BackToTop from '@/components/BackToTop.vue';
 import DescriptionProduct from '@/components/DescriptionProduct.vue';
+import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpareparts.vue';
 
 </script>
 <template>
@@ -27,6 +28,7 @@ import DescriptionProduct from '@/components/DescriptionProduct.vue';
         <CarouselProduct/>
         <DownloadBlok/>
         <DescriptionProduct/>
+        <CarouselAccessoriesSpareparts/>
     </div>
     <Footer/>
 </template>

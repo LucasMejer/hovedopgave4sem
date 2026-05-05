@@ -4,12 +4,14 @@ import { ref } from 'vue';
 const accordionarray = ref([
     {
         Overskrift: "Description",
+        is_open: false,
         Semioverskrift: "Ultra-compact and portable 1000 lumen rechargeable LED work light",
         Broedtekst: "NOVA MINI is a portable LED handlamp and basically a “must-have” for professionals. This USB-C rechargeable work light is perfect for carrying with you throughout the workday, as it is small and compact.",
         Content: ""
     },
     {
         Overskrift: "Details",
+        is_open: false,
         ProduktDetails: [{
             Os: "Product Number",
             Bt: "03.6299"
@@ -78,6 +80,7 @@ const accordionarray = ref([
     },
     {
         Overskrift: "Main Light",
+        is_open: false,
         ProduktDetails: [{
             Os: "Luminous Flux, Max(Lumen)",
             Bt: "1000"
@@ -114,6 +117,7 @@ const accordionarray = ref([
     },
      {
         Overskrift: "Electrical",
+        is_open: false,
         ProduktDetails: [{
             Os: "Power source",
             Bt: "Rechargeable Battery"
@@ -158,6 +162,7 @@ const accordionarray = ref([
     },
     {
         Overskrift: "Operation",
+        is_open: false,
         ProduktDetails: [{
             Os: "Operating time with min. lumen (hours)",
             Bt: "18.00"
@@ -214,6 +219,7 @@ const accordionarray = ref([
     },
     {
         Overskrift: "Accessories",
+        is_open: false,
         ProduktDetails: [{
             Os: "Product line",
             Bt: "WORK LIGHTS"
@@ -225,19 +231,39 @@ const accordionarray = ref([
     ]
     }
 ])
-
 </script>
 <template>
-<div v-for="value in accordionarray">
-    <h2>{{ value.Overskrift }}</h2>
-    <h3>{{ value.Semioverskrift }}</h3>
-    <p>{{ value.Broedtekst }}</p>
-    <div v-for="details in value.ProduktDetails">
-        <h3>{{ details.Os }}</h3>
-        <p>{{ details.Bt }}</p>
+<div v-for="value in accordionarray" class="accordion">
+    <h2 @click="value.is_open = !value.is_open">
+        {{ value.Overskrift }}
+        <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt="">
+    </h2>
+    <div v-show="value.is_open">
+        <h3>{{ value.Semioverskrift }}</h3>
+        <p>{{ value.Broedtekst }}</p>
+        <div v-for="details in value.ProduktDetails">
+            <h3>{{ details.Os }}</h3>
+            <p>{{ details.Bt }}</p>
+        </div>
     </div>
 </div>
 </template>
 <style lang="scss" scoped>
+@use '../assets/_colors.scss' as c;
+.accordion{
+    background-color: c.$hover-state-active;
+}
 
+h2{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+        img{
+            height: 30px;
+        
+        &.rotate{
+            transform: rotate(180deg);
+        }
+    }
+}
 </style>

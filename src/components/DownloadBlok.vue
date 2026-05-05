@@ -109,7 +109,7 @@ const clearAll = () => {
     </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 @use '../assets/_headings.scss' as f;
 @use '../assets/_colors.scss' as c;
