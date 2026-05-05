@@ -123,8 +123,8 @@ onMounted(() => {
                 </h3>
                 <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.producttype">
                     <label for="ProductTypeBox">
-                        <p class="DiscontinuedFilter">Discontinued</p>
-                    <input type="checkbox" id="ProductTypeBox" value="Discontinued" v-model="activeFilters">
+                        <p class="FlashlightFilter">Flashlight</p>
+                    <input type="checkbox" id="ProductTypeBox" value="Flashlight" v-model="activeFilters">
                     </label>
                 </div>
             </button>
@@ -138,8 +138,8 @@ onMounted(() => {
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.powersource">
                     <label for="PowerSourceBox">
-                        <p class="DiscontinuedFilter">Discontinued</p>
-                    <input type="checkbox" id="PowerSourceBox" value="Discontinued" v-model="activeFilters">
+                        <p class="24VFilter">24 V</p>
+                    <input type="checkbox" id="PowerSourceBox" value="24V" v-model="activeFilters">
                     </label>
                 </div>
             </button>
@@ -152,8 +152,8 @@ onMounted(() => {
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.plugtype">
                     <label for="PlugTypeBox">
-                        <p class="DiscontinuedFilter">Discontinued</p>
-                    <input type="checkbox" id="PlugTypeBox" value="Discontinued" v-model="activeFilters">
+                        <p class="TypeAFilter">Type A (US plug)</p>
+                    <input type="checkbox" id="PlugTypeBox" value="TypeA" v-model="activeFilters">
                     </label>
                 </div>
             </button>
@@ -225,6 +225,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 
+    @use '../assets/colors.scss' as c;
     @use '../assets/_headings.scss' as h;
 
     .CategoryHeading{
@@ -316,7 +317,6 @@ onMounted(() => {
                 p{
                     padding: 3px;
                     width: max-content;
-                    text-transform: uppercase;
                     }
             }
             
@@ -324,16 +324,16 @@ onMounted(() => {
         }
         .AllIndustryFilter{
             .ConstructionFilter{
-                color: #000000;   
+                color: c.$font-color-primary;   
             }
             .ElectricianFilter{
-                color: #07775B;   
+                color: c.$font-color-primary;  
             } 
         }
 
         .AllDiscontinuedFilter{
             .DiscontinuedFilter{
-                color: #B91215;   
+                color: c.$font-color-primary; 
             }
         }
     }
