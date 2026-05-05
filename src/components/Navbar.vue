@@ -490,6 +490,12 @@ onBeforeUnmount(() => {
                 width: 90%;
                 justify-content: flex-start;
                 margin: 10px auto;
+
+                a {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
 
             .nav-row {
