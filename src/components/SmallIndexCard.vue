@@ -40,12 +40,17 @@
 .smallindexcard{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 150px;
     height: 150px;
     padding: 20px;
     text-align: center;
+
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
     
     img {
         width: 100%;
@@ -64,13 +69,19 @@
 
     .smallindexcard{
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         cursor: pointer;
         text-align: center;
+        width: 175px;
+        height: 175px;
         padding: 10px;
 
         img {
             max-width: 100px;
+        }
+
+        h3 {
+            font-size: 20px;
         }
 
         &:hover {

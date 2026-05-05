@@ -29,7 +29,10 @@ onBeforeUnmount(() => {
 <template>
     <div :class="{'button-hidden': buttonHidden}" class="back-to-top">
             <a href="#top">
-                <p>Back to Top</p>
+                <div class="overlay">
+                    <p>Back to Top</p>
+                </div>
+                
                 <img class="white" src="../../public/ikoner/up-arrow-hvid.png" alt="">
                 <img class="black" src="../../public/ikoner/up-arrow.png" alt="">
             </a>
@@ -54,29 +57,45 @@ onBeforeUnmount(() => {
         border-radius: 15px;
         position: fixed;
         z-index: 5;
-        bottom: 10px;
-        right: 10px;
+        bottom: 20px;
+        right: 20px;
         transition: 0.3s ease;
-        /*border: 2px solid c.$font-color-primary;*/
-        
+        border: 1px solid c.$background-color-primary; 
+        overflow: hidden;
 
         a {
             display: flex;
             white-space: nowrap;
             text-decoration: none;
             align-items: center;
-            padding: 10px;
+            padding: 5px 0px 5px 5px;
 
             p {
+                position: relative;
                 font-size: 14px;
                 color: c.$font-color-secondary;
                 margin-right: 5px;
+                display: none;
+                white-space: nowrap;
             }
+        }
+
+        .overlay {
+            position: relative;
+            overflow: hidden;
+            left: 100%;
+            width: 0;
+            transition: 0.3s ease;
+
         }
 
 
         img {
             height: 20px;
+            z-index: 6;
+            background-color: c.$font-color-primary;
+            transition: 0.3s ease;
+            padding: 5px 10px 5px 5px;
         }
 
         .black {
@@ -89,11 +108,28 @@ onBeforeUnmount(() => {
 
         &:hover {
             background-color: c.$red-color-icon;
-/*
+            border: 1px solid c.$red-color-icon;
+
             p {
-                color: c.$font-color-primary;
+                display: inline;
+                width: 100%;
+                right: 0;
+                padding: 5px 0 5px 10px;
             }
 
+            img {
+                background-color: c.$red-color-icon;
+            }
+
+            .overlay {
+                left: 0;
+                width: auto;
+                height: auto;
+            }
+
+
+
+/*
             .black {
                 display: block;
             }
