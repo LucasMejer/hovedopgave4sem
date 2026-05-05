@@ -107,8 +107,8 @@ onBeforeUnmount(() => {
         }
 
         &:hover {
-            background-color: c.$red-color-icon;
-            border: 1px solid c.$red-color-icon;
+            background-color: c.$red-color-logo;
+            border: 1px solid c.$red-color-logo;
 
             p {
                 display: inline;
