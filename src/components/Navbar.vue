@@ -328,6 +328,7 @@ onBeforeUnmount(() => {
     .search-bar {
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 5px auto;
         padding: 15px 0 25px 0;
         width: 90%;
@@ -337,14 +338,20 @@ onBeforeUnmount(() => {
             height: 30px;
             width: 100%;
             min-width: 200px;
-            
+            border: 1px solid #afafaf;
             margin: 0 10px 0 0;
-            padding: 0 10px;
+            padding: 5px 10px;
+            font-family: f.$font-primary;
+            font-size: 13px;
+        }
+
+        ::placeholder {
+            color: #c5c5c5;
         }
 
         .search-icon {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
         }
     }
 
@@ -567,6 +574,12 @@ onBeforeUnmount(() => {
                 .search-input {
                     min-width: 150px;
                     max-width: 500px;
+                }
+
+                .search-icon {
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
 

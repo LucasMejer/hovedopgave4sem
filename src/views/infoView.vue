@@ -81,10 +81,6 @@ h1{
 }
 
 @media only screen and (min-width: 768px){
-    
-}
-
-@media only screen and (min-width: 768px){
         .LargeIndexCardsDiv{
         display: flex;
         flex-direction: row;
