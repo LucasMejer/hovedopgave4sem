@@ -3,6 +3,8 @@
 import { ref } from 'vue';
 
 let productArray = ref([]);
+let IndustryOpen = ref(false);
+let DiscontinuedOpen = ref(false);
 
 async function FetchProducts(){
   try {
@@ -38,7 +40,16 @@ try {
       } catch (error) {
       console.error(error);
     }
+
+    IndustryOpen.value = false
+    DiscontinuedOpen.value = false
 }
+
+function CloseAllTabs() {
+    IndustryOpen.value = false
+    DiscontinuedOpen.value = false
+}
+
 
 </script>
 
@@ -61,18 +72,61 @@ try {
                         </p>
                     </div>
                 </div>
-                <button class="EditButton" @click="item.active = !item.active">
+                <button class="EditButton" @click="item.active = !item.active, CloseAllTabs()">
                     <p>
                         Edit Product
                     </p>
                 </button>
             </div>
             <div class="EditProductDiv" v-if="item.active == true">
-                <h3>
-                    Overskrift
-                    <input type="text" v-model="NyTitel">
-                </h3>
-                <button @click="item.ProduktTitel = NyTitel, UpdateProducts()">
+                <h2>
+                    Overskrift:
+                    <input type="text" v-model="NyTitel" :placeholder="item.ProduktTitel">
+                </h2>
+                <h2>
+                    Tags:
+                </h2>
+                <div class="AllTagDrops">
+                    <button class="OpenTagsButton" @click="IndustryOpen = !IndustryOpen">
+                        <h3>
+                        Industry tags
+                        </h3>
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                    </button>
+                    <div class="DropDownTags" v-if="IndustryOpen">
+                        <label for="AutomotiveBox">
+                        <p>Automotive</p>
+                        <input type="checkbox" id="AutomotiveBox" v-model="item.ProduktTags.Automotive">
+                        </label>
+                        <label for="ConstructionBox">
+                            <p>Construction</p>
+                        <input type="checkbox" id="ConstructionBox" v-model="item.ProduktTags.Construction">
+                        </label>
+                        <label for="ElectricianBox">
+                            <p>Electrician</p>
+                        <input type="checkbox" id="ElectricianBox" v-model="item.ProduktTags.Electrician">
+                        </label>    
+                        <label for="PaintingBox">
+                            <p>Painting</p>
+                        <input type="checkbox" id="PaintingBox" v-model="item.ProduktTags.Painting">
+                        </label>
+                    </div>
+                    
+                    <button class="OpenTagsButton" @click="DiscontinuedOpen = !DiscontinuedOpen">
+                        <h3>
+                            Discontinued tags
+                        </h3>
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                    </button>
+                    <div class="DropDownTags" v-if="DiscontinuedOpen">
+                        <label for="DiscontinuedBox">
+                        <p>Discontinued</p>
+                        <input type="checkbox" id="DiscontinuedBox" v-model="item.ProduktTags.Discontinued">
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="SaveButton" @click="NyTitel != null ? item.ProduktTitel = NyTitel : item.ProduktTitel = item.ProduktTitel, item.active = false,  UpdateProducts()">
                     Save
                 </button>
             </div>
@@ -119,15 +173,48 @@ try {
         margin-top: -10px;
         margin-bottom: 35px;
         border-style: solid;
-        height: 250px;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         padding: 10px;
-        justify-content: space-between;
-        Button{
+        gap: 25px;
+        .SaveButton{
             width: 25%;
             margin: 0px auto 0px auto;
             height: 35px;
+            align-self: flex-end;
         }
+    }
+
+    .DropDownTags{
+        display: flex;
+        gap: 10%;
+        margin: 25px 0px 15px 0px;
+        label{
+            display: flex;
+            gap: 5px;
+        }
+    }
+
+    .OpenTagsButton{
+        background-color: #00000000;
+        border-style: none;
+        text-align: left;
+        padding: 0px;
+        cursor: pointer;
+        width: fit-content;
+        display: flex;
+        margin: 0px auto 0px 0px;
+    }
+
+    .arrow{
+        width: 25px;
+        height: 25px;
+    }
+
+    .AllTagDrops{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 </style>
