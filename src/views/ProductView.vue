@@ -4,6 +4,7 @@ import DownloadBlok from '@/components/DownloadBlok.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import BackToTop from '@/components/BackToTop.vue';
+import DescriptionProduct from '@/components/DescriptionProduct.vue';
 
 </script>
 <template>
@@ -25,6 +26,7 @@ import BackToTop from '@/components/BackToTop.vue';
         <p>03.6200</p>
         <CarouselProduct/>
         <DownloadBlok/>
+        <DescriptionProduct/>
     </div>
     <Footer/>
 </template>
