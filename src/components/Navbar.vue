@@ -171,61 +171,74 @@ onBeforeUnmount(() => {
         </div>
         
         <div class="desktop-nav">
-            <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+
+            <div class="partnersite">
+                <p><a href="https://www.scangrip.com/da-dk">Scangrip.com</a></p>
+                <hr class="thick-line-vertical">
+                <p class="marked">Partner</p>
+            </div>
+
+            <hr class="thick-line">
+
+            <div class="nav-row">
+                <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             
-            <div class="nav-menu-items">
-                <div>
-                    <button @click="toggleProductInformation" class="menu-item" ref="menuItemPI">
-                        <p>Product Information</p>
-                        <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                    </button>
-                    <ul class="dropdown" v-if="togglePI" ref="dropdown">
-                        <li><router-link to="/category" class="link">Work lights</router-link></li>
-                        <li>CONNECT</li>
-                        <li>Paint industry</li>
-                        <li>UV curing</li>
-                        <li>Explosion proof</li>
-                        <li>Vice jaws</li>
-                        <li>Coil spring compressors</li>
-                        <li>Accessories</li>
-                        <li>Spare parts</li>
-                        <li>Products for campaings</li>
-                        <li>Discontinued products</li>
-                    </ul>
-                </div>
-                <div>
-                    <button @click="toggleMarketingItems" class="menu-item" ref="menuItemMI">
-                        <p>Marketing Items</p>
-                        <img :class="{'rotate': toggleMI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                    </button>
-                    <ul class="dropdown" v-if="toggleMI" ref="dropdown">
-                        <li>Prices and product data</li>
-                        <li>Sales guides</li>
-                        <li>Campaign material</li>
-                        <li>Videos</li>
-                        <li>Points of sales</li>
-                        <li>Branding</li>
-                        <li>Social media</li>
-                        <li>Pictures</li>
-                        <li>Energy labels</li>
-                        <li>Brochures</li>
-                        <li>Company profile</li>
-                        <li>Logos and symbols</li>
-                        <li>Customized logo engraving</li>
-                        <li>Press releases</li>
-                    </ul>
-                </div>
-                
-                <div class="search-bar">
-                    <input class="search-input" type="text" placeholder="Search...">
-                    <img class="search-icon" src="../../public/ikoner/search.png" alt="">
-                </div>
-                <div class="nav-icons">
-                    <router-link to="/info"><img src="../../public/ikoner/info.png" alt=""></router-link>
-                    <img src="../../public/ikoner/english-flag.png" alt="">
-                    <img src="../../public/ikoner/profile.svg" alt="">
+                <div class="nav-menu-items">
+                    <div>
+                        <button @click="toggleProductInformation" class="menu-item" ref="menuItemPI">
+                            <p>Product Information</p>
+                            <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        </button>
+                        <ul class="dropdown" v-if="togglePI" ref="dropdown">
+                            <li><router-link to="/category" class="link">Work lights</router-link></li>
+                            <li>CONNECT</li>
+                            <li>Paint industry</li>
+                            <li>UV curing</li>
+                            <li>Explosion proof</li>
+                            <li>Vice jaws</li>
+                            <li>Coil spring compressors</li>
+                            <li>Accessories</li>
+                            <li>Spare parts</li>
+                            <li>Products for campaings</li>
+                            <li>Discontinued products</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button @click="toggleMarketingItems" class="menu-item" ref="menuItemMI">
+                            <p>Marketing Items</p>
+                            <img :class="{'rotate': toggleMI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        </button>
+                        <ul class="dropdown" v-if="toggleMI" ref="dropdown">
+                            <li>Prices and product data</li>
+                            <li>Sales guides</li>
+                            <li>Campaign material</li>
+                            <li>Videos</li>
+                            <li>Points of sales</li>
+                            <li>Branding</li>
+                            <li>Social media</li>
+                            <li>Pictures</li>
+                            <li>Energy labels</li>
+                            <li>Brochures</li>
+                            <li>Company profile</li>
+                            <li>Logos and symbols</li>
+                            <li>Customized logo engraving</li>
+                            <li>Press releases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input class="search-input" type="text" placeholder="Search...">
+                        <img class="search-icon" src="../../public/ikoner/search.png" alt="">
+                    </div>
+                    <div class="nav-icons">
+                        <router-link to="/info"><img src="../../public/ikoner/info.png" alt=""></router-link>
+                        <img src="../../public/ikoner/english-flag.png" alt="">
+                        <img src="../../public/ikoner/profile.svg" alt="">
+                    </div>
                 </div>
             </div>
+
+            
         </div>
         
 
@@ -465,15 +478,29 @@ onBeforeUnmount(() => {
 
         .desktop-nav {
             display: flex;
-            align-items: center;
-            width: 90%;
-            margin: 30px auto 0 auto;
+            flex-direction: column;
+
 
 
             .partner-logo {
                 padding: 0;
             }
+
+            .partnersite {
+                width: 90%;
+                justify-content: flex-start;
+                margin: 10px auto;
+            }
+
+            .nav-row {
+                display: flex;
+                width: 90%;
+                margin: auto;
+                margin-top: 30px;
+            }
+
         }
+
 
 
         .nav-menu-items {
@@ -504,15 +531,10 @@ onBeforeUnmount(() => {
             }
 
             .dropdown {
-                /*list-style-type: none;
-                margin: 10px auto;
-                width: 80%;
-                padding: 0;*/
-
                 position: absolute;
                 z-index: 5;
                 width: auto;
-                top: 10%;
+                top: 17%;
                 margin: 0 0 0 20px;
                 
                 
