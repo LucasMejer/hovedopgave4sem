@@ -48,6 +48,10 @@
         padding: 50px 0px;
         flex-direction: row-reverse;
         background-color: none;
+        iframe {
+            width: 60%;
+        }
+
         h3{
             display: flex;
             align-items: center;
