@@ -80,6 +80,11 @@ button{
   border: none;
   min-width: 24px;
   min-height: 24px;
+  width: 30px;
+  height: 30px;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: center;
   &:hover{
     color: c.$font-color-secondary;
     background-color: c.$hover-state-active;

@@ -44,7 +44,7 @@
     align-items: center;
     width: 150px;
     height: 150px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 
     h3 {

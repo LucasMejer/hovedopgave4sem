@@ -19,13 +19,15 @@
         background-color: c.$section-color-video;
     }
 .videosection{
+    width: 90%;
     display: flex;
     flex-direction:column;
     padding-top: 23.5px;
     padding-top: 40px;
+    margin :auto;
     iframe{
         aspect-ratio: 16/9;
-        width: 90%;
+        width: 100%;
         margin: auto;
         height: auto;
     }
@@ -34,9 +36,13 @@
         flex-direction: column;
         justify-content: center;
     }
+
+    h2{
+        margin: 20px auto 0px auto;
+    }
+
     h3{
-        width: 90%;
-        margin: 40px auto;
+        margin: 20px auto 40px auto;
         font-weight: 400;
     }
 }
