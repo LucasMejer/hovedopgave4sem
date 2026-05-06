@@ -16,19 +16,22 @@ import BackToTop from '@/components/BackToTop.vue';
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
             CardHeading="Master data" 
-            CardText="Find master data for all available SCANGRIP products - in a single file" 
+            CardText="Find master data for all available SCANGRIP products - in a single file"
+            CardButtonText="Download"
             CardImg="/ikoner/index-masterdata-ikon.svg"
             CardDownload="/download/master-data.xlsx"
         />
         <LargeIndexCard
             CardHeading="Media file" 
-            CardText="Download the complete file 'Media' containing pictures, manuals, energy labels, MSDS and DoC info." 
+            CardText="Download the complete file 'Media' containing pictures, manuals, energy labels, MSDS and DoC info."
+            CardButtonText="Download"
             CardImg="/ikoner/index-mediafile-ikon.svg"
             CardDownload="https://partner.scangrip.com/Files/Images/00-Website-pictures/Partner/Marketing%20items/Price%20and%20data/Pictures_Manuals_EnergyLabels_MSDS_DOC_ProductSheet.zip"
         />
         <LargeIndexCard 
             CardHeading="Pricelist" 
-            CardText="Download SCANGRIP's price lists for all products/markets." 
+            CardText="Download SCANGRIP's price lists for all products/markets."
+            CardButtonText="Download"
             CardImg="/ikoner/index-pricelist-ikon.svg"
             CardDownload="/download/price-list.xlsx"
         />

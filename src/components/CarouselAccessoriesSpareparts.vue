@@ -2,8 +2,42 @@
 import { ref } from 'vue'
 
 const slides = ref([
-  { image: '/public/novamini.png', title: 'Slide 1' },
-  { image: '/public/novamini-i-brug.jpg', title: 'Slide 2' },
+  { 
+    image: 'https://www.scangrip.com/Admin/Public/GetImage.ashx?width=800&height=800&crop=5&FillCanvas=True&DoNotUpscale=true&Compression=75&image=/Files/Images/03.5301/03.5301-usb-car-charger.jpg',
+    title: 'photo of car adaptor',
+    produkttitle: 'CAR ADAPTOR 5V, 12-24V',
+    produktnr: '03.5301'
+  },
+
+  { image: 'https://www.scangrip.com/Files/Images/03.5368/03.5368-charger-au-5v-1a.jpg',
+    title: 'photo of Australian plug charger',
+    produkttitle: 'CHARGER AU, 5V, 1A, BLACK',
+    produktnr: '03.5368'
+  },
+
+  { 
+    image: 'https://www.scangrip.com/Files/Images/03.5305/03.5305-USB-CHARGER-SCANGRIP-LOGO.jpg',
+    title: 'photo of charger with USB plug',
+    produkttitle: 'CHARGER USB 5V, 1A',
+    produktnr: '03.5305'
+  },
+  { 
+    image: 'https://www.scangrip.com/Files/Images/03.5352/03.5352-uk-charger-1.jpg',
+    title: 'photo of charger with uk plug included USB',
+    produkttitle: 'CHARGER USB 5V, 1A UK',
+    produktnr: '03.5352'
+  },
+  { 
+    image: 'https://us.scangrip.com/Files/Images/03.5355/03.5355-ul-charger-5v-1a-3.jpg',
+    title: 'photo of charger with US plug included USB',
+    produkttitle: 'CHARGER USB, 5V, 1A US',
+    produktnr: '03.5355'
+  },
+  { image: 'https://www.scangrip.com/Files/Images/03.5925/03.5925-usb-c-cable-1.jpg',
+    title: 'Photo of a cable with USB-A end to USB-C',
+    produkttitle: 'USB-C CABLE',
+    produktnr: '03.5925'
+  },
 ])
 
 const currentIndex = ref(0)
@@ -19,14 +53,22 @@ const prev = () => {
 <template>
 <p>hej</p>
 <div class='carousel'>
-    <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 50}%)` }'>
-      <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
+  <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 50}%)` }'>
+    <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
+      <div class="carousel-card">
         <img :src='slide.image' :alt='slide.title'>
+          <h3>
+            {{ slide.produkttitle }}
+          </h3>
+          <p>
+            {{ slide.produktnr}}
+          </p>
       </div>
     </div>
-    <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt=""></button>
-    <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt=""></button>
   </div>
+  <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt=""></button>
+  <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt=""></button>
+</div>
 </template>
 <style lang="scss" scoped>
 @use '../assets/_headings.scss' as f;
@@ -68,5 +110,19 @@ const prev = () => {
 .carousel-slide img {
   width: 100%;
   height: 100%;
+}
+
+.carousel-card{
+  background-color: c.$font-color-secondary;
+  filter: drop-shadow(#1a1a1a 5px 5px 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  img{
+    height: 50px;
+    width: auto;
+  }
 }
 </style>

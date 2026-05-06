@@ -21,9 +21,9 @@ const prev = () => {
 
 <template>
   <div class='carousel'>
-        <div class="carousel-counter">
+      <div class="carousel-counter">
         {{ currentIndex + 1 }} / {{ slides.length }}
-    </div>
+      </div>
     <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 100}%)` }'>
       <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
         <img :src='slide.image' :alt='slide.title'>
