@@ -317,7 +317,7 @@ function ConfirmDelete(){
                     }) &&
                     ResetCreateForm()
                     :
-                    CreateError()", >
+                    CreateError()">
                     Opret
                 </button>
             </div>
