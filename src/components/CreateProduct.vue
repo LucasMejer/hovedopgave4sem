@@ -234,7 +234,7 @@ function ConfirmDelete(){
 
         
         <div class="NewProduct">
-            <button class="OpenButton" @click="NewProductActive = !NewProductActive">
+            <button class="OpenButton" @click="NewProductActive.value = !NewProductActive.value">
                 <p>Opret nyt produkt</p>
             </button>
             <div class="NewProductInfoDiv" v-if="NewProductActive">
