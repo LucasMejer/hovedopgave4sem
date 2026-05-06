@@ -36,7 +36,7 @@ function toggleAccordion() {
     margin: 0;
     border: 1px solid c.$font-color-primary;
     color: c.$font-color-primary;
-    padding: 10px 5px;
+    padding: 10px 10px;
     height: fit-content;
 }
 h3{
@@ -45,6 +45,7 @@ h3{
 
 p{
     text-align: left;
+    padding-top: 10px;
 }
 
 .arrows {
@@ -56,6 +57,7 @@ p{
 }
 
 button{
+    padding: 0;
     text-decoration: none;
     background-color: #00000000;
     border: none;
