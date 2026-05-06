@@ -5,7 +5,9 @@ const cardInfo = defineProps({
             CardText:String,
             CardImg:String,
             CardDownload:String,
-            CardButtonText:String
+            CardButtonText:String,
+            CardButtonIcon:String
+
         })
 </script>
 
@@ -15,7 +17,7 @@ const cardInfo = defineProps({
         <h3 class="CardText CardDesc">{{ CardText }}</h3>
         <a class="DownloadButton" :href="cardInfo.CardDownload">
             <h3>{{ CardButtonText }}</h3>
-            <img src="/ikoner/download-ikon.svg" alt="">
+            <img :src="CardButtonIcon" alt="">
         </a> 
     </div>
 </template>

@@ -17,6 +17,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-productdataandprices-ikon.svg"
             CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20product%20data%20and%20prices.pdf"
+            CardButtonIcon="/ikoner/arrow-right.svg"
         />
         <LargeIndexCard
             CardHeading="Marketing materials" 
@@ -24,6 +25,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-marketingmaterials-ikon.svg"
             CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20download%20pictures.pdf"
+            CardButtonIcon="/ikoner/arrow-right.svg"
         />
         <LargeIndexCard 
             CardHeading="Sales tools" 
@@ -31,6 +33,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more" 
             CardImg="/ikoner/infosite-salestools-ikon.svg"
             CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20sales%20tools.pdf"
+            CardButtonIcon="/ikoner/arrow-right.svg"
         />
          <LargeIndexCard 
             CardHeading="Certificates and documentation" 
@@ -38,6 +41,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-certificatesanddocumentation-ikon.svg"
             CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20certificates%20and%20documentation.pdf"
+            CardButtonIcon="/ikoner/arrow-right.svg"
         />
     </div>
     <h1>FAQ</h1>
@@ -93,6 +97,7 @@ h1{
         }
     .FAQAccordioncard {
         grid-template-columns: 1fr 1fr;
+        margin: 10px auto 60px;
     }
 }
 </style>

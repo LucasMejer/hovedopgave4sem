@@ -20,6 +20,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Download"
             CardImg="/ikoner/index-masterdata-ikon.svg"
             CardDownload="/download/master-data.xlsx"
+            CardButtonIcon="/ikoner/download-ikon.svg"
         />
         <LargeIndexCard
             CardHeading="Media file" 
@@ -27,13 +28,15 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Download"
             CardImg="/ikoner/index-mediafile-ikon.svg"
             CardDownload="https://partner.scangrip.com/Files/Images/00-Website-pictures/Partner/Marketing%20items/Price%20and%20data/Pictures_Manuals_EnergyLabels_MSDS_DOC_ProductSheet.zip"
-        />
+            CardButtonIcon="/ikoner/download-ikon.svg"
+        />  
         <LargeIndexCard 
             CardHeading="Pricelist" 
             CardText="Download SCANGRIP's price lists for all products/markets."
             CardButtonText="Download"
             CardImg="/ikoner/index-pricelist-ikon.svg"
             CardDownload="/download/price-list.xlsx"
+            CardButtonIcon="/ikoner/download-ikon.svg"
         />
     </div>
     <SmallIndexCard/>
