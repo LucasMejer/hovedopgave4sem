@@ -234,10 +234,10 @@ function ConfirmDelete(){
 
         
         <div class="NewProduct">
-            <button class="OpenButton" @click="NewProductActive.value = !NewProductActive.value">
+            <button class="OpenButton" @click="NewProductActive = !NewProductActive">
                 <p>Opret nyt produkt</p>
             </button>
-            <div class="NewProductInfoDiv" v-if="NewProductActive">
+            <div class="NewProductInfoDiv" v-if="NewProductActive == true">
                 <h2>
                     Produkt Titel:
                     <input class="TextInput NytProduktInput" type="text" v-model="NytProduktTitel" placeholder="NOVA MINI">
