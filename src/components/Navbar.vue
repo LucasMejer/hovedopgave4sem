@@ -54,6 +54,15 @@ function onScroll() {
 }
 
 
+/*
+Searchbar
+Hent data fra database
+Put det i et array
+Hold det indtastede i inputfeltet op mod elementerne i arrayet
+Vis kun det der matcher med det søgte
+*/
+
+
 
 onMounted( () => {
     window.addEventListener("click", clickOutside);
