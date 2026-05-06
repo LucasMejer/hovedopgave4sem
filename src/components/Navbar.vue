@@ -189,41 +189,47 @@ onBeforeUnmount(() => {
                             <p>Product Information</p>
                             <img :class="{'rotate': togglePI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                         </button>
-                        <ul class="dropdown" v-if="togglePI" ref="dropdown">
-                            <li><router-link to="/category" class="link">Work lights</router-link></li>
-                            <li>CONNECT</li>
-                            <li>Paint industry</li>
-                            <li>UV curing</li>
-                            <li>Explosion proof</li>
-                            <li>Vice jaws</li>
-                            <li>Coil spring compressors</li>
-                            <li>Accessories</li>
-                            <li>Spare parts</li>
-                            <li>Products for campaings</li>
-                            <li>Discontinued products</li>
-                        </ul>
+                        <div class="dropdown" v-if="togglePI" ref="dropdown">
+                            <ul class="dropdown-content">
+                                <li><router-link to="/category" class="link">Work lights</router-link></li>
+                                <li>CONNECT</li>
+                                <li>Paint industry</li>
+                                <li>UV curing</li>
+                                <li>Explosion proof</li>
+                                <li>Vice jaws</li>
+                                <li>Coil spring compressors</li>
+                                <li>Accessories</li>
+                                <li>Spare parts</li>
+                                <li>Products for campaings</li>
+                                <li>Discontinued products</li>
+                            </ul>
+                        </div>
+                        
                     </div>
                     <div>
                         <button @click="toggleMarketingItems" class="menu-item" ref="menuItemMI">
                             <p>Marketing Items</p>
                             <img :class="{'rotate': toggleMI}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                         </button>
-                        <ul class="dropdown" v-if="toggleMI" ref="dropdown">
-                            <li>Prices and product data</li>
-                            <li>Sales guides</li>
-                            <li>Campaign material</li>
-                            <li>Videos</li>
-                            <li>Points of sales</li>
-                            <li>Branding</li>
-                            <li>Social media</li>
-                            <li>Pictures</li>
-                            <li>Energy labels</li>
-                            <li>Brochures</li>
-                            <li>Company profile</li>
-                            <li>Logos and symbols</li>
-                            <li>Customized logo engraving</li>
-                            <li>Press releases</li>
-                        </ul>
+                        <div class="dropdown" v-if="toggleMI" ref="dropdown">
+                            <ul class="dropdown-content">
+                                <li>Prices and product data</li>
+                                <li>Sales guides</li>
+                                <li>Campaign material</li>
+                                <li>Videos</li>
+                                <li>Points of sales</li>
+                                <li>Branding</li>
+                                <li>Social media</li>
+                                <li>Pictures</li>
+                                <li>Energy labels</li>
+                                <li>Brochures</li>
+                                <li>Company profile</li>
+                                <li>Logos and symbols</li>
+                                <li>Customized logo engraving</li>
+                                <li>Press releases</li>
+                            </ul>
+                        </div>
+                        
                     </div>
                     
                     <div class="search-bar">
@@ -377,7 +383,7 @@ onBeforeUnmount(() => {
         padding-bottom: 30px;
         box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
         overflow-y: auto;
-        max-height: 75vh;
+        max-height: 78vh;
 
         
 
@@ -451,7 +457,6 @@ onBeforeUnmount(() => {
             margin: 10px auto;
             width: 80%;
             padding: 0;
-            
 
 
             li {
@@ -546,13 +551,19 @@ onBeforeUnmount(() => {
             .dropdown {
                 position: absolute;
                 z-index: 5;
-                width: auto;
-                top: 17%;
-                margin: 0 0 0 20px;
+                width: 0;
                 
-                
-                box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
-                background-color: #fff;
+
+                .dropdown-content {
+                    position: absolute;
+                    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+                    background-color: #fff;
+                    list-style-type: none;
+                    width: auto;
+                    margin: 0 0 0 20px;
+                    white-space: nowrap;
+                    padding: 0;
+                }
 
 
                 li {
