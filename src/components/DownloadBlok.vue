@@ -71,7 +71,7 @@ const clearAll = () => {
                 <img src="/public/ikoner/mp4-ikon.svg" alt="">
                 <input type="checkbox" value="videoa" v-model="selected">
                 <span class="checkmark"></span>
-                <p>NOVA MINI Product img</p>
+                <p>NOVA MINI Product</p>
             </div>
             <div class="scroll-blok-card">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
@@ -113,16 +113,24 @@ const clearAll = () => {
 
 @use '../assets/_headings.scss' as f;
 @use '../assets/_colors.scss' as c;
+.downloadblok{
+    margin: 40px auto;
+}
 
 button{
     border: none;
+    background-color: c.$section-color-background;
+    align-items: baseline;
+    img{
+        filter: brightness(0);
+    }
 }
 .scroll{
     overflow: scroll;
     height: 200px;
     display: grid;
     grid-template-columns: auto auto;
-    background-color: c.$hover-state-active;
+    background-color: c.$section-color-background;
     padding: 10px auto;
 }
 
@@ -132,19 +140,24 @@ button{
     height: 200px;
     display: grid;
     grid-template-columns: auto auto;
-    background-color: c.$hover-state-active;
+    background-color: c.$section-color-background;
     object-fit: cover;
     padding: 10px auto;
 }
 
 .scroll-blok-card{
-    margin: auto;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: rgba(173, 173, 173, 1);
+    max-width: 135px;
 }
 
 .overlay{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    background-color: rgba(173, 173, 173, 1);
+    border-top: solid 0.1px c.$font-color-primary;
 }
 
 .valgt{
