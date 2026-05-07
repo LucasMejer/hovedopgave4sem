@@ -233,17 +233,20 @@ const accordionarray = ref([
 ])
 </script>
 <template>
-<div v-for="value in accordionarray" class="accordion">
-    <h2 @click="value.is_open = !value.is_open">
-        {{ value.Overskrift }}
-        <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt="">
-    </h2>
-    <div v-show="value.is_open">
-        <h3>{{ value.Semioverskrift }}</h3>
-        <p>{{ value.Broedtekst }}</p>
-        <div v-for="details in value.ProduktDetails">
-            <h3>{{ details.Os }}</h3>
-            <p>{{ details.Bt }}</p>
+<div class="placement">
+    <div v-for="value in accordionarray" class="accordion">
+        <h2 @click="value.is_open = !value.is_open"
+            :class="{ open:value.is_open }">
+            {{ value.Overskrift }}
+            <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt="">
+        </h2>
+        <div v-show="value.is_open">
+            <h3>{{ value.Semioverskrift }}</h3>
+            <p>{{ value.Broedtekst }}</p>
+            <div v-for="details in value.ProduktDetails">
+                <h3>{{ details.Os }}</h3>
+                <p>{{ details.Bt }}</p>
+            </div>
         </div>
     </div>
 </div>
@@ -251,13 +254,21 @@ const accordionarray = ref([
 <style lang="scss" scoped>
 @use '../assets/_colors.scss' as c;
 .accordion{
-    background-color: c.$hover-state-active;
+    background-color: c.$section-color-background;
+}
+.placement{
+    margin: 40px auto;
 }
 
 h2{
     display: flex;
     justify-content: space-between;
+    padding: 16px 8px;
     cursor: pointer;
+
+        &.open{
+            border-buttom:0.1px solid c.$font-color-primary;
+        }
         img{
             height: 30px;
         
@@ -265,5 +276,9 @@ h2{
             transform: rotate(180deg);
         }
     }
+}
+
+h3,p{
+    padding: 2px 8px;
 }
 </style>

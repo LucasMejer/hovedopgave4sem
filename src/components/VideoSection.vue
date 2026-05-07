@@ -16,7 +16,7 @@
 @use '../assets/headings' as h;
 .backgroundcolor{
         width: 100%;
-        background-color: c.$section-color-video;
+        background-color: c.$section-color-background;
     }
 .videosection{
     width: 90%;
@@ -58,6 +58,10 @@
             width: 60%;
         }
 
+        h2{
+            margin: 20px 0px;
+        }
+        
         h3{
             display: flex;
             align-items: center;

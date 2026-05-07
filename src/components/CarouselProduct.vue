@@ -57,19 +57,21 @@ const prev = () => {
   min-width: 100%;
 }
 
-.carousel-btn {
+button.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-}
-.carousel-btn img{
+  border: none;
+  background: transparent;
+  img{
     height: 20px;
     width: 20px;
+  }
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 10px;}
+.next { right: 10px;}
 
 .carousel-slide img {
   width: 100%;
