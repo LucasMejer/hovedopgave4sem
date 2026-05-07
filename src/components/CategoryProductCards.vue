@@ -119,7 +119,7 @@ onMounted(() => {
                 <hr>
                 <h3 @click="OpenFilterDropDown('producttype')">
                     Product type
-                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                    <img class="ArrowDown" :class="{'rotate': filterToggles.producttype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.producttype">
                     <label for="ProductTypeBox">
@@ -134,7 +134,7 @@ onMounted(() => {
                 <hr>
                 <h3 @click="OpenFilterDropDown('powersource')">
                     Power source
-                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                    <img class="ArrowDown" :class="{'rotate': filterToggles.powersource}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.powersource">
                     <label for="PowerSourceBox">
@@ -148,7 +148,7 @@ onMounted(() => {
                 <hr>
                 <h3 @click="OpenFilterDropDown('plugtype')">
                     Plug type
-                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                    <img class="ArrowDown" :class="{'rotate': filterToggles.plugtype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.plugtype">
                     <label for="PlugTypeBox">
@@ -162,7 +162,7 @@ onMounted(() => {
                 <hr>
                 <h3 @click="OpenFilterDropDown('industry')">
                     Industry
-                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                    <img class="ArrowDown" :class="{'rotate': filterToggles.industry}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllIndustryFilter" id="MainDropdown" v-if="filterToggles.industry">
                     <label for="ConstructionBox">
@@ -182,7 +182,7 @@ onMounted(() => {
                 <hr>
                 <h3 @click="OpenFilterDropDown('discontinued')">
                     Discontinued
-                    <img class="ArrowDown" src="/ikoner/arrow-down.png" alt="">
+                    <img class="ArrowDown" :class="{'rotate': filterToggles.discontinued}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.discontinued">
                     <label for="DiscontinuedBox">
@@ -218,6 +218,11 @@ onMounted(() => {
                         {{item.ProduktBeskrivelse}}
                     </p>
                 </div>
+            </div>
+            <div>
+                <button class="LoadMoreButton">
+                    Load more
+                </button>       
             </div>
         </div>
     </div>
@@ -283,6 +288,7 @@ onMounted(() => {
                     .ArrowDown{
                         height: 30px;
                         margin: 0px;
+                        transition: transform 0.3s ease;
                     }
                 }
                 
@@ -401,6 +407,16 @@ onMounted(() => {
         } 
     }
 
+    .rotate{
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+
+    .LoadMoreButton{
+
+    }
+
+    //Media query
     @media only screen and (min-width: 768px){
 
         .CategoryHeading{
