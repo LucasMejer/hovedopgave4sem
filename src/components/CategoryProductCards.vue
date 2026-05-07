@@ -176,6 +176,16 @@ onMounted(() => {
                         <p class="ElectricianFilter">Electrician</p>
                         <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters">  
                     </label>
+
+                    <label for="AutomotiveBox">
+                        <p class="AutomotiveFilter">Automotive</p>
+                        <input type="checkbox" id="AutomotiveBox" value="Automotive" v-model="activeFilters">  
+                    </label>
+
+                    <label for="PaintingBox">
+                        <p class="PaintingFilter">Painting</p>
+                        <input type="checkbox" id="PaintingBox" value="Painting" v-model="activeFilters">  
+                    </label>
                 </div>
             </button>
             
@@ -199,6 +209,11 @@ onMounted(() => {
         <div class="ProductGridAndHeading">
             <div class="ProductGridHeadings">
                 <h3>Resultater: {{filteredProducts.length}}</h3>
+                <div class="VisningDiv">
+                    <h3>Visning:</h3>
+                    <img src="/public/ikoner/grid-hvid.png" alt="" class="ProductGridIcon">
+                    <img src="/public/ikoner/list-sort.png" alt="" class="ProductListIcon">
+                </div>
             </div>
             <div class="ProductGrid">
                 <div v-for="(item, index) in filteredProducts" :key="item.ProduktNummer" class="AboveProductDiv">
@@ -479,8 +494,31 @@ onMounted(() => {
             grid-template-columns: 25% auto;
 
             .ProductGridHeadings{
-                display: block;
                 margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .VisningDiv{
+                    display: flex;
+                    .ProductGridIcon{
+                    height: 1.5rem;
+                    margin: auto 0.25rem auto 0.5rem;
+                    border-style: solid;
+                    border-width: 2px;
+                    border-color: #000000;
+                    background-color: black;
+                    cursor: pointer;
+                    }
+                    .ProductListIcon{
+                        height: 1.5rem;
+                        margin: auto 0.25rem;
+                        border-style: solid;
+                        border-width: 2px;
+                        border-color: #000000;
+                        background-color: white;
+                        cursor: pointer;
+                    }
+                }   
             }
 
             .FilterMainDiv{
