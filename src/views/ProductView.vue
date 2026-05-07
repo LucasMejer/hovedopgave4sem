@@ -38,6 +38,14 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
     margin: auto;
 }
 
+h3{
+    margin: 20px 0px;
+}
+
+p{
+    margin: 10px 0px;
+}
+
 li p{
     list-style: none;
     padding: 10px 10px;

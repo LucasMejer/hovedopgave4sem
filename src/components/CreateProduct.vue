@@ -1,5 +1,4 @@
 <script setup>
-
 import { ref } from 'vue';
 
 let productArray = ref([]);
@@ -108,7 +107,6 @@ function ConfirmDelete(){
     PopupActive.value = false
     UpdateProducts()
 }
-
 </script>
 
 <template>
