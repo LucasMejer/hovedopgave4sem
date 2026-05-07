@@ -52,7 +52,7 @@ const prev = () => {
 </script>
 <template>
 <div class='carousel'>
-  <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 50}%)` }'>
+  <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 52.5}%)` }'>
     <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
       <div class="carousel-card">
         <img :src='slide.image' :alt='slide.title'>
@@ -75,22 +75,28 @@ const prev = () => {
 
 .carousel {
   position: relative;
-  overflow: hidden;
   width: 100%;
   margin: 100px auto;
+  padding: 10px 0px;
+  overflow: hidden;
 }
 
 .carousel-inner {
   display: flex;
   position: relative;
   z-index: 1;
-  width: 120%;
+  width: 80%;
+  margin: auto;
+  gap: 20px;
 }
 /* transition: transform 0.3s ease;*/
 
 .carousel-slide {
-  max-width: 43.5%;
+  max-width: 50%;
   margin: auto;
+  img{
+    width: 100%;
+  }
 }
 
 .carousel-btn {
@@ -124,10 +130,8 @@ const prev = () => {
   align-items: center;
   padding: 20px;
   min-height: 205px;
-  margin: 0px 20px;
   img{
-    height: 140px;
-    width: auto;
+    width: 100%;
   }
 }
 </style>

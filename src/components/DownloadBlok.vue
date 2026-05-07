@@ -155,7 +155,7 @@ button{
 .overlay{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     background-color: rgba(173, 173, 173, 1);
     border-top: solid 0.1px c.$font-color-primary;
 }

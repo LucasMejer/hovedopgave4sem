@@ -233,19 +233,21 @@ const accordionarray = ref([
 ])
 </script>
 <template>
-<div class="placement">
-    <div v-for="value in accordionarray" class="accordion">
-        <h2 @click="value.is_open = !value.is_open"
-            :class="{ open:value.is_open }">
-            {{ value.Overskrift }}
-            <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt="">
-        </h2>
-        <div v-show="value.is_open">
-            <h3>{{ value.Semioverskrift }}</h3>
-            <p>{{ value.Broedtekst }}</p>
-            <div v-for="details in value.ProduktDetails">
-                <h3>{{ details.Os }}</h3>
-                <p>{{ details.Bt }}</p>
+<div class="description_desktopview">
+    <div class="placement">
+        <div v-for="value in accordionarray" class="accordion">
+            <h2 @click="value.is_open = !value.is_open"
+                :class="{ open:value.is_open }">
+                {{ value.Overskrift }}
+                <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt="">
+            </h2>
+            <div v-show="value.is_open">
+                <h3>{{ value.Semioverskrift }}</h3>
+                <p>{{ value.Broedtekst }}</p>
+                <div v-for="details in value.ProduktDetails">
+                    <h3>{{ details.Os }}</h3>
+                    <p>{{ details.Bt }}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -281,4 +283,19 @@ h2{
 h3,p{
     padding: 2px 8px;
 }
+
+@media only screen and (min-width: 768px){
+    .description_desktopview{
+        display: flex;
+        
+    }
+
+    .placement{
+        margin: 0;
+        display: flex;
+    }
+
+
+    
+    }
 </style>
