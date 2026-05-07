@@ -548,7 +548,7 @@ onBeforeUnmount(() => {
             .nav-icons {
                 justify-content: space-between;
                 min-width: 120px;
-                margin: 0 0 0 30px;
+                margin: 0 0 0 20px;
 
                 img {
                     padding: 0;

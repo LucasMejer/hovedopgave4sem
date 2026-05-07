@@ -102,6 +102,7 @@ function UpdateBottomButtons(){
             text-align: center;
             color: c.$font-color-secondary;
             width: 85%;
+            line-height: 1;
         }
         .CarouselButtonPrev{
            display: none;
