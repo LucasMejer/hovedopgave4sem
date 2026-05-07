@@ -25,8 +25,10 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
         </div>
         <h3>NOVA MINI</h3>
         <p>03.6200</p>
-        <CarouselProduct/>
-        <DownloadBlok/>
+        <div class="desktopview">
+            <CarouselProduct/>
+            <DownloadBlok/>
+        </div>
         <DescriptionProduct/>
         <CarouselAccessoriesSpareparts/>
     </div>
@@ -60,4 +62,10 @@ img{
     display: flex;
     margin: auto;
 }
+
+@media only screen and (min-width: 768px){
+    .desktopview{
+        display: flex;
+    }
+    }
 </style>
