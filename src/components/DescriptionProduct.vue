@@ -327,12 +327,12 @@ h3,p{
 
     .placement{
         margin: 0;
-        width: fit-content;
     }
 
     .overskrifter{
         display: flex;
         flex-wrap: wrap;
+        width: fit-content;
     }
 
     .overskrift h2{
@@ -345,7 +345,8 @@ h3,p{
     }
 
     .indhold{
-        margin-top: 20px
+        margin-top: 20px;
+        width: 100vw;
     }
     }
 </style>
