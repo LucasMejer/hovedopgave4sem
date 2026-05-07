@@ -63,6 +63,8 @@ try {
 
     IndustryOpen.value = false
     DiscontinuedOpen.value = false
+
+    location.reload();
 }
 
 function CloseAllTabs() {
@@ -87,6 +89,7 @@ function ResetCreateForm(){
     NytProduktNummer.value = null
 
     NewProductActive.value = !NewProductActive.value;
+
 
     UpdateProducts();
 }

@@ -4,6 +4,8 @@ import { computed, onMounted, ref } from 'vue';
 let productArray = ref([]);
 let activeFilters = ref([]);
 
+let totalProducts = ref(3);
+
 const mediaQuery = window.matchMedia("(max-width: 768px)");
 
 async function FetchProducts(){
@@ -194,35 +196,44 @@ onMounted(() => {
             </div>
 
         </div>
-        <div>
+        <div class="ProductGridAndHeading">
             <div class="ProductGridHeadings">
                 <h3>Resultater: {{filteredProducts.length}}</h3>
             </div>
             <div class="ProductGrid">
-                <div v-for="item in filteredProducts" :key="item.ProduktNummer" class="ProductDiv">
-                    <div class="ProductTags">
-                        <span v-for="(value, key) in item.ProduktTags" >
-                            <p v-if="value" :class="[key + 'Class']">
-                                {{ key }}
+                <div v-for="(item, index) in filteredProducts" :key="item.ProduktNummer" class="AboveProductDiv">
+                    <div class="ProductDiv" v-if="index <= (totalProducts -1)">
+                            <div class="ProductTags">
+                                <span v-for="(value, key) in item.ProduktTags" >
+                                    <p v-if="value" :class="[key + 'Class']">
+                                        {{ key }}
+                                    </p>
+                                </span>
+                            </div> 
+                            <img :src=item.ProduktBillede alt="">
+                            <h2>
+                                {{ item.ProduktTitel }}
+                            </h2>
+                            <p>
+                                {{item.ProduktNummer}}
                             </p>
-                        </span>
-                    </div> 
-                    <img :src=item.ProduktBillede alt="">
-                    <h2>
-                        {{ item.ProduktTitel }}
-                    </h2>
-                    <p>
-                        {{item.ProduktNummer}}
-                    </p>
-                    <p>
-                        {{item.ProduktBeskrivelse}}
-                    </p>
+                            <p>
+                                {{item.ProduktBeskrivelse}}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <button class="LoadMoreButton">
-                    Load more
-                </button>       
+            <div class="BottomButtonsDiv">
+                <button class="LoadMoreButton" v-if="totalProducts < filteredProducts.length" @click="totalProducts += 3">
+                    <h3>
+                        Load more
+                    </h3>
+                </button>
+                 <button class="ReturnButton">
+                    <h3>
+                        Return to top
+                    </h3>
+                </button>   
             </div>
         </div>
     </div>
@@ -242,6 +253,7 @@ onMounted(() => {
             margin: 35px 0px;
         }
     }
+
 
     .FullProductsDiv{
         display: flex;
@@ -342,25 +354,55 @@ onMounted(() => {
                 color: c.$font-color-primary; 
             }
         }
+
+
+        .BottomButtonsDiv{
+            .LoadMoreButton{
+                width: 100%;
+                height: 50px;
+                margin: 0% 0px 2.5% 0px;
+                background-color: c.$green-color-icon;
+                border-style: none;
+                cursor: pointer;
+                h3{
+                    color: c.$font-color-secondary;
+                }
+            }
+            .ReturnButton{
+                width: 100%;
+                height: 50px;
+                margin: 2.5% 0px 5% 0px;
+                background-color: c.$font-color-secondary;
+                border-style: none;
+                cursor: pointer;
+                h3{
+                    color: c.$font-color-primary;
+                }
+            }
+        }
     }
 
+    .AboveProductDiv{
+        display: flex;
+    }
 
     .ProductGrid{
         display: grid;
         grid-template-columns: 47.5% 47.5%;
         column-gap: 5%; 
-        row-gap: 5%;
         margin: 10% 0%;
-
+        
         img{
             width: 90%;
             margin: 10px 0px;
         }
 
+
        .ProductDiv{
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             width: auto;
             box-sizing: border-box;
             border-color: black;
@@ -370,6 +412,8 @@ onMounted(() => {
             padding: 15px 0px;
             gap: 10px;
             cursor: pointer;
+            text-align: center;
+            margin-bottom: 35px;
             
             .ProductTags{
                 align-self: flex-start;
@@ -412,9 +456,6 @@ onMounted(() => {
         transition: transform 0.3s ease;
     }
 
-    .LoadMoreButton{
-
-    }
 
     //Media query
     @media only screen and (min-width: 768px){
@@ -483,11 +524,19 @@ onMounted(() => {
                 }
             } 
             
+            .BottomButtonsDiv{
+                .LoadMoreButton{
+                    margin: 0% 0px 1% 0px;
+                }
+                .ReturnButton{
+                    margin: 1% 0px 2.5% 0px;
+                }
+            }
             
         }
 
         .ProductGrid{
-            margin: 0px 0px 10% 0px;
+            margin: 0px 0px 5% 0px;
         }
 
         .ProductGrid{
@@ -496,5 +545,7 @@ onMounted(() => {
                 width: auto;
             }
         }
+
+        
     }
 </style>
