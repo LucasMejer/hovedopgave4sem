@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import { onMounted } from 'vue';
-import { onBeforeUnmount } from 'vue';  
+import { onBeforeUnmount } from 'vue';
+import SearchBar from './SearchBar.vue';
 
 const toggleBM = ref(false);
 const togglePI = ref(false);
@@ -54,16 +55,6 @@ function onScroll() {
 }
 
 
-/*
-Searchbar
-Hent data fra database
-Put det i et array
-Hold det indtastede i inputfeltet op mod elementerne i arrayet
-Vis kun det der matcher med det søgte
-*/
-
-
-
 onMounted( () => {
     window.addEventListener("click", clickOutside);
     window.addEventListener("scroll", onScroll);
@@ -90,10 +81,8 @@ onBeforeUnmount(() => {
                 <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
             </div>
             
-            <div class="search-bar">
-                <input class="search-input" type="text" placeholder="Search...">
-                <img class="search-icon" src="../../public/ikoner/search.png" alt="">
-            </div>
+            <SearchBar/>
+            
             <hr class="thick-line" v-if="toggleBM">
             
             <div class="nav-burgermenu" v-if="toggleBM">
@@ -241,10 +230,8 @@ onBeforeUnmount(() => {
                         
                     </div>
                     
-                    <div class="search-bar">
-                        <input class="search-input" type="text" placeholder="Search...">
-                        <img class="search-icon" src="../../public/ikoner/search.png" alt="">
-                    </div>
+                    <SearchBar/>
+
                     <div class="nav-icons">
                         <router-link to="/info"><img src="../../public/ikoner/info.png" alt=""></router-link>
                         <img src="../../public/ikoner/english-flag.png" alt="">
@@ -340,35 +327,6 @@ onBeforeUnmount(() => {
         
     }
 
-    .search-bar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 5px auto;
-        padding: 15px 0 25px 0;
-        width: 90%;
-
-
-        .search-input {
-            height: 30px;
-            width: 100%;
-            min-width: 200px;
-            border: 1px solid #afafaf;
-            margin: 0 10px 0 0;
-            padding: 5px 10px;
-            font-family: f.$font-primary;
-            font-size: 13px;
-        }
-
-        ::placeholder {
-            color: #c5c5c5;
-        }
-
-        .search-icon {
-            width: 20px;
-            height: 20px;
-        }
-    }
 
     .dark-background {
         z-index: 4;
@@ -583,22 +541,6 @@ onBeforeUnmount(() => {
                     &:hover {
                         text-decoration: underline;
                         text-underline-offset: 6px;
-                    }
-                }
-            }
-
-            .search-bar {
-
-                padding: 0 30px;
-
-                .search-input {
-                    min-width: 150px;
-                    max-width: 500px;
-                }
-
-                .search-icon {
-                    &:hover {
-                        cursor: pointer;
                     }
                 }
             }
