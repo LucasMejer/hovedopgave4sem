@@ -75,8 +75,7 @@ const accordionarray = ref([
          {
             Os: "US versioned net weight (lb)",
             Bt: "0.61"
-        }
-    ]
+        }]
     },
     {
         Overskrift: "Main Light",
@@ -112,8 +111,7 @@ const accordionarray = ref([
         {
             Os: "Beam Angle Main",
             Bt: "100°"
-        }
-    ]
+        }]
     },
      {
         Overskrift: "Electrical",
@@ -157,8 +155,7 @@ const accordionarray = ref([
          {
             Os: "Charger included",
             Bt: "No"
-        }
-    ]
+        }]
     },
     {
         Overskrift: "Operation",
@@ -214,8 +211,7 @@ const accordionarray = ref([
         {
             Os: "US versioned charging temperature (°F)",
             Bt: "+14 to +104 °F"
-        }
-    ]
+        }]
     },
     {
         Overskrift: "Accessories",
@@ -227,21 +223,23 @@ const accordionarray = ref([
         {
             Os: "Product family",
             Bt: "NOVA"
-        }
-    ]
+        }]
     }
 ])
 </script>
 <template>
-<div class="description_desktopview">
+<!--Mobil-->
+<div class="mobile-view">
     <div class="placement">
         <div v-for="value in accordionarray" class="accordion">
             <h2 @click="value.is_open = !value.is_open"
                 :class="{ open:value.is_open }">
                 {{ value.Overskrift }}
-                <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt="">
+                <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt=""
+                class="title"
+                >
             </h2>
-            <div v-show="value.is_open">
+            <div v-show="value.is_open" class="content">
                 <h3>{{ value.Semioverskrift }}</h3>
                 <p>{{ value.Broedtekst }}</p>
                 <div v-for="details in value.ProduktDetails">
@@ -252,14 +250,43 @@ const accordionarray = ref([
         </div>
     </div>
 </div>
+<!--Computer-->
+<div class="desktop-view">
+    <div class="placement">
+        <div class="overskrifter">
+            <h2  v-for="value in accordionarray" @click="value.is_open = !value.is_open"
+                :class="{ open:value.is_open }">
+                {{ value.Overskrift }}
+            </h2>
+        </div>
+        <div class="indhold">
+            <div v-for="value in accordionarray" :key="value.Overskrift" v-show="value.is_open" class="content">
+                <h3>{{ value.Semioverskrift }}</h3>
+                <p>{{ value.Broedtekst }}</p>
+                <div v-for="details in value.ProduktDetails" :key="details.Os">
+                    <h3>{{ details.Os }}</h3>
+                    <p>{{ details.Bt }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </template>
 <style lang="scss" scoped>
 @use '../assets/_colors.scss' as c;
-.accordion{
-    background-color: c.$section-color-background;
+
+.mobile-view{
+    display: block;
 }
+
+.desktop-view{
+    display: none;
+}
+
 .placement{
     margin: 40px auto;
+    background-color: c.$section-color-background;;
 }
 
 h2{
@@ -267,9 +294,10 @@ h2{
     justify-content: space-between;
     padding: 16px 8px;
     cursor: pointer;
+    border-left: solid 0.2px;
 
         &.open{
-            border-buttom:0.1px solid c.$font-color-primary;
+            border-bottom:0.1px solid c.$font-color-primary;
         }
         img{
             height: 30px;
@@ -285,17 +313,39 @@ h3,p{
 }
 
 @media only screen and (min-width: 768px){
-    .description_desktopview{
-        display: flex;
-        
+    .mobile-view{
+        display: none;
+    }
+    
+    .desktop-view{
+        display: block;
+    }
+
+    .accordion{
+        background-color: c.$section-color-background;
     }
 
     .placement{
         margin: 0;
-        display: flex;
+        width: fit-content;
     }
 
+    .overskrifter{
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-    
+    .overskrift h2{
+        flex: 1;
+        text-align: center;
+    }
+
+    .overskrift h2.open {
+        border-bottom: 2px solid c.$font-color-primary;
+    }
+
+    .indhold{
+        margin-top: 20px
+    }
     }
 </style>
