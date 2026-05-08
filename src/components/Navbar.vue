@@ -494,6 +494,7 @@ onBeforeUnmount(() => {
             margin: 0 0 0 30px;
             flex-direction: row;
             align-items: center;
+            justify-content: space-between;
             
 
             .menu-item {
@@ -547,7 +548,7 @@ onBeforeUnmount(() => {
 
             .nav-icons {
                 justify-content: space-between;
-                min-width: 120px;
+                min-width: 140px;
                 margin: 0 0 0 20px;
 
                 img {

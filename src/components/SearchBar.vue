@@ -1,18 +1,22 @@
 <script setup>
-import { ref } from 'vue';
 
-
-function clickInside() {
-
-};
+let databaseArray = ([]);
 
 
 /*
-Searchbar
+tomt array
 Hent data fra database
 Put det i et array
+loop der spyttet elementerne fra arrayet ud
+(eventuelt lav kategorier med resultattyper - opdel det i databasen)
+
 Hold det indtastede i inputfeltet op mod elementerne i arrayet
 Vis kun det der matcher med det søgte
+
+
+Vis kun søgeresultater når inputfeltet er markeret
+luk dropdown når der klikkes uden for 
+
 */
 </script>
 
@@ -21,7 +25,9 @@ Vis kun det der matcher med det søgte
     <div class="search-bar">
         <div class="search-input-container">
             <input class="search-input" type="text" placeholder="Search..." v-model="search">
-            <img class="search-icon" src="../../public/ikoner/search.png" alt="">
+            <div class="icon-container">
+                <img class="search-icon" src="../../public/ikoner/search.png" alt="">
+            </div>
         </div>
         
         <div class="searched-dropdown-container">
@@ -54,7 +60,7 @@ Vis kun det der matcher med det søgte
         padding: 15px 0 25px 0;
         width: 90%;
 
-        &:hover .searched-dropdown-container {
+        &:has(input:focus) .searched-dropdown-container {
             display: block;
         }
 
@@ -62,10 +68,7 @@ Vis kun det der matcher med det søgte
         .search-input-container {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
 
-
-            
 
             .search-input {
                 height: 30px;
@@ -75,19 +78,24 @@ Vis kun det der matcher med det søgte
                 padding: 5px 10px;
                 font-family: f.$font-primary;
                 font-size: 13px;
-
-                
             }
 
             ::placeholder {
                 color: #c5c5c5;
             }
 
+            .icon-container {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
             .search-icon {
+                position: absolute;
                 width: 20px;
                 height: 20px;
                 margin-right: 10px;
-                position: absolute;
+                
             }
         }
 
@@ -167,10 +175,16 @@ Vis kun det der matcher med det søgte
 
         .search-bar {
                 padding: 0 20px;
+                width: 100%;
+                margin: 0;
+                min-width: 150px;
+                max-width: 500px;
+
+                
+
 
                 .search-input {
-                    min-width: 150px;
-                    max-width: 500px;
+                    
                 }
 
                 .search-icon {
@@ -181,7 +195,8 @@ Vis kun det der matcher med det søgte
 
 
                 .searched-dropdown-container {
-                    
+                    min-width: 150px;
+                    max-width: 500px;
 
 
                     .searched-dropdown {
