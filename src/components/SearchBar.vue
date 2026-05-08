@@ -1,7 +1,29 @@
 <script setup>
+import { ref } from 'vue';
 
-let databaseArray = ([]);
+const search = ref('');
+let databaseArray = ref([]);
 
+async function fetchData() {
+    try {
+        const res = await fetch(`https://hovedopgave4sem-default-rtdb.europe-west1.firebasedatabase.app/products.json`, {
+            method: 'GET',
+        });
+
+        if (!res.ok) throw new Error("Failed to fetch data");
+
+        const data = await res.json();
+
+        databaseArray.value = Object.values(data);
+
+        console.log(databaseArray.value);
+    }
+    catch (error) {
+      console.error(error);
+  }
+};
+
+fetchData();
 
 /*
 tomt array
@@ -9,6 +31,7 @@ Hent data fra database
 Put det i et array
 loop der spyttet elementerne fra arrayet ud
 (eventuelt lav kategorier med resultattyper - opdel det i databasen)
+(unikt key??)
 
 Hold det indtastede i inputfeltet op mod elementerne i arrayet
 Vis kun det der matcher med det søgte
@@ -18,6 +41,7 @@ Vis kun søgeresultater når inputfeltet er markeret
 luk dropdown når der klikkes uden for 
 
 */
+
 </script>
 
 <template>
@@ -32,9 +56,11 @@ luk dropdown når der klikkes uden for
         
         <div class="searched-dropdown-container">
             <div class="searched-dropdown">
+
                 <div class="searched-product">
                     <img class="product-image" src="../../public/novamini.png" alt="">
                     <div class="product-content">
+                        
                         <div class="product-text">
                             <h3 class="text">NOVA MINI</h3>
                             <p class="text number">03.6200</p>
@@ -43,7 +69,25 @@ luk dropdown når der klikkes uden for
                             <p class="tag">Construction</p>
                             <p class="tag">Electrician</p>
                         </div>
+                        
                     </div>
+                </div>
+
+                <div v-for="item in databaseArray" class="searched-product" :key="item.id">
+                    <img class="product-image" :src=item.ProduktBillede alt="">
+                    <div class="product-content">
+                        
+                        <div class="product-text">
+                            <h3 class="text"> {{item.ProduktTitel}} </h3>
+                            <p class="text number"> {{ item.ProduktNummer }} </p>
+                        </div>
+                        <div class="product-tags">
+                            <p class="tag">Construction</p>
+                            <p class="tag">Electrician</p>
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -116,7 +160,8 @@ luk dropdown når der klikkes uden for
 
                 .searched-product {
                     display: flex;
-                    padding: 10px;
+                    padding: 20px 10px;
+                    border: 1px solid #afafaf;
 
                     .product-image {
                         width: 50px;
@@ -135,11 +180,11 @@ luk dropdown når der klikkes uden for
                             align-items: flex-end;
                             
 
-
+/*
                             .text {
                                 
                                 
-                            }
+                            }*/
 
                             .number {
                                 color: c.$hover-state-active;
@@ -183,9 +228,9 @@ luk dropdown når der klikkes uden for
                 
 
 
-                .search-input {
+                /*.search-input {
                     
-                }
+                }*/
 
                 .search-icon {
                     &:hover {
