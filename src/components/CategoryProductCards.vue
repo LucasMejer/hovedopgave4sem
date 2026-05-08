@@ -4,7 +4,7 @@ import { computed, onMounted, ref } from 'vue';
 let productArray = ref([]);
 let activeFilters = ref([]);
 
-let totalProducts = ref(3);
+let totalProducts = ref(6);
 
 const mediaQuery = window.matchMedia("(max-width: 768px)");
 
@@ -220,10 +220,13 @@ onMounted(() => {
                     <div class="ProductDiv" v-if="index <= (totalProducts -1)">
                             <div class="ProductTags">
                                 <span v-for="(value, key) in item.ProduktTags" >
-                                    <p v-if="value" :class="[key + 'Class']">
+                                    <p v-if="value && key != 'Discontinued'" :class="[key + 'Class']">
                                         {{ key }}
                                     </p>
                                 </span>
+                                <p v-if="item.ProduktTags.Discontinued" class="DiscontinuedClass">
+                                        Discontinued
+                                </p>
                             </div> 
                             <img :src=item.ProduktBillede alt="">
                             <h2>
@@ -239,7 +242,7 @@ onMounted(() => {
                     </div>
                 </div>
             <div class="BottomButtonsDiv">
-                <button class="LoadMoreButton" v-if="totalProducts < filteredProducts.length" @click="totalProducts += 3">
+                <button class="LoadMoreButton" v-if="totalProducts < filteredProducts.length" @click="totalProducts += 6">
                     <h3>
                         Load more
                     </h3>
