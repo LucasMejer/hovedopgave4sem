@@ -89,4 +89,10 @@ button.carousel-btn {
   font-family: f.$font-primary;
   z-index: 2;
 }
+
+@media only screen and (min-width: 768px){
+  .carousel{
+    width: 50%;
+  }
+}
 </style>

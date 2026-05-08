@@ -226,13 +226,18 @@ const accordionarray = ref([
         }]
     }
 ])
+const toggleAccordion = (clickedValue) => {
+    const wasOpen = clickedValue.is_open
+    accordionarray.value.forEach(item => item.is_open = false)
+    clickedValue.is_open = !wasOpen
+}
 </script>
 <template>
 <!--Mobil-->
 <div class="mobile-view">
     <div class="placement">
         <div v-for="value in accordionarray" class="accordion">
-            <h2 @click="value.is_open = !value.is_open"
+            <h2 @click="toggleAccordion(value)"
                 :class="{ open:value.is_open }">
                 {{ value.Overskrift }}
                 <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt=""
@@ -254,7 +259,8 @@ const accordionarray = ref([
 <div class="desktop-view">
     <div class="placement">
         <div class="overskrifter">
-            <h2  v-for="value in accordionarray" @click="value.is_open = !value.is_open"
+            <h2 v-for="value in accordionarray"
+                @click="toggleAccordion(value)"
                 :class="{ open:value.is_open }">
                 {{ value.Overskrift }}
             </h2>
