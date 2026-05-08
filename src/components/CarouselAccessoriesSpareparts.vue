@@ -89,7 +89,6 @@ const prev = () => {
   margin: auto;
   gap: 20px;
 }
-/* transition: transform 0.3s ease;*/
 
 .carousel-slide {
   max-width: 50%;

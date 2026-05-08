@@ -31,8 +31,8 @@ const toggleSelection = (value) => {
 
 <template>
  <div class="downloadblok">
-        <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">files</button>
-        <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">images</button>
+        <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">Files</button>
+        <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">Images</button>
         <div class="scroll" v-if="filesshown">
             <div class="scroll-blok-card" @click="toggleSelection('manual')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
@@ -126,7 +126,7 @@ const toggleSelection = (value) => {
 }
 
 button{
-    border: none;
+    border: solid c.$section-color-background;
     background-color: c.$section-color-background;
     align-items: baseline;
     img{
@@ -185,6 +185,10 @@ button{
     .scrollimage{
         height: 400px;
         grid-template-columns: auto auto auto auto;
+    }
+
+    .downloadblok{
+    margin: 0px;
     }
 }
 </style>

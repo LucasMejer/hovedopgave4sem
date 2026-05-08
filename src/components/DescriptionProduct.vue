@@ -4,7 +4,7 @@ import { ref } from 'vue';
 const accordionarray = ref([
     {
         Overskrift: "Description",
-        is_open: false,
+        is_open: true,
         Semioverskrift: "Ultra-compact and portable 1000 lumen rechargeable LED work light",
         Broedtekst: "NOVA MINI is a portable LED handlamp and basically a “must-have” for professionals. This USB-C rechargeable work light is perfect for carrying with you throughout the workday, as it is small and compact.",
         Content: ""
@@ -341,18 +341,18 @@ h3,p{
         width: fit-content;
     }
 
-    .overskrift h2{
-        flex: 1;
-        text-align: center;
-    }
-
-    .overskrift h2.open {
-        border-bottom: 2px solid c.$font-color-primary;
+    .overskrifter h2.open {
+        border-bottom:none ;
+        border-top:0.1px solid c.$font-color-primary;
+        background-color: c.$font-color-secondary;
     }
 
     .indhold{
-        margin-top: 20px;
-        width: 100vw;
+        padding-top: 20px;
+        background-color: c.$font-color-secondary;
+        border-style: solid;
+        border-color: c.$font-color-primary;
+        border-width: 0px 0.1px 0.1px 0.1px;
     }
     }
 </style>

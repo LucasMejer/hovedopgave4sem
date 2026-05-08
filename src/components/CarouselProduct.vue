@@ -17,9 +17,22 @@ const next = () => {
 const prev = () => {
   currentIndex.value = currentIndex.value === 0 ? slides.value.length - 1 : currentIndex.value - 1
 }
+
+const goToSlide = (index) => {
+  currentIndex.value = index
+}
 </script>
 
 <template>
+  <div class="thumbnails">
+      <img
+        v-for="(slide, index) in slides"
+        :key="index"
+        :src="slide.image"
+        :class="{ active: index === currentIndex }"
+        @click="goToSlide(index)"
+      />
+    </div>
   <div class='carousel'>
       <div class="carousel-counter">
         {{ currentIndex + 1 }} / {{ slides.length }}
@@ -85,14 +98,44 @@ button.carousel-btn {
   background: rgba(0,0,0,0.5);
   color: c.$font-color-secondary;
   padding: 5px 10px;
-  border-radius: 5px;
   font-family: f.$font-primary;
   z-index: 2;
+}
+
+.thumbnails {
+  display: none;
 }
 
 @media only screen and (min-width: 768px){
   .carousel{
     width: 50%;
+    margin: 0px 50px;
+  }
+  
+  .thumbnails {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 10px;
+  }
+
+  .thumbnails img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid transparent;
+    transition: 0.2s;
+  }
+
+  .thumbnails img.active {
+    opacity: 1;
+    border: 2px solid black;
+  }
+
+  .thumbnails img:hover {
+    opacity: 0.8;
   }
 }
 </style>

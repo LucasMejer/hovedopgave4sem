@@ -23,11 +23,21 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
                 </router-link>
             </li>
         </div>
-        <h3>NOVA MINI</h3>
-        <p>03.6200</p>
+        
         <div class="desktopview">
+            <div class="mobile-heading">
+                <h3>NOVA MINI</h3>
+                <p>03.6200</p>
+            </div>
             <CarouselProduct/>
-            <DownloadBlok/>
+            <div class="download-div">
+                <div class="desktop-heading">
+                    <h3>NOVA MINI</h3>
+                    <p>03.6200</p>
+                </div>
+                <DownloadBlok/>
+            </div>
+            
         </div>
         <DescriptionProduct/>
         <CarouselAccessoriesSpareparts/>
@@ -63,10 +73,31 @@ img{
     margin: auto;
 }
 
+.desktop-heading{
+    display: none;
+}
+
 @media only screen and (min-width: 768px){
+    
     .desktopview{
         display: flex;
-        align-items: center;
+        margin-bottom: 80px;
+        .mobile-heading{
+        display: none;
+        }
+        .desktop-heading{
+            display: block;
+        }
+        .download-div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     }
+
+    h3{
+            margin: 0px 0px 20px 0px;
+    }
+
     }
 </style>
