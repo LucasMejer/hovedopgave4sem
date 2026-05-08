@@ -4,7 +4,7 @@ import { computed, onMounted, ref } from 'vue';
 let productArray = ref([]);
 let activeFilters = ref([]);
 
-let totalProducts = ref(3);
+let totalProducts = ref(6);
 
 const mediaQuery = window.matchMedia("(max-width: 768px)");
 
@@ -215,31 +215,44 @@ onMounted(() => {
                     <img src="/public/ikoner/list-sort.png" alt="" class="ProductListIcon">
                 </div>
             </div>
+
+            <div class="ActiveFiltersDiv">
+                <button v-for="value in activeFilters" @click="activeFilters.splice(activeFilters.indexOf(value), 1)" class="ActiveFiltersButton">
+                    <p>
+                        {{value}}
+                    </p>
+                    <img src="/public/ikoner/close.png" alt="">
+                </button>
+            </div>
+
             <div class="ProductGrid">
                 <div v-for="(item, index) in filteredProducts" :key="item.ProduktNummer" class="AboveProductDiv">
-                    <div class="ProductDiv" v-if="index <= (totalProducts -1)">
-                            <div class="ProductTags">
-                                <span v-for="(value, key) in item.ProduktTags" >
-                                    <p v-if="value" :class="[key + 'Class']">
+                    <a class="ProductDiv" v-if="index <= (totalProducts -1)" href="/product">
+                        <div class="ProductTags">
+                            <span v-for="(value, key) in item.ProduktTags" >
+                                    <p v-if="value && key != 'Discontinued'" :class="[key + 'Class']">
                                         {{ key }}
                                     </p>
-                                </span>
-                            </div> 
-                            <img :src=item.ProduktBillede alt="">
-                            <h2>
-                                {{ item.ProduktTitel }}
-                            </h2>
-                            <p>
-                                {{item.ProduktNummer}}
-                            </p>
-                            <p>
-                                {{item.ProduktBeskrivelse}}
-                            </p>
-                        </div>
-                    </div>
+                            </span>
+                                <p v-if="item.ProduktTags.Discontinued" class="DiscontinuedClass">
+                                        Discontinued
+                                </p>
+                        </div> 
+                        <img :src=item.ProduktBillede alt="">
+                        <h2>
+                            {{ item.ProduktTitel }}
+                        </h2>
+                        <p>
+                            {{item.ProduktNummer}}
+                        </p>
+                        <p>
+                            {{item.ProduktBeskrivelse}}
+                        </p>
+                    </a>
                 </div>
+            </div>
             <div class="BottomButtonsDiv">
-                <button class="LoadMoreButton" v-if="totalProducts < filteredProducts.length" @click="totalProducts += 3">
+                <button class="LoadMoreButton" v-if="totalProducts < filteredProducts.length" @click="totalProducts += 6">
                     <h3>
                         Load more
                     </h3>
@@ -279,6 +292,28 @@ onMounted(() => {
         .ProductGridHeadings{
             display: none;
         }
+        .ActiveFiltersDiv{
+            display: flex;
+            margin-bottom: 25px;
+
+            .ActiveFiltersButton{
+            margin: 20px 25px 0px 0px;
+            width: fit-content;
+            height: 30px;
+            background-color: c.$font-color-secondary;
+            border-style: solid;
+            border-width: 1px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img{
+                height: 100%;
+                margin: auto 0px;
+            }
+        }
+        }
+        
         
         .FilterMainDiv{
             .FiltersHeading{
@@ -420,6 +455,7 @@ onMounted(() => {
 
 
        .ProductDiv{
+            text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: center;

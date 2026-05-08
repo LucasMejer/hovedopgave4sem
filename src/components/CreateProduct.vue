@@ -34,12 +34,16 @@ async function FetchProducts(){
     const data = await Res.json();
 
     productArray.value = Object.values(data);
+    
+    //Product array skal være i alfabetisk rækkefølge
+    productArray.value.sort((a, b) => a.ProduktTitel.localeCompare(b.ProduktTitel));
 
     console.log(productArray.value);
     
   } catch (error) {
       console.error(error);
   }
+
 }
 
 FetchProducts();
@@ -328,13 +332,16 @@ function ConfirmDelete(){
 </template>
 
 <style lang="scss" scoped>
+
+    @use '../assets/colors' as c;
+
     body{
         margin: 5%;
     }
 
     .ProductDiv{
         padding: 15px;
-        border-color: black;
+        border-color: c.$font-color-primary;
         border-width: 2px;
         border-style: solid;
         display: flex;
