@@ -30,7 +30,7 @@
 
 .smallindexcardsection {
     width: 90%;
-    margin: auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -42,10 +42,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     padding: 10px;
     text-align: center;
+    margin: 30px 0;
 
     h3 {
         font-size: 18px;
@@ -54,11 +55,26 @@
     
     img {
         width: 100%;
-        max-width: 100px;
+        max-width: 200px;
         height: auto;
         margin-bottom: 10px;
     }
 }
+
+@media only screen and (min-width: 485px) {
+
+    .smallindexcardsection {
+        margin: 20px auto 40px auto;
+    }
+
+    .smallindexcard {
+        width: 150px;
+        height: 150px;
+        margin: 20px;
+    }
+
+}
+
 
 @media only screen and (min-width: 768px){
 
@@ -75,6 +91,7 @@
         width: 175px;
         height: 175px;
         padding: 10px;
+        margin: 0;
 
         img {
             max-width: 100px;
