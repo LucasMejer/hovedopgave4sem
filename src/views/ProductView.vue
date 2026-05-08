@@ -66,6 +66,7 @@ img{
 @media only screen and (min-width: 768px){
     .desktopview{
         display: flex;
+        align-items: center;
     }
     }
 </style>

@@ -19,6 +19,14 @@ const counterminus = () => {
 const clearAll = () => {
     selected.value = []
 }
+
+const toggleSelection = (value) => {
+  if (selected.value.includes(value)) {
+    selected.value = selected.value.filter(item => item !== value)
+  } else {
+    selected.value.push(value)
+  }
+}
 </script>
 
 <template>
@@ -26,72 +34,72 @@ const clearAll = () => {
         <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">files</button>
         <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">images</button>
         <div class="scroll" v-if="filesshown">
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('manual')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="manual" v-model="selected">
+                <input type="checkbox" value="manual" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
                 <p>NOVA MINI Manual</p>
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('video')">
                 <img src="/public/ikoner/mp4-ikon.svg" alt="">
-                <input type="checkbox" value="video" v-model="selected">
+                <input type="checkbox" value="video" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
                 <p>NOVA MINI Product Video</p>
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('nightview')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="nightview" v-model="selected">
+                <input type="checkbox" value="nightview" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
                 <p>Work Lights Night View</p>
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('pdf')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="pdf" v-model="selected">
+                <input type="checkbox" value="pdf" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
             </div>
-              <div class="scroll-blok-card">
+              <div class="scroll-blok-card" @click="toggleSelection('newpdf')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="newpdf" v-model="selected">
+                <input type="checkbox" value="newpdf" v-model="selected" @click.stop >
                 <span class="checkmark"></span> 
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('construnctiondocument')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="cunstructiondocument" v-model="selected">
+                <input type="checkbox" value="constructiondocument" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
             </div>
         </div>
          <div class="scrollimage" v-if="imagesshown">
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('manuala')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="manuala" v-model="selected">
+                <input type="checkbox" value="manuala" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
                 <p>NOVA MINI Manual</p>
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('videoa')">
                 <img src="/public/ikoner/mp4-ikon.svg" alt="">
-                <input type="checkbox" value="videoa" v-model="selected">
+                <input type="checkbox" value="videoa" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
                 <p>NOVA MINI Product</p>
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('nightviewa')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="nightviewa" v-model="selected">
+                <input type="checkbox" value="nightviewa" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
                 <p>Work Lights Night img</p>
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('pdfa')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="pdfa" v-model="selected">
+                <input type="checkbox" value="pdfa" v-model="selected" @click.stop >
                 <span class="checkmark"></span>
             </div>
-              <div class="scroll-blok-card">
+              <div class="scroll-blok-card" @click="toggleSelection('newpdfa')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="newpdfa" v-model="selected">
+                <input type="checkbox" value="newpdfa" v-model="selected" @click.stop>
                 <span class="checkmark"></span> 
             </div>
-            <div class="scroll-blok-card">
+            <div class="scroll-blok-card" @click="toggleSelection('constructiondocumenta')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="cunstructiondocumenta" v-model="selected">
+                <input type="checkbox" value="constructiondocumenta" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
             </div>
         </div>
@@ -171,9 +179,11 @@ button{
 
 @media only screen and (min-width: 768px){
     .scroll{
+        height: 400px;
         grid-template-columns: auto auto auto auto;
     }
     .scrollimage{
+        height: 400px;
         grid-template-columns: auto auto auto auto;
     }
 }
