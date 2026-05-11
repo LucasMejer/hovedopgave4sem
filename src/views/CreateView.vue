@@ -4,7 +4,7 @@ import CreateProduct from '@/components/CreateProduct.vue';
 </script>
 
 <template>
-    <h1>SCANGRIP PARTNERSITE DATABASE</h1>
+    <h1>SCANGRIP BUSINESS PARTNERSITE DATABASE</h1>
     <CreateProduct/>
 </template>
 

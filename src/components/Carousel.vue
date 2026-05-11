@@ -82,7 +82,7 @@ function UpdateBottomButtons(){
         height: 300px;
         justify-content: center;
         align-items: center;
-        background-color: black;
+        background-color: c.$font-color-primary;
         .CarouselItem{
             position: absolute;
             inset: 0;
@@ -114,7 +114,7 @@ function UpdateBottomButtons(){
         button{
             z-index: 2;
             position: absolute;
-            color: rgba(255, 255, 255, 0.603);
+            color: rgba(255, 255, 255, 0.6);
             cursor: pointer;
             border-radius: 100%;
             padding: 0px;
@@ -136,13 +136,13 @@ function UpdateBottomButtons(){
                 width: 24px;
                 height: 24px;
                 display: inline-block;
-                background-color: rgba(255, 255, 255, 0.409);
+                background-color: rgba(255, 255, 255, 0.4);
                 border-radius: 50px;
                 margin: 0 10px;
                 cursor: pointer;
             }
             .CarouselBottomButtonSelected{
-                background-color: rgba(255, 255, 255, 0.851);
+                background-color: rgba(255, 255, 255, 0.8);
             }
         }
     }  

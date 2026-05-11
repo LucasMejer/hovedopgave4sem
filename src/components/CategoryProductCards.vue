@@ -329,7 +329,7 @@ onMounted(() => {
                     background-color: #ffffff00;
                     border-style: none;
                     cursor: pointer;
-                    color: #7d7d7d;
+                    color: c.$hover-state-active;
                     text-decoration: underline;
                 }
             }
@@ -364,9 +364,9 @@ onMounted(() => {
             flex-direction: column;
             gap: 15px;
             padding: 10px;
-            background-color: #ffffff;
+            background-color: c.$background-color-primary;
             border: 1px;
-            border-color: #000000;
+            border-color: c.$font-color-primary;
             border-style: solid;
             width: 175px;
             label{
@@ -464,7 +464,7 @@ onMounted(() => {
             justify-content: space-between;
             width: auto;
             box-sizing: border-box;
-            border-color: black;
+            border-color: c.$font-color-primary;
             border: 1px;
             border-style: solid ;
             width: 100%;
@@ -487,23 +487,23 @@ onMounted(() => {
                     width: max-content;
                 }
                 .ConstructionClass{
-                    color: #ffffff;
-                    background-color: #000000;
+                    color: c.$font-color-secondary;
+                    background-color: c.$font-color-primary;
                 }
                 .ElectricianClass{
-                    color: #ffffff;
+                    color: c.$font-color-secondary;
                     background-color: #07775B;
                 }
                 .PaintingClass{
-                    color: #ffffff;
+                    color: c.$font-color-secondary;
                     background-color: #88964E;
                 }
                 .AutomotiveClass{
-                    color: #ffffff;
+                    color: c.$font-color-secondary;
                     background-color: #2715AE;
                 }
                 .DiscontinuedClass{
-                    color: #ffffff;
+                    color: c.$font-color-secondary;
                     background-color: #B91215;
                 }    
             }
@@ -543,8 +543,8 @@ onMounted(() => {
                     margin: auto 0.25rem auto 0.5rem;
                     border-style: solid;
                     border-width: 2px;
-                    border-color: #000000;
-                    background-color: black;
+                    border-color: c.$font-color-primary;
+                    background-color: c.$font-color-primary;
                     cursor: pointer;
                     }
                     .ProductListIcon{
@@ -552,8 +552,8 @@ onMounted(() => {
                         margin: auto 0.25rem;
                         border-style: solid;
                         border-width: 2px;
-                        border-color: #000000;
-                        background-color: white;
+                        border-color: c.$font-color-primary;
+                        background-color: c.$font-color-secondary;
                         cursor: pointer;
                     }
                 }   
@@ -566,7 +566,7 @@ onMounted(() => {
                     margin-top: 10px;
                     hr{
                         display: block;
-                        border-color: black;
+                        border-color: c.$font-color-primary;
                         border-style: solid;
                         border-width: 1px;
                         margin-bottom: 5px;
