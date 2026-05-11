@@ -147,6 +147,7 @@ luk dropdown når der klikkes uden for
             display: none;
             position: relative;
             z-index: 6;
+            
 
 
             .searched-dropdown {
@@ -156,6 +157,10 @@ luk dropdown når der klikkes uden for
                 list-style-type: none;
                 width: 100%;
                 box-sizing: border-box;
+                overflow: scroll;
+                max-height: 60vh;
+                overflow-x: hidden;
+                
 
 
                 .searched-product {
