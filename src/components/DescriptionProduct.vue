@@ -7,7 +7,7 @@ const accordionarray = ref([
         is_open: true,
         Semioverskrift: "Ultra-compact and portable 1000 lumen rechargeable LED work light",
         Broedtekst: "NOVA MINI is a portable LED handlamp and basically a “must-have” for professionals. This USB-C rechargeable work light is perfect for carrying with you throughout the workday, as it is small and compact.",
-        Content: ""
+        Content: "PjZNKyOqbjQ"
     },
     {
         Overskrift: "Details",
@@ -246,6 +246,8 @@ const toggleAccordion = (clickedValue) => {
                 <div v-for="details in value.ProduktDetails">
                     <h3>{{ details.Os }}</h3>
                     <p>{{ details.Bt }}</p>
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -265,6 +267,9 @@ const toggleAccordion = (clickedValue) => {
             <div v-for="value in accordionarray" :key="value.Overskrift" v-show="value.is_open" class="content">
                 <h3>{{ value.Semioverskrift }}</h3>
                 <p>{{ value.Broedtekst }}</p>
+                <div v-if="value.Content != null">
+                    <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + value.Content" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
                 <div v-for="details in value.ProduktDetails" :key="details.Os">
                     <h3>{{ details.Os }}</h3>
                     <p>{{ details.Bt }}</p>
@@ -296,8 +301,6 @@ h2{
     justify-content: space-between;
     padding: 16px 8px;
     cursor: pointer;
-    border-left: solid 0.2px;
-
         &.open{
             border-bottom:0.1px solid c.$font-color-primary;
         }
@@ -315,6 +318,11 @@ h3,p{
 }
 
 @media only screen and (min-width: 768px){
+
+    h2{
+    border-left: solid 0.2px;
+    }
+
     .mobile-view{
         display: none;
     }

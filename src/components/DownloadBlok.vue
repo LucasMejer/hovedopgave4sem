@@ -126,9 +126,11 @@ const toggleSelection = (value) => {
 }
 
 button{
-    border: solid c.$section-color-background;
-    background-color: c.$section-color-background;
+    border: solid rgba(173, 173, 173, 1);
+    background-color: rgba(173, 173, 173, 1);
     align-items: baseline;
+    font-size: 18px;
+    
     img{
         filter: brightness(0);
     }
@@ -154,7 +156,7 @@ button{
 }
 
 .scroll-blok-card{
-    margin: 20px auto;
+    margin: 20px 10px;
     padding: 10px;
     background-color: rgba(173, 173, 173, 1);
     max-width: 135px;
@@ -166,10 +168,13 @@ button{
     align-items: center;
     background-color: rgba(173, 173, 173, 1);
     border-top: solid 0.1px c.$font-color-primary;
+    padding: 10px;
 }
 
 .valgt{
     text-decoration: underline;
+    background-color: c.$section-color-background;
+    border-color: c.$section-color-background;
 }
 
 .clearAll p:hover {

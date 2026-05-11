@@ -37,7 +37,6 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
                 </div>
                 <DownloadBlok/>
             </div>
-            
         </div>
         <DescriptionProduct/>
         <CarouselAccessoriesSpareparts/>

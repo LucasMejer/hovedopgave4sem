@@ -80,6 +80,9 @@ const prev = () => {
   margin: 100px auto;
   padding: 10px 0px;
   overflow: hidden;
+  h2{
+    margin-bottom: 10px;
+  }
 }
 
 .carousel-inner {
@@ -139,6 +142,7 @@ const prev = () => {
   min-height: 205px;
   img{
     width: 100%;
+    object-fit: cover;
   }
 }
 
@@ -151,6 +155,9 @@ const prev = () => {
 .carousel-card{
   min-height: 556px;
   min-width: 300px;
+  img{
+    height: 300px;
+  }
 }
 }
 </style>
