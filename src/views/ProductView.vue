@@ -45,6 +45,12 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
     <Footer/>
 </template>
 <style lang="scss" scoped>
+@use '../assets/colors.scss' as c;
+
+a{
+    color: c.$font-color-primary;
+}
+
 .view-width{
     width: 90%;
     margin: auto;

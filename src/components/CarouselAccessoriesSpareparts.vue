@@ -52,6 +52,7 @@ const prev = () => {
 </script>
 <template>
 <div class='carousel'>
+  <h2>Accessories</h2>
   <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 52.5}%)` }'>
     <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
       <div class="carousel-card">
@@ -103,8 +104,15 @@ const prev = () => {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  border: none;
-  background: transparent;
+  background: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  border: 0.1px solid c.$font-color-primary;
+  cursor: pointer;
   img{
     height: 20px;
     width: 20px;
@@ -132,5 +140,17 @@ const prev = () => {
   img{
     width: 100%;
   }
+}
+
+@media only screen and (min-width: 768px){
+  .carousel{
+    h2{
+      margin-bottom: 30px;
+    }
+  }
+.carousel-card{
+  min-height: 556px;
+  min-width: 300px;
+}
 }
 </style>
