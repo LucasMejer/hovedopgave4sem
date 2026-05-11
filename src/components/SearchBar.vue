@@ -3,6 +3,8 @@ import { ref } from 'vue';
 
 const search = ref('');
 let databaseArray = ref([]);
+let searchHidden = ref(true);
+const input = ref(null);
 
 async function fetchData() {
     try {
@@ -25,6 +27,19 @@ async function fetchData() {
 
 fetchData();
 
+function showSearches() {
+    if (search.value.length > 0) {
+        searchHidden.value = false;
+    }
+    else {
+        searchHidden.value = true;
+    }
+}
+
+
+
+
+
 /*
 tomt array
 Hent data fra database
@@ -40,6 +55,16 @@ Vis kun det der matcher med det søgte
 Vis kun søgeresultater når inputfeltet er markeret
 luk dropdown når der klikkes uden for 
 
+
+
+input.length
+includes i produkttitel
+
+tolowercase
+trim
+
+
+
 */
 
 </script>
@@ -48,14 +73,20 @@ luk dropdown når der klikkes uden for
 
     <div class="search-bar">
         <div class="search-input-container">
-            <input class="search-input" type="text" placeholder="Search..." v-model="search">
+            <input 
+                class="search-input" 
+                type="text" 
+                placeholder="Search..." 
+                v-model="search"
+                @input="showSearches"
+            >
             <div class="icon-container">
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="">
             </div>
         </div>
         
         <div class="searched-dropdown-container">
-            <div class="searched-dropdown">
+            <div :class="{'search-hidden': searchHidden}" class="searched-dropdown">
 
                 <div class="searched-product">
                     <img class="product-image" src="../../public/novamini.png" alt="">
@@ -98,6 +129,10 @@ luk dropdown når der klikkes uden for
 <style lang="scss">
     @use '../assets/_colors.scss' as c;
     @use '../assets/_headings.scss' as f;
+
+    .search-hidden {
+        display: none;
+    }
 
     .search-bar {
         margin: 0 auto;
@@ -215,11 +250,33 @@ luk dropdown når der klikkes uden for
             }
         }
 
-        .hide-searches {
-            display: none;
-        }
 
     }
+
+    .ConstructionClass{
+        color: #ffffff;
+        background-color: #000000;
+    }
+
+    .ElectricianClass{
+        color: #ffffff;
+        background-color: #07775B;
+    }
+
+    .PaintingClass{
+        color: #ffffff;
+        background-color: #88964E;
+    }
+
+    .AutomotiveClass{
+        color: #ffffff;
+        background-color: #2715AE;
+    }
+
+    .DiscontinuedClass{
+        color: #ffffff;
+        background-color: #B91215;
+    }    
 
     @media (min-width: 1280px) {
 

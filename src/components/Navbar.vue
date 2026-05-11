@@ -60,7 +60,7 @@ onMounted( () => {
     window.addEventListener("scroll", onScroll);
 });
 
-onBeforeUnmount(() => {
+onBeforeUnmount( () => {
     window.removeEventListener("click", clickOutside);
     window.removeEventListener("scroll", onScroll);
 });
