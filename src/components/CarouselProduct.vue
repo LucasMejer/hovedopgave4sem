@@ -76,7 +76,14 @@ button.carousel-btn {
   transform: translateY(-50%);
   z-index: 2;
   border: none;
-  background: transparent;
+  background: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  cursor: pointer;
   img{
     height: 20px;
     width: 20px;

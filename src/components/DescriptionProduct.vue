@@ -13,6 +13,14 @@ const accordionarray = ref([
         Overskrift: "Details",
         is_open: false,
         ProduktDetails: [{
+            Os: "Product line",
+            Bt: "WORK LIGHTS"
+        },
+        {
+            Os: "Product family",
+            Bt: "NOVA"
+        },
+        {
             Os: "Product Number",
             Bt: "03.6299"
         },
@@ -211,18 +219,6 @@ const accordionarray = ref([
         {
             Os: "US versioned charging temperature (°F)",
             Bt: "+14 to +104 °F"
-        }]
-    },
-    {
-        Overskrift: "Accessories",
-        is_open: false,
-        ProduktDetails: [{
-            Os: "Product line",
-            Bt: "WORK LIGHTS"
-        },
-        {
-            Os: "Product family",
-            Bt: "NOVA"
         }]
     }
 ])
