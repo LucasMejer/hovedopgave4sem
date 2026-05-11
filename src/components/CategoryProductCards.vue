@@ -257,11 +257,13 @@ onMounted(() => {
                         Load more
                     </h3>
                 </button>
-                 <a class="ReturnButton" href="#top">
+                <!--
+                <a class="ReturnButton" href="#top">
                     <h3>
                         Return to top
                     </h3>
-                </a>   
+                </a> 
+                -->  
             </div>
         </div>
     </div>
@@ -415,7 +417,7 @@ onMounted(() => {
             .LoadMoreButton{
                 width: 100%;
                 height: 50px;
-                margin: 0% 0px 2.5% 0px;
+                margin: 0% 0px 7.5% 0px;
                 background-color: c.$green-color-icon;
                 border-style: none;
                 cursor: pointer;
@@ -606,7 +608,7 @@ onMounted(() => {
             
             .BottomButtonsDiv{
                 .LoadMoreButton{
-                    margin: 0% 0px 1% 0px;
+                    margin: 0% 0px 5% 0px;
                 }
                 .ReturnButton{
                     margin: 1% 0px 2.5% 0px;
