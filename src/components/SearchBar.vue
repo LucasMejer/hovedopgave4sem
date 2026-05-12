@@ -123,9 +123,12 @@ loop alle tags
                             <p class="text number"> {{ item.ProduktNummer }} </p>
                         </div>
                         <div class="product-tags">
-                            <p v-for="(value, key) in item.ProduktTags" class="tag" :class="[key + 'Class']">
-                                {{ key }}
-                            </p>
+                            <span v-for="(value, key) in item.ProduktTags">
+                                <p v-if="value" class="tag" :class="[key + 'Class']">
+                                    {{ key }}
+                                </p>
+                            </span>
+                            
 
                         </div>
                         
@@ -334,6 +337,11 @@ loop alle tags
                             &:hover {
                                 background-color: #e6e6e6;
                                 cursor: pointer;
+                            }
+
+                            .product-image {
+                                width: 60px;
+                                height: 60px;
                             }
                         }
 
