@@ -4,6 +4,7 @@ import { ref } from 'vue';
 const search = ref('');
 let databaseArray = ref([]);
 let searchHidden = ref(true);
+let productHidden = ref(false);
 
 async function fetchData() {
     try {
@@ -33,10 +34,17 @@ function showSearches() {
     if (search.value.length > 0) {
 
         const searchString = JSON.stringify(search.value)
+/*
+        if (databaseArray.ProduktTitel.includes(searchString)) {
+            console.log(searchString);
+        }
 
-        
+        else {
+            return
+        }*/
 
         searchHidden.value = false;
+
     }
     else {
         searchHidden.value = true;
@@ -48,12 +56,6 @@ function showSearches() {
 
 
 /*
-tomt array
-Hent data fra database
-Put det i et array
-loop der spyttet elementerne fra arrayet ud
-(eventuelt lav kategorier med resultattyper - opdel det i databasen)
-(unikt key??)
 
 Hold det indtastede i inputfeltet op mod elementerne i arrayet
 Vis kun det der matcher med det søgte
@@ -63,17 +65,10 @@ Vis kun søgeresultater når inputfeltet er markeret
 luk dropdown når der klikkes uden for 
 
 
-
-input.length
 includes i produkttitel
 
 tolowercase
 trim
-
-
-
-put tags i array
-loop alle tags
 
 */
 
@@ -98,26 +93,9 @@ loop alle tags
         <div class="searched-dropdown-container">
             <div :class="{'search-hidden': searchHidden}" class="searched-dropdown">
 
-                <!--<div class="searched-product">
-                    <img class="product-image" src="../../public/novamini.png" alt="">
-                    <div class="product-content">
-                        
-                        <div class="product-text">
-                            <h3 class="text">NOVA MINI</h3>
-                            <p class="text number">03.6200</p>
-                        </div>
-                        <div class="product-tags">
-                            <p class="tag">Construction</p>
-                            <p class="tag">Electrician</p>
-                        </div>
-                        
-                    </div>
-                </div>-->
-
-                <div v-for="item in databaseArray" class="searched-product" :key="item.id">
+                <div v-for="item in databaseArray" :class="{'product-hidden': productHidden}" class="searched-product" :key="item.ProduktNummer">
                     <img class="product-image" :src=item.ProduktBillede alt="">
                     <div class="product-content">
-                        
                         <div class="product-text">
                             <h3 class="text"> {{item.ProduktTitel}} </h3>
                             <p class="text number"> {{ item.ProduktNummer }} </p>
@@ -128,13 +106,10 @@ loop alle tags
                                     {{ key }}
                                 </p>
                             </span>
-                            
-
                         </div>
-                        
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
@@ -146,6 +121,10 @@ loop alle tags
     @use '../assets/_headings.scss' as f;
 
     .search-hidden {
+        display: none;
+    }
+
+    .product-hidden {
         display: none;
     }
 
@@ -236,12 +215,6 @@ loop alle tags
                             align-items: flex-end;
                             
 
-/*
-                            .text {
-                                
-                                
-                            }*/
-
                             .number {
                                 color: c.$hover-state-active;
                                 margin-bottom: 3px;
@@ -301,14 +274,9 @@ loop alle tags
                 width: 100%;
                 margin: 0;
                 min-width: 300px;
-                max-width: 500px;
+                max-width: 400px;
 
                 
-
-
-                /*.search-input {
-                    
-                }*/
 
                 .search-icon {
                     &:hover {
@@ -319,7 +287,7 @@ loop alle tags
 
                 .searched-dropdown-container {
                     min-width: 300px;
-                    max-width: 500px;
+                    max-width: 400px;
 
 
                     .searched-dropdown {
@@ -327,10 +295,7 @@ loop alle tags
                         position: absolute;
                         box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
                         border: none;
-                        /*
-                        list-style-type: none;
-                        width: 100%;
-                        box-sizing: border-box;*/
+
 
                         .searched-product {
 
@@ -338,11 +303,11 @@ loop alle tags
                                 background-color: #e6e6e6;
                                 cursor: pointer;
                             }
-
+                            /*
                             .product-image {
-                                width: 60px;
-                                height: 60px;
-                            }
+                                width: 50px;
+                                height: 50px;
+                            }*/
                         }
 
 
