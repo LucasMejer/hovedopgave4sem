@@ -4,7 +4,6 @@ import { ref } from 'vue';
 const search = ref('');
 let databaseArray = ref([]);
 let searchHidden = ref(true);
-const input = ref(null);
 
 async function fetchData() {
     try {
@@ -25,10 +24,18 @@ async function fetchData() {
   }
 };
 
+
+
 fetchData();
+
 
 function showSearches() {
     if (search.value.length > 0) {
+
+        const searchString = JSON.stringify(search.value)
+
+        
+
         searchHidden.value = false;
     }
     else {
@@ -65,6 +72,9 @@ trim
 
 
 
+put tags i array
+loop alle tags
+
 */
 
 </script>
@@ -88,7 +98,7 @@ trim
         <div class="searched-dropdown-container">
             <div :class="{'search-hidden': searchHidden}" class="searched-dropdown">
 
-                <div class="searched-product">
+                <!--<div class="searched-product">
                     <img class="product-image" src="../../public/novamini.png" alt="">
                     <div class="product-content">
                         
@@ -102,7 +112,7 @@ trim
                         </div>
                         
                     </div>
-                </div>
+                </div>-->
 
                 <div v-for="item in databaseArray" class="searched-product" :key="item.id">
                     <img class="product-image" :src=item.ProduktBillede alt="">
@@ -113,8 +123,10 @@ trim
                             <p class="text number"> {{ item.ProduktNummer }} </p>
                         </div>
                         <div class="product-tags">
-                            <p class="tag">Construction</p>
-                            <p class="tag">Electrician</p>
+                            <p v-for="(value, key) in item.ProduktTags" class="tag" :class="[key + 'Class']">
+                                {{ key }}
+                            </p>
+
                         </div>
                         
                     </div>
@@ -203,6 +215,7 @@ trim
                     padding: 20px 10px;
                     border: 1px solid #afafaf;
 
+
                     .product-image {
                         width: 50px;
                         height: 50px;
@@ -235,10 +248,34 @@ trim
 
                         .product-tags {
                             display: flex;
+                            flex-wrap: wrap;
 
                             .tag {
-                                margin-right: 5px;
+                                margin: 5px 5px 0 0;
+                                padding: 5px;
+                                font-size: 13px;
                             }
+
+                            .ConstructionClass{
+                                color: c.$font-color-secondary;
+                                background-color: c.$font-color-primary;
+                            }
+                            .ElectricianClass{
+                                color: c.$font-color-secondary;
+                                background-color: #07775B;
+                            }
+                            .PaintingClass{
+                                color: c.$font-color-secondary;
+                                background-color: #88964E;
+                            }
+                            .AutomotiveClass{
+                                color: c.$font-color-secondary;
+                                background-color: #2715AE;
+                            }
+                            .DiscontinuedClass{
+                                color: c.$font-color-secondary;
+                                background-color: #B91215;
+                            }    
                             
                         }
                     }
@@ -253,30 +290,6 @@ trim
 
     }
 
-    .ConstructionClass{
-        color: #ffffff;
-        background-color: #000000;
-    }
-
-    .ElectricianClass{
-        color: #ffffff;
-        background-color: #07775B;
-    }
-
-    .PaintingClass{
-        color: #ffffff;
-        background-color: #88964E;
-    }
-
-    .AutomotiveClass{
-        color: #ffffff;
-        background-color: #2715AE;
-    }
-
-    .DiscontinuedClass{
-        color: #ffffff;
-        background-color: #B91215;
-    }    
 
     @media (min-width: 1280px) {
 
@@ -284,7 +297,7 @@ trim
                 padding: 0 20px;
                 width: 100%;
                 margin: 0;
-                min-width: 150px;
+                min-width: 300px;
                 max-width: 500px;
 
                 
@@ -302,7 +315,7 @@ trim
 
 
                 .searched-dropdown-container {
-                    min-width: 150px;
+                    min-width: 300px;
                     max-width: 500px;
 
 
