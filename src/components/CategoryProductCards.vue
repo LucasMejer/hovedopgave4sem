@@ -110,7 +110,7 @@ onMounted(() => {
                 Filters
                 <button class="NulstilButton" @click="resetFilters">
                     <p>
-                        Nulstil
+                        Reset
                     </p>
                 </button>
             </h3>
@@ -208,9 +208,9 @@ onMounted(() => {
         </div>
         <div class="ProductGridAndHeading">
             <div class="ProductGridHeadings">
-                <h3>Resultater: {{filteredProducts.length}}</h3>
+                <h3>Results: {{filteredProducts.length}}</h3>
                 <div class="VisningDiv">
-                    <h3>Visning:</h3>
+                    <h3>View:</h3>
                     <img src="/public/ikoner/grid-hvid.png" alt="" class="ProductGridIcon">
                     <img src="/public/ikoner/list-sort.png" alt="" class="ProductListIcon">
                 </div>

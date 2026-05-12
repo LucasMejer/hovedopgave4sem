@@ -232,23 +232,25 @@ const toggleAccordion = (clickedValue) => {
 <!--Mobil-->
 <div class="mobile-view">
     <div class="placement">
-        <div v-for="value in accordionarray" class="accordion">
-            <h2 @click="toggleAccordion(value)"
-                :class="{ open:value.is_open }">
-                {{ value.Overskrift }}
-                <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt=""
-                class="title"
-                >
-            </h2>
-            <div v-show="value.is_open" class="content">
-                <h3>{{ value.Semioverskrift }}</h3>
-                <p>{{ value.Broedtekst }}</p>
-                <div v-if="value.Content != null">
-                    <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + value.Content" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div v-for="details in value.ProduktDetails">
-                    <h3>{{ details.Os }}</h3>
-                    <p>{{ details.Bt }}</p>
+        <div class="overskrifter">
+            <div v-for="value in accordionarray" class="accordion">
+                <h2 @click="toggleAccordion(value)"
+                    :class="{ open:value.is_open }">
+                    {{ value.Overskrift }}
+                    <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt=""
+                    class="title"
+                    >
+                </h2>
+                <div v-show="value.is_open" class="content">
+                    <h3>{{ value.Semioverskrift }}</h3>
+                    <p>{{ value.Broedtekst }}</p>
+                    <div v-if="value.Content != null">
+                        <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + value.Content" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div v-for="details in value.ProduktDetails">
+                        <h3>{{ details.Os }}</h3>
+                        <p>{{ details.Bt }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,7 +268,7 @@ const toggleAccordion = (clickedValue) => {
         </div>
         <div class="indhold">
             <div v-for="value in accordionarray" :key="value.Overskrift" v-show="value.is_open" class="content">
-                <div class="tekst">
+                <div class="tekst" v-if="value.Semioverskrift != null">
                 <h3>{{ value.Semioverskrift }}</h3>
                 <p>{{ value.Broedtekst }}</p>
                 </div>
@@ -303,9 +305,20 @@ const toggleAccordion = (clickedValue) => {
     background-color: c.$font-color-secondary;
     border-right: solid #1a1a1a 0.1px;
     border-left: solid #1a1a1a 0.1px;
+    border-bottom: solid #1a1a1a 0.1px;
+    
+    h3{
+        padding-bottom: 0px;
+    }
+
+    p{
+        padding: 8px 0px 20px 12px;
+    }
+    
     iframe{
         height: auto;
         width: 100%;
+        display: block;
     }
 }
 
@@ -315,6 +328,7 @@ h2{
     justify-content: space-between;
     padding: 3pt 12px;
     cursor: pointer;
+    font-weight: normal;
         &.open{
             border-right: solid #1a1a1a 0.1px;
             border-left: solid #1a1a1a 0.1px;
@@ -330,8 +344,19 @@ h2{
     }
 }
 
-h3,p{
+h3{
+    padding: 0px 12px 10px 12px;
+    
+}
+
+p{
   padding: 12px 12px;
+}
+
+.overskrifter{
+    h2{
+        padding: 15px;
+    }
 }
 
 @media only screen and (min-width: 768px){
@@ -392,6 +417,7 @@ h3,p{
         flex-direction: column;
         border-left: none;
         border-right: none;
+        border-bottom: none;
         height: 100%;
         
         .videodiv{

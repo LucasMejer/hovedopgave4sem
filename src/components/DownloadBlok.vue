@@ -105,12 +105,13 @@ const toggleSelection = (value) => {
         </div>
         <div class="overlay">
             <div class="amount-selected-counter">
-                <p>{{ selected.length }} filer valgt</p>
+                <p>{{ selected.length }} Files selected</p>
             </div>
             <div class="clearAll">
-                <p @click="clearAll">ryd alle</p>
+                <p @click="clearAll">Clear</p>
             </div>
-            <button>Download
+            <button class="downloadbutton">
+                Download
                 <img src="/public/ikoner/download-ikon.svg" alt="">
             </button>
         </div>
@@ -126,14 +127,21 @@ const toggleSelection = (value) => {
 }
 
 button{
-    border: solid rgba(173, 173, 173, 1);
-    background-color: rgba(173, 173, 173, 1);
+    border: solid rgb(239, 239, 239);
+    background-color: rgb(239, 239, 239);
     align-items: baseline;
     font-size: 18px;
+    padding: 10px;
     
-    img{
-        filter: brightness(0);
-    }
+}
+
+.downloadbutton{
+    color: c.$font-color-secondary;
+    background-color: c.$red-color-logo;
+    border-color: c.$red-color-logo;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .scroll{
@@ -143,15 +151,20 @@ button{
     height: 200px;
     display: grid;
     grid-template-columns: auto auto;
-    background-color: c.$section-color-background;
     object-fit: cover;
     padding: 10px auto;
+    grid-gap: 0px 15px;
+
+    border-top: solid 0.1px black;
+  border-left: solid 0.1px black;
+  border-right: solid 0.1px black;
+
 }
 
 .scroll-blok-card{
     margin: 20px 10px;
     padding: 10px;
-    background-color: rgba(173, 173, 173, 1);
+    background-color: rgba(218, 218, 218, 1);
     max-width: 135px;
 }
 
@@ -159,25 +172,39 @@ button{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(173, 173, 173, 1);
+    background-color: rgba(218, 218, 218, 1);
     border-top: solid 0.1px c.$font-color-primary;
     padding: 10px;
 }
 
 .valgt{
-    text-decoration: underline;
-    background-color: c.$section-color-background;
-    border-color: c.$section-color-background;
+    font-weight: 600;
+  background-color: #fff;
+  border-color: #fff;
+  border-top: solid 0.1px black;
+  border-left: solid 0.1px black;
+  border-right: solid 0.1px black;
+  outline-bottom: solid 0.1px #fff;
+  box-shadow: 0 5px 0 0px #fff;
+  border-bottom: none;
+  margin-bottom: -5px;
+  outline-top: #000;
 }
 
-.clearAll p:hover {
-  color: red;
-  cursor: pointer;
+.clearAll{
+    text-decoration: underline;
+    &:hover {
+        color: c.$font-color-secondary;
+        cursor: pointer;
+        p{
+            color: c.$font-color-secondary;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px){
     .scroll{
-        height: 400px;
+        height: 25vw;
         grid-template-columns: repeat(auto-fit, 145px);
         justify-content: space-around;
         width: auto;

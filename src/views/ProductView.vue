@@ -15,7 +15,7 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
         <div class="breadcrumb">
             <li>
                 <router-link to="/">
-                    <p>Forside</p>
+                    <p>Home</p>
                 </router-link>
                 <p>></p>
                 <router-link to="/category">
@@ -26,14 +26,14 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
         
         <div class="desktopview">
             <div class="mobile-heading">
-                <h3>NOVA MINI</h3>
-                <p>03.6200</p>
+                <h1>NOVA MINI</h1>
+                <h3>03.6200</h3>
             </div>
             <CarouselProduct/>
             <div class="download-div">
                 <div class="desktop-heading">
-                    <h3>NOVA MINI</h3>
-                    <p>03.6200</p>
+                    <h1>NOVA MINI</h1>
+                    <h3>03.6200</h3>
                 </div>
                 <DownloadBlok/>
             </div>
@@ -55,9 +55,21 @@ a{
     margin: auto;
 }
 
-h3{
+/*h3{
     margin: 20px 0px;
-}
+    font-weight: normal;
+}*/
+
+    h1{
+        margin: 0px;
+        font-weight: normal;
+    }
+    h3{
+        margin: 0px 0px 20px 0px;
+        font-weight: normal;
+    }
+
+
 
 p{
     margin: 10px 0px;
@@ -65,7 +77,7 @@ p{
 
 li p{
     list-style: none;
-    padding: 10px 10px;
+    padding: 10px 10px 0px 0px;
 }
 
 .breadcrumb li{
@@ -99,10 +111,6 @@ img{
             justify-content: space-between;
             width: 100%;
         }
-    }
-
-    h3{
-            margin: 0px 0px 20px 0px;
     }
 
     }
