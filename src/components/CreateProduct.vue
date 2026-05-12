@@ -248,7 +248,7 @@ function ConfirmDelete(){
                     <input class="TextInput NytProduktInput" type="text" v-model="NytProduktTitel" placeholder="NOVA MINI">
                 </h2>
                 <h2>
-                    Billede Link:
+                    Billede(r):
                     <input class="TextInput NytProduktInput" type="text" v-model="NytProduktBillede" placeholder="https://www.scangrip.com/Admin/Public/GetImage.ashx?width=620&height=496&image=%2fFiles%2fImages%2f03.6202-nova-4%2f03.6202-nova-4-0-0.jpg">
                 </h2>
                 <h2>
@@ -259,6 +259,32 @@ function ConfirmDelete(){
                     Produkt Nummer:
                     <input class="TextInput NytProduktInput" type="text" v-model="NytProduktNummer" placeholder="03.6010">
                 </h2>
+
+                <button class="OpenTagsButton">
+                        <h3>
+                        Details
+                        </h3>
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                </button>
+                <button class="OpenTagsButton">
+                        <h3>
+                        Main Light
+                        </h3>
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                </button>
+                <button class="OpenTagsButton">
+                        <h3>
+                        Electrical
+                        </h3>
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                </button>
+                <button class="OpenTagsButton">
+                        <h3>
+                        Operation
+                        </h3>
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                </button>
+
                 <h2>
                     Tags:
                 </h2>
