@@ -498,9 +498,9 @@ onBeforeUnmount( () => {
             
 
             .menu-item {
-                margin: 0;
                 justify-content: flex-start;
-                margin: 0 20px;
+                padding-right: 10px;
+                margin: 0 auto;
                 cursor: pointer;
                 background-color: #fff;
 
@@ -528,7 +528,7 @@ onBeforeUnmount( () => {
                     background-color: #fff;
                     list-style-type: none;
                     width: auto;
-                    margin: 0 0 0 20px;
+                    margin: 0;
                     white-space: nowrap;
                     padding: 0;
                 }
