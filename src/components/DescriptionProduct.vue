@@ -243,11 +243,12 @@ const toggleAccordion = (clickedValue) => {
             <div v-show="value.is_open" class="content">
                 <h3>{{ value.Semioverskrift }}</h3>
                 <p>{{ value.Broedtekst }}</p>
+                <div v-if="value.Content != null">
+                    <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + value.Content" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
                 <div v-for="details in value.ProduktDetails">
                     <h3>{{ details.Os }}</h3>
                     <p>{{ details.Bt }}</p>
-                    <div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -265,9 +266,11 @@ const toggleAccordion = (clickedValue) => {
         </div>
         <div class="indhold">
             <div v-for="value in accordionarray" :key="value.Overskrift" v-show="value.is_open" class="content">
+                <div class="tekst">
                 <h3>{{ value.Semioverskrift }}</h3>
                 <p>{{ value.Broedtekst }}</p>
-                <div v-if="value.Content != null">
+                </div>
+                <div v-if="value.Content != null" class="videodiv">
                     <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + value.Content" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div v-for="details in value.ProduktDetails" :key="details.Os">
@@ -293,16 +296,30 @@ const toggleAccordion = (clickedValue) => {
 
 .placement{
     margin: 40px auto;
-    background-color: c.$section-color-background;;
+    background-color: c.$section-color-background;
 }
+
+.content{
+    background-color: c.$font-color-secondary;
+    border-right: solid #1a1a1a 0.1px;
+    border-left: solid #1a1a1a 0.1px;
+    iframe{
+        height: auto;
+        width: 100%;
+    }
+}
+
 
 h2{
     display: flex;
     justify-content: space-between;
-    padding: 16px 8px;
+    padding: 3pt 12px;
     cursor: pointer;
         &.open{
-            border-bottom:0.1px solid c.$font-color-primary;
+            border-right: solid #1a1a1a 0.1px;
+            border-left: solid #1a1a1a 0.1px;
+            border-top: solid #1a1a1a 0.1px;
+            background-color: c.$font-color-secondary;
         }
         img{
             height: 30px;
@@ -314,7 +331,7 @@ h2{
 }
 
 h3,p{
-    padding: 2px 8px;
+  padding: 12px 12px;
 }
 
 @media only screen and (min-width: 768px){
@@ -339,6 +356,17 @@ h3,p{
         margin: 0;
     }
 
+    .indhold{
+        padding-top: 20px;
+        background-color: c.$font-color-secondary;
+        border-style: solid;
+        border-color: c.$font-color-primary;
+        border-width: 0px 0.1px 0.1px 0.1px;
+        height: fit-content;
+        height: 100%;
+        min-height: 25vw;
+    }
+
     .overskrifter{
         display: flex;
         flex-wrap: wrap;
@@ -351,12 +379,54 @@ h3,p{
         background-color: c.$font-color-secondary;
     }
 
-    .indhold{
-        padding-top: 20px;
-        background-color: c.$font-color-secondary;
-        border-style: solid;
-        border-color: c.$font-color-primary;
-        border-width: 0px 0.1px 0.1px 0.1px;
+    
+
+    .tekst{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
     }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        border-left: none;
+        border-right: none;
+        height: 100%;
+        
+        .videodiv{
+            aspect-ratio: 16 / 9;
+            position: absolute;
+            right: 10%;
+            width: 40%;
+            height: fit-content;
+        }
+
+        iframe{
+        height: 100%;
+        width: 100%;
+        float: right;
+        position: relative;
+    }
+    }
+
+h2{
+    display: flex;
+    justify-content: space-between;
+    padding: 3pt 12px;
+    cursor: pointer;
+        &.open{
+            border-bottom:0.1px solid c.$font-color-primary;
+            background-color: c.$font-color-secondary;
+        }
+        img{
+            height: 30px;
+        
+        &.rotate{
+            transform: rotate(180deg);
+        }
+    }
+}
+
     }
 </style>

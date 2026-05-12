@@ -68,7 +68,7 @@ const toggleSelection = (value) => {
                 <span class="checkmark"></span>
             </div>
         </div>
-         <div class="scrollimage" v-if="imagesshown">
+         <div class="scroll" v-if="imagesshown">
             <div class="scroll-blok-card" @click="toggleSelection('manuala')">
                 <img src="/public/ikoner/pdf-ikon.svg" alt="">
                 <input type="checkbox" value="manuala" v-model="selected" @click.stop>
@@ -135,17 +135,10 @@ button{
         filter: brightness(0);
     }
 }
-.scroll{
-    overflow: scroll;
-    height: 200px;
-    display: grid;
-    grid-template-columns: auto auto;
-    background-color: c.$section-color-background;
-    padding: 10px auto;
-}
 
-.scrollimage{
-    overflow: scroll;
+.scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
     scrollbar-width: auto;
     height: 200px;
     display: grid;
@@ -185,15 +178,20 @@ button{
 @media only screen and (min-width: 768px){
     .scroll{
         height: 400px;
-        grid-template-columns: auto auto auto auto;
-    }
-    .scrollimage{
-        height: 400px;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: repeat(auto-fit, 145px);
+        justify-content: space-around;
+        width: auto;
+        padding-right: 2.5%;
     }
 
     .downloadblok{
     margin: 0px;
+    }
+
+    .scroll-blok-card{
+        display: flex;
+        flex-direction: column;
+        width: 125px;
     }
 }
 </style>

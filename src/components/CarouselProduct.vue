@@ -115,8 +115,10 @@ button.carousel-btn {
 
 @media only screen and (min-width: 768px){
   .carousel{
-    width: 50%;
+    width: 100%;
     margin: 0px 50px;
+    display: flex;
+    height: fit-content;
   }
   
   .thumbnails {
