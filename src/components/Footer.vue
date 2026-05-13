@@ -36,10 +36,10 @@
             <div class="footer-content">
                 <h2>SOCIAL LINKS</h2>
                 <div class="some-icons">
-                    <a href="https://www.instagram.com/scangrip_official/" aria-label="instagram" target="_blank"><img src="/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
-                    <a href="https://www.facebook.com/scangrip" aria-label="facebook" target="_blank"><img src="/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
-                    <a href="https://www.linkedin.com/company/scangrip" aria-label="linkedin" target="_blank"><img src="/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
-                    <a href="https://www.linkedin.com/company/scangrip" aria-label="youtubekanal" target="_blank"><img src="/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
+                    <a href="https://www.instagram.com/scangrip_official/" aria-label="instagram" target="_blank"><img src="/public/ikoner/some-instagram-ikon.svg" alt="link til scangrips instagram"></a>
+                    <a href="https://www.facebook.com/scangrip" aria-label="facebook" target="_blank"><img src="/public/ikoner/some-facebook-ikon.svg" alt="link til scangrips facebook"></a>
+                    <a href="https://www.linkedin.com/company/scangrip" aria-label="linkedin" target="_blank"><img src="/public/ikoner/some-linkedin-ikon.svg" alt="link til scangrips linkedin"></a>
+                    <a href="https://www.linkedin.com/company/scangrip" aria-label="youtubekanal" target="_blank"><img src="/public/ikoner/some-youtube-ikon.svg" alt="link til scangrips youtubekanal"></a>
                 </div>
             </div>
         </div>
@@ -62,6 +62,7 @@ max-width: 90%;
 h2{
     color: c.$font-color-secondary;
 }
+
 p{
     color: c.$font-color-secondary;
     margin: 5px 0px 5px 0px;
@@ -76,8 +77,9 @@ a{
 }
 
 button{
-  background-color: c.$hover-state-inactive;
-  border: none;
+  color: c.$font-color-secondary;
+  background-color: c.$footer-background-color;
+  border: solid 0.1px c.$font-color-secondary;
   min-width: 24px;
   min-height: 24px;
   width: 30px;

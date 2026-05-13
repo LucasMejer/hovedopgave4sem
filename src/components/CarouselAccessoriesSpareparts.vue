@@ -52,7 +52,7 @@ const prev = () => {
 </script>
 <template>
 <div class='carousel'>
-  <h2>Accessories</h2>
+  <h2>Accessories for NOVA MINI</h2>
   <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 52.5}%)` }'>
     <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
       <div class="carousel-card">

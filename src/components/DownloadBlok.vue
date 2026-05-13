@@ -70,50 +70,55 @@ const toggleSelection = (value) => {
         </div>
          <div class="scroll" v-if="imagesshown">
             <div class="scroll-blok-card" @click="toggleSelection('manuala')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <img src="/public/novamini.png" alt="">
                 <input type="checkbox" value="manuala" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
-                <p>NOVA MINI Manual</p>
+                <p>NOVA MINI</p>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('videoa')">
-                <img src="/public/ikoner/mp4-ikon.svg" alt="">
+                <img src="/public/novamini-i-brug.jpg" alt="">
                 <input type="checkbox" value="videoa" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
-                <p>NOVA MINI Product</p>
+                <p>NOVA MINI pocket use</p>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('nightviewa')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <img src="/public/novamini-nineteenth-degree-angle.jpg" alt="">
                 <input type="checkbox" value="nightviewa" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
-                <p>Work Lights Night img</p>
+                <p>NOVA MINI 90º</p>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('pdfa')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <img src="/public/novamini-magnet-attachment.jpg" alt="">
                 <input type="checkbox" value="pdfa" v-model="selected" @click.stop >
                 <span class="checkmark"></span>
+                <p>Magnetic attachment</p>
             </div>
               <div class="scroll-blok-card" @click="toggleSelection('newpdfa')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <img src="/public/novamini-opti-light.jpg" alt="">
                 <input type="checkbox" value="newpdfa" v-model="selected" @click.stop>
-                <span class="checkmark"></span> 
+                <span class="checkmark"></span>
+                <p>OPTI Light settings</p>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('constructiondocumenta')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
+                <img src="/public/novamini-spareparts.jpg" alt="">
                 <input type="checkbox" value="constructiondocumenta" v-model="selected" @click.stop>
                 <span class="checkmark"></span>
+                <p>Spareparts overview</p>
             </div>
         </div>
         <div class="overlay">
-            <div class="amount-selected-counter">
-                <p>{{ selected.length }} Files selected</p>
-            </div>
             <div class="clearAll">
-                <p @click="clearAll">Clear</p>
+                <p @click="clearAll">Clear selection</p>
             </div>
-            <button class="downloadbutton">
-                Download
-                <img src="/public/ikoner/download-ikon.svg" alt="">
-            </button>
+            <div class="aligmentright">
+                <div class="amount-selected-counter">
+                    <p>{{ selected.length }} Files selected</p>
+                </div>
+                <button class="downloadbutton">
+                    Download
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -122,23 +127,32 @@ const toggleSelection = (value) => {
 
 @use '../assets/_headings.scss' as f;
 @use '../assets/_colors.scss' as c;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .downloadblok{
     margin: 40px auto;
 }
 
 button{
-    border: solid rgb(239, 239, 239);
-    background-color: rgb(239, 239, 239);
+    border: solid rgba(218, 218, 218, 1);;
+    background-color: rgba(218, 218, 218, 1);
     align-items: baseline;
     font-size: 18px;
     padding: 10px;
     
 }
 
+.aligmentright{
+    display: flex;
+    align-items: center;
+    gap: 0px 12px;
+}
+
 .downloadbutton{
     color: c.$font-color-secondary;
     background-color: c.$red-color-logo;
     border-color: c.$red-color-logo;
+    font-family: f.$font-primary;
     text-align: center;
     display: flex;
     align-items: center;
@@ -154,18 +168,18 @@ button{
     object-fit: cover;
     padding: 10px auto;
     grid-gap: 0px 15px;
-
-    border-top: solid 0.1px black;
-  border-left: solid 0.1px black;
-  border-right: solid 0.1px black;
+    border-top: solid 0.1px c.$font-color-primary;
+    border-left: solid 0.1px c.$font-color-primary;
+    border-right: solid 0.1px c.$font-color-primary;
 
 }
 
 .scroll-blok-card{
     margin: 20px 10px;
     padding: 10px;
-    background-color: rgba(218, 218, 218, 1);
+    background-color: c.$font-color-secondary;
     max-width: 135px;
+    border: solid 0.1px c.$font-color-primary;
 }
 
 .overlay{
@@ -179,16 +193,16 @@ button{
 
 .valgt{
     font-weight: 600;
-  background-color: #fff;
-  border-color: #fff;
-  border-top: solid 0.1px black;
-  border-left: solid 0.1px black;
-  border-right: solid 0.1px black;
-  outline-bottom: solid 0.1px #fff;
-  box-shadow: 0 5px 0 0px #fff;
+  background-color: c.$font-color-secondary;
+  border-color: c.$font-color-secondary;
+  border-top: solid 0.1px c.$font-color-primary;
+  border-left: solid 0.1px c.$font-color-primary;
+  border-right: solid 0.1px c.$font-color-primary;
+  outline-bottom: solid 0.1px c.$font-color-secondary;
+  box-shadow: 0 5px 0 0px c.$font-color-secondary;
   border-bottom: none;
   margin-bottom: -5px;
-  outline-top: #000;
+  outline-top: c.$font-color-primary;
 }
 
 .clearAll{

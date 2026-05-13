@@ -8,8 +8,39 @@ import BackToTop from '@/components/BackToTop.vue';
 <template>
     <Navbar/>
     <BackToTop/>
+    <div class="breadcrumb">
+            <li>
+                <router-link to="/">
+                    <p>Home</p>
+                </router-link>
+                <p>></p>
+                <p>Worklights</p>
+            </li>
+        </div>
     <CategoryProductCards/>
     <Footer/>
 </template>
 <style lang="scss" scoped>
+@use '../assets/colors.scss' as c;
+a{
+    color: c.$font-color-primary;
+}
+
+p{
+    margin: 10px 0px;
+}
+
+li p{
+    list-style: none;
+    padding: 10px 10px 0px 0px;
+}
+
+.breadcrumb {
+    width: 90%;
+    margin: auto;
+    
+li{
+    display: flex;
+    padding-bottom: 20px;
+}}
 </style>

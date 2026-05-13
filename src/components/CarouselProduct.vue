@@ -4,8 +4,11 @@ import { ref } from 'vue'
 const slides = ref([
   { image: '/public/novamini.png', title: 'Slide 1' },
   { image: '/public/novamini-i-brug.jpg', title: 'Slide 2' },
-  { image: '/public/novamini-opti-light.jpg', title: 'Slide 3' },
-  { image: '/public/novamini-spareparts.jpg', title: 'Slide 4' },
+  { image: '/public/novamini-nineteenth-degree-angle.jpg', title: 'Slide 3' },
+  { image: '/public/novamini-magnet-attachment.jpg', title: 'Slide 4' },
+  { image: '/public/novamini-on-middlefinger.jpg', title: 'Slide 5'},
+  { image: '/public/novamini-opti-light.jpg', title: 'Slide 6'},
+  { image: '/public/novamini-spareparts.jpg', title: 'Slide 7'}
 ])
 
 const currentIndex = ref(0)

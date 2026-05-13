@@ -9,6 +9,15 @@ import BackToTop from '@/components/BackToTop.vue';
 <template>
     <Navbar/>
     <BackToTop/>
+        <div class="breadcrumb">
+        <li>
+            <router-link to="/">
+                <p>Home</p>
+            </router-link>
+            <p>></p>
+            <p>Info and guides</p>
+        </li>
+    </div>
     <h1>INFO AND GUIDES</h1>
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
@@ -70,6 +79,8 @@ import BackToTop from '@/components/BackToTop.vue';
     <Footer/>
 </template>
 <style lang="scss" scoped>
+@use '../assets/colors.scss' as c;
+
 h1{
     display: flex;
     justify-content: center;
@@ -87,6 +98,27 @@ h1{
     width: 90%;
     margin: 10px auto 20px;
 }
+
+a{
+    color: c.$font-color-primary;
+}
+
+p{
+    margin: 10px 0px;
+}
+
+li p{
+    list-style: none;
+    padding: 10px 10px 0px 0px;
+}
+
+.breadcrumb {
+    width: 90%;
+    margin: auto;
+    
+li{
+    display: flex;
+}}
 
 @media only screen and (min-width: 768px){
         .LargeIndexCardsDiv{

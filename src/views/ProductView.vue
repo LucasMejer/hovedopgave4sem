@@ -21,9 +21,10 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
                 <router-link to="/category">
                     <p>Worklights</p>
                 </router-link>
+                <p>></p>
+                <p>NOVA MINI</p>
             </li>
         </div>
-        
         <div class="desktopview">
             <div class="mobile-heading">
                 <h1>NOVA MINI</h1>

@@ -12,7 +12,7 @@
             <h3>Campaign material</h3>
         </div>
         <div class="smallindexcard">
-            <img src="/ikoner/index-videos-ikon.png" alt="">
+            <img src="/ikoner/index-videos-ikon.svg" alt="">
             <h3>Videos</h3>
         </div>
         <div class="smallindexcard">
