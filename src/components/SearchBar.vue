@@ -273,7 +273,7 @@ trim
                 padding: 0 20px;
                 width: 100%;
                 margin: 0;
-                min-width: 300px;
+                min-width: 250px;
                 max-width: 400px;
 
                 
@@ -286,7 +286,7 @@ trim
 
 
                 .searched-dropdown-container {
-                    min-width: 300px;
+                    min-width: 250px;
                     max-width: 400px;
 
 

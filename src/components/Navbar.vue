@@ -94,7 +94,6 @@ onBeforeUnmount( () => {
                 <hr class="thick-line">
 
                 <div class="nav-icons">
-                    <router-link to="/info"><img src="../../public/ikoner/info.png" alt=""></router-link>
                     <img src="../../public/ikoner/english-flag.png" alt="">
                     <img src="../../public/ikoner/profile.svg" alt="">
                 </div>
@@ -164,6 +163,11 @@ onBeforeUnmount( () => {
                         <hr>
                         <li>Press releases</li>
                     </ul>
+                    <hr v-if="toggleMI">
+                    <router-link to="/info" class="menu-item link">
+                        <p>Info and guides</p>
+                    </router-link>
+                    <hr>
                 </div>
             </div>
         </div>
@@ -179,9 +183,10 @@ onBeforeUnmount( () => {
             <hr class="thick-line">
 
             <div class="nav-row">
-                <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
-            
                 <div class="nav-menu-items">
+
+                    <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+                    
                     <div>
                         <button @click="toggleProductInformation" class="menu-item" ref="menuItemPI">
                             <p>Product Information</p>
@@ -202,7 +207,6 @@ onBeforeUnmount( () => {
                                 <li>Discontinued products</li>
                             </ul>
                         </div>
-                        
                     </div>
                     <div>
                         <button @click="toggleMarketingItems" class="menu-item" ref="menuItemMI">
@@ -227,13 +231,15 @@ onBeforeUnmount( () => {
                                 <li>Press releases</li>
                             </ul>
                         </div>
-                        
                     </div>
-                    
+
+                    <router-link to="/info" class="menu-item link">
+                        <p>Info and guides</p>
+                    </router-link>  
+
                     <SearchBar/>
 
                     <div class="nav-icons">
-                        <router-link to="/info"><img src="../../public/ikoner/info.png" alt=""></router-link>
                         <img src="../../public/ikoner/english-flag.png" alt="">
                         <img src="../../public/ikoner/profile.svg" alt="">
                     </div>
@@ -406,10 +412,10 @@ onBeforeUnmount( () => {
             align-items: center;
 
             
-                .rotate {
-                    transform: rotate(180deg);
-                    transition: transform 0.3s ease;
-                }
+            .rotate {
+                transform: rotate(180deg);
+                transition: transform 0.3s ease;
+            }
             
 
             p {
@@ -463,6 +469,7 @@ onBeforeUnmount( () => {
 
             .partner-logo {
                 padding: 0;
+                min-width: 150px;
             }
 
             .partnersite {
@@ -491,16 +498,21 @@ onBeforeUnmount( () => {
         .nav-menu-items {
             max-width: none;
             width: 100vw;
-            margin: 0 0 0 30px;
+            margin: 0 0 0 0px;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+
+            .menu-dropdown-items-container {
+                display: flex;
+
+            }
             
 
             .menu-item {
                 justify-content: flex-start;
-                padding-right: 10px;
-                margin: 0 auto;
+                padding-left: 20px;
+                margin: 0 0;
                 cursor: pointer;
                 background-color: #fff;
 
@@ -548,7 +560,7 @@ onBeforeUnmount( () => {
 
             .nav-icons {
                 justify-content: space-between;
-                min-width: 140px;
+                min-width: 80px;
                 margin: 0 0 0 20px;
 
                 img {
