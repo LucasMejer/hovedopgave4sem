@@ -479,7 +479,8 @@ onMounted(() => {
             
             .ProductTags{
                 align-self: flex-start;
-                margin: 0px 7.5%;
+                margin: 0px 1.5%;
+                position: absolute;
                 span{
                     width: auto;
                 }
