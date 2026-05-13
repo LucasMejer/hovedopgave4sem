@@ -6,7 +6,8 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Cpjg4pIZbGU?si=68dTU7Dq3vqH_EQ2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="columntext">
                 <h2>Unsure how to use the Business Partner Site?</h2>
-                <h3>How to navigate through the Business Partner Site by watching our guide video.</h3>
+                <h3>Learn how to navigate through the Business Partner Site by watching our guide video.</h3>
+                <h3>You can find more information and guides &nbsp;<router-link to="/info" href="#top" class="info-link">here</router-link>.</h3>
             </div>
         </div>
     </div>
@@ -22,13 +23,12 @@
     width: 90%;
     display: flex;
     flex-direction:column;
-    padding-top: 23.5px;
-    padding-top: 40px;
-    margin :auto;
+    padding: 40px 0;
+    margin: auto;
     iframe{
         aspect-ratio: 16/9;
         width: 100%;
-        margin: auto;
+        margin: 0 auto 20px 0;
         height: auto;
     }
     .columntext{
@@ -38,13 +38,24 @@
     }
 
     h2{
-        margin: 20px auto 0px auto;
+        margin: 20px 0 0px 0;
     }
 
     h3{
-        margin: 20px auto 40px auto;
+        margin: 20px 0 0px 0;
         font-weight: 400;
+        
     }
+    .info-link {
+        margin: 0;
+        text-decoration: underline;
+        cursor: pointer;
+        display: inline;
+        color: inherit;
+
+        
+    }
+
 }
 
 @media only screen and (min-width: 768px){
@@ -56,16 +67,15 @@
         background-color: none;
         iframe {
             width: 60%;
+            margin: 0;
         }
 
         h2{
-            margin: 20px 0px;
+            margin: 0px;
         }
         
         h3{
-            display: flex;
-            align-items: center;
-            margin: 0 20px 0 0;
+            margin: 20px 20px 0 0;
         }
     }
     }

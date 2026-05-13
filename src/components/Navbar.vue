@@ -540,7 +540,7 @@ onBeforeUnmount( () => {
                     background-color: #fff;
                     list-style-type: none;
                     width: auto;
-                    margin: 0;
+                    margin: 0 0 0 20px;
                     white-space: nowrap;
                     padding: 0;
                 }

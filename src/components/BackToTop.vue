@@ -6,7 +6,7 @@ import { onBeforeUnmount } from 'vue';
 
 let buttonHidden = ref(true);
 
-function backToTop() {
+function backToTopScroll() {
     const currentScrollY = window.scrollY
     if (currentScrollY <= 400) {
         buttonHidden.value = true;
@@ -16,26 +16,29 @@ function backToTop() {
     }
 }
 
+function backToTopClick() {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+}
+
 
 onMounted( () => {
-    window.addEventListener("scroll", backToTop);
+    window.addEventListener("scroll", backToTopScroll);
 });
 
 onBeforeUnmount(() => {
-    window.removeEventListener("scroll", backToTop);
+    window.removeEventListener("scroll", backToTopScroll);
 });
 </script>
 
 <template>
     <div :class="{'button-hidden': buttonHidden}" class="back-to-top">
-            <a href="#top">
+            <button @click="backToTopClick">
                 <div class="overlay">
                     <p>Back to Top</p>
                 </div>
                 
                 <img class="white" src="../../public/ikoner/up-arrow-hvid.png" alt="">
-                <img class="black" src="../../public/ikoner/up-arrow.png" alt="">
-            </a>
+            </button>
     </div>
 </template>
 
@@ -63,12 +66,17 @@ onBeforeUnmount(() => {
         border: 1px solid c.$background-color-primary; 
         overflow: hidden;
 
-        a {
+        button {
             display: flex;
             white-space: nowrap;
             text-decoration: none;
             align-items: center;
             padding: 5px 0px 5px 5px;
+            background-color: c.$font-color-primary;
+            transition: 0.3s ease;
+            border: none;
+            cursor: pointer;
+
 
             p {
                 position: relative;
@@ -127,16 +135,10 @@ onBeforeUnmount(() => {
                 height: auto;
             }
 
-
-
-/*
-            .black {
-                display: block;
+            button {
+                background-color: c.$red-color-icon;
             }
 
-            .white {
-                display: none;
-            }*/
         }
     }
 
@@ -145,7 +147,5 @@ onBeforeUnmount(() => {
         transition: 0.3s ease;
     }
 }
-
-
 
 </style>
