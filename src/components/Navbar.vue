@@ -95,7 +95,7 @@ onBeforeUnmount( () => {
 
                 <div class="nav-icons">
                     <img src="../../public/ikoner/english-flag.png" alt="">
-                    <img src="../../public/ikoner/profile.svg" alt="">
+                    <img src="../../public/ikoner/header-login-ikon.svg" alt="">
                 </div>
 
                 <div class="nav-menu-items">
@@ -241,7 +241,7 @@ onBeforeUnmount( () => {
 
                     <div class="nav-icons">
                         <img src="../../public/ikoner/english-flag.png" alt="">
-                        <img src="../../public/ikoner/profile.svg" alt="">
+                        <img src="../../public/ikoner/header-login-ikon.svg" alt="">
                     </div>
                 </div>
             </div>

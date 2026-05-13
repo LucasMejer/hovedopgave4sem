@@ -6,22 +6,27 @@
         <div class="smallindexcard">
             <img src="/public/ikoner/index-salesguide-ikon.svg" alt="">
             <h3>Sales Guide</h3>
+            <p>Discover our sales guides for industry-specific work light products</p>
         </div>
         <div class="smallindexcard">
             <img src="/ikoner/index-campaignmaterial-ikon.svg" alt="">
             <h3>Campaign material</h3>
+            <p>Discover SCANGRIP's downloadable campaign materials</p>
         </div>
         <div class="smallindexcard">
             <img src="/ikoner/index-videos-ikon.svg" alt="">
             <h3>Videos</h3>
+            <p>Download and discover all our videos</p>
         </div>
         <div class="smallindexcard">
             <img src="/ikoner/index-pointofsales-ikon.svg" alt="">
             <h3>POS-materials</h3>
+            <p>Explore our exhibition material, merchandise, and in-store displays</p>
         </div>
         <div class="smallindexcard">
             <img src="/public/ikoner/index-brand-ikon.svg" alt="">
             <h3>Branding</h3>
+            <p>Check out our brand book and download captivating branding images</p>
         </div>
     </div>
 </template>
