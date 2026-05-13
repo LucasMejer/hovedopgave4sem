@@ -473,6 +473,9 @@ onMounted(() => {
             cursor: pointer;
             text-align: center;
             margin-bottom: 35px;
+            &:visited{
+                color: c.$font-color-primary;
+            }
             
             .ProductTags{
                 align-self: flex-start;
