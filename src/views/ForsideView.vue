@@ -27,11 +27,11 @@ import BackToTop from '@/components/BackToTop.vue';
             CardText="Download the complete file 'Media' containing pictures, manuals, energy labels, MSDS and DoC info."
             CardButtonText="Download"
             CardImg="/ikoner/index-mediafile-ikon.svg"
-            CardDownload="https://partner.scangrip.com/Files/Images/00-Website-pictures/Partner/Marketing%20items/Price%20and%20data/Pictures_Manuals_EnergyLabels_MSDS_DOC_ProductSheet.zip"
+            CardDownload="/download/media-file.zip"
             CardButtonIcon="/ikoner/download-ikon.svg"
         />  
         <LargeIndexCard 
-            CardHeading="Pricelist" 
+            CardHeading="Price list" 
             CardText="Download SCANGRIP's price lists for all products/markets."
             CardButtonText="Download"
             CardImg="/ikoner/index-pricelist-ikon.svg"

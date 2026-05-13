@@ -16,7 +16,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardText="How to find product information, technical details and prices."
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-productdataandprices-ikon.svg"
-            CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20product%20data%20and%20prices.pdf"
+            CardDownload="/download/info-product-data-and-prices.pdf"
             CardButtonIcon="/ikoner/arrow-right.svg"
         />
         <LargeIndexCard
@@ -24,7 +24,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardText="How to download pictures, videos, brochures, symbols and logos."
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-marketingmaterials-ikon.svg"
-            CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20download%20pictures.pdf"
+            CardDownload="/download/info-marketing-materials.pdf"
             CardButtonIcon="/ikoner/arrow-right.svg"
         />
         <LargeIndexCard 
@@ -32,7 +32,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardText="How to find sales campaigns, exhibition equipment and other sales tools."
             CardButtonText="Read more" 
             CardImg="/ikoner/infosite-salestools-ikon.svg"
-            CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20sales%20tools.pdf"
+            CardDownload="/download/info-sales-tools.pdf"
             CardButtonIcon="/ikoner/arrow-right.svg"
         />
          <LargeIndexCard 
@@ -40,7 +40,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardText="How to find CE certificates, manuals, energy labels and other documentation."
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-certificatesanddocumentation-ikon.svg"
-            CardDownload="https://partner.scangrip.com/Files/Images/00-PARTNER/PDF/Guides/How%20to%20find%20certificates%20and%20documentation.pdf"
+            CardDownload="/download/info-certificates-and-documentation.pdf"
             CardButtonIcon="/ikoner/arrow-right.svg"
         />
     </div>
