@@ -9,6 +9,8 @@ const CarouselImages = [
 
 let currentImage = ref(0);
 
+let stopAutoScrollBool = ref(false);
+
 let Button1Selected = ref(true);
 let Button2Selected = ref(false);
 let Button3Selected = ref(false);
@@ -20,6 +22,7 @@ function prev() {
     currentImage.value = CarouselImages.length - 1 // jump to end
   }
   UpdateBottomButtons();
+  stopAutoScroll();
 }
 
 function next() {
@@ -29,11 +32,26 @@ function next() {
     currentImage.value = 0
   }
   UpdateBottomButtons();
+  stopAutoScroll();
+}
+
+function autonext() {
+  if (currentImage.value <= CarouselImages.length - 2) {
+    currentImage.value++
+  } else {
+    currentImage.value = 0
+  }
+  UpdateBottomButtons();
+}
+
+function stopAutoScroll(){
+    stopAutoScrollBool.value = true;
 }
 
 function BottomButton(ImageIndex){
     currentImage.value = ImageIndex
     UpdateBottomButtons();
+    stopAutoScroll();
 }
 
 function UpdateBottomButtons(){
@@ -52,17 +70,50 @@ function UpdateBottomButtons(){
     }
 }
 
+setTimeout(autoScrollFunction, 4000);
+
+function autoScrollFunction() {
+    if(!stopAutoScrollBool.value){
+        autonext();
+        setTimeout(autoScrollFunction, 4000)
+    }
+}
     
 </script>
 
 <template>
     <div class="CarouselDiv" aria-label="Nyhed Karrusel" CarouselData>
-        <button class="CarouselButtonPrev" @click="prev"><img src="/ikoner/index-carousel-arrowleft.svg" alt=""></button>
-        <button class="CarouselButtonNext" @click="next"><img src="/ikoner/index-carousel-arrowright.svg" alt=""></button>
+        <button class="CarouselButtonPrev NavButtons" @click="prev"><img src="/ikoner/index-carousel-arrowleft.svg" alt=""></button>
+        <button class="CarouselButtonNext NavButtons" @click="next"><img src="/ikoner/index-carousel-arrowright.svg" alt=""></button>
         <div class="CarouselItem" >
-            <img :src="CarouselImages[currentImage].scr" alt="">
+            <Transition>
+                <span v-show="currentImage == 0">
+                    <img  :src="CarouselImages[0].scr" alt="">
+                </span>
+            </Transition>
+
+            <Transition>
+                <span v-show="currentImage == 1">
+                    <img  :src="CarouselImages[1].scr" alt="">
+                </span>
+            </Transition>
+
+            <Transition>
+                <span v-show="currentImage == 2">
+                    <img  :src="CarouselImages[2].scr" alt="">
+                </span>
+            </Transition>
+
         </div>
-        <h1 class="CarouselText">{{ CarouselImages[currentImage].text }}</h1>
+        <div class="CarouselTextDiv">
+            <h1>{{ CarouselImages[currentImage].text }}</h1>
+            <button class="ReadmoreButton">
+                <h3>
+                    Read more
+                </h3>
+            </button>
+        </div>
+        
         <div class="CarouselBottomNav">
             <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button1Selected}" @click="BottomButton(0)"></span>
             <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button2Selected}" @click="BottomButton(1)"></span>
@@ -74,6 +125,15 @@ function UpdateBottomButtons(){
 <style lang="scss" scoped>
 
     @use '../assets/_colors' as c;
+
+    .v-enter-active , .v-leave-active {
+    transition: opacity 1s ease;
+    }
+
+    .v-enter-from, .v-leave-to {
+    opacity: 0;
+    }
+
 
     .CarouselDiv{
         position: relative;
@@ -88,6 +148,7 @@ function UpdateBottomButtons(){
             inset: 0;
             img{
                 display: block;
+                position: absolute;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -95,14 +156,35 @@ function UpdateBottomButtons(){
                 opacity: 0.5;
             }
         }
-        .CarouselText{
+        .CarouselTextDiv{
             z-index: 2;
-            display: block;
+            display: flex;
             position: absolute;
-            text-align: center;
-            color: c.$font-color-secondary;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
             width: 85%;
-            line-height: 1;
+            gap: 0px;
+            h1{
+                text-align: center;
+                color: c.$font-color-secondary;
+                width: 85%;
+                line-height: 1;
+                margin: 15px auto;
+            }
+            .ReadmoreButton{
+                width: 30%;
+                height: 50px;
+                margin: auto;
+                background-color: c.$font-color-secondary;
+                border-color: c.$font-color-primary;
+                border-style: solid;
+                border-width: 1px;
+                cursor: pointer;
+                h3{
+                    text-align: center;
+                }
+            }
         }
         .CarouselButtonPrev{
            display: none;
@@ -111,7 +193,7 @@ function UpdateBottomButtons(){
         .CarouselButtonNext{
            display: none;
         }
-        button{
+        .NavButtons{
             z-index: 2;
             position: absolute;
             color: rgba(255, 255, 255, 0.6);
@@ -124,6 +206,7 @@ function UpdateBottomButtons(){
                 border-radius: 100%;
             }
         }
+        
 
         .CarouselBottomNav{
             width: 100%;
