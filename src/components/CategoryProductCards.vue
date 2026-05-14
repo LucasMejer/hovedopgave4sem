@@ -566,6 +566,7 @@ onMounted(() => {
             .FilterMainDiv{
                 padding-right: 10%;
                 align-content: flex-start;
+                margin-bottom: 25%;
                 button{
                     margin-top: 10px;
                     hr{
