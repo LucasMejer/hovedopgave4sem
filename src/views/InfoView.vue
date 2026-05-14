@@ -101,6 +101,7 @@ h1{
 
 a{
     color: c.$font-color-primary;
+    text-underline-offset: 2px;
 }
 
 p{

@@ -307,9 +307,7 @@ onMounted(() => {
         width: 90%;
         justify-content: left;
         margin: auto;
-        h1{
-            margin: 35px 0px;
-        }
+        
     }
 
 
@@ -578,9 +576,7 @@ onMounted(() => {
         .CategoryHeading{
             justify-content: center;
             text-align: center;
-            h1{
-                margin: 65px;
-            }
+            
         }
 
         .FullProductsDiv{

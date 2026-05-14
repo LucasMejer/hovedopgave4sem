@@ -514,7 +514,7 @@ onBeforeUnmount( () => {
 
                 &:hover {
                     text-decoration: underline;
-                    text-underline-offset: 8px;
+                    text-underline-offset: 6px;
                 }
 
                 p {
@@ -536,7 +536,7 @@ onBeforeUnmount( () => {
                     background-color: #fff;
                     list-style-type: none;
                     width: auto;
-                    margin: 0 0 0 20px;
+                    margin: -5px 0 0 20px;
                     white-space: nowrap;
                     padding: 0;
                 }
