@@ -1,12 +1,11 @@
 <script setup>
 import { ref } from 'vue';
 
-
 const selected = ref([])
 
-const imagesshown = ref(true)
+const filesshown = ref(true)
 
-const filesshown = ref(false)
+const imagesshown = ref(false)
 
 const counterplus = () => {
     currentCounter.value = (currentCounter.value + 1) % totalcounts.value
@@ -34,75 +33,66 @@ const toggleSelection = (value) => {
         <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">Files</button>
         <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">Images</button>
         <div class="scroll" v-if="filesshown">
-            <div class="scroll-blok-card" @click="toggleSelection('manual')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="manual" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+            <div class="scroll-blok-card" @click="toggleSelection('manual')" :class="{ 'blok-card-valgt': selected.includes('manual') }">
+                <img src="/public/download/novamini-manual.jpg" alt="">
+                <!--<input type="checkbox" value="manual" v-model="selected" @click.stop>-->
                 <p>NOVA MINI Manual</p>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('video')">
-                <img src="/public/ikoner/mp4-ikon.svg" alt="">
-                <input type="checkbox" value="video" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+            <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }">
+                <img src="/public/download/novamini-mp4.png" alt="">
+                <!--<input type="checkbox" value="productvideo" v-model="selected" @click.stop>-->
                 <p>NOVA MINI Product Video</p>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('nightview')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="nightview" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
-                <p>Work Lights Night View</p>
+            <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }">
+                <img src="/public/download/novamini-safety-data.jpg" alt="">
+                <!--<input type="checkbox" value="safetydata" v-model="selected" @click.stop>-->
+                <p>NOVA MINI Safety data</p>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('pdf')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="pdf" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+            <div class="scroll-blok-card" @click="toggleSelection('productsheet')" :class="{ 'blok-card-valgt': selected.includes('productsheet') }">
+                <img src="/public/download/novamini-productsheet-uk.jpg" alt="">
+                <!--<input type="checkbox" value="productsheet" v-model="selected" @click.stop>-->
+                <p>NOVA MINI Productsheet UK</p>
             </div>
-              <div class="scroll-blok-card" @click="toggleSelection('newpdf')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="newpdf" v-model="selected" @click.stop >
-                <span class="checkmark"></span> 
-            </div>
-            <div class="scroll-blok-card" @click="toggleSelection('construnctiondocument')">
-                <img src="/public/ikoner/pdf-ikon.svg" alt="">
-                <input type="checkbox" value="constructiondocument" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+              <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }">
+                <img src="/public/download/novamini-eu-declaration.jpg" alt="">
+                <!--<input type="checkbox" value="declaration" v-model="selected" @click.stop>-->
+                <p>NOVA MINI Declaration of Conformity</p> 
             </div>
         </div>
          <div class="scroll" v-if="imagesshown">
-            <div class="scroll-blok-card" @click="toggleSelection('manuala')">
+            <div class="scroll-blok-card" @click="toggleSelection('productimage')" :class="{ 'blok-card-valgt': selected.includes('productimage') }">
                 <img src="/public/novamini.png" alt="">
-                <input type="checkbox" value="manuala" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+                <!--<input type="checkbox" value="productimage" v-model="selected" @click.stop>-->
                 <p>NOVA MINI</p>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('videoa')">
+            <div class="scroll-blok-card" @click="toggleSelection('pocketuse')" :class="{ 'blok-card-valgt': selected.includes('pocketuse') }">
                 <img src="/public/novamini-i-brug.jpg" alt="">
-                <input type="checkbox" value="videoa" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+                <!--<input type="checkbox" value="pocketuse" v-model="selected" @click.stop>-->
                 <p>NOVA MINI pocket use</p>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('nightviewa')">
+            <div class="scroll-blok-card" @click="toggleSelection('nineteenthdegree')" :class="{ 'blok-card-valgt': selected.includes('nineteenthdegree') }">
                 <img src="/public/novamini-nineteenth-degree-angle.jpg" alt="">
-                <input type="checkbox" value="nightviewa" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+                <!--<input type="checkbox" value="nineteenthdegree" v-model="selected" @click.stop>-->
                 <p>NOVA MINI 90º</p>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('pdfa')">
+            <div class="scroll-blok-card" @click="toggleSelection('magnetattachment')" :class="{ 'blok-card-valgt': selected.includes('magnetattachment') }">
                 <img src="/public/novamini-magnet-attachment.jpg" alt="">
-                <input type="checkbox" value="pdfa" v-model="selected" @click.stop >
-                <span class="checkmark"></span>
+                <!--<input type="checkbox" value="magnetattachment" v-model="selected" @click.stop>-->
                 <p>Magnetic attachment</p>
             </div>
-              <div class="scroll-blok-card" @click="toggleSelection('newpdfa')">
+            <div class="scroll-blok-card" @click="toggleSelection('onmiddlefinger')" :class="{ 'blok-card-valgt': selected.includes('onmiddlefinger') }">
+                <img src="/public/novamini-on-middlefinger.jpg" alt="">
+                <!--<input type="checkbox" value="onmiddlefinger" v-model="selected" @click.stop>-->
+                <p>NOVA MINI in hand</p>
+            </div>
+            <div class="scroll-blok-card" @click="toggleSelection('optilight')" :class="{ 'blok-card-valgt': selected.includes('optilight') }">
                 <img src="/public/novamini-opti-light.jpg" alt="">
-                <input type="checkbox" value="newpdfa" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+                <!--<input type="checkbox" value="optilight" v-model="selected" @click.stop>-->
                 <p>OPTI Light settings</p>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('constructiondocumenta')">
+            <div class="scroll-blok-card" @click="toggleSelection('sparepartsoverview')" :class="{ 'blok-card-valgt': selected.includes('sparepartsoverview') }">
                 <img src="/public/novamini-spareparts.jpg" alt="">
-                <input type="checkbox" value="constructiondocumenta" v-model="selected" @click.stop>
-                <span class="checkmark"></span>
+                <!--<input type="checkbox" value="sparepartsoverview" v-model="selected" @click.stop >-->
                 <p>Spareparts overview</p>
             </div>
         </div>
@@ -131,6 +121,12 @@ const toggleSelection = (value) => {
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .downloadblok{
     margin: 40px auto;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 button{
@@ -180,6 +176,17 @@ button{
     background-color: c.$font-color-secondary;
     max-width: 135px;
     border: solid 0.1px c.$font-color-primary;
+    max-height: 200px;
+}
+
+.blok-card-valgt{
+    box-sizing: border-box;
+    border: solid red;
+    margin: 20px 10px;
+    padding: 10px;
+    background-color: c.$font-color-secondary;
+    max-width: 135px;
+    max-height: 200px;
 }
 
 .overlay{
@@ -193,16 +200,16 @@ button{
 
 .valgt{
     font-weight: 600;
-  background-color: c.$font-color-secondary;
-  border-color: c.$font-color-secondary;
-  border-top: solid 0.1px c.$font-color-primary;
-  border-left: solid 0.1px c.$font-color-primary;
-  border-right: solid 0.1px c.$font-color-primary;
-  outline-bottom: solid 0.1px c.$font-color-secondary;
-  box-shadow: 0 5px 0 0px c.$font-color-secondary;
-  border-bottom: none;
-  margin-bottom: -5px;
-  outline-top: c.$font-color-primary;
+    background-color: c.$font-color-secondary;
+    border-color: c.$font-color-secondary;
+    border-top: solid 0.1px c.$font-color-primary;
+    border-left: solid 0.1px c.$font-color-primary;
+    border-right: solid 0.1px c.$font-color-primary;
+    outline-bottom: solid 0.1px c.$font-color-secondary;
+    box-shadow: 0 5px 0 0px c.$font-color-secondary;
+    border-bottom: none;
+    margin-bottom: -5px;
+    outline-top: c.$font-color-primary;
 }
 
 .clearAll{
