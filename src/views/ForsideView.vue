@@ -56,7 +56,7 @@ import BackToTop from '@/components/BackToTop.vue';
         .LargeIndexCardsDiv{
         display: flex;
         flex-direction: row;
-        padding: 80px;
+        padding: 50px;
         justify-content: center;
         }
     }

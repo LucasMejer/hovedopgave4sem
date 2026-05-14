@@ -49,6 +49,7 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
 
 a{
     color: c.$font-color-primary;
+    text-underline-offset: 2px;
 }
 
 .view-width{

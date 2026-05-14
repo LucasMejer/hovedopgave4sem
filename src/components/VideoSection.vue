@@ -17,7 +17,7 @@
 @use '../assets/headings' as h;
 .backgroundcolor{
         width: 100%;
-        background-color: rgb(247, 247, 247);
+        
     }
 .videosection{
     width: 90%;
@@ -49,9 +49,10 @@
     .info-link {
         margin: 0;
         text-decoration: underline;
+        text-underline-offset: 2px;
         cursor: pointer;
         display: inline;
-        color: inherit;
+        color: rgb(48, 48, 166);
 
         
     }
@@ -71,7 +72,7 @@
         }
         iframe {
             width: 50%;
-            margin: 0;
+            margin: 50px 0;
         }
 
         h2{

@@ -24,6 +24,7 @@ import BackToTop from '@/components/BackToTop.vue';
 @use '../assets/colors.scss' as c;
 a{
     color: c.$font-color-primary;
+    text-underline-offset: 2px;
 }
 
 p{
@@ -41,6 +42,6 @@ li p{
     
 li{
     display: flex;
-    padding-bottom: 20px;
+    
 }}
 </style>

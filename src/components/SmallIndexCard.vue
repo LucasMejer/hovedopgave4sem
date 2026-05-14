@@ -111,9 +111,7 @@
             height: 50px;
             transition: ease 0.3s;
 
-            img {
-                display: inline;
-            }
+            
     
         }
 
@@ -140,6 +138,8 @@
                 height: 75px;
                 width: 75px;
                 transition: ease 0.3s;
+
+                
             }
 
             p {
