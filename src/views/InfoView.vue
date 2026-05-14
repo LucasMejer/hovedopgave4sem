@@ -96,7 +96,7 @@ h1{
     grid-template-columns: 1fr;
     gap: 20px;
     width: 90%;
-    margin: 10px auto 20px;
+    margin: 0 auto 30px auto;
 }
 
 a{
@@ -122,15 +122,27 @@ li{
 }}
 
 @media only screen and (min-width: 768px){
-        .LargeIndexCardsDiv{
+    .LargeIndexCardsDiv{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 2.5% 5%;
+
+
+        .CardDiv {
+            margin: 0 auto 40px auto;
+        }
+    }
+    .FAQAccordioncard {
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto 50px auto;
+    }
+}
+
+@media (min-width: 1280px) {
+    .LargeIndexCardsDiv{
         display: flex;
         flex-direction: row;
         gap: 5%;
-        margin: 2.5% 5%;
-        }
-    .FAQAccordioncard {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px auto 60px;
     }
 }
 </style>
