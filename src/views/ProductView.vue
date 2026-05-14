@@ -99,7 +99,8 @@ img{
     
     .desktopview{
         display: flex;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
+        justify-content: space-between;
         .mobile-heading{
         display: none;
         }
@@ -110,9 +111,16 @@ img{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 100%;
+            width: 40%;
+        }
+    
+        h3{
+            margin: 0px 0px 5px 0px;
         }
     }
+    .breadcrumb li{
+            margin-bottom: 5px;
+        }
 
     }
 </style>

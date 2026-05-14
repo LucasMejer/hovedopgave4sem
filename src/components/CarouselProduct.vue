@@ -118,7 +118,7 @@ button.carousel-btn {
 
 @media only screen and (min-width: 768px){
   .carousel{
-    width: 100%;
+    width: 40%;
     margin: 0px 50px;
     display: flex;
     height: fit-content;
