@@ -214,9 +214,10 @@ button{
     padding: 10px;
     background-color: c.$font-color-secondary;
     max-width: 135px;
-    border: solid 0.1px c.$font-color-primary;
+    border: solid 5px white;
     max-height: 200px;
     box-sizing: border-box;
+    outline: solid 0.1px c.$font-color-primary;
 }
 
 
@@ -224,6 +225,7 @@ button{
 .blok-card-valgt{
     box-sizing: border-box;
     border: solid 5px c.$font-color-primary;
+    outline: solid 0.1px c.$font-color-primary;
     .checkmark {
     position: absolute;
     top: -20px;
