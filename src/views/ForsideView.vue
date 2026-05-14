@@ -12,7 +12,7 @@ import BackToTop from '@/components/BackToTop.vue';
 <template>
     <Navbar/>
     <BackToTop/>
-    <Carousel />
+    <SmallIndexCard/>
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
             CardHeading="Master data" 
@@ -39,22 +39,25 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonIcon="/ikoner/download-ikon.svg"
         />
     </div>
-    <SmallIndexCard/>
+    <Carousel />
     <VideoSection/>
     <Footer/>
 </template>
 <style lang="scss" scoped>
+@use '../assets/_colors.scss' as c;
     .LargeIndexCardsDiv{
         display: flex;
         flex-direction: column;
+
+        background-color: rgb(247, 247, 247);
     }
 
     @media only screen and (min-width: 768px){
         .LargeIndexCardsDiv{
         display: flex;
         flex-direction: row;
-        gap: 5%;
-        margin: 2.5% 5%;
+        padding: 80px;
+        justify-content: center;
         }
     }
 </style>
