@@ -126,7 +126,7 @@ onBeforeUnmount(() => {
             }
 
             img {
-                background-color: c.$red-color-icon;
+                background-color: c.$red-color-logo;
             }
 
             .overlay {
@@ -136,7 +136,7 @@ onBeforeUnmount(() => {
             }
 
             button {
-                background-color: c.$red-color-icon;
+                background-color: c.$red-color-logo;
             }
 
         }

@@ -26,6 +26,8 @@ const toggleSelection = (value) => {
     selected.value.push(value)
   }
 }
+
+
 </script>
 
 <template>
@@ -35,65 +37,101 @@ const toggleSelection = (value) => {
         <div class="scroll" v-if="filesshown">
             <div class="scroll-blok-card" @click="toggleSelection('manual')" :class="{ 'blok-card-valgt': selected.includes('manual') }">
                 <img src="/public/download/novamini-manual.jpg" alt="">
-                <!--<input type="checkbox" value="manual" v-model="selected" @click.stop>-->
                 <p>NOVA MINI Manual</p>
+                <img v-if="selected.includes('manual')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }">
                 <img src="/public/download/novamini-mp4.png" alt="">
-                <!--<input type="checkbox" value="productvideo" v-model="selected" @click.stop>-->
                 <p>NOVA MINI Product Video</p>
+                <img v-if="selected.includes('productvideo')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }">
                 <img src="/public/download/novamini-safety-data.jpg" alt="">
-                <!--<input type="checkbox" value="safetydata" v-model="selected" @click.stop>-->
                 <p>NOVA MINI Safety data</p>
+                <img v-if="selected.includes('safetydata')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('productsheet')" :class="{ 'blok-card-valgt': selected.includes('productsheet') }">
                 <img src="/public/download/novamini-productsheet-uk.jpg" alt="">
-                <!--<input type="checkbox" value="productsheet" v-model="selected" @click.stop>-->
                 <p>NOVA MINI Productsheet UK</p>
+                <img v-if="selected.includes('productsheet')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
               <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }">
                 <img src="/public/download/novamini-eu-declaration.jpg" alt="">
-                <!--<input type="checkbox" value="declaration" v-model="selected" @click.stop>-->
-                <p>NOVA MINI Declaration of Conformity</p> 
+                <p>NOVA MINI Declaration of Conformity</p>
+                <img v-if="selected.includes('declaration')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark"> 
             </div>
         </div>
          <div class="scroll" v-if="imagesshown">
             <div class="scroll-blok-card" @click="toggleSelection('productimage')" :class="{ 'blok-card-valgt': selected.includes('productimage') }">
                 <img src="/public/novamini.png" alt="">
-                <!--<input type="checkbox" value="productimage" v-model="selected" @click.stop>-->
                 <p>NOVA MINI</p>
+                <img v-if="selected.includes('productimage')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark"> 
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('pocketuse')" :class="{ 'blok-card-valgt': selected.includes('pocketuse') }">
                 <img src="/public/novamini-i-brug.jpg" alt="">
-                <!--<input type="checkbox" value="pocketuse" v-model="selected" @click.stop>-->
                 <p>NOVA MINI pocket use</p>
+                <img v-if="selected.includes('pocketuse')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('nineteenthdegree')" :class="{ 'blok-card-valgt': selected.includes('nineteenthdegree') }">
                 <img src="/public/novamini-nineteenth-degree-angle.jpg" alt="">
-                <!--<input type="checkbox" value="nineteenthdegree" v-model="selected" @click.stop>-->
-                <p>NOVA MINI 90º</p>
+                <p>NOVA MINI flexibility</p>
+                <img v-if="selected.includes('nineteenthdegree')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('magnetattachment')" :class="{ 'blok-card-valgt': selected.includes('magnetattachment') }">
                 <img src="/public/novamini-magnet-attachment.jpg" alt="">
-                <!--<input type="checkbox" value="magnetattachment" v-model="selected" @click.stop>-->
                 <p>Magnetic attachment</p>
+                <img v-if="selected.includes('magnetattachment')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('onmiddlefinger')" :class="{ 'blok-card-valgt': selected.includes('onmiddlefinger') }">
                 <img src="/public/novamini-on-middlefinger.jpg" alt="">
-                <!--<input type="checkbox" value="onmiddlefinger" v-model="selected" @click.stop>-->
                 <p>NOVA MINI in hand</p>
+                <img v-if="selected.includes('onmiddlefinger')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('optilight')" :class="{ 'blok-card-valgt': selected.includes('optilight') }">
                 <img src="/public/novamini-opti-light.jpg" alt="">
-                <!--<input type="checkbox" value="optilight" v-model="selected" @click.stop>-->
                 <p>OPTI Light settings</p>
+                <img v-if="selected.includes('optilight')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('sparepartsoverview')" :class="{ 'blok-card-valgt': selected.includes('sparepartsoverview') }">
                 <img src="/public/novamini-spareparts.jpg" alt="">
-                <!--<input type="checkbox" value="sparepartsoverview" v-model="selected" @click.stop >-->
                 <p>Spareparts overview</p>
+                <img v-if="selected.includes('sparepartsoverview')" 
+                src="/public/ikoner/check.svg"
+                alt="selected" 
+                class="checkmark">
             </div>
         </div>
         <div class="overlay">
@@ -171,22 +209,30 @@ button{
 }
 
 .scroll-blok-card{
+    position: relative;
     margin: 20px 10px;
     padding: 10px;
     background-color: c.$font-color-secondary;
     max-width: 135px;
     border: solid 0.1px c.$font-color-primary;
     max-height: 200px;
+    box-sizing: border-box;
 }
+
+
 
 .blok-card-valgt{
     box-sizing: border-box;
-    border: solid red;
-    margin: 20px 10px;
-    padding: 10px;
-    background-color: c.$font-color-secondary;
-    max-width: 135px;
-    max-height: 200px;
+    border: solid 5px c.$font-color-primary;
+    .checkmark {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(90deg);
+}
 }
 
 .overlay{
