@@ -218,6 +218,9 @@ button{
     max-height: 200px;
     box-sizing: border-box;
     outline: solid 0.1px c.$font-color-primary;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
 }
 
 
