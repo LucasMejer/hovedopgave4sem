@@ -298,7 +298,6 @@ const toggleAccordion = (clickedValue) => {
 
 .placement{
     margin: 40px auto;
-    background-color: c.$section-color-background;
 }
 
 .content{
@@ -354,6 +353,7 @@ p{
 }
 
 .overskrifter{
+    background-color: c.$section-color-background;
     h2{
         padding: 15px;
     }
@@ -384,9 +384,7 @@ p{
     .indhold{
         padding-top: 20px;
         background-color: c.$font-color-secondary;
-        border-style: solid;
-        border-color: c.$font-color-primary;
-        border-width: 0px 0.1px 0.1px 0.1px;
+        border: solid 0.01px c.$font-color-primary;
         height: fit-content;
         height: 100%;
         min-height: 25vw;
@@ -444,6 +442,7 @@ h2{
         &.open{
             border-bottom:0.1px solid c.$font-color-primary;
             background-color: c.$font-color-secondary;
+            box-shadow: 0 5px 0 0px rgb(255, 255, 255);
         }
         img{
             height: 30px;

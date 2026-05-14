@@ -119,7 +119,7 @@ img{
         }
     }
     .breadcrumb li{
-            margin-bottom: 5px;
+            margin-bottom: 20px;
         }
 
     }
