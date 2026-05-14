@@ -168,7 +168,7 @@ img{
 }
 
 button{
-    border: solid rgba(218, 218, 218, 1);;
+    border: solid 0.1px rgba(218, 218, 218, 1);;
     background-color: rgba(218, 218, 218, 1);
     align-items: baseline;
     font-size: 18px;
@@ -251,11 +251,10 @@ button{
     border-top: solid 0.1px c.$font-color-primary;
     border-left: solid 0.1px c.$font-color-primary;
     border-right: solid 0.1px c.$font-color-primary;
-    outline-bottom: solid 0.1px c.$font-color-secondary;
-    box-shadow: 0 5px 0 0px c.$font-color-secondary;
-    border-bottom: none;
-    margin-bottom: -5px;
-    outline-top: c.$font-color-primary;
+    /*outline-bottom: solid 0.1px c.$font-color-secondary;*/
+    box-shadow: 0 2px 0 -1px c.$font-color-secondary;
+    
+    /*outline-top: c.$font-color-primary;*/
 }
 
 .clearAll{
