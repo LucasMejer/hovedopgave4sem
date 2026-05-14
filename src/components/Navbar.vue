@@ -252,10 +252,6 @@ onBeforeUnmount( () => {
 
     </nav>
 
-    <br>
-    <br>
-
-
 
 </template>
 
@@ -464,6 +460,7 @@ onBeforeUnmount( () => {
         .desktop-nav {
             display: flex;
             flex-direction: column;
+            border-bottom: 1px solid #afafaf;
 
 
 
@@ -487,8 +484,7 @@ onBeforeUnmount( () => {
             .nav-row {
                 display: flex;
                 width: 90%;
-                margin: auto;
-                margin-top: 30px;
+                margin: 30px auto;
             }
 
         }
@@ -561,7 +557,7 @@ onBeforeUnmount( () => {
             .nav-icons {
                 justify-content: space-between;
                 min-width: 80px;
-                margin: 0 0 0 20px;
+                margin: 0 0 0 0;
 
                 img {
                     padding: 0;

@@ -74,12 +74,12 @@ const cardInfo = defineProps({
             position: relative;
             background-color: rgba(0, 0, 0, 0);
             background-position: center top;
-            background-size: clamp(180px, 55%, 280px);
+            background-size: clamp(180px, 55%, 180px);
             justify-content: flex-end;
-            width: 100%;
-            height: 25vw;
+            min-width: 250px;
+            max-width: 350px;
+            height: 22vw;
             min-height: 375px;
-            max-height: 450px;
             margin: 0px;
             .CardText{
                 margin: clamp(3px, 2.5%, 13px) 0px;
@@ -89,7 +89,8 @@ const cardInfo = defineProps({
             .CardDesc{
                 font-weight: 400;
                 font-size: 16px;
-                text-align: left;
+                height: 50px;
+
             }
             .DownloadButton{
                 position: relative;

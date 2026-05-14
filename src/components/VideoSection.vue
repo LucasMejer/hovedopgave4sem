@@ -17,7 +17,7 @@
 @use '../assets/headings' as h;
 .backgroundcolor{
         width: 100%;
-        background-color: c.$section-color-background;
+        background-color: rgb(247, 247, 247);
     }
 .videosection{
     width: 90%;
@@ -61,12 +61,16 @@
 @media only screen and (min-width: 768px){
     .videosection{
         width: 90%;
-        margin: auto;
-        padding: 50px 0px;
+        margin: 0 auto;
+        padding: 0px;
         flex-direction: row-reverse;
         background-color: none;
+        .columntext {
+            width: 50%;
+            margin: 20px auto;
+        }
         iframe {
-            width: 60%;
+            width: 50%;
             margin: 0;
         }
 

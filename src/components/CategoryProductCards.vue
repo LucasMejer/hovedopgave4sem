@@ -4,7 +4,9 @@ import { computed, onMounted, ref } from 'vue';
 let productArray = ref([]);
 let activeFilters = ref([]);
 
-let totalProducts = ref(6);
+let totalProducts = ref(15);
+
+let CurrentPage = ref(1);
 
 const mediaQuery = window.matchMedia("(max-width: 768px)");
 
@@ -19,7 +21,7 @@ async function FetchProducts(){
     const data = await Res.json();
     productArray.value = Object.values(data);
 
-    console.log(productArray.value);
+    //console.log(productArray.value);
     
   } catch (error) {
       console.error(error);
@@ -27,6 +29,7 @@ async function FetchProducts(){
 }
 
     const filteredProducts = computed(() => {
+
         if(!activeFilters.value) return productArray.value;
 
         return productArray.value.filter(product => {
@@ -73,6 +76,7 @@ async function FetchProducts(){
 
     function resetFilters(){
         activeFilters.value = [];
+        resetPages();
     }
 
     function ScreenSizeCheck(size){
@@ -85,6 +89,17 @@ async function FetchProducts(){
         }
     }
 
+    const MaxPages = computed(() => {
+        return Math.max(1, Math.ceil(filteredProducts.value.length / 15));    
+    });
+
+    function resetPages(){
+        setTimeout(pageDefault, 10)
+    }
+
+    function pageDefault(){
+        CurrentPage.value = 1;
+    }
 
 onMounted(() => {
     FetchProducts();
@@ -126,7 +141,7 @@ onMounted(() => {
                 <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.producttype">
                     <label for="ProductTypeBox">
                         <p class="FlashlightFilter">Flashlight</p>
-                    <input type="checkbox" id="ProductTypeBox" value="Flashlight" v-model="activeFilters">
+                    <input type="checkbox" id="ProductTypeBox" value="Flashlight" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>
             </button>
@@ -141,7 +156,7 @@ onMounted(() => {
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.powersource">
                     <label for="PowerSourceBox">
                         <p class="24VFilter">24 V</p>
-                    <input type="checkbox" id="PowerSourceBox" value="24V" v-model="activeFilters">
+                    <input type="checkbox" id="PowerSourceBox" value="24V" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>
             </button>
@@ -155,7 +170,7 @@ onMounted(() => {
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.plugtype">
                     <label for="PlugTypeBox">
                         <p class="TypeAFilter">Type A (US plug)</p>
-                    <input type="checkbox" id="PlugTypeBox" value="TypeA" v-model="activeFilters">
+                    <input type="checkbox" id="PlugTypeBox" value="TypeA" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>
             </button>
@@ -169,22 +184,22 @@ onMounted(() => {
                 <div class="AllIndustryFilter" id="MainDropdown" v-if="filterToggles.industry">
                     <label for="ConstructionBox">
                         <p class="ConstructionFilter">Construction</p>
-                    <input type="checkbox" id="ConstructionBox" value="Construction" v-model="activeFilters">
+                    <input type="checkbox" id="ConstructionBox" value="Construction" v-model="activeFilters" @click="resetPages()">
                     </label>
 
                     <label for="ElectricianBox">
                         <p class="ElectricianFilter">Electrician</p>
-                        <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters">  
+                        <input type="checkbox" id="ElectricianBox" value="Electrician" v-model="activeFilters" @click="resetPages()">  
                     </label>
 
                     <label for="AutomotiveBox">
                         <p class="AutomotiveFilter">Automotive</p>
-                        <input type="checkbox" id="AutomotiveBox" value="Automotive" v-model="activeFilters">  
+                        <input type="checkbox" id="AutomotiveBox" value="Automotive" v-model="activeFilters" @click="resetPages()">  
                     </label>
 
                     <label for="PaintingBox">
                         <p class="PaintingFilter">Painting</p>
-                        <input type="checkbox" id="PaintingBox" value="Painting" v-model="activeFilters">  
+                        <input type="checkbox" id="PaintingBox" value="Painting" v-model="activeFilters" @click="resetPages()">  
                     </label>
                 </div>
             </button>
@@ -199,7 +214,7 @@ onMounted(() => {
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.discontinued">
                     <label for="DiscontinuedBox">
                         <p class="DiscontinuedFilter">Discontinued</p>
-                    <input type="checkbox" id="DiscontinuedBox" value="Discontinued" v-model="activeFilters">
+                    <input type="checkbox" id="DiscontinuedBox" value="Discontinued" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>
             </button>
@@ -217,7 +232,7 @@ onMounted(() => {
             </div>
 
             <div class="ActiveFiltersDiv">
-                <button v-for="value in activeFilters" @click="activeFilters.splice(activeFilters.indexOf(value), 1)" class="ActiveFiltersButton">
+                <button v-for="value in activeFilters" @click="activeFilters.splice(activeFilters.indexOf(value), 1), resetPages()" class="ActiveFiltersButton">
                     <p>
                         {{value}}
                     </p>
@@ -227,7 +242,7 @@ onMounted(() => {
 
             <div class="ProductGrid">
                 <div v-for="(item, index) in filteredProducts" :key="item.ProduktNummer" class="AboveProductDiv">
-                    <a class="ProductDiv" v-if="index <= (totalProducts -1)" href="/product">
+                    <a class="ProductDiv" v-if="index > ((15 * CurrentPage) - 15) - 1 && index < (15 * CurrentPage)" href="/product">
                         <div class="ProductTags">
                             <span v-for="(value, key) in item.ProduktTags" >
                                     <p v-if="value && key != 'Discontinued'" :class="[key + 'Class']">
@@ -252,11 +267,24 @@ onMounted(() => {
                 </div>
             </div>
             <div class="BottomButtonsDiv">
+                <div class="PageNav">
+                    <button class="PageSwitch" @click="(CurrentPage > 1) ? CurrentPage -= 1 : CurrentPage = 1" :class="{'ArrowOff': CurrentPage <= 1}">
+                        <img src="/ikoner/arrow-left.svg" alt="">
+                    </button>
+                    <h3>
+                        Page {{ CurrentPage }} of {{ MaxPages }}
+                    </h3>
+                    <button class="PageSwitch" @click="(CurrentPage < MaxPages) ? CurrentPage += 1 : CurrentPage = MaxPages" :class="{'ArrowOff': CurrentPage >= MaxPages}">
+                        <img src="/ikoner/arrow-right.svg" alt="">
+                    </button>
+                </div>
+                <!--
                 <button class="LoadMoreButton" v-if="totalProducts < filteredProducts.length" @click="totalProducts += 6">
                     <h3>
                         Load more
                     </h3>
                 </button>
+                --> 
                 <!--
                 <a class="ReturnButton" href="#top">
                     <h3>
@@ -414,6 +442,30 @@ onMounted(() => {
             align-items: center;
             height: fit-content;
             text-align: center;
+            margin: 0px 0px 5% 0px;
+            .PageNav{
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                flex-direction: row;
+                text-align: center;
+                .PageSwitch{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 22.5px;
+                    width: 22.5px;
+                    margin: 0px;
+                    padding: 0px;
+                    background-color: c.$font-color-secondary;
+                    border-style: none;
+                    cursor: pointer;
+                }
+                .ArrowOff{
+                    opacity: 0.5;
+                    cursor: auto;
+                }
+            }
             .LoadMoreButton{
                 width: 100%;
                 height: 50px;
