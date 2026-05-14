@@ -521,7 +521,6 @@ onMounted(() => {
                 width: 100%;
                 height: 50px;
                 margin: 0% 0px 7.5% 0px;
-                background-color: c.$green-color-icon;
                 border-style: none;
                 cursor: pointer;
                 h3{
