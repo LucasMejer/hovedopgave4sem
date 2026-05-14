@@ -8,10 +8,18 @@ let totalProducts = ref(15);
 
 let CurrentPage = ref(1);
 
+let SelectedFilterCount = ref([
+    0,
+    0,
+    0,
+    0,
+    0
+]);
+
 const mediaQuery = window.matchMedia("(max-width: 768px)");
 
 async function FetchProducts(){
-  try {
+try {
     const Res = await fetch(
         `https://hovedopgave4sem-default-rtdb.europe-west1.firebasedatabase.app/products.json`
     );
@@ -23,83 +31,128 @@ async function FetchProducts(){
 
     //console.log(productArray.value);
     
-  } catch (error) {
-      console.error(error);
-  }
+} catch (error) {
+    console.error(error);
+}
 }
 
-    const filteredProducts = computed(() => {
+const filteredProducts = computed(() => {
 
-        if(!activeFilters.value) return productArray.value;
+    if(!activeFilters.value) return productArray.value;
 
-        return productArray.value.filter(product => {
-            return activeFilters.value.every(filter =>
-                product.ProduktTags?.[filter]
-            );
-        });
+    return productArray.value.filter(product => {
+        return activeFilters.value.every(filter =>
+            product.ProduktTags?.[filter]
+        );
     });
+});
 
-    const filterToggles = ref({
-        industry: false,
-        discontinued: false,
-        producttype: false,
-        powersource: false,
-        plugtype: false
+const FiltersVisible1 = computed(() => {
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Flashlight')
+
+    if(tempArray.filter(Boolean).length == 0){
+        return '';
+    }
+    return `(${tempArray.filter(Boolean).length})`
+});
+
+const FiltersVisible2 = computed(() => {
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == '24V')
+
+    if(tempArray.filter(Boolean).length == 0){
+        return '';
+    }
+    return `(${tempArray.filter(Boolean).length})`
+});
+
+const FiltersVisible3 = computed(() => {
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'TypeA')
+
+    if(tempArray.filter(Boolean).length == 0){
+        return '';
+    }
+    return `(${tempArray.filter(Boolean).length})`
+});
+
+const FiltersVisible4 = computed(() => {
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Construction' || filter == 'Electrician' || filter == 'Automotive' || filter == 'Painting')
+
+    if(tempArray.filter(Boolean).length == 0){
+        return '';
+    }
+    return `(${tempArray.filter(Boolean).length})`
+});
+
+const FiltersVisible5 = computed(() => {
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Discontinued')
+
+    if(tempArray.filter(Boolean).length == 0){
+        return '';
+    }
+    return `(${tempArray.filter(Boolean).length})`
+});
+
+const filterToggles = ref({
+    industry: false,
+    discontinued: false,
+    producttype: false,
+    powersource: false,
+    plugtype: false
+})
+
+const OpenFilterDropDown = (FilterRef) =>{
+
+    //Dont close all other filters when on desktop
+    if (window.innerWidth >= 768){
+        filterToggles.value[FilterRef] = !filterToggles.value[FilterRef]
+        return
+    }
+
+    Object.keys(filterToggles.value).forEach(filter => {
+        filterToggles.value[filter] = (filter === FilterRef)
+        ? !filterToggles.value[filter]
+        : false;
     })
+}
 
-    const OpenFilterDropDown = (FilterRef) =>{
+function clickOutside(event) {
 
-        //Dont close all other filters when on desktop
-        if (window.innerWidth >= 768){
-            filterToggles.value[FilterRef] = !filterToggles.value[FilterRef]
-            return
-        }
+    //Dont run code if on desktop
+    if (window.innerWidth >= 768) return;
 
+    if (!event.target.closest(".FilterButtons")) {
         Object.keys(filterToggles.value).forEach(filter => {
-            filterToggles.value[filter] = (filter === FilterRef)
-            ? !filterToggles.value[filter]
-            : false;
-        })
+            filterToggles.value[filter] = false
+        });
     }
+}
 
-    function clickOutside(event) {
+function resetFilters(){
+    activeFilters.value = [];
+    resetPages();
+}
 
-        //Dont run code if on desktop
-        if (window.innerWidth >= 768) return;
+function ScreenSizeCheck(size){
 
-        if (!event.target.closest(".FilterButtons")) {
-            Object.keys(filterToggles.value).forEach(filter => {
-                filterToggles.value[filter] = false
-            });
-        }
+    //Runs if screen goes to mobile size
+    if(size.matches){
+        Object.keys(filterToggles.value).forEach(filter => {
+            filterToggles.value[filter] = false
+        });
     }
+}
 
-    function resetFilters(){
-        activeFilters.value = [];
-        resetPages();
-    }
+const MaxPages = computed(() => {
+    return Math.max(1, Math.ceil(filteredProducts.value.length / totalProducts.value));    
+});
 
-    function ScreenSizeCheck(size){
+function resetPages(){
+    setTimeout(pageDefault, 10)
+}
 
-        //Runs if screen goes to mobile size
-        if(size.matches){
-            Object.keys(filterToggles.value).forEach(filter => {
-                filterToggles.value[filter] = false
-            });
-        }
-    }
-
-    const MaxPages = computed(() => {
-        return Math.max(1, Math.ceil(filteredProducts.value.length / 15));    
-    });
-
-    function resetPages(){
-        setTimeout(pageDefault, 10)
-    }
-
-    function pageDefault(){
-        CurrentPage.value = 1;
-    }
+function pageDefault(){
+    CurrentPage.value = 1;
+}
 
 onMounted(() => {
     FetchProducts();
@@ -135,7 +188,7 @@ onMounted(() => {
             <button class="FilterButtons">
                 <hr>
                 <h3 @click="OpenFilterDropDown('producttype')">
-                    Product type
+                    Product type {{FiltersVisible1}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.producttype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.producttype">
@@ -150,7 +203,7 @@ onMounted(() => {
             <button class="FilterButtons">
                 <hr>
                 <h3 @click="OpenFilterDropDown('powersource')">
-                    Power source
+                    Power source {{FiltersVisible2}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.powersource}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.powersource">
@@ -164,7 +217,7 @@ onMounted(() => {
             <button class="FilterButtons">
                 <hr>
                 <h3 @click="OpenFilterDropDown('plugtype')">
-                    Plug type
+                    Plug type {{FiltersVisible3}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.plugtype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.plugtype">
@@ -178,7 +231,7 @@ onMounted(() => {
             <button class="FilterButtons">
                 <hr>
                 <h3 @click="OpenFilterDropDown('industry')">
-                    Industry
+                    Industry {{FiltersVisible4}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.industry}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllIndustryFilter" id="MainDropdown" v-if="filterToggles.industry">
@@ -208,7 +261,7 @@ onMounted(() => {
             <button class="FilterButtons">
                 <hr>
                 <h3 @click="OpenFilterDropDown('discontinued')">
-                    Discontinued
+                    Discontinued {{FiltersVisible5}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.discontinued}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.discontinued">
@@ -242,7 +295,7 @@ onMounted(() => {
 
             <div class="ProductGrid">
                 <div v-for="(item, index) in filteredProducts" :key="item.ProduktNummer" class="AboveProductDiv">
-                    <a class="ProductDiv" v-if="index > ((15 * CurrentPage) - 15) - 1 && index < (15 * CurrentPage)" href="/product">
+                    <a class="ProductDiv" v-if="index > ((totalProducts * CurrentPage) - totalProducts) - 1 && index < (totalProducts * CurrentPage)" href="/product">
                         <div class="ProductTags">
                             <span v-for="(value, key) in item.ProduktTags" >
                                     <p v-if="value && key != 'Discontinued'" :class="[key + 'Class']">
