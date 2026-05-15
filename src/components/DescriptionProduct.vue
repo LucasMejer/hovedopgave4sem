@@ -442,7 +442,7 @@ h2{
         &.open{
             border-bottom:0.1px solid c.$font-color-primary;
             background-color: c.$font-color-secondary;
-            box-shadow: 0 5px 0 0px rgb(255, 255, 255);
+            box-shadow: 0 5px 0 -0.5px rgb(255, 255, 255);
         }
         img{
             height: 30px;

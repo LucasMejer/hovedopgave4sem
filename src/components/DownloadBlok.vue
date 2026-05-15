@@ -257,7 +257,7 @@ button{
     border-left: solid 0.1px c.$font-color-primary;
     border-right: solid 0.1px c.$font-color-primary;
     /*outline-bottom: solid 0.1px c.$font-color-secondary;*/
-    box-shadow: 0 2px 0 -1px c.$font-color-secondary;
+    box-shadow: 0 5px 0 -0.5px c.$font-color-secondary;
     
     /*outline-top: c.$font-color-primary;*/
 }
