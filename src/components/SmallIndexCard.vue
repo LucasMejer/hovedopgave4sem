@@ -5,10 +5,12 @@
     <div class="smallindexcardsection">
         <div class="smallindexcard">
             <div class="image-container">
-                <img src="/public/ikoner/index-salesguide-ikon.svg" alt="">
+                <img class="red" src="/public/ikoner/index-salesguide-ikon.svg" alt="">
             </div>
             <h3>Sales Guide</h3>
-            <p>Discover our sales guides for industry-specific work light products</p>
+            <div class="text-container">
+                <p>Discover our sales guides for industry-specific work light products</p>
+            </div>
         </div>
         <div class="smallindexcard">
             <div class="image-container">
@@ -19,7 +21,9 @@
                 </svg>
             </div>
             <h3>Campaign material</h3>
-            <p>Discover SCANGRIP's downloadable campaign materials</p>
+            <div class="text-container">
+                <p>Discover SCANGRIP's downloadable campaign materials</p>
+            </div>
         </div>
         <div class="smallindexcard">
             <div class="image-container">
@@ -30,7 +34,9 @@
                 </svg>
             </div>
             <h3>Videos</h3>
-            <p>Download and discover all our videos</p>
+            <div class="text-container">
+                <p>Download and discover all our videos</p>
+            </div>
         </div>
         <div class="smallindexcard">
             <div class="image-container">
@@ -43,14 +49,18 @@
                 </svg>
             </div>
             <h3>POS-materials</h3>
-            <p>Explore our exhibition material, merchandise, and in-store displays</p>
+            <div class="text-container">
+                <p>Explore our exhibition material, merchandise, and in-store displays</p>
+            </div>
         </div>
         <div class="smallindexcard">
             <div class="image-container">
                 <img class="red" src="/public/ikoner/index-brand-ikon.svg" alt="">
             </div>
             <h3>Branding</h3>
-            <p>Check out our brand book and download captivating branding images</p>
+            <div class="text-container">
+                <p>Check out our brand book and download captivating branding images</p>
+            </div>
         </div>
     </div>
 </template>
@@ -81,8 +91,13 @@
         margin-bottom: 8px;
     }
 
-    p {
-        font-size: 16px;
+    .text-container {
+        width: 75%;
+
+        p {
+            font-size: 16px;
+            text-align: left;
+        }
     }
 
     .image-container {
@@ -99,11 +114,31 @@
         }
     }
 }
+
+@media only screen and (min-width: 768px) {
+
+    .smallindexcard {
+        width: 200px;
+        height: 200px;
+
+        .image-container {
+            width: 100px;
+            height: 100px;
+            transition: ease 0.3s;
+
+        }
+
+        .text-container {
+            width: 90%;
+
+        }
+
+    }
+}
     
 
 
-
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 1280px){
 
     .smallindexcardsection{
         margin: 0 auto;
@@ -117,7 +152,6 @@
         height: 170px;
         padding: 10px;
         margin: 20px 0;
-        
         transition: ease 0.3s;
 
         .image-container {
@@ -125,7 +159,6 @@
             height: 50px;
             transition: ease 0.3s;
 
-    
         }
 
         h3 {
@@ -136,30 +169,21 @@
             font-size: 12;
             display: none;
             transition: ease 0.3s;
-            text-align: left;
-            margin-left: 15px;
         }
 
         
         &:hover {
 
-            
-
-            
             transition: ease 0.3s;
-
-
 
             .image-container {
                 height: 75px;
                 width: 75px;
                 transition: ease 0.3s;
-
-                
+      
                 svg {
                     color: c.$red-color-logo;
                 }
-
 
                 .red {
                     filter:
@@ -180,20 +204,6 @@
             }
             
         }
-        /*
-        &:hover {
-            box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
-            border-radius: 5px;
-            transition: ease 0.3s;
-            width: 175px;
-            height: 175px;
-            align-items: center;
-            justify-content: center;
-
-            img {
-                width: 200px;
-            }
-        }*/
     }
 }
 
