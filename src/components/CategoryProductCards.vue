@@ -285,7 +285,7 @@ onMounted(() => {
             </div>
 
             <div class="ActiveFiltersDiv">
-                <button v-for="value in activeFilters" @click="activeFilters.splice(activeFilters.indexOf(value), 1), resetPages()" class="ActiveFiltersButton">
+                <button v-for="value in activeFilters" @click="activeFilters.splice(activeFilters.indexOf(value), 1), resetPages()" class="ActiveFiltersButton" :class="[value + 'Tag']">
                     <p>
                         {{value}}
                     </p>
@@ -373,6 +373,8 @@ onMounted(() => {
         .ProductGridHeadings{
             display: none;
         }
+
+        
         .ActiveFiltersDiv{
             display: flex;
             margin-bottom: 25px;
@@ -388,12 +390,66 @@ onMounted(() => {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
             img{
                 height: 100%;
                 margin: auto 0px;
             }
+
+            
         }
+        .ConstructionTag{
+            p{
+                color: c.$font-color-secondary;
+            }
+            img{
+                filter: invert(1);
+            }
+            border-color: c.$font-color-secondary;
+            background-color: c.$font-color-primary;
         }
+        .ElectricianTag{
+            p{
+                color: c.$font-color-secondary;
+            }
+            img{
+                filter: invert(1);
+            }
+            border-color: c.$font-color-secondary;
+            background-color: #07775B;
+        }
+        .PaintingTag{
+            p{
+                color: c.$font-color-secondary;
+            }
+            img{
+                filter: invert(1);
+            }
+            border-color: c.$font-color-secondary;
+            background-color: #88964E;
+        }
+        .AutomotiveTag{
+            p{
+                color: c.$font-color-secondary;
+            }
+            img{
+                filter: invert(1);
+            }
+            border-color: c.$font-color-secondary;
+            background-color: #2715AE;
+        }
+        .DiscontinuedTag{
+            p{
+                color: c.$font-color-secondary;
+            }
+            img{
+                filter: invert(1);
+            }
+            border-color: c.$font-color-secondary;
+            background-color: #B91215;
+        }  
+        }
+        
         
         
         .FilterMainDiv{
@@ -589,7 +645,7 @@ onMounted(() => {
                 p{
                     margin: 5% 0px 5% 0px;
                     padding: 5px;
-                    text-transform: uppercase;
+                    //text-transform: uppercase;
                     width: max-content;
                 }
                 .ConstructionClass{
