@@ -183,6 +183,7 @@ function autoScrollFunction() {
                 cursor: pointer;
                 h3{
                     text-align: center;
+                    margin-bottom: -4px;
                 }
             }
         }

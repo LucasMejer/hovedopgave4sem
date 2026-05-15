@@ -53,7 +53,7 @@ const prev = () => {
 <template>
 <div class='carousel'>
   <h2>Accessories for NOVA MINI</h2>
-  <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 52.5}%)` }'>
+  <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 32}%)` }'>
     <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
       <div class="carousel-card">
         <img :src='slide.image' :alt='slide.title'>
@@ -76,7 +76,7 @@ const prev = () => {
 
 .carousel {
   position: relative;
-  width: 100%;
+  width: 90%;
   margin: 100px auto;
   padding: 10px 0px;
   overflow: hidden;
@@ -89,7 +89,7 @@ const prev = () => {
   display: flex;
   position: relative;
   z-index: 1;
-  width: 80%;
+  width: 100%;
   margin: auto;
   gap: 20px;
 }
@@ -146,6 +146,12 @@ const prev = () => {
   }
 }
 
+
+.carousel-slide {
+  flex: 0 0 48%; // roughly 2 slides per view with gap
+  margin: auto;
+}
+
 @media only screen and (min-width: 768px){
   .carousel{
     h2{
@@ -159,5 +165,10 @@ const prev = () => {
     height: 300px;
   }
 }
+
+.carousel-slide {
+    flex: 0 0 30%; // 3 slides per view on large screens
+  }
+
 }
 </style>

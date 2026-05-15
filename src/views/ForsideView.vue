@@ -45,21 +45,22 @@ import BackToTop from '@/components/BackToTop.vue';
 </template>
 <style lang="scss" scoped>
 @use '../assets/_colors.scss' as c;
+    
+.LargeIndexCardsDiv{
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgb(247, 247, 247);
+}
+
+@media only screen and (min-width: 768px){
     .LargeIndexCardsDiv{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        padding: 50px;
+        justify-content: center;
 
-        background-color: rgb(247, 247, 247);
+
     }
-
-    @media only screen and (min-width: 768px){
-        .LargeIndexCardsDiv{
-            display: flex;
-            flex-direction: row;
-            padding: 50px;
-            justify-content: center;
-
-
-        }
-    }
+}
 </style>
