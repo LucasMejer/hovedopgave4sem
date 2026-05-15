@@ -267,7 +267,7 @@ const toggleAccordion = (clickedValue) => {
             </h2>
         </div>
         <div class="indhold">
-            <div v-for="value in accordionarray" :key="value.Overskrift" v-show="value.is_open" class="content">
+            <div v-for="value in accordionarray" :key="value.Overskrift" v-show="value.is_open" :class="['content', { 'full-width': value.Overskrift === 'Description' }]">
                 <div class="tekst" v-if="value.Semioverskrift != null">
                 <h3>{{ value.Semioverskrift }}</h3>
                 <p>{{ value.Broedtekst }}</p>
@@ -275,8 +275,8 @@ const toggleAccordion = (clickedValue) => {
                 <div v-if="value.Content != null" class="videodiv">
                     <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + value.Content" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                <div v-for="details in value.ProduktDetails" :key="details.Os">
-                    <h3>{{ details.Os }}</h3>
+                <div v-for="details in value.ProduktDetails" :key="details.Os" class="flexalign">
+                    <h3>{{ details.Os }}:</h3>
                     <p>{{ details.Bt }}</p>
                 </div>
             </div>
@@ -361,6 +361,8 @@ p{
 
 @media only screen and (min-width: 768px){
 
+    
+
     h2{
     border-left: solid 0.2px;
     }
@@ -388,6 +390,10 @@ p{
         height: fit-content;
         height: 100%;
         min-height: 25vw;
+        .flexalign{
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     .overskrifter{
@@ -402,8 +408,6 @@ p{
         background-color: c.$font-color-secondary;
     }
 
-    
-
     .tekst{
         display: flex;
         flex-direction: column;
@@ -411,13 +415,14 @@ p{
     }
 
     .content{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         border-left: none;
         border-right: none;
         border-bottom: none;
         height: 100%;
-        
+        gap: 20px;
+
         .videodiv{
             aspect-ratio: 16 / 9;
             position: absolute;
@@ -431,27 +436,37 @@ p{
         width: 100%;
         float: right;
         position: relative;
-    }
+        }
     }
 
-h2{
-    display: flex;
-    justify-content: space-between;
-    padding: 3pt 12px;
-    cursor: pointer;
-        &.open{
-            border-bottom:0.1px solid c.$font-color-primary;
-            background-color: c.$font-color-secondary;
-            box-shadow: 0 5px 0 -0.5px rgb(255, 255, 255);
-        }
-        img{
-            height: 30px;
-        
-        &.rotate{
-            transform: rotate(180deg);
+    .content p{
+        padding: 12px 12px;
+    }
+
+    .content.full-width {
+      grid-template-columns: none;
+    }
+
+    h2{
+        display: flex;
+        justify-content: space-between;
+        padding: 3pt 12px;
+        cursor: pointer;
+            &.open{
+                border-bottom:0.1px solid c.$font-color-primary;
+                background-color: c.$font-color-secondary;
+                box-shadow: 0 5px 0 -0.5px rgb(255, 255, 255);
+            }
+            img{
+                height: 30px;
+            
+            &.rotate{
+                transform: rotate(180deg);
+            }
         }
     }
-}
+
+
 
     }
 </style>
