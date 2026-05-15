@@ -42,6 +42,10 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <img src="/public/ikoner/eye-icon.svg" alt="">
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }">
                 <img src="/public/download/novamini-mp4.png" alt="">
@@ -223,7 +227,6 @@ button{
     flex-direction: column;
     gap: 5%;
 }
-
 
 
 .blok-card-valgt{
