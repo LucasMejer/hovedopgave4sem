@@ -144,7 +144,7 @@ const toggleSelection = (value) => {
                 </div>
                 <button class="downloadbutton">
                     Download
-                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                    <img class="download-icon" src="/public/ikoner/download-ikon.svg" alt="">
                 </button>
             </div>
         </div>
@@ -190,6 +190,7 @@ button{
     text-align: center;
     display: flex;
     align-items: center;
+    padding-top: 15px;
 }
 
 .scroll{
@@ -215,7 +216,7 @@ button{
     background-color: c.$font-color-secondary;
     max-width: 135px;
     border: solid 5px white;
-    max-height: 200px;
+  
     box-sizing: border-box;
     outline: solid 0.1px c.$font-color-primary;
     display: flex;
@@ -273,6 +274,10 @@ button{
     }
 }
 
+    .download-icon {
+        margin-bottom: 5px;
+    }
+
 @media only screen and (min-width: 768px){
     .scroll{
         height: 25vw;
@@ -291,5 +296,7 @@ button{
         flex-direction: column;
         width: 125px;
     }
+
+
 }
 </style>
