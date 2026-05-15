@@ -63,6 +63,13 @@ function clickOutsideSearch(click) {
     else return;
 };
 
+function clearSearch() {
+    search.value = '';
+    searchHidden.value = true;
+    clearHidden.value = true;
+
+}
+
 onMounted( () => {
     window.addEventListener("click", clickOutsideSearch);
 });
@@ -92,7 +99,9 @@ trim
 andet
 flere tags?
 klik på largeindex?
-
+info ikoner ikke samme stil og meget store og tykke
+store pile
+dropshadow på accessories
 */
 
 </script>
@@ -110,7 +119,7 @@ klik på largeindex?
             >
             <div class="icon-container">
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="">
-                <svg @click="clearSearh" :class="{'clear-hidden': clearHidden}" class="clear-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg @click="clearSearch" :class="{'clear-hidden': clearHidden}" class="clear-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.5 1.5L14.25 14.25M27 27L14.25 14.25M14.25 14.25L1.5 27M14.25 14.25L27 1.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                 </svg>
             </div>
