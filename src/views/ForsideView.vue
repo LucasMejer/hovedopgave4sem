@@ -24,7 +24,7 @@ import BackToTop from '@/components/BackToTop.vue';
         />
         <LargeIndexCard
             CardHeading="Media file" 
-            CardText="Download the complete file 'Media' containing pictures, manuals, energy labels, MSDS and DoC info."
+            CardText="Download the SCANGRIP Media File containing all pictures, manuals, and more"
             CardButtonText="Download"
             CardImg="/ikoner/index-mediafile-ikon.svg"
             CardDownload="/download/media-file.zip"
@@ -32,7 +32,7 @@ import BackToTop from '@/components/BackToTop.vue';
         />  
         <LargeIndexCard 
             CardHeading="Price list" 
-            CardText="Download SCANGRIP's price lists for all products/markets."
+            CardText="Download SCANGRIP's price lists for all products/markets"
             CardButtonText="Download"
             CardImg="/ikoner/index-pricelist-ikon.svg"
             CardDownload="/download/price-list.xlsx"

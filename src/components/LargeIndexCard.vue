@@ -90,7 +90,8 @@ const cardInfo = defineProps({
                 font-weight: 400;
                 font-size: 16px;
                 height: 50px;
-
+                text-align: left;
+                margin-left: 35px;
             }
             .DownloadButton{
                 position: relative;
