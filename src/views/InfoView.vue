@@ -127,7 +127,6 @@ li{
         grid-template-columns: 1fr 1fr;
         margin: 2.5% 5%;
 
-
         .CardDiv {
             margin: 0 auto 40px auto;
         }
