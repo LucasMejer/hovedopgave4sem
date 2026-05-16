@@ -639,10 +639,11 @@ function ConfirmDelete(){
 
     .Popup{
         position: fixed;
+        z-index: 3;
         width: 100%;
-        height: 100%;
+        height: 120%;
         margin-left: -5%;
-        margin-top: -5%;
+        margin-top: -25%;
         display: flex;
         background-color: #00000090;
     }

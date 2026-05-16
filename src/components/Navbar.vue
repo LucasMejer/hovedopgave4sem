@@ -276,7 +276,7 @@ onBeforeUnmount( () => {
         z-index: 5;
         background-color: #fff;
         width: 100vw;
-        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
+        box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
         transition: 0.3s ease;
         max-height: 100vh;
 
@@ -466,7 +466,7 @@ onBeforeUnmount( () => {
 
             .partner-logo {
                 padding: 0;
-                min-width: 150px;
+                min-width: 250px;
             }
 
             .partnersite {

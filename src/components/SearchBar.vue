@@ -1,10 +1,15 @@
 <script setup>
 import { ref } from 'vue';
+import { onMounted } from 'vue';
+import { onBeforeUnmount } from 'vue';
 
 const search = ref('');
-let databaseArray = ref([]);
-let searchHidden = ref(true);
-let productHidden = ref(false);
+const databaseArray = ref([]);
+const searchHidden = ref(true);
+const productHidden = ref(false);
+const clearHidden = ref(true);
+const searchInput = ref(null);
+const searchDropdown = ref(null);
 
 async function fetchData() {
     try {
@@ -24,11 +29,7 @@ async function fetchData() {
       console.error(error);
   }
 };
-
-
-
 fetchData();
-
 
 function showSearches() {
     if (search.value.length > 0) {
@@ -43,15 +44,39 @@ function showSearches() {
             return
         }*/
 
+        clearHidden.value = false;
+
         searchHidden.value = false;
 
     }
     else {
         searchHidden.value = true;
+
+        clearHidden.value = true;
     }
 }
 
+function clickOutsideSearch(click) {
+    if (!searchInput.value.contains(click.target) && !searchDropdown.value.contains(click.target)) {
+        searchHidden.value = true;
+    }
+    else return;
+};
 
+function clearSearch() {
+    search.value = '';
+    searchHidden.value = true;
+    clearHidden.value = true;
+
+}
+
+onMounted( () => {
+    window.addEventListener("click", clickOutsideSearch);
+});
+
+onBeforeUnmount( () => {
+    window.removeEventListener("click", clickOutsideSearch);
+});
 
 
 
@@ -61,7 +86,7 @@ Hold det indtastede i inputfeltet op mod elementerne i arrayet
 Vis kun det der matcher med det søgte
 
 
-Vis kun søgeresultater når inputfeltet er markeret
+
 luk dropdown når der klikkes uden for 
 
 
@@ -70,6 +95,13 @@ includes i produkttitel
 tolowercase
 trim
 
+
+andet
+flere tags?
+klik på largeindex?
+info ikoner ikke samme stil og meget store og tykke
+store pile
+dropshadow på accessories
 */
 
 </script>
@@ -77,7 +109,7 @@ trim
 <template>
 
     <div class="search-bar">
-        <div class="search-input-container">
+        <div class="search-input-container" ref="searchInput">
             <input 
                 class="search-input" 
                 type="text" 
@@ -87,13 +119,16 @@ trim
             >
             <div class="icon-container">
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="">
+                <svg @click="clearSearch" :class="{'clear-hidden': clearHidden}" class="clear-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 1.5L14.25 14.25M27 27L14.25 14.25M14.25 14.25L1.5 27M14.25 14.25L27 1.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
             </div>
         </div>
         
-        <div class="searched-dropdown-container">
+        <div class="searched-dropdown-container" ref="searchDropdown">
             <div :class="{'search-hidden': searchHidden}" class="searched-dropdown">
 
-                <div v-for="item in databaseArray" :class="{'product-hidden': productHidden}" class="searched-product" :key="item.ProduktNummer">
+                <router-link to="/product" v-for="item in databaseArray" :class="{'product-hidden': productHidden}" class="searched-product" :key="item.ProduktNummer">
                     <img class="product-image" :src=item.ProduktBillede alt="">
                     <div class="product-content">
                         <div class="product-text">
@@ -108,7 +143,7 @@ trim
                             </span>
                         </div>
                     </div>
-                </div>
+                </router-link>
 
             </div>
         </div>
@@ -120,7 +155,17 @@ trim
     @use '../assets/_colors.scss' as c;
     @use '../assets/_headings.scss' as f;
 
+    @mixin icon {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
+
     .search-hidden {
+        display: none;
+    }
+
+    .clear-hidden {
         display: none;
     }
 
@@ -132,11 +177,6 @@ trim
         margin: 0 auto;
         padding: 15px 0 25px 0;
         width: 90%;
-
-        &:has(input:focus) .searched-dropdown-container {
-            display: block;
-        }
-
 
         .search-input-container {
             display: flex;
@@ -164,16 +204,19 @@ trim
             }
 
             .search-icon {
-                position: absolute;
-                width: 20px;
-                height: 20px;
+                @include icon;
                 margin-right: 10px;
                 
+            }
+
+            .clear-icon {
+                @include icon;
+                margin-right: 40px;
+                color: #c5c5c5;
             }
         }
 
         .searched-dropdown-container {
-            display: none;
             position: relative;
             z-index: 6;
             
@@ -190,12 +233,14 @@ trim
                 max-height: 60vh;
                 overflow-x: hidden;
                 
+                
 
 
                 .searched-product {
                     display: flex;
                     padding: 20px 10px;
                     border: 1px solid #afafaf;
+                    text-decoration: none;
 
 
                     .product-image {
@@ -208,7 +253,7 @@ trim
                         flex-direction: column;
                         justify-content: space-between;
                         margin-left: 10px;
-
+                        
 
                         .product-text {
                             display: flex;
@@ -279,6 +324,11 @@ trim
                 
 
                 .search-icon {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .clear-icon {
                     &:hover {
                         cursor: pointer;
                     }
