@@ -26,24 +26,39 @@ const toggleSelection = (value) => {
     selected.value.push(value)
   }
 }
+//om overlay skal være vist
+const openOverlay = ref (false)
 
+//refference til billede
+const overlayImage = ref ("")
+
+function activateOverlay(link){
+    overlayImage.value = link
+    openOverlay.value = true
+}
 
 </script>
 
 <template>
+<!-- fullscreenview styrer at overlay af billede kommer op -->
+<div class="fullscreenview" v-if="openOverlay" @click="openOverlay = false">
+    <img :src="overlayImage" alt="">
+</div>
  <div class="downloadblok">
         <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">Files</button>
         <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">Images</button>
         <div class="scroll" v-if="filesshown">
             <div class="scroll-blok-card" @click="toggleSelection('manual')" :class="{ 'blok-card-valgt': selected.includes('manual') }">
                 <img src="/public/download/novamini-manual.jpg" alt="">
-                <p>NOVA MINI Manual</p>
+                <p>NOVA MINI Manual (PDF)</p>
                 <img v-if="selected.includes('manual')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <img src="/public/ikoner/eye-icon.svg" alt="">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-manual.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
                     <img src="/public/ikoner/download-ikon.svg" alt="">
                 </div>
             </div>
@@ -54,6 +69,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-mp4.png')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }">
                 <img src="/public/download/novamini-safety-data.jpg" alt="">
@@ -62,6 +83,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-safety-data.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('productsheet')" :class="{ 'blok-card-valgt': selected.includes('productsheet') }">
                 <img src="/public/download/novamini-productsheet-uk.jpg" alt="">
@@ -70,6 +97,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-productsheet-uk.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
               <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }">
                 <img src="/public/download/novamini-eu-declaration.jpg" alt="">
@@ -78,6 +111,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark"> 
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-eu-declaration.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
         </div>
          <div class="scroll" v-if="imagesshown">
@@ -87,7 +126,13 @@ const toggleSelection = (value) => {
                 <img v-if="selected.includes('productimage')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
-                class="checkmark"> 
+                class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini.png')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div> 
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('pocketuse')" :class="{ 'blok-card-valgt': selected.includes('pocketuse') }">
                 <img src="/public/novamini-i-brug.jpg" alt="">
@@ -96,6 +141,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-i-brug.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('nineteenthdegree')" :class="{ 'blok-card-valgt': selected.includes('nineteenthdegree') }">
                 <img src="/public/novamini-nineteenth-degree-angle.jpg" alt="">
@@ -104,6 +155,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-nineteenth-degree-angle.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('magnetattachment')" :class="{ 'blok-card-valgt': selected.includes('magnetattachment') }">
                 <img src="/public/novamini-magnet-attachment.jpg" alt="">
@@ -112,6 +169,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-magnet-attachment.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('onmiddlefinger')" :class="{ 'blok-card-valgt': selected.includes('onmiddlefinger') }">
                 <img src="/public/novamini-on-middlefinger.jpg" alt="">
@@ -120,6 +183,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-on-middlefinger.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('optilight')" :class="{ 'blok-card-valgt': selected.includes('optilight') }">
                 <img src="/public/novamini-opti-light.jpg" alt="">
@@ -128,6 +197,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-opti-light.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('sparepartsoverview')" :class="{ 'blok-card-valgt': selected.includes('sparepartsoverview') }">
                 <img src="/public/novamini-spareparts.jpg" alt="">
@@ -136,6 +211,12 @@ const toggleSelection = (value) => {
                 src="/public/ikoner/check.svg"
                 alt="selected" 
                 class="checkmark">
+                <div class="scroll-blok-card-blok">
+                    <div class="preview" @click="activateOverlay('/public/download/novamini-spareparts.jpg')">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </div>
+                    <img src="/public/ikoner/download-ikon.svg" alt="">
+                </div>
             </div>
         </div>
         <div class="overlay">
@@ -281,6 +362,21 @@ button{
         margin-bottom: 5px;
     }
 
+    .fullscreenview{
+        z-index: 5;
+        position: fixed;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+        background-color: rgba(0, 0, 0, 0.404);
+        img{
+        width: 30%;
+        height: auto;
+        margin: 10% 35% 0% 35%;
+        }
+    }
+
 @media only screen and (min-width: 768px){
     .scroll{
         height: 25vw;
@@ -300,6 +396,17 @@ button{
         width: 125px;
     }
 
+    .scroll-blok-card-blok{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        img{
+            object-fit: contain;
+            width: fit-content;
+            max-width: 25px;
+            filter: brightness(0);
+        }
+    }
 
 }
 </style>
