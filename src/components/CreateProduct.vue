@@ -117,6 +117,7 @@ function ConfirmDelete(){
 </script>
 
 <template>
+    <main>
     <body>
         <div class="Popup" v-if="PopupActive">
             <div class="PopupInner">
@@ -136,8 +137,13 @@ function ConfirmDelete(){
 
         <div v-for="item in productArray" :key="item.ProduktNummer">
             <div class="ProductDiv">
-                <input type="checkbox" class="ProductCheckbox">
-                <img class="ProductImg" :src=item.ProduktBillede alt="">
+                <label for="CheckProduct">
+                    <p>
+                    Vælg produkt
+                    </p>
+                </label>
+                <input type="checkbox" class="ProductCheckbox" id="CheckProduct">
+                <img class="ProductImg" :src=item.ProduktBillede alt="Product Billede">
                 <div class="ProductInfoDiv">
                     <h3>
                         {{ item.ProduktTitel }}
@@ -197,37 +203,37 @@ function ConfirmDelete(){
                         <h3>
                         Description
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk beskrivelse pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Video
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk video pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Details
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk details pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Main Light
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk main light pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Electrical
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk electrical pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Operation
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk operation pil">
                 </button>
                 <hr>
                 <h2>
@@ -238,31 +244,25 @@ function ConfirmDelete(){
                         <h3>
                         Product type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk product type tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Power source tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk power source tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Plug type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk plug type tags pil">
                     </button>
                     <button class="OpenTagsButton" @click="IndustryOpen = !IndustryOpen">
                         <h3>
                         Industry tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
-                    </button>
-                    <button class="OpenTagsButton" @click="IndustryOpen = !IndustryOpen">
-                        <h3>
-                        Industry tags
-                        </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk industry tags pil">
                     </button>
                     <div class="DropDownTags" v-if="IndustryOpen">
                         <label :for="'AutomotiveBox' + item.ProduktNummer">
@@ -292,7 +292,7 @@ function ConfirmDelete(){
                         <h3>
                             Discontinued tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk discontinued pil">
                     </button>
                     <div class="DropDownTags" v-if="DiscontinuedOpen">
                         <label :for="'DiscontinuedBox' + item.ProduktNummer">
@@ -353,37 +353,37 @@ function ConfirmDelete(){
                         <h3>
                         Description
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk beskrivelse pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Video
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk video pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Details
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk details pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Main Light
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk main light pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Electrical
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk electrical pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Operation
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk operation pil">
                 </button>
                 <hr>
                 <h2>
@@ -394,25 +394,25 @@ function ConfirmDelete(){
                         <h3>
                         Product type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk product type tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Power source tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk power source tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Plug type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk plug type tags pil">
                     </button>
                     <button class="OpenTagsButton" @click="IndustryOpen = !IndustryOpen">
                         <h3>
                         Industry tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk industry tags pil">
                     </button>
                     <div class="DropDownTags" v-if="IndustryOpen">
                         <label for="NewAutomotiveBox">
@@ -442,7 +442,7 @@ function ConfirmDelete(){
                         <h3>
                             Discontinued tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="">
+                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk discontinued tags pil">
                     </button>
                     <div class="DropDownTags" v-if="DiscontinuedOpen">
                         <label for="NewDiscontinuedBox">
@@ -483,7 +483,7 @@ function ConfirmDelete(){
             </div>
         </div>
     </body>
-    
+    </main>
 </template>
 
 <style lang="scss" scoped>
@@ -507,6 +507,12 @@ function ConfirmDelete(){
             position: absolute;
             height: 25px;
             width: 25px;
+        }
+        label{
+            position: absolute;
+            margin-left: 30px;
+            height: 25px;
+            width: 150px;
         }
     }
 

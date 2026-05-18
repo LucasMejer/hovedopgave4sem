@@ -3,45 +3,47 @@
 </script>
 
 <template>
-    <div class="HeadingsDiv">
-        <h2 class="HeadingOn">
-            Product Information
-        </h2>
-        <h2 class="HeadingOff">
-            Marketing Items
-        </h2>
-    </div>
-    <div class="NavigationDiv">
-        <div class="SorterDiv">
-            <div class="FiltSortDiv">
-                <h3>
-                Sorter
-                </h3>
-                <img src="/ikoner/arrow-down.png" alt="">
-                <h3>
-                Filtrer
-                </h3>
-                <img src="/ikoner/arrow-down.png" alt="">
+    <header>
+        <div class="HeadingsDiv">
+            <h2 class="HeadingOn">
+                Product Information
+            </h2>
+            <h2 class="HeadingOff">
+                Marketing Items
+            </h2>
+        </div>
+        <div class="NavigationDiv">
+            <div class="SorterDiv">
+                <div class="FiltSortDiv">
+                    <h3>
+                    Sorter
+                    </h3>
+                    <img src="/ikoner/arrow-down.png" alt="">
+                    <h3>
+                    Filtrer
+                    </h3>
+                    <img src="/ikoner/arrow-down.png" alt="">
+                </div>
+            </div>
+            <div class="SearchBarDiv">
+                <input type="text" placeholder="Søg..." >
+                <img src="../../public/ikoner/search.png" alt="">
+            </div>
+            <div class="TrashDiv">
+                <div>
+                    <p>
+                    Seneste slettet produkter:
+                    </p>
+                    <img src="/ikoner/trash-ikon.svg" alt="">
+                </div>
+                <button>
+                    <p>
+                    Slet valgte produkter
+                    </p>
+                </button>
             </div>
         </div>
-        <div class="SearchBarDiv">
-            <input type="text" placeholder="Søg..." >
-            <img src="../../public/ikoner/search.png" alt="">
-        </div>
-        <div class="TrashDiv">
-            <div>
-                <p>
-                Seneste slettet produkter:
-                </p>
-                <img src="/ikoner/trash-ikon.svg" alt="">
-            </div>
-            <button>
-                <p>
-                Slet valgte produkter
-                </p>
-            </button>
-        </div>
-    </div>
+    </header>
 </template>
 
 <style lang="scss" scoped>

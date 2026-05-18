@@ -279,8 +279,8 @@ onMounted(() => {
                 <h3>Results: {{filteredProducts.length}}</h3>
                 <div class="VisningDiv">
                     <h3>View:</h3>
-                    <img src="/public/ikoner/grid-hvid.png" alt="" class="ProductGridIcon">
-                    <img src="/public/ikoner/list-sort.png" alt="" class="ProductListIcon">
+                    <img src="/public/ikoner/grid-hvid.png" alt="Grid sort" class="ProductGridIcon">
+                    <img src="/public/ikoner/list-sort.png" alt="List sort" class="ProductListIcon">
                 </div>
             </div>
 
@@ -306,7 +306,7 @@ onMounted(() => {
                                         Discontinued
                                 </p>
                         </div> 
-                        <img :src=item.ProduktBillede alt="">
+                        <img :src=item.ProduktBillede :alt="item.ProduktTitel">
                         <h2>
                             {{ item.ProduktTitel }}
                         </h2>
@@ -322,13 +322,13 @@ onMounted(() => {
             <div class="BottomButtonsDiv">
                 <div class="PageNav">
                     <button class="PageSwitch" @click="(CurrentPage > 1) ? CurrentPage -= 1 : CurrentPage = 1" :class="{'ArrowOff': CurrentPage <= 1}">
-                        <img src="/ikoner/arrow-left.svg" alt="">
+                        <img src="/ikoner/arrow-left.svg" alt="Previous page">
                     </button>
                     <h3>
                         Page {{ CurrentPage }} of {{ MaxPages }}
                     </h3>
                     <button class="PageSwitch" @click="(CurrentPage < MaxPages) ? CurrentPage += 1 : CurrentPage = MaxPages" :class="{'ArrowOff': CurrentPage >= MaxPages}">
-                        <img src="/ikoner/arrow-right.svg" alt="">
+                        <img src="/ikoner/arrow-right.svg" alt="Next page">
                     </button>
                 </div>
                 <!--
