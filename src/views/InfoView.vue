@@ -101,7 +101,11 @@ h1{
 
 a{
     color: c.$font-color-primary;
-    text-underline-offset: 2px;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline 1.5px;
+        text-underline-offset: 2px;
+    }
 }
 
 p{

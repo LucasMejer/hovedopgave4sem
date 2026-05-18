@@ -278,9 +278,12 @@ const toggleAccordion = (clickedValue) => {
                 <div v-if="value.Content != null" class="videodiv">
                     <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + value.Content" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                <div v-for="details in value.ProduktDetails" :key="details.Os" class="flexalign">
-                    <h3>{{ details.Os }}:</h3>
-                    <p>{{ details.Bt }}</p>
+                <div v-for="details in value.ProduktDetails" :key="details.Os" >
+                    <div class="flexalign">
+                        <h3>{{ details.Os }}:</h3>
+                        <p>{{ details.Bt }}</p>
+                    </div>
+                    <hr>
                 </div>
             </div>
         </div>
@@ -346,10 +349,7 @@ h2{
     }
 }
 
-h3{
-    padding: 0px 12px 10px 12px;
-    
-}
+
 
 p{
   padding: 12px 12px;
@@ -358,7 +358,7 @@ p{
 .overskrifter{
     background-color: c.$section-color-background;
     h2{
-        padding: 15px;
+        padding: 19px 10px 15px 10px;
     }
 }
 
@@ -387,7 +387,7 @@ p{
     }
 
     .indhold{
-        padding-top: 20px;
+        padding: 20px 10px 20px 10px;
         background-color: c.$font-color-secondary;
         border: solid 0.01px c.$font-color-primary;
         height: fit-content;

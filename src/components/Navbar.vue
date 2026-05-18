@@ -473,6 +473,14 @@ onBeforeUnmount( () => {
                 justify-content: flex-start;
                 margin: 10px auto;
 
+                .marked {
+                    margin-left: 10px;
+                }
+
+                p {
+                    margin: 5px 10px 5px 0;
+                }
+
                 a {
                     &:hover {
                         text-decoration: underline;

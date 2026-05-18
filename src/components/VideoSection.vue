@@ -48,14 +48,12 @@
     }
     .info-link {
         margin: 0;
-        text-decoration: underline;
+        text-decoration: underline 1.5px;
         text-underline-offset: 2px;
         cursor: pointer;
         display: inline;
         color: rgb(0, 0, 0);
-        font-weight: 600;
-
-        
+        font-weight: 500;
     }
 
 }

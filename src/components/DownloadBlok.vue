@@ -323,7 +323,7 @@ button{
     padding: 10px;
     background-color: c.$font-color-secondary;
     max-width: 135px;
-    border: solid 5px white;
+    border: solid 2px white;
     box-sizing: border-box;
     outline: solid 0.1px c.$font-color-primary;
     display: flex;
@@ -344,7 +344,7 @@ button{
 
 .blok-card-valgt{
     box-sizing: border-box;
-    border: solid 5px c.$font-color-primary;
+    border: solid 2px c.$font-color-primary;
     outline: solid 0.1px c.$font-color-primary;
     .checkmark {
     position: absolute;
@@ -379,11 +379,11 @@ button{
     /*outline-top: c.$font-color-primary;*/
 }
 
-.clearAll button{
-    text-decoration: underline;
+.clearAll{
     &:hover {
         color: c.$font-color-secondary;
         cursor: pointer;
+        text-decoration: underline;
         p{
             color: c.$font-color-secondary;
         }
@@ -426,6 +426,17 @@ button{
         display: flex;
         flex-direction: column;
         width: 125px;
+        &:hover{
+            border-color: grey;
+            cursor: pointer;
+        }
+    }
+
+    .blok-card-valgt{
+         &:hover{
+            border-color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
     }
 
     .scroll-blok-card-blok{
@@ -441,6 +452,16 @@ button{
             width: fit-content;
             max-width: 25px;
             filter: brightness(0);
+        &:hover{
+            cursor: pointer;
+                filter: invert(50%)
+                        sepia(100%)
+                        saturate(7000%)
+                        hue-rotate(345deg)
+                        brightness(85%)
+                        contrast(110%);
+            
+        }
         }
     }
 

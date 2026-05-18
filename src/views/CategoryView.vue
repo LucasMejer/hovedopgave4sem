@@ -14,7 +14,7 @@ import BackToTop from '@/components/BackToTop.vue';
                     <p>Home</p>
                 </router-link>
                 <p>></p>
-                <p>Worklights</p>
+                <p class="Active">Worklights</p>
             </li>
         </div>
     <CategoryProductCards/>
@@ -24,8 +24,14 @@ import BackToTop from '@/components/BackToTop.vue';
 @use '../assets/colors.scss' as c;
 a{
     color: c.$font-color-primary;
-    text-underline-offset: 2px;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline 1.5px;
+        text-underline-offset: 2px;
+    }
 }
+
+
 
 p{
     margin: 10px 0px;
@@ -34,6 +40,7 @@ p{
 li p{
     list-style: none;
     padding: 10px 10px 0px 0px;
+    
 }
 
 .breadcrumb {

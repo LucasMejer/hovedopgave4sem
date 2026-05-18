@@ -154,6 +154,7 @@ const prev = () => {
 
 @media only screen and (min-width: 768px){
   .carousel{
+    width: 100%;
     h2{
       margin-bottom: 30px;
     }
