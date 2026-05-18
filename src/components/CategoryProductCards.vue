@@ -185,9 +185,9 @@ onMounted(() => {
             
             <div class="AllFilterDropdowns">
 
-            <button class="FilterButtons">
+            <button class="FilterButtons" tabindex="-1">
                 <hr>
-                <h3 @click="OpenFilterDropDown('producttype')">
+                <h3 @click="OpenFilterDropDown('producttype')" tabindex="0" @keydown.enter="OpenFilterDropDown('producttype')">
                     Product type {{FiltersVisible1}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.producttype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
@@ -200,9 +200,9 @@ onMounted(() => {
             </button>
 
             
-            <button class="FilterButtons">
+            <button class="FilterButtons" tabindex="-1">
                 <hr>
-                <h3 @click="OpenFilterDropDown('powersource')">
+                <h3 @click="OpenFilterDropDown('powersource')" tabindex="0" @keydown.enter="OpenFilterDropDown('powersource')">
                     Power source {{FiltersVisible2}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.powersource}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
@@ -214,9 +214,9 @@ onMounted(() => {
                 </div>
             </button>
 
-            <button class="FilterButtons">
+            <button class="FilterButtons" tabindex="-1">
                 <hr>
-                <h3 @click="OpenFilterDropDown('plugtype')">
+                <h3 @click="OpenFilterDropDown('plugtype')" tabindex="0" @keydown.enter="OpenFilterDropDown('plugtype')">
                     Plug type {{FiltersVisible3}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.plugtype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
@@ -228,9 +228,9 @@ onMounted(() => {
                 </div>
             </button>
 
-            <button class="FilterButtons">
+            <button class="FilterButtons" tabindex="-1">
                 <hr>
-                <h3 @click="OpenFilterDropDown('industry')">
+                <h3 @click="OpenFilterDropDown('industry')" tabindex="0" @keydown.enter="OpenFilterDropDown('industry')">
                     Industry {{FiltersVisible4}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.industry}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
@@ -258,9 +258,9 @@ onMounted(() => {
             </button>
             
 
-            <button class="FilterButtons">
+            <button class="FilterButtons" tabindex="-1">
                 <hr>
-                <h3 @click="OpenFilterDropDown('discontinued')">
+                <h3 @click="OpenFilterDropDown('discontinued')" tabindex="0" @keydown.enter="OpenFilterDropDown('discontinued')">
                     Discontinued {{FiltersVisible5}}
                     <img class="ArrowDown" :class="{'rotate': filterToggles.discontinued}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
