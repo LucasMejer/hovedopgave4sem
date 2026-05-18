@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { onMounted } from 'vue';
 import { onBeforeUnmount } from 'vue';
 
@@ -31,18 +31,14 @@ async function fetchData() {
 };
 fetchData();
 
+
+const searchesFilter = computed(() => {
+    return databaseArray.value.filter(item => item.ProduktTitel.toLowerCase().includes(search.value.toLowerCase()))
+});
+
+
 function showSearches() {
     if (search.value.length > 0) {
-
-        const searchString = JSON.stringify(search.value)
-/*
-        if (databaseArray.ProduktTitel.includes(searchString)) {
-            console.log(searchString);
-        }
-
-        else {
-            return
-        }*/
 
         clearHidden.value = false;
 
@@ -81,21 +77,6 @@ onBeforeUnmount( () => {
 
 
 /*
-
-Hold det indtastede i inputfeltet op mod elementerne i arrayet
-Vis kun det der matcher med det søgte
-
-
-
-luk dropdown når der klikkes uden for 
-
-
-includes i produkttitel
-
-tolowercase
-trim
-
-
 andet
 flere tags?
 klik på largeindex?
@@ -128,7 +109,7 @@ dropshadow på accessories
         <div class="searched-dropdown-container" ref="searchDropdown">
             <div :class="{'search-hidden': searchHidden}" class="searched-dropdown">
 
-                <router-link to="/product" v-for="item in databaseArray" :class="{'product-hidden': productHidden}" class="searched-product" :key="item.ProduktNummer">
+                <router-link to="/product" v-for="item in searchesFilter" :class="{'product-hidden': productHidden}" class="searched-product" :key="id">
                     <img class="product-image" :src=item.ProduktBillede alt="">
                     <div class="product-content">
                         <div class="product-text">
@@ -157,8 +138,8 @@ dropshadow på accessories
 
     @mixin icon {
         position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
     }
 
     .search-hidden {
@@ -211,7 +192,7 @@ dropshadow på accessories
 
             .clear-icon {
                 @include icon;
-                margin-right: 40px;
+                margin-right: 45px;
                 color: #c5c5c5;
             }
         }
@@ -321,18 +302,25 @@ dropshadow på accessories
                 min-width: 250px;
                 max-width: 400px;
 
-                
+                .search-input-container {
 
-                .search-icon {
-                    &:hover {
-                        cursor: pointer;
+                    .search-icon {
+                        width: 20px;
+                        height: 20px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .clear-icon {
+                        width: 16px;
+                        height: 16px;
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
-                .clear-icon {
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
+
+                
 
 
                 .searched-dropdown-container {
