@@ -483,8 +483,7 @@ onBeforeUnmount( () => {
 
                 a {
                     &:hover {
-                        text-decoration: underline;
-                        text-decoration-thickness: 1.5px;
+                        text-decoration: underline 1.5px;
                     }
                 }
             }
@@ -521,9 +520,8 @@ onBeforeUnmount( () => {
                 background-color: #fff;
 
                 &:hover {
-                    text-decoration: underline;
+                    text-decoration: underline 1.5px;
                     text-underline-offset: 6px;
-                    text-decoration-thickness: 1.5px;
                 }
 
                 p {
