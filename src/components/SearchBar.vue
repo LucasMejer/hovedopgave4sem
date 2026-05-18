@@ -99,8 +99,8 @@ dropshadow på accessories
                 @input="showSearches"
             >
             <div class="icon-container">
-                <img class="search-icon" src="../../public/ikoner/search.png" alt="">
-                <svg @click="clearSearch" :class="{'clear-hidden': clearHidden}" class="clear-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <img class="search-icon" src="../../public/ikoner/search.png" alt="Search">
+                <svg @click="clearSearch" :class="{'clear-hidden': clearHidden}" class="clear-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Clear">
                     <path d="M1.5 1.5L14.25 14.25M27 27L14.25 14.25M14.25 14.25L1.5 27M14.25 14.25L27 1.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                 </svg>
             </div>
@@ -110,7 +110,7 @@ dropshadow på accessories
             <div :class="{'search-hidden': searchHidden}" class="searched-dropdown">
 
                 <router-link to="/product" v-for="item in searchesFilter" :class="{'product-hidden': productHidden}" class="searched-product" :key="id">
-                    <img class="product-image" :src=item.ProduktBillede alt="">
+                    <img class="product-image" :src=item.ProduktBillede :alt="`${item.ProduktTitel} produktbillede`">
                     <div class="product-content">
                         <div class="product-text">
                             <h3 class="text"> {{item.ProduktTitel}} </h3>
@@ -338,7 +338,7 @@ dropshadow på accessories
                         .searched-product {
 
                             &:hover {
-                                background-color: #e6e6e6;
+                                background-color: #DADADA;
                                 cursor: pointer;
                             }
                             /*

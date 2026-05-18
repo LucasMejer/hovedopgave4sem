@@ -74,11 +74,11 @@ onBeforeUnmount( () => {
         <div :class="{'nav-hidden': navHidden}" class="mobile-nav" ref="mobileNav">
             <div class="logo-line">
                 <button @click="toggleBurger" id="burgermenu" ref="burgerMenu">
-                    <img :class="{'hidden': toggleBM}" src="../../public/ikoner/burgermenu.png" alt=""></img>
-                    <img :class="{'visible': toggleBM}" class="hidden" src="../../public/ikoner/close.png" alt=""></img>
+                    <img :class="{'hidden': toggleBM}" src="../../public/ikoner/burgermenu.png" alt="Burgermenu"></img>
+                    <img :class="{'visible': toggleBM}" class="hidden" src="../../public/ikoner/close.png" alt="Close"></img>
                 </button>
                 
-                <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+                <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Home"></router-link>
             </div>
             
             <SearchBar/>
@@ -94,8 +94,8 @@ onBeforeUnmount( () => {
                 <hr class="thick-line">
 
                 <div class="nav-icons">
-                    <img src="../../public/ikoner/english-flag.png" alt="">
-                    <img src="../../public/ikoner/header-login-ikon.svg" alt="">
+                    <img src="../../public/ikoner/english-flag.png" alt="Language">
+                    <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile">
                 </div>
 
                 <div class="nav-menu-items">
@@ -185,7 +185,7 @@ onBeforeUnmount( () => {
             <div class="nav-row">
                 <div class="nav-menu-items">
 
-                    <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Scangrip partner site logo"></router-link>
+                    <router-link to="/"><img class="partner-logo" src="../../public/ikoner/PARTNER_LOGO.svg" alt="Home"></router-link>
                     
                     <div>
                         <button @click="toggleProductInformation" class="menu-item" ref="menuItemPI">
@@ -240,8 +240,8 @@ onBeforeUnmount( () => {
                     <SearchBar/>
 
                     <div class="nav-icons">
-                        <img src="../../public/ikoner/english-flag.png" alt="">
-                        <img src="../../public/ikoner/header-login-ikon.svg" alt="">
+                        <img src="../../public/ikoner/english-flag.png" alt="Language">
+                        <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile">
                     </div>
                 </div>
             </div>
