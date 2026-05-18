@@ -109,8 +109,8 @@ dropshadow på accessories
         <div class="searched-dropdown-container" ref="searchDropdown">
             <div :class="{'search-hidden': searchHidden}" class="searched-dropdown">
 
-                <router-link to="/product" v-for="item in searchesFilter" :class="{'product-hidden': productHidden}" class="searched-product" :key="id">
-                    <img class="product-image" :src=item.ProduktBillede :alt="`${item.ProduktTitel} produktbillede`">
+                <router-link to="/product" v-for="item in searchesFilter" :class="{'product-hidden': productHidden}" class="searched-product" :key="item.ProduktNummer">
+                    <img class="product-image" :src=item.ProduktBillede :alt="item.ProduktTitel">
                     <div class="product-content">
                         <div class="product-text">
                             <h3 class="text"> {{item.ProduktTitel}} </h3>

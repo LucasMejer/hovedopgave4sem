@@ -378,8 +378,7 @@ onBeforeUnmount( () => {
         }
 
         .marked {
-            font-weight: 700;
-            text-decoration: underline;
+            font-weight: 600;
         }
     }   
 
@@ -477,6 +476,7 @@ onBeforeUnmount( () => {
                 a {
                     &:hover {
                         text-decoration: underline;
+                        text-decoration-thickness: 1.5px;
                     }
                 }
             }
@@ -515,6 +515,7 @@ onBeforeUnmount( () => {
                 &:hover {
                     text-decoration: underline;
                     text-underline-offset: 6px;
+                    text-decoration-thickness: 1.5px;
                 }
 
                 p {

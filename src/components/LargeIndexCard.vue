@@ -17,7 +17,7 @@ const cardInfo = defineProps({
         <h3 class="CardText CardDesc">{{ CardText }}</h3>
         <a class="DownloadButton" :href="cardInfo.CardDownload" target="_blank">
             <h3>{{ CardButtonText }}</h3>
-            <img :src="CardButtonIcon" :alt="'Download ' + CardHeading">
+            <img :src="CardButtonIcon" alt="">
         </a> 
     </div>
 </template>
