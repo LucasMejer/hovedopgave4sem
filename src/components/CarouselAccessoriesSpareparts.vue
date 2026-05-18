@@ -4,37 +4,37 @@ import { ref } from 'vue'
 const slides = ref([
   { 
     image: 'https://www.scangrip.com/Admin/Public/GetImage.ashx?width=800&height=800&crop=5&FillCanvas=True&DoNotUpscale=true&Compression=75&image=/Files/Images/03.5301/03.5301-usb-car-charger.jpg',
-    title: 'photo of car adaptor',
+    title: 'Car adaptor',
     produkttitle: 'CAR ADAPTOR 5V, 12-24V',
     produktnr: '03.5301'
   },
 
   { image: 'https://www.scangrip.com/Files/Images/03.5368/03.5368-charger-au-5v-1a.jpg',
-    title: 'photo of Australian plug charger',
+    title: 'Australian plug charger',
     produkttitle: 'CHARGER AU, 5V, 1A, BLACK',
     produktnr: '03.5368'
   },
 
   { 
     image: 'https://www.scangrip.com/Files/Images/03.5305/03.5305-USB-CHARGER-SCANGRIP-LOGO.jpg',
-    title: 'photo of charger with USB plug',
+    title: 'Charger with USB plug',
     produkttitle: 'CHARGER USB 5V, 1A',
     produktnr: '03.5305'
   },
   { 
     image: 'https://www.scangrip.com/Files/Images/03.5352/03.5352-uk-charger-1.jpg',
-    title: 'photo of charger with uk plug included USB',
+    title: 'Charger with uk plug included USB',
     produkttitle: 'CHARGER USB 5V, 1A UK',
     produktnr: '03.5352'
   },
   { 
     image: 'https://us.scangrip.com/Files/Images/03.5355/03.5355-ul-charger-5v-1a-3.jpg',
-    title: 'photo of charger with US plug included USB',
+    title: 'Charger with US plug included USB',
     produkttitle: 'CHARGER USB, 5V, 1A US',
     produktnr: '03.5355'
   },
   { image: 'https://www.scangrip.com/Files/Images/03.5925/03.5925-usb-c-cable-1.jpg',
-    title: 'Photo of a cable with USB-A end to USB-C',
+    title: 'Cable with USB-A end to USB-C',
     produkttitle: 'USB-C CABLE',
     produktnr: '03.5925'
   },
