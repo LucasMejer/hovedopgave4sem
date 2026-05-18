@@ -239,6 +239,7 @@ const toggleAccordion = (clickedValue) => {
                     {{ value.Overskrift }}
                     <img :class="{'rotate':value.is_open}" src="/public/ikoner/arrow-down.png" alt=""
                     class="title"
+                    
                     >
                 </h2>
                 <div v-show="value.is_open" class="content">
@@ -262,7 +263,9 @@ const toggleAccordion = (clickedValue) => {
         <div class="overskrifter">
             <h2 v-for="value in accordionarray"
                 @click="toggleAccordion(value)"
-                :class="{ open:value.is_open }">
+                :class="{ open:value.is_open }"
+                tabindex="0"
+                @keydown.enter="toggleAccordion(value)">
                 {{ value.Overskrift }}
             </h2>
         </div>

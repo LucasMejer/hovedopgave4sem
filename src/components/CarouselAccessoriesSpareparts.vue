@@ -66,8 +66,8 @@ const prev = () => {
       </div>
     </div>
   </div>
-  <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt=""></button>
-  <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt=""></button>
+  <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt="" aria-label="go previous"></button>
+  <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt="" aria-label="go to next"></button>
 </div>
 </template>
 <style lang="scss" scoped>
