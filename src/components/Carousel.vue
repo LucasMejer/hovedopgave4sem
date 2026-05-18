@@ -83,24 +83,24 @@ function autoScrollFunction() {
 
 <template>
     <div class="CarouselDiv" aria-label="Nyhed Karrusel" CarouselData>
-        <button class="CarouselButtonPrev NavButtons" @click="prev"><img src="/ikoner/index-carousel-arrowleft.svg" alt=""></button>
-        <button class="CarouselButtonNext NavButtons" @click="next"><img src="/ikoner/index-carousel-arrowright.svg" alt=""></button>
+        <button class="CarouselButtonPrev NavButtons" @click="prev"><img src="/ikoner/index-carousel-arrowleft.svg" alt="Previous carousel image"></button>
+        <button class="CarouselButtonNext NavButtons" @click="next"><img src="/ikoner/index-carousel-arrowright.svg" alt="Next carousel image"></button>
         <div class="CarouselItem" >
             <Transition>
                 <span v-show="currentImage == 0">
-                    <img  :src="CarouselImages[0].scr" alt="">
+                    <img  :src="CarouselImages[0].scr" alt="News picture 1">
                 </span>
             </Transition>
 
             <Transition>
                 <span v-show="currentImage == 1">
-                    <img  :src="CarouselImages[1].scr" alt="">
+                    <img  :src="CarouselImages[1].scr" alt="News picture 2">
                 </span>
             </Transition>
 
             <Transition>
                 <span v-show="currentImage == 2">
-                    <img  :src="CarouselImages[2].scr" alt="">
+                    <img  :src="CarouselImages[2].scr" alt="News picture 3">
                 </span>
             </Transition>
 
