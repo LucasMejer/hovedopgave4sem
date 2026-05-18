@@ -2,23 +2,27 @@
 import { ref } from 'vue'
 
 const slides = ref([
-  { image: '/public/novamini.png', title: 'Slide 1' },
-  { image: '/public/novamini-i-brug.jpg', title: 'Slide 2' },
-  { image: '/public/novamini-nineteenth-degree-angle.jpg', title: 'Slide 3' },
-  { image: '/public/novamini-magnet-attachment.jpg', title: 'Slide 4' },
-  { image: '/public/novamini-on-middlefinger.jpg', title: 'Slide 5'},
-  { image: '/public/novamini-opti-light.jpg', title: 'Slide 6'},
-  { image: '/public/novamini-spareparts.jpg', title: 'Slide 7'}
+  { image: '/novamini.png', title: 'Nova Mini front view' },
+  { image: '/novamini-i-brug.jpg', title: 'Nova Mini in use' },
+  { image: '/novamini-nineteenth-degree-angle.jpg', title: 'Nova Mini angle view' },
+  { image: '/novamini-magnet-attachment.jpg', title: 'Nova Mini magnet attachment' },
+  { image: '/novamini-on-middlefinger.jpg', title: 'Nova Mini on finger' },
+  { image: '/novamini-opti-light.jpg', title: 'Nova Mini opti light' },
+  { image: '/novamini-spareparts.jpg', title: 'Nova Mini spare parts' }
 ])
 
 const currentIndex = ref(0)
 
 const next = () => {
-  currentIndex.value = (currentIndex.value + 1) % slides.value.length
+  currentIndex.value =
+    (currentIndex.value + 1) % slides.value.length
 }
 
 const prev = () => {
-  currentIndex.value = currentIndex.value === 0 ? slides.value.length - 1 : currentIndex.value - 1
+  currentIndex.value =
+    currentIndex.value === 0
+      ? slides.value.length - 1
+      : currentIndex.value - 1
 }
 
 const goToSlide = (index) => {
@@ -27,31 +31,75 @@ const goToSlide = (index) => {
 </script>
 
 <template>
+  <!-- Thumbnails -->
   <div class="thumbnails">
+    <button
+      v-for="(slide, index) in slides"
+      :key="index"
+      type="button"
+      class="thumbnail-btn"
+      :class="{ active: index === currentIndex }"
+      @click="goToSlide(index)"
+      :aria-label="`Go to image ${index + 1}`"
+    >
       <img
+        :src="slide.image"
+        :alt="slide.title"
+      />
+    </button>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="carousel-counter">
+      {{ currentIndex + 1 }} / {{ slides.length }}
+    </div>
+
+    <div
+      class="carousel-inner"
+      :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+    >
+      <div
         v-for="(slide, index) in slides"
         :key="index"
-        :src="slide.image"
-        :class="{ active: index === currentIndex }"
-        @click="goToSlide(index)"
+        class="carousel-slide"
+      >
+        <img
+          :src="slide.image"
+          :alt="slide.title"
+        />
+      </div>
+    </div>
+
+    <!-- Previous button -->
+    <button
+      @click="prev"
+      class="carousel-btn prev"
+      type="button"
+      aria-label="Previous image"
+    >
+      <img
+        src="/ikoner/arrow-left.svg"
+        alt=""
       />
-    </div>
-  <div class='carousel'>
-      <div class="carousel-counter">
-        {{ currentIndex + 1 }} / {{ slides.length }}
-      </div>
-    <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 100}%)` }'>
-      <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
-        <img :src='slide.image' :alt='slide.title'>
-      </div>
-    </div>
-    <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt=""></button>
-    <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt=""></button>
+    </button>
+
+    <!-- Next button -->
+    <button
+      @click="next"
+      class="carousel-btn next"
+      type="button"
+      aria-label="Next image"
+    >
+      <img
+        src="/ikoner/arrow-right.svg"
+        alt=""
+      />
+    </button>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
 @use '../assets/_headings.scss' as f;
 @use '../assets/_colors.scss' as c;
 
@@ -66,11 +114,15 @@ const goToSlide = (index) => {
   position: relative;
   z-index: 1;
 }
-/*
-  transition: transform 0.3s ease;
-  */
+
 .carousel-slide {
   min-width: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 button.carousel-btn {
@@ -87,25 +139,26 @@ button.carousel-btn {
   height: 45px;
   border-radius: 100%;
   cursor: pointer;
-  img{
+
+  img {
     height: 20px;
     width: 20px;
   }
 }
 
-.prev { left: 10px;}
-.next { right: 10px;}
+.prev {
+  left: 10px;
+}
 
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
+.next {
+  right: 10px;
 }
 
 .carousel-counter {
   position: absolute;
   top: 10px;
   right: 15px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: c.$font-color-secondary;
   padding: 5px 10px;
   font-family: f.$font-primary;
@@ -116,14 +169,14 @@ button.carousel-btn {
   display: none;
 }
 
-@media only screen and (min-width: 768px){
-  .carousel{
+@media only screen and (min-width: 768px) {
+  .carousel {
     width: 40%;
     margin: 0px 50px;
     display: flex;
     height: fit-content;
   }
-  
+
   .thumbnails {
     display: flex;
     flex-direction: column;
@@ -131,23 +184,37 @@ button.carousel-btn {
     gap: 10px;
   }
 
-  .thumbnails img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    cursor: pointer;
-    opacity: 0.5;
+  .thumbnail-btn {
     border: 2px solid transparent;
+    background: transparent;
+    padding: 0;
+
+    cursor: pointer;
+
+    opacity: 0.5;
     transition: 0.2s;
   }
 
-  .thumbnails img.active {
+  .thumbnail-btn img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .thumbnail-btn.active {
     opacity: 1;
     border: 2px solid black;
   }
 
-  .thumbnails img:hover {
+  .thumbnail-btn:hover {
     opacity: 0.8;
+  }
+
+  .thumbnail-btn:focus-visible,
+  .carousel-btn:focus-visible {
+    outline: 3px solid black;
+    outline-offset: 2px;
   }
 }
 </style>
