@@ -52,7 +52,8 @@
         text-underline-offset: 2px;
         cursor: pointer;
         display: inline;
-        color: rgb(48, 48, 166);
+        color: rgb(0, 0, 0);
+        font-weight: 600;
 
         
     }

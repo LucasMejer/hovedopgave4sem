@@ -245,6 +245,13 @@ function autoScrollFunction() {
                 display: block;
                 right: 1rem;
             }
+            .CarouselBottomNav{
+                .CarouselBottomButton{
+                    width: 18px;
+                    height: 18px;
+                }
+            }
         }
+        
     }
 </style>

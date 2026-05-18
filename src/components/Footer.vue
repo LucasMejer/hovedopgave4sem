@@ -31,7 +31,11 @@
             <div class="footer-content">
                 <h2>MAILING LIST</h2>
                 <p>Sign up if you would like to receive occassional treats from us.</p>
-                <button aria-label="">Go</button>
+                <button aria-label="">
+                    <p>
+                    Go
+                    </p>
+                </button>
             </div>
             <div class="footer-content">
                 <h2>SOCIAL LINKS</h2>
@@ -58,6 +62,13 @@ footer{
 .footer-content{
 margin: 20px auto 10px auto;
 max-width: 90%;
+button{
+    display: flex;
+    align-items: center;
+    p{
+        margin: 0px 0px -2px 0px;
+    }
+}
 }
 h2{
     color: c.$font-color-secondary;
@@ -120,9 +131,9 @@ img{
         margin: 20px 0px;
     }
     img{
-        height: 40px;
-        width: 40px;
-        margin: 5px;
+        height: 30px;
+        width: 30px;
+        margin: 5px 20px 5px 0px;
     }
 
     .copyright-notice{
