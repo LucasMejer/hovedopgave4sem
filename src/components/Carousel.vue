@@ -115,9 +115,9 @@ function autoScrollFunction() {
         </div>
         
         <div class="CarouselBottomNav">
-            <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button1Selected}" @click="BottomButton(0)"></span>
-            <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button2Selected}" @click="BottomButton(1)"></span>
-            <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button3Selected}" @click="BottomButton(2)"></span>
+            <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button1Selected}" @click="BottomButton(0)" tabindex="0" @keydown.enter="BottomButton(0)"></span>
+            <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button2Selected}" @click="BottomButton(1)" tabindex="0" @keydown.enter="BottomButton(1)"></span>
+            <span class="CarouselBottomButton" :class="{CarouselBottomButtonSelected : Button3Selected}" @click="BottomButton(2)" tabindex="0" @keydown.enter="BottomButton(2)"></span>
         </div>
     </div>
 </template>
