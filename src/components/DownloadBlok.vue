@@ -66,7 +66,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }" :aria-pressed="selected.includes('productvideo')" aria-label="Select NOVA MINI mp4" tabindex="0" @keydown.enter="toggleSelection('productvideo')">
                 <img src="/public/download/novamini-mp4.png" alt="">
-                <p>NOVA MINI Product Video</p>
+                <p>NOVA MINI Product Video (MP4)</p>
                 <img v-if="selected.includes('productvideo')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -82,7 +82,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }" :aria-pressed="selected.includes('safetydata')" aria-label="Select NOVA MINI safetydata PDF" tabindex="0" @keydown.enter="toggleSelection('saftydata')">
                 <img src="/public/download/novamini-safety-data.jpg" alt="">
-                <p>NOVA MINI Safety data</p>
+                <p>NOVA MINI Safety data (PDF)</p>
                 <img v-if="selected.includes('safetydata')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -98,7 +98,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('productsheet')" :class="{ 'blok-card-valgt': selected.includes('productsheet') }" :aria-pressed="selected.includes('productsheet')" aria-label="Select NOVA MINI productsheet uk PDF" tabindex="0" @keydown.enter="toggleSelection('productsheet')">
                 <img src="/public/download/novamini-productsheet-uk.jpg" alt="">
-                <p>NOVA MINI Productsheet UK</p>
+                <p>NOVA MINI Productsheet UK (PDF)</p>
                 <img v-if="selected.includes('productsheet')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -114,7 +114,7 @@ function activateOverlay(link){
             </div>
               <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }" :aria-pressed="selected.includes('declaration')" aria-label="Select NOVA MINI declaration eu PDF" tabindex="0" @keydown.enter="toggleSelection('declaration')">
                 <img src="/public/download/novamini-eu-declaration.jpg" alt="">
-                <p>NOVA MINI Declaration of Conformity</p>
+                <p>NOVA MINI Declaration of Conformity (PDF)</p>
                 <img v-if="selected.includes('declaration')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -132,7 +132,7 @@ function activateOverlay(link){
          <div class="scroll" v-if="imagesshown">
             <div class="scroll-blok-card" @click="toggleSelection('productimage')" :class="{ 'blok-card-valgt': selected.includes('productimage') }" :aria-pressed="selected.includes('productimage')" aria-label="Select NOVA MINI productimage" tabindex="0" @keydown.enter="toggleSelection('productimage')">
                 <img src="/public/novamini.png" alt="">
-                <p>NOVA MINI</p>
+                <p>NOVA MINI (JPG)</p>
                 <img v-if="selected.includes('productimage')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -148,7 +148,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('pocketuse')" :class="{ 'blok-card-valgt': selected.includes('pocketuse') }" :aria-pressed="selected.includes('pocketuse')" aria-label="Select NOVA MINI pocketuse productimage" tabindex="0" @keydown.enter="toggleSelection('pocketuse')">
                 <img src="/public/novamini-i-brug.jpg" alt="">
-                <p>NOVA MINI pocket use</p>
+                <p>NOVA MINI pocket use (JPG)</p>
                 <img v-if="selected.includes('pocketuse')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -164,7 +164,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('nineteenthdegree')" :class="{ 'blok-card-valgt': selected.includes('nineteenthdegree') }" :aria-pressed="selected.includes('nineteenthdegree')" aria-label="Select NOVA MINI ninetheenth degree product angle productimage" tabindex="0" @keydown.enter="toggleSelection('nineteenthdegree')">
                 <img src="/public/novamini-nineteenth-degree-angle.jpg" alt="">
-                <p>NOVA MINI flexibility</p>
+                <p>NOVA MINI flexibility (JPG)</p>
                 <img v-if="selected.includes('nineteenthdegree')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -180,7 +180,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('magnetattachment')" :class="{ 'blok-card-valgt': selected.includes('magnetattachment') }" :aria-pressed="selected.includes('magnetattachment')" aria-label="Select NOVA MINI magnet attachment productimage" tabindex="0" @keydown.enter="toggleSelection('magnetattachment')">
                 <img src="/public/novamini-magnet-attachment.jpg" alt="">
-                <p>Magnetic attachment</p>
+                <p>Magnetic attachment (JPG)</p>
                 <img v-if="selected.includes('magnetattachment')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -196,7 +196,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('onmiddlefinger')" :class="{ 'blok-card-valgt': selected.includes('onmiddlefinger') }" :aria-pressed="selected.includes('onmiddlefinger')" aria-label="Select NOVA MINI on middlefinger productimage" tabindex="0" @keydown.enter="toggleSelection('onmiddlefinger')">
                 <img src="/public/novamini-on-middlefinger.jpg" alt="">
-                <p>NOVA MINI in hand</p>
+                <p>NOVA MINI in hand (JPG)</p>
                 <img v-if="selected.includes('onmiddlefinger')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -212,7 +212,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('optilight')" :class="{ 'blok-card-valgt': selected.includes('optilight') }" :aria-pressed="selected.includes('optilight')" aria-label="Select NOVA MINI optilight settings productimage" tabindex="0" @keydown.enter="toggleSelection('optilight')">
                 <img src="/public/novamini-opti-light.jpg" alt="">
-                <p>OPTI Light settings</p>
+                <p>OPTI Light settings (JPG)</p>
                 <img v-if="selected.includes('optilight')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
@@ -228,7 +228,7 @@ function activateOverlay(link){
             </div>
             <div class="scroll-blok-card" @click="toggleSelection('sparepartsoverview')" :class="{ 'blok-card-valgt': selected.includes('sparepartsoverview') }" :aria-pressed="selected.includes('sparepartsoverview')" aria-label="Select NOVA MINI spareparts overview productimage" tabindex="0" @keydown.enter="toggleSelection('sparepartsoverview')">
                 <img src="/public/novamini-spareparts.jpg" alt="">
-                <p>Spareparts overview</p>
+                <p>Spareparts overview (JPG)</p>
                 <img v-if="selected.includes('sparepartsoverview')" 
                 src="/public/ikoner/check.svg"
                 alt="selected" 
