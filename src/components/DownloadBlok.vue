@@ -34,9 +34,13 @@ const overlayImage = ref ("")
 
 function activateOverlay(link){
     overlayImage.value = link
-
-        openOverlay.value = !openOverlay.value
-
+    if (openOverlay.value === false) {
+        openOverlay.value = true
+    }
+    else if (openOverlay.value === true) {
+        openOverlay.value = false
+    }
+        
 
 }
 
@@ -135,10 +139,10 @@ function activateOverlay(link){
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/download/novamini-productsheet-uk.jpg')" type="button" aria-label=">NOVA MINI Productsheet UK (PDF)">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-productsheet-uk.jpg')" type="button" aria-label=">Preview NOVA MINI Productsheet UK PDF">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
-                    <button type="button" class="download" aria-label="Download NOVA MINI productsheet uk PDF" @click.stop="downloadFunction('productsheet')">
+                    <button type="button" class="download" aria-label="Download NOVA MINI productsheet uk PDF" @click.stop="downloadFunction('NOVA MINI Productsheet UK (PDF)')">
                         <img src="/public/ikoner/download-ikon.svg" alt="">
                     </button>
                 </div>
@@ -200,7 +204,7 @@ function activateOverlay(link){
                     <button class="preview" @click.stop="activateOverlay('/novamini-i-brug.jpg')" type="button" aria-label="Preview NOVA MINI pocketuse productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
-                    <button type="button" class="download" aria-label="Download NOVA MINI pocketuse productimage jpg" @click.stop="downloadFunction('NOVA MINI pocket use (JPG')">
+                    <button type="button" class="download" aria-label="Download NOVA MINI pocketuse productimage jpg" @click.stop="downloadFunction('NOVA MINI pocket use (JPG)')">
                         <img src="/public/ikoner/download-ikon.svg" alt="">
                     </button>
                 </div>
@@ -297,7 +301,7 @@ function activateOverlay(link){
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/novamini-spareparts.jpg')" @keydown.esc="activateOverlay('/novamini-spareparts.jpg')" type="button" aria-label="Preview NOVA MINI spareparts overview productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-spareparts.jpg')" @keydown.esc.stop="activateOverlay('/novamini-spareparts.jpg')" type="button" aria-label="Preview NOVA MINI spareparts overview productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button  type="button" class="download" aria-label="Download NOVA MINI spareparts overview productimage jpg" @click.stop="downloadFunction('Spareparts overview (JPG)')">
@@ -474,6 +478,9 @@ button{
     }
 
     .fullscreenview{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         z-index: 5;
         position: fixed;
         left: 0%;
@@ -481,11 +488,10 @@ button{
         top: 0%;
         bottom: 0%;
         background-color: rgba(0, 0, 0, 0.404);
-        img{
-        width: 30%;
-        height: auto;
-        margin: 10% 35% 0% 35%;
-        }
+            img{
+            width: auto;
+            height: 80vh;
+            }
     }
 
 @media only screen and (min-width: 768px){
