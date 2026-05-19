@@ -37,6 +37,13 @@ function activateOverlay(link){
     openOverlay.value = true
 }
 
+function downloadFunction(){
+    if(selected.value.length > 0){
+        alert('You have now downloaded the selected file(s)');
+    }
+    
+}
+
 </script>
 
 <template>
@@ -56,7 +63,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-manual.jpg')" type="button" aria-label="Preview NOVA MINI Manual">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-manual.jpg')" type="button" aria-label="Preview NOVA MINI Manual">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI PDF Manual">
@@ -72,7 +79,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-mp4.png')" type="button" aria-label="Preview NOVA MINI mp4">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-mp4.png')" type="button" aria-label="Preview NOVA MINI mp4">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI product video">
@@ -88,7 +95,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-safety-data.jpg')" type="button" aria-label="Preview NOVA MINI safetydata PDF">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-safety-data.jpg')" type="button" aria-label="Preview NOVA MINI safetydata PDF">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI safetydata PDF">
@@ -104,7 +111,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-productsheet-uk.jpg')" type="button" aria-label="Preview NOVA MINI productsheet uk PDF">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-productsheet-uk.jpg')" type="button" aria-label="Preview NOVA MINI productsheet uk PDF">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI productsheet uk PDF">
@@ -120,7 +127,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark"> 
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-eu-declaration.jpg')" type="button" aria-label="Preview NOVA MINI declaration eu PDF">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-eu-declaration.jpg')" type="button" aria-label="Preview NOVA MINI declaration eu PDF">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI declaration eu PDF">
@@ -138,7 +145,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini.png')" type="button" aria-label="Preview NOVA MINI declaration eu PDF">
+                    <button class="preview" @click.stop="activateOverlay('/novamini.png')" type="button" aria-label="Preview NOVA MINI declaration eu PDF">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI declaration eu PDF">
@@ -154,7 +161,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-i-brug.jpg')" type="button" aria-label="Preview NOVA MINI pocketuse productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-i-brug.jpg')" type="button" aria-label="Preview NOVA MINI pocketuse productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI pocketuse productimage jpg">
@@ -170,7 +177,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-nineteenth-degree-angle.jpg')" type="button" aria-label="Preview NOVA MINI ninetheenth degree product angle productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-nineteenth-degree-angle.jpg')" type="button" aria-label="Preview NOVA MINI ninetheenth degree product angle productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI ninetheenth degree product angle productimage jpg">
@@ -186,7 +193,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-magnet-attachment.jpg')" type="button" aria-label="Preview NOVA MINI magnet attachment productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-magnet-attachment.jpg')" type="button" aria-label="Preview NOVA MINI magnet attachment productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI magnet attachment productimage jpg">
@@ -202,7 +209,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-on-middlefinger.jpg')" type="button" aria-label="Preview NOVA MINI on middlefinger productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-on-middlefinger.jpg')" type="button" aria-label="Preview NOVA MINI on middlefinger productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI on middlefinger productimage jpg">
@@ -218,7 +225,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-opti-light.jpg')" type="button" aria-label="Preview NOVA MINI optilight settings productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-opti-light.jpg')" type="button" aria-label="Preview NOVA MINI optilight settings productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI optilight settings productimage jpg">
@@ -234,7 +241,7 @@ function activateOverlay(link){
                 alt="selected" 
                 class="checkmark">
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/public/download/novamini-spareparts.jpg')" type="button" aria-label="Preview NOVA MINI spareparts overview productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-spareparts.jpg')" type="button" aria-label="Preview NOVA MINI spareparts overview productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI spareparts overview productimage jpg">
@@ -251,7 +258,7 @@ function activateOverlay(link){
                 <div class="amount-selected-counter">
                     <p>{{ selected.length }} Files selected</p>
                 </div>
-                <button class="downloadbutton">
+                <button class="downloadbutton" @click="downloadFunction()">
                     Download
                     <img class="download-icon" src="/public/ikoner/download-ikon.svg" alt="">
                 </button>
@@ -299,6 +306,7 @@ button{
     display: flex;
     align-items: center;
     padding-top: 15px;
+    cursor: pointer;
 }
 
 .scroll{

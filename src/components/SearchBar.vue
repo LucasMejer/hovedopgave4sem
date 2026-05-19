@@ -268,7 +268,7 @@ dropshadow på accessories
                             }
                             .PaintingClass{
                                 color: c.$font-color-secondary;
-                                background-color: #88964E;
+                                background-color: #6c793e;
                             }
                             .AutomotiveClass{
                                 color: c.$font-color-secondary;

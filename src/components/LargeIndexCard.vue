@@ -12,7 +12,7 @@ const cardInfo = defineProps({
 </script>
 
 <template>
-    <div class="CardDiv" :style="{backgroundImage: `url(${cardInfo.CardImg})`}">
+    <div class="CardDiv" :style="{backgroundImage: `url(${cardInfo.CardImg})`}" tabindex="0">
         <h2 class="CardText">{{ CardHeading }}</h2>
         <h3 class="CardText CardDesc">{{ CardText }}</h3>
         <a class="DownloadButton" :href="cardInfo.CardDownload" target="_blank">
