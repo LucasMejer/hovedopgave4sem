@@ -279,8 +279,8 @@ onMounted(() => {
                 <h3>Results: {{filteredProducts.length}}</h3>
                 <div class="VisningDiv">
                     <h3>View:</h3>
-                    <img src="/public/ikoner/grid-hvid.png" alt="Skift til grid layout" class="ProductGridIcon">
-                    <img src="/public/ikoner/list-sort.png" alt="Skift til list layout" class="ProductListIcon">
+                    <img src="/public/ikoner/grid-hvid.png" alt="Change to grid layout" class="ProductGridIcon">
+                    <img src="/public/ikoner/list-sort.png" alt="Change to list layout" class="ProductListIcon">
                 </div>
             </div>
 

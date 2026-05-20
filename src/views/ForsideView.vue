@@ -29,7 +29,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardImg="/ikoner/index-mediafile-ikon.svg"
             CardDownload="/download/media-file.zip"
             CardButtonIcon="/ikoner/download-ikon.svg"
-        />  
+        /> 
         <LargeIndexCard 
             CardHeading="Price list" 
             CardText="Download SCANGRIP's price lists for all products/markets"
@@ -49,9 +49,14 @@ import BackToTop from '@/components/BackToTop.vue';
 .LargeIndexCardsDiv{
     display: flex;
     flex-direction: column;
-
     background-color: rgb(247, 247, 247);
+
+    /*a {
+        text-decoration: none;
+        color: black;
+    }*/
 }
+
 
 @media only screen and (min-width: 768px){
     .LargeIndexCardsDiv{
