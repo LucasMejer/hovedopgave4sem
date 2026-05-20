@@ -33,7 +33,7 @@ fetchData();
 
 
 const searchesFilter = computed(() => {
-    return databaseArray.value.filter(item => item.ProduktTitel.toLowerCase().trim().replaceAll(' ', '').includes(search.value.toLowerCase().trim().replaceAll(' ', '')))
+    return databaseArray.value.filter(item => item.ProduktTitel.toLowerCase().replaceAll(' ', '').includes(search.value.toLowerCase().replaceAll(' ', '')))
 });
 
 
