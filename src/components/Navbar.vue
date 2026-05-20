@@ -555,7 +555,7 @@ onBeforeUnmount( () => {
                     cursor: pointer;
 
                     &:hover {
-                        text-decoration: underline;
+                        text-decoration: underline 1.5px;
                         text-underline-offset: 6px;
                     }
                 }
