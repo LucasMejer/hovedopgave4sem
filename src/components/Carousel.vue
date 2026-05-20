@@ -88,19 +88,19 @@ function autoScrollFunction() {
         <div class="CarouselItem" >
             <Transition>
                 <span v-show="currentImage == 0">
-                    <img  :src="CarouselImages[0].scr" alt="News picture 1">
+                    <img  :src="CarouselImages[0].scr" alt="">
                 </span>
             </Transition>
 
             <Transition>
                 <span v-show="currentImage == 1">
-                    <img  :src="CarouselImages[1].scr" alt="News picture 2">
+                    <img  :src="CarouselImages[1].scr" alt="">
                 </span>
             </Transition>
 
             <Transition>
                 <span v-show="currentImage == 2">
-                    <img  :src="CarouselImages[2].scr" alt="News picture 3">
+                    <img  :src="CarouselImages[2].scr" alt="">
                 </span>
             </Transition>
 

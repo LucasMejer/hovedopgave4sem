@@ -32,7 +32,7 @@ onBeforeUnmount(() => {
 
 <template>
     <div :class="{'button-hidden': buttonHidden}" class="back-to-top">
-            <button @click="backToTopClick" aria-label="back-to-top button">
+            <button @click="backToTopClick" aria-label="back to top button">
                 <div class="overlay">
                     <p>Back to Top</p>
                 </div>

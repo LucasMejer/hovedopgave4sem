@@ -7,7 +7,7 @@
             <div class="columntext">
                 <h2>Unsure how to use the Business Partner Site?</h2>
                 <h3>Learn how to navigate through the Business Partner Site by watching our guide video.</h3>
-                <h3>You can find more information and guides&nbsp;<router-link to="/info" href="#top" class="info-link">here</router-link>.</h3>
+                <h3>You can find more information and guides&nbsp;<router-link to="/info" class="info-link" aria-label="Link to Info and guides">here</router-link>.</h3>
             </div>
         </div>
     </div>

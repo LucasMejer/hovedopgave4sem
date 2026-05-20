@@ -279,8 +279,8 @@ onMounted(() => {
                 <h3>Results: {{filteredProducts.length}}</h3>
                 <div class="VisningDiv">
                     <h3>View:</h3>
-                    <img src="/public/ikoner/grid-hvid.png" alt="Grid sort" class="ProductGridIcon">
-                    <img src="/public/ikoner/list-sort.png" alt="List sort" class="ProductListIcon">
+                    <img src="/public/ikoner/grid-hvid.png" alt="Skift til grid layout" class="ProductGridIcon">
+                    <img src="/public/ikoner/list-sort.png" alt="Skift til list layout" class="ProductListIcon">
                 </div>
             </div>
 
@@ -289,7 +289,7 @@ onMounted(() => {
                     <p>
                         {{value}}
                     </p>
-                    <img src="/public/ikoner/close.png" alt="">
+                    <img src="/public/ikoner/close.png" alt="Close">
                 </button>
             </div>
 
@@ -306,7 +306,7 @@ onMounted(() => {
                                         Discontinued
                                 </p>
                         </div> 
-                        <img :src=item.ProduktBillede :alt="item.ProduktTitel">
+                        <img :src=item.ProduktBillede alt="">
                         <h2>
                             {{ item.ProduktTitel }}
                         </h2>

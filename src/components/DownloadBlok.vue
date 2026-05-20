@@ -75,7 +75,7 @@ function activateOverlay(link){
                     <p>NOVA MINI Manual (PDF)</p>
                     <img v-if="selected.includes('manual')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -95,7 +95,7 @@ function activateOverlay(link){
                     <p>NOVA MINI Product Video (MP4)</p>
                     <img v-if="selected.includes('productvideo')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -115,7 +115,7 @@ function activateOverlay(link){
                     <p>NOVA MINI Safety data (PDF)</p>
                     <img v-if="selected.includes('safetydata')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -135,7 +135,7 @@ function activateOverlay(link){
                     <p>NOVA MINI Productsheet UK (PDF)</p>
                     <img v-if="selected.includes('productsheet')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -155,7 +155,7 @@ function activateOverlay(link){
                     <p>NOVA MINI Declaration of Conformity (PDF)</p>
                     <img v-if="selected.includes('declaration')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark"> 
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -177,7 +177,7 @@ function activateOverlay(link){
                     <p>NOVA MINI (JPG)</p>
                     <img v-if="selected.includes('productimage')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -197,7 +197,7 @@ function activateOverlay(link){
                     <p>NOVA MINI pocket use (JPG)</p>
                     <img v-if="selected.includes('pocketuse')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -217,7 +217,7 @@ function activateOverlay(link){
                     <p>NOVA MINI flexibility (JPG)</p>
                     <img v-if="selected.includes('nineteenthdegree')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -237,7 +237,7 @@ function activateOverlay(link){
                     <p>Magnetic attachment (JPG)</p>
                     <img v-if="selected.includes('magnetattachment')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -257,7 +257,7 @@ function activateOverlay(link){
                     <p>NOVA MINI in hand (JPG)</p>
                     <img v-if="selected.includes('onmiddlefinger')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -277,7 +277,7 @@ function activateOverlay(link){
                     <p>OPTI Light settings (JPG)</p>
                     <img v-if="selected.includes('optilight')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
@@ -297,7 +297,7 @@ function activateOverlay(link){
                     <p>Spareparts overview (JPG)</p>
                     <img v-if="selected.includes('sparepartsoverview')" 
                     src="/public/ikoner/check.svg"
-                    alt="selected" 
+                    alt="" 
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">

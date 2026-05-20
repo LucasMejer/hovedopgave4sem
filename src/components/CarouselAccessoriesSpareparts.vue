@@ -56,7 +56,7 @@ const prev = () => {
   <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 32}%)` }'>
     <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
       <div class="carousel-card">
-        <img :src='slide.image' :alt='slide.title'>
+        <img :src='slide.image' alt=''>
           <h3>
             {{ slide.produkttitle }}
           </h3>

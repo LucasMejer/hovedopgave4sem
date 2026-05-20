@@ -2,8 +2,9 @@
 </script>
 
 <template>
+    <!--Der er ingen aria-labels på, da det erstatter resten af teksten, og der skal rigtigt være et link omkring hvert card-->
     <div class="smallindexcardsection">
-        <div class="smallindexcard" aria-label="Link to sales guides" tabindex="0">
+        <div class="smallindexcard" tabindex="0">
             <div class="image-container">
                 <img class="red" src="/public/ikoner/index-salesguide-ikon.svg" alt="">
             </div>
@@ -12,7 +13,7 @@
                 <p>Discover our sales guides for industry-specific work light products</p>
             </div>
         </div>
-        <div class="smallindexcard" aria-label="Link to campaign materal" tabindex="0">
+        <div class="smallindexcard" tabindex="0">
             <div class="image-container">
                 <svg width="35" height="26" viewBox="0 0 35 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="">
                     <path d="M9 24.07L6.02344 15.567C6.0094 15.5269 5.97155 15.5 5.92906 15.5H3.5M12.5 14V15.4C12.5 15.4552 12.4552 15.5 12.4 15.5H3.5V14M3.5 14C2.66667 13.8333 0.5 13.3 0.5 12.5C0.5 11.7038 0.5 9.85102 0.5 9.01193C0.5 9.00375 0.500901 8.99632 0.502948 8.98841C0.676311 8.31801 1.51153 7 3.5 7M3.5 14V7M3.5 7V5.6C3.5 5.54477 3.54477 5.5 3.6 5.5H12.4C12.4552 5.5 12.5 5.54477 12.5 5.6V7.5M12.5 7.5C15.5 7 22.3 5.2 25.5 2M12.5 7.5V14M25.5 2V0.6C25.5 0.544772 25.5448 0.5 25.6 0.5H27.9C27.9552 0.5 28 0.544772 28 0.6V7.5M25.5 2V18.5M25.5 18.5C22.3 14.1 15.5 14.3333 12.5 14M25.5 18.5V20.4C25.5 20.4552 25.5448 20.5 25.6 20.5H27.9C27.9552 20.5 28 20.4552 28 20.4V13.5" stroke="currentColor"/>
@@ -25,7 +26,7 @@
                 <p>Discover SCANGRIP's downloadable campaign materials</p>
             </div>
         </div>
-        <div class="smallindexcard" aria-label="Link to videos" tabindex="0">
+        <div class="smallindexcard" tabindex="0">
             <div class="image-container">
                 <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="">
                     <path d="M28.9133 0.5H4.59692C2.33426 0.5 0.5 2.15717 0.5 4.20139V18.6438C0.5 20.688 2.33426 22.3452 4.59692 22.3452H28.9133C31.176 22.3452 33.0102 20.688 33.0102 18.6438V4.20139C33.0102 2.15717 31.176 0.5 28.9133 0.5Z" stroke="currentColor" stroke-miterlimit="10"/>
@@ -38,7 +39,7 @@
                 <p>Download and discover all our videos</p>
             </div>
         </div>
-        <div class="smallindexcard" aria-label="Link to POS-materials" tabindex="0">
+        <div class="smallindexcard" tabindex="0">
             <div class="image-container">
                 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="">
                     <path d="M4.25 14.1665V27.7498C4.25 28.8544 5.14543 29.7498 6.25 29.7498H27.75C28.8546 29.7498 29.75 28.8544 29.75 27.7498V14.1665" stroke="currentColor"/>
@@ -53,7 +54,7 @@
                 <p>Explore our exhibition material, merchandise, and in-store displays</p>
             </div>
         </div>
-        <div class="smallindexcard" aria-label="Link to campaign materal" tabindex="0">
+        <div class="smallindexcard" tabindex="0">
             <div class="image-container">
                 <img class="red" src="/public/ikoner/index-brand-ikon.svg" alt="">
             </div>  
@@ -194,7 +195,36 @@
                         brightness(102%)
                         contrast(95%);
                 }
-                
+            }
+
+            p {
+                display: block;
+                font-size: 14;
+                transition: ease 0.3s;
+            } 
+        }
+
+        &:focus {
+            transition: ease 0.3s;
+
+            .image-container {
+                height: 75px;
+                width: 75px;
+                transition: ease 0.3s;
+      
+                svg {
+                    color: c.$red-color-logo;
+                }
+
+                .red {
+                    filter:
+                        invert(16%)
+                        sepia(72%)
+                        saturate(3060%)
+                        hue-rotate(342deg)
+                        brightness(102%)
+                        contrast(95%);
+                }
             }
 
             p {
@@ -202,7 +232,6 @@
                 font-size: 14;
                 transition: ease 0.3s;
             }
-            
         }
     }
 }
