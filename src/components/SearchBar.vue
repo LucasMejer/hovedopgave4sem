@@ -99,7 +99,7 @@ dropshadow på accessories
                 @input="showSearches"
             >
             <div class="icon-container">
-                <svg @click="clearSearch" :class="{'clear-hidden': clearHidden}" class="clear-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Clear" tabindex="0">
+                <svg @click="clearSearch" :class="{'clear-hidden': clearHidden}" class="clear-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Clear" tabindex="0" @keydown.enter="clearSearch">
                     <path d="M1.5 1.5L14.25 14.25M27 27L14.25 14.25M14.25 14.25L1.5 27M14.25 14.25L27 1.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                 </svg>
                 <img class="search-icon" src="../../public/ikoner/search.png" alt="Search" tabindex="0">
