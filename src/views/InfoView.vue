@@ -123,6 +123,7 @@ li p{
     
 li{
     display: flex;
+    align-items: center;
 }}
 
 @media only screen and (min-width: 768px){

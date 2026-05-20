@@ -49,6 +49,7 @@ li p{
     
 li{
     display: flex;
+    align-items: center;
     
 }}
 </style>
