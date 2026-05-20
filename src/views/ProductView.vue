@@ -88,6 +88,7 @@ li p{
 
 .breadcrumb li{
     display: flex;
+    align-items: center;
 }
 
 img{
