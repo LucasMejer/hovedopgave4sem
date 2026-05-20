@@ -94,8 +94,8 @@ onBeforeUnmount( () => {
                 <hr class="thick-line">
 
                 <div class="nav-icons">
-                    <img src="../../public/ikoner/english-flag.png" alt="Language">
-                    <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile">
+                    <img src="../../public/ikoner/english-flag.png" alt="Language" tabindex="0">
+                    <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile" tabindex="0">
                 </div>
 
                 <div class="nav-menu-items">
@@ -240,8 +240,8 @@ onBeforeUnmount( () => {
                     <SearchBar/>
 
                     <div class="nav-icons">
-                        <img src="../../public/ikoner/english-flag.png" alt="Language">
-                        <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile">
+                        <img src="../../public/ikoner/english-flag.png" alt="Language" tabindex="0">
+                        <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile" tabindex="0">
                     </div>
                 </div>
             </div>
