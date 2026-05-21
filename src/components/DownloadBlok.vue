@@ -32,18 +32,14 @@ const openOverlay = ref (false)
 //refference til billede
 const overlayImage = ref ("")
 
-function activateOverlay(link){
+
+function activateOverlay(link) {
     overlayImage.value = link
     if (openOverlay.value === false) {
         openOverlay.value = true
     }
-    else if (openOverlay.value === true) {
-        openOverlay.value = false
-    }
-        
-
+    else return
 }
-
 
     function downloadFunction(file){
          if(file){
@@ -60,10 +56,10 @@ function activateOverlay(link){
 
 <template>
 <!-- fullscreenview styrer at overlay af billede kommer op -->
-<div class="fullscreenview" v-if="openOverlay" @click="openOverlay = false">
+<div class="fullscreenview" v-if="openOverlay" @click="openOverlay = false" tabindex="1">
     <img :src="overlayImage" alt="">
 </div>
- <div class="downloadblok">
+ <div class="downloadblok" @keydown.esc="openOverlay = false">
         <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">Files</button>
         <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">Images</button>
         <div class="scroll" v-if="filesshown">
@@ -301,7 +297,7 @@ function activateOverlay(link){
                     class="checkmark">
                 </div>
                 <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/novamini-spareparts.jpg')" @keydown.esc.stop="activateOverlay('/novamini-spareparts.jpg')" type="button" aria-label="Preview NOVA MINI spareparts overview productimage">
+                    <button class="preview" @click.stop="activateOverlay('/novamini-spareparts.jpg')" type="button" aria-label="Preview NOVA MINI spareparts overview productimage">
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button  type="button" class="download" aria-label="Download NOVA MINI spareparts overview productimage jpg" @click.stop="downloadFunction('Spareparts overview (JPG)')">
@@ -493,6 +489,11 @@ button{
             height: 80vh;
             }
     }
+
+.download, .preview {
+    padding: 0;
+    margin: 10px;
+}
 
 @media only screen and (min-width: 768px){
     .scroll{
