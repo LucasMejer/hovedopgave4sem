@@ -106,7 +106,7 @@ onBeforeUnmount( () => {
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="togglePI">
-                        <li><router-link to="/category" class="link">Work lights</router-link></li>
+                        <li><router-link to="/category" class="link">All lights</router-link></li>
                         <hr>
                         <li>CONNECT</li>
                         <hr>
@@ -194,7 +194,7 @@ onBeforeUnmount( () => {
                         </button>
                         <div class="dropdown" v-if="togglePI" ref="dropdown">
                             <ul class="dropdown-content">
-                                <li><router-link to="/category" class="link">Work lights</router-link></li>
+                                <li><router-link to="/category" class="link">All lights</router-link></li>
                                 <li>CONNECT</li>
                                 <li>Paint industry</li>
                                 <li>UV curing</li>
