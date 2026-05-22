@@ -66,6 +66,10 @@ const cardInfo = defineProps({
             &:hover{
                 border-color: c.$hover-state-active;
             }
+            img {
+                width: 25px;
+                height: 25px;
+            }
         }
     }
 

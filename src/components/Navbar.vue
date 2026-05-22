@@ -7,10 +7,14 @@ import SearchBar from './SearchBar.vue';
 const toggleBM = ref(false);
 const togglePI = ref(false);
 const toggleMI = ref(false);
+const toggleLan = ref(false);
+const togglePro = ref(false);
 const burgerMenu = ref(null);
 const mobileNav = ref(null);
 const menuItemPI = ref(null);
 const menuItemMI = ref(null);
+const menuItemLan = ref(null);
+const menuItemPro = ref(null);
 const dropdown = ref(null);
 
 const toggleBurger = () => {
@@ -25,6 +29,14 @@ const toggleMarketingItems = () => {
     toggleMI.value = !toggleMI.value;
 };
 
+const toggleProfile = () => {
+    togglePro.value = !togglePro.value;
+};
+
+const toggleLanguage = () => {
+    toggleLan.value = !toggleLan.value;
+};
+
 function clickOutside(click) {
     if (toggleBM.value && !burgerMenu.value.contains(click.target) && !mobileNav.value.contains(click.target)) {
         toggleBM.value = false;
@@ -35,7 +47,11 @@ function clickOutside(click) {
     else if (!toggleBM.value && toggleMI.value && !dropdown.value.contains(click.target) && !menuItemMI.value.contains(click.target)) {
         toggleMI.value = false;
     }
+    else if (!toggleBM.value && toggleLan.value && !dropdown.value.contains(click.target) && !menuItemLan.value.contains(click.target))
+        toggleLan.value = false;
 
+    else if (!toggleBM.value && togglePro.value && !dropdown.value.contains(click.target) && !menuItemPro.value.contains(click.target))
+        togglePro.value = false;
     else return;
 };
 
@@ -228,8 +244,39 @@ onBeforeUnmount( () => {
                     <SearchBar/>
 
                     <div class="nav-icons">
-                        <img src="../../public/ikoner/english-flag.png" alt="Language" tabindex="0">
-                        <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile" tabindex="0">
+                        <div>
+                            <button @click="toggleLanguage" class="menu-item nav-icon-item" ref="menuItemLan">
+                                <img src="../../public/ikoner/english-flag.png" class="img-underline" alt="Language" tabindex="0">
+                                <img :class="{'rotate': toggleLan}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                            </button>
+                            <div class="dropdown" v-if="toggleLan" ref="dropdown">
+                                <ul class="dropdown-content-icon">
+                                    <li>
+                                        <img src="../../public/ikoner/danish-flag.png" alt="Danish">
+                                    </li>
+                                    <li>
+                                        <img src="../../public/ikoner/german-flag.png" alt="German">
+                                    </li>
+                                    <li>
+                                        <img src="../../public/ikoner/french-flag.png" alt="French">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <button @click="toggleProfile" class="menu-item nav-icon-item" ref="menuItemPro">
+                                <img src="../../public/ikoner/header-login-ikon.svg" class="img-underline" alt="Profile" tabindex="0">
+                                <img :class="{'rotate': togglePro}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                            </button>
+                            <div class="dropdown" v-if="togglePro" ref="dropdown">
+                                <ul class="dropdown-content-icon">
+                                    <li>My profile</li>
+                                    <li>Sign out</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -246,7 +293,6 @@ onBeforeUnmount( () => {
 <style lang="scss">
     @use '../assets/_colors.scss' as c;
     @use '../assets/_headings.scss' as f;
-
 
     nav {
         margin-bottom: 140px;
@@ -387,12 +433,12 @@ onBeforeUnmount( () => {
         flex-direction: column;
 
         .menu-item {
-            border: none;
-            background-color: #fafafa;
-            padding: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: none;
+            background-color: #fafafa;
+            padding: 0;
 
             
             .rotate {
@@ -436,6 +482,27 @@ onBeforeUnmount( () => {
 
     @media (min-width: 1280px) {
 
+        @mixin dropdown-content-mixin {
+            position: absolute;
+            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+            background-color: #fff;
+            list-style-type: none;
+            width: auto;
+            white-space: nowrap;
+            padding: 0;
+
+            li {
+                font-size: 16px;
+                margin: 15px 15px;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline 1.5px;
+                    text-underline-offset: 6px;
+                }
+            }
+        }
+
         nav {
             margin-bottom: 0;
         }
@@ -448,8 +515,6 @@ onBeforeUnmount( () => {
             display: flex;
             flex-direction: column;
             border-bottom: 1px solid #afafaf;
-
-
 
             .partner-logo {
                 padding: 0;
@@ -484,8 +549,6 @@ onBeforeUnmount( () => {
 
         }
 
-
-
         .nav-menu-items {
             max-width: none;
             width: 100vw;
@@ -496,13 +559,12 @@ onBeforeUnmount( () => {
 
             .menu-dropdown-items-container {
                 display: flex;
-
             }
             
 
             .menu-item {
                 justify-content: flex-start;
-                padding-left: 20px;
+                padding-left: 15px;
                 margin: 0 0;
                 cursor: pointer;
                 background-color: #fff;
@@ -519,6 +581,21 @@ onBeforeUnmount( () => {
                 }
             }
 
+            .nav-icon-item {
+                margin: 5px;
+                padding: 0;
+/*
+                .img-underline {
+                    box-sizing: border-box;
+                }
+                
+
+                &:hover .img-underline {
+                    
+                    border-bottom: 2px solid black;
+                }*/
+            }
+
             .dropdown {
                 position: absolute;
                 z-index: 5;
@@ -526,37 +603,22 @@ onBeforeUnmount( () => {
                 
 
                 .dropdown-content {
-                    position: absolute;
-                    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
-                    background-color: #fff;
-                    list-style-type: none;
-                    width: auto;
-                    margin: -5px 0 0 20px;
-                    white-space: nowrap;
-                    padding: 0;
+                    @include dropdown-content-mixin;
+                    margin: -5px 0 0 15px;
                 }
 
-
-                li {
-                    font-size: 16px;
-                    margin: 15px 15px;
-                    cursor: pointer;
-
-                    &:hover {
-                        text-decoration: underline 1.5px;
-                        text-underline-offset: 6px;
-                    }
+                .dropdown-content-icon {
+                    @include dropdown-content-mixin;
+                    margin: -5px 0 0 5px;
                 }
+
             }
 
             .nav-icons {
-                justify-content: space-between;
-                min-width: 80px;
                 margin: 0 0 0 0;
 
                 img {
                     padding: 0;
-                    cursor: pointer;
                 }
             }
         }

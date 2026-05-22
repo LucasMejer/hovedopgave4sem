@@ -26,7 +26,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-productdataandprices-ikon.svg"
             CardDownload="/download/info-product-data-and-prices.pdf"
-            CardButtonIcon="/ikoner/arrow-right.svg"
+            CardButtonIcon="/ikoner/arrow-right2.png"
         />
         <LargeIndexCard
             CardHeading="Marketing materials" 
@@ -34,7 +34,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-marketingmaterials-ikon.svg"
             CardDownload="/download/info-marketing-materials.pdf"
-            CardButtonIcon="/ikoner/arrow-right.svg"
+            CardButtonIcon="/ikoner/arrow-right2.png"
         />
         <LargeIndexCard 
             CardHeading="Sales tools" 
@@ -42,7 +42,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more" 
             CardImg="/ikoner/infosite-salestools-ikon.svg"
             CardDownload="/download/info-sales-tools.pdf"
-            CardButtonIcon="/ikoner/arrow-right.svg"
+            CardButtonIcon="/ikoner/arrow-right2.png"
         />
          <LargeIndexCard 
             CardHeading="Certificates and documentation" 
@@ -50,7 +50,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonText="Read more"
             CardImg="/ikoner/infosite-certificatesanddocumentation-ikon.svg"
             CardDownload="/download/info-certificates-and-documentation.pdf"
-            CardButtonIcon="/ikoner/arrow-right.svg"
+            CardButtonIcon="/ikoner/arrow-right2.png"
         />
     </div>
     <h1>FAQ</h1>
