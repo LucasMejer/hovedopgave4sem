@@ -61,7 +61,7 @@ function activateOverlay(link) {
 </div>
  <div class="downloadblok" @keydown.esc="openOverlay = false">
         <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">Files</button>
-        <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">Images</button>
+        <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">Media</button>
         <div class="scroll" v-if="filesshown">
             <div class="scroll-blok-card" @click="toggleSelection('manual')" :class="{ 'blok-card-valgt': selected.includes('manual') }" :aria-pressed="selected.includes('manual')" aria-label="Select NOVA MINI Manual PDF" tabindex="0" @keydown.enter="toggleSelection('manual')">
                 <div class="scroll-blok-image-text">
@@ -79,26 +79,6 @@ function activateOverlay(link) {
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI PDF Manual" @click.stop="downloadFunction('NOVA MINI Manual (PDF)')">
-                        <img src="/public/ikoner/download-ikon.svg" alt="">
-                    </button>
-                </div>
-            </div>
-            <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }" :aria-pressed="selected.includes('productvideo')" aria-label="Select NOVA MINI mp4" tabindex="0" @keydown.enter="toggleSelection('productvideo')">
-                <div class="scroll-blok-image-text">
-                    <div class="scroll-blok-image-container">
-                        <img src="/public/download/novamini-mp4.png" alt="">
-                    </div>
-                    <p>NOVA MINI Product Video (MP4)</p>
-                    <img v-if="selected.includes('productvideo')" 
-                    src="/public/ikoner/check.svg"
-                    alt="" 
-                    class="checkmark">
-                </div>
-                <div class="scroll-blok-card-blok">
-                    <button class="preview" @click.stop="activateOverlay('/download/novamini-mp4.png')" type="button" aria-label="Preview NOVA MINI mp4">
-                        <img src="/public/ikoner/eye-icon.svg" alt="">
-                    </button>
-                    <button type="button" class="download" aria-label="Download NOVA MINI product video" @click.stop="downloadFunction('NOVA MINI Product Video (MP4)')">
                         <img src="/public/ikoner/download-ikon.svg" alt="">
                     </button>
                 </div>
@@ -301,6 +281,26 @@ function activateOverlay(link) {
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button  type="button" class="download" aria-label="Download NOVA MINI spareparts overview productimage jpg" @click.stop="downloadFunction('Spareparts overview (JPG)')">
+                        <img src="/public/ikoner/download-ikon.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }" :aria-pressed="selected.includes('productvideo')" aria-label="Select NOVA MINI mp4" tabindex="0" @keydown.enter="toggleSelection('productvideo')">
+                <div class="scroll-blok-image-text">
+                    <div class="scroll-blok-image-container">
+                        <img src="/public/download/novamini-mp4.png" alt="">
+                    </div>
+                    <p>NOVA MINI Product Video (MP4)</p>
+                    <img v-if="selected.includes('productvideo')" 
+                    src="/public/ikoner/check.svg"
+                    alt="" 
+                    class="checkmark">
+                </div>
+                <div class="scroll-blok-card-blok">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-mp4.png')" type="button" aria-label="Preview NOVA MINI mp4">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </button>
+                    <button type="button" class="download" aria-label="Download NOVA MINI product video" @click.stop="downloadFunction('NOVA MINI Product Video (MP4)')">
                         <img src="/public/ikoner/download-ikon.svg" alt="">
                     </button>
                 </div>

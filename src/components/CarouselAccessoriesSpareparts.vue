@@ -148,7 +148,7 @@ const prev = () => {
 
 
 .carousel-slide {
-  flex: 0 0 48%; // roughly 2 slides per view with gap
+  flex: 0 0 48%;
   margin: auto;
 }
 
@@ -163,12 +163,14 @@ const prev = () => {
   min-height: 556px;
   min-width: 300px;
   img{
-    height: 300px;
+    height: 250px;
+    width: 75%;
+    
   }
 }
 
 .carousel-slide {
-    flex: 0 0 30%; // 3 slides per view on large screens
+    flex: 30%;
   }
 
 }
