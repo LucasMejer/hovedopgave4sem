@@ -345,6 +345,7 @@ button{
     align-items: baseline;
     font-size: 18px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .aligmentright{

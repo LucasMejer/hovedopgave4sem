@@ -97,6 +97,7 @@ const prev = () => {
 .carousel-slide {
   max-width: 50%;
   margin: auto;
+  cursor: pointer;
   img{
     width: 100%;
   }
