@@ -21,6 +21,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardImg="/ikoner/index-masterdata-ikon.svg"
             CardDownload="/download/master-data.xlsx"
             CardButtonIcon="/ikoner/download-ikon.svg"
+            class="clickable"
         />
         <LargeIndexCard
             CardHeading="Media file" 
@@ -29,6 +30,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardImg="/ikoner/index-mediafile-ikon.svg"
             CardDownload="/download/media-file.zip"
             CardButtonIcon="/ikoner/download-ikon.svg"
+            class="clickable"
         /> 
         <LargeIndexCard 
             CardHeading="Price list" 
@@ -37,6 +39,7 @@ import BackToTop from '@/components/BackToTop.vue';
             CardImg="/ikoner/index-pricelist-ikon.svg"
             CardDownload="/download/price-list.xlsx"
             CardButtonIcon="/ikoner/download-ikon.svg"
+            class="clickable"
         />
     </div>
     <Carousel />
@@ -56,6 +59,13 @@ import BackToTop from '@/components/BackToTop.vue';
         color: black;
     }*/
 }
+/*
+.clickable {
+    &:hover {
+        cursor: pointer;
+        border: 1px solid black;
+    }
+}*/
 
 
 @media only screen and (min-width: 768px){

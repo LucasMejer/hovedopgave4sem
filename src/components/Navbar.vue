@@ -108,14 +108,6 @@ onBeforeUnmount( () => {
                     <ul class="dropdown" v-if="togglePI">
                         <li><router-link to="/category" class="link">All lights</router-link></li>
                         <hr>
-                        <li>CONNECT</li>
-                        <hr>
-                        <li>Paint industry</li>
-                        <hr>
-                        <li>UV curing</li>
-                        <hr>
-                        <li>Explosion proof</li>
-                        <hr>
                         <li>Vice jaws</li>
                         <hr>
                         <li>Coil spring compressors</li>
@@ -124,7 +116,7 @@ onBeforeUnmount( () => {
                         <hr>
                         <li>Spare parts</li>
                         <hr>
-                        <li>Products for campaings</li>
+                        <li>Campaign products</li>
                         <hr>
                         <li>Discontinued products</li>
                     </ul>
@@ -195,15 +187,11 @@ onBeforeUnmount( () => {
                         <div class="dropdown" v-if="togglePI" ref="dropdown">
                             <ul class="dropdown-content">
                                 <li><router-link to="/category" class="link">All lights</router-link></li>
-                                <li>CONNECT</li>
-                                <li>Paint industry</li>
-                                <li>UV curing</li>
-                                <li>Explosion proof</li>
                                 <li>Vice jaws</li>
                                 <li>Coil spring compressors</li>
                                 <li>Accessories</li>
                                 <li>Spare parts</li>
-                                <li>Products for campaings</li>
+                                <li>Campaign products</li>
                                 <li>Discontinued products</li>
                             </ul>
                         </div>

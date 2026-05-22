@@ -19,14 +19,14 @@
             </div>
             <div class="footer-content">
                 <h2>PARTNER SUPPORT</h2>
-                <p>Product Information</p>
-                <p>Brochures</p>
-                <p>Price List</p>
-                <p>Sales Guides</p>
-                <p>Campaigns</p>
-                <p>Business Partner Support Folder</p>
-                <p>Privacy policy</p>
-                <p>Cookie policy</p>
+                <p class="clickable">Product Information</p>
+                <p class="clickable">Brochures</p>
+                <p class="clickable">Price List</p>
+                <p class="clickable">Sales Guides</p>
+                <p class="clickable">Campaigns</p>
+                <p class="clickable">Business Partner Support Folder</p>
+                <p class="clickable">Privacy policy</p>
+                <p class="clickable">Cookie policy</p>
             </div>
             <div class="footer-content">
                 <h2>MAILING LIST</h2>
@@ -103,6 +103,12 @@ button{
     background-color: c.$hover-state-active;
     cursor: pointer;
   }
+}
+
+.clickable {
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .some-icons{

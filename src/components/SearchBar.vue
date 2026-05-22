@@ -197,6 +197,9 @@ dropshadow på accessories
                 @include icon;
                 margin-right: 45px;
                 color: #c5c5c5;
+                &:focus:not(:focus-visible) {
+                    outline: none;
+                }
             }
         }
 
