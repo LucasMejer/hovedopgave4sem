@@ -8,13 +8,6 @@ let totalProducts = ref(15);
 
 let CurrentPage = ref(1);
 
-let SelectedFilterCount = ref([
-    0,
-    0,
-    0,
-    0,
-    0
-]);
 
 const mediaQuery = window.matchMedia("(max-width: 768px)");
 
@@ -45,6 +38,15 @@ const filteredProducts = computed(() => {
             product.ProduktTags?.[filter]
         );
     });
+});
+
+const FiltersVisible0 = computed(() => {
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Work Lights' || filter == 'UV curing' || filter == 'Detailing and colour match' || filter == 'Ex-proof')
+
+    if(tempArray.filter(Boolean).length == 0){
+        return '';
+    }
+    return `(${tempArray.filter(Boolean).length})`
 });
 
 const FiltersVisible1 = computed(() => {
@@ -184,6 +186,36 @@ onMounted(() => {
             </h3>
             
             <div class="AllFilterDropdowns">
+
+            <button class="FilterButtons" tabindex="-1">
+                <hr>
+                <h3 @click="OpenFilterDropDown('productline')" tabindex="0" @keydown.enter="OpenFilterDropDown('productline')">
+                    Product line {{FiltersVisible0}}
+                    <img class="ArrowDown" :class="{'rotate': filterToggles.producttype}" src="/ikoner/arrow-down.png" alt="">
+                </h3>
+                <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.productline">
+                    <label for="WorklightsBox">
+                        <p class="WorklightsFilter">Work Lights</p>
+                    <input type="checkbox" id="WorklightsBox" value="Work Lights" v-model="activeFilters" @click="resetPages()">
+                    </label>
+
+                    <label for="UVcuringBox">
+                        <p class="UVcuringFilter">UV curing</p>
+                    <input type="checkbox" id="UVcuringBox" value="UV curing" v-model="activeFilters" @click="resetPages()">
+                    </label>
+
+                    <label for="DetailingandcolourmatchBox">
+                        <p class="DetailingandcolourmatchFilter">Detailing and colour match</p>
+                    <input type="checkbox" id="DetailingandcolourmatchBox" value="Detailing and colour match" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    
+                    <label for="ExproofBox">
+                        <p class="ExproofFilter">Ex-proof</p>
+                    <input type="checkbox" id="ExproofBox" value="Ex-proof" v-model="activeFilters" @click="resetPages()">
+                    </label>
+
+                </div>
+            </button>
 
             <button class="FilterButtons" tabindex="-1">
                 <hr>
@@ -378,6 +410,7 @@ onMounted(() => {
         .ActiveFiltersDiv{
             display: flex;
             margin-bottom: 25px;
+            flex-wrap: wrap;
 
             .ActiveFiltersButton{
             margin: 20px 25px 0px 0px;
@@ -632,6 +665,19 @@ onMounted(() => {
             text-align: center;
             margin-bottom: 35px;
             &:visited{
+                border-color: c.$font-color-primary;
+                color: c.$font-color-primary;
+            }
+            &:link{
+                border-color: c.$font-color-primary;
+                color: c.$font-color-primary;
+            }
+            &:hover{
+                border-color: c.$font-color-primary;
+                color: c.$font-color-primary;
+            }
+            &:active{
+                border-color: c.$font-color-primary;
                 color: c.$font-color-primary;
             }
             
@@ -761,7 +807,7 @@ onMounted(() => {
                             padding: 10px 0px;
                             border: 0px;
                             border-style: none;
-                            width: 175px;
+                            width: 100%;
                         }
                     }
                 }
