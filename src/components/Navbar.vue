@@ -246,22 +246,19 @@ onBeforeUnmount( () => {
                     <div class="nav-icons">
                         <div>
                             <button @click="toggleLanguage" class="menu-item nav-icon-item" ref="menuItemLan">
-                                <img src="../../public/ikoner/english-flag.png" class="img-underline" alt="Language" tabindex="0">
+                                <img src="../../public/ikoner/english-flag.png" class="img-underline-menu" alt="Language" tabindex="0">
                                 <img :class="{'rotate': toggleLan}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                             </button>
                             <div class="dropdown" v-if="toggleLan" ref="dropdown">
                                 <ul class="dropdown-content-icon">
-                                    <li class="img-underline dropdown-item-flex">
+                                    <li class="img-underline">
                                         <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
-                                        Da
                                     </li>
-                                    <li class="img-underline dropdown-item-flex">
+                                    <li class="img-underline">
                                         <img src="../../public/ikoner/german-flag.png" alt="German" >
-                                        De
                                     </li>
-                                    <li class="img-underline dropdown-item-flex">
+                                    <li class="img-underline">
                                         <img src="../../public/ikoner/french-flag.png" alt="French" >
-                                        Fr
                                     </li>
                                 </ul>
                             </div>
@@ -269,7 +266,7 @@ onBeforeUnmount( () => {
                         
                         <div>
                             <button @click="toggleProfile" class="menu-item nav-icon-item" ref="menuItemPro">
-                                <img src="../../public/ikoner/header-login-ikon.svg" class="img-underline" alt="Profile" tabindex="0">
+                                <img src="../../public/ikoner/header-login-ikon.svg" class="img-underline-menu" alt="Profile" tabindex="0">
                                 <img :class="{'rotate': togglePro}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                             </button>
                             <div class="dropdown" v-if="togglePro" ref="dropdown">
@@ -589,7 +586,16 @@ onBeforeUnmount( () => {
                 margin: 5px;
                 padding: 0;
 
+                .img-underline-menu {
+                    border-bottom: 2px solid white;
+                }
+                &:hover .img-underline-menu {
+                    border-bottom: 2px solid black;
+                }
+
             }
+
+
 
             .img-underline {
                 border-bottom: 2px solid white;
@@ -619,20 +625,20 @@ onBeforeUnmount( () => {
                 .dropdown-content-icon {
                     @include dropdown-content-mixin;
                     margin: -5px 0 0 5px;
-
+/*
                     li {
                         &:hover {
                             text-decoration: none;
                         }
                         
-                    }
+                    }*/
                 }
-
+/*
                 .dropdown-item-flex {
                     display: flex;
                     align-items: end;
                 }
-
+*/
             }
 
             .nav-icons {
