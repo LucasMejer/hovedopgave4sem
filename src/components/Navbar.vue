@@ -109,9 +109,42 @@ onBeforeUnmount( () => {
                 </div>
                 <hr class="thick-line">
 
-                <div class="nav-icons">
+                <div class="nav-icons mobile-nav-icons">
+                    <div class="nav-mobile-icons-container">
+                        <button @click="toggleLanguage" class="mobile-icon-button" ref="menuItemLan">
+                            <img src="../../public/ikoner/english-flag.png" class="img-underline-menu" alt="Language">
+                            <img :class="{'rotate': toggleLan}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        </button>
+                        <ul class="dropdown" v-if="toggleLan">
+                            <li class="img-underline" tabindex="0">
+                                <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
+                            </li>
+                            <li class="img-underline" tabindex="0">
+                                <img src="../../public/ikoner/german-flag.png" alt="German" >
+                            </li>
+                            <li class="img-underline" tabindex="0">
+                                <img src="../../public/ikoner/french-flag.png" alt="French" >
+                            </li>
+                        </ul>
+                    </div>
+                    
+
+                    <!--
                     <img src="../../public/ikoner/english-flag.png" alt="Language" tabindex="0">
                     <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile" tabindex="0">
+                    -->
+                    
+                    <div class="nav-mobile-icons-container">
+                        <button @click="toggleProfile" class="mobile-icon-button" ref="menuItemPro">
+                            <img src="../../public/ikoner/header-login-ikon.svg" class="img-underline-menu" alt="Profile">
+                            <img :class="{'rotate': togglePro}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                        </button>
+                        <ul class="dropdown" v-if="togglePro">
+                            <li tabindex="0">My profile</li>
+                            <li tabindex="0"> Sign out</li>
+                        </ul>
+                    </div>
+                    
                 </div>
 
                 <div class="nav-menu-items">
@@ -246,18 +279,18 @@ onBeforeUnmount( () => {
                     <div class="nav-icons">
                         <div>
                             <button @click="toggleLanguage" class="menu-item nav-icon-item" ref="menuItemLan">
-                                <img src="../../public/ikoner/english-flag.png" class="img-underline-menu" alt="Language" tabindex="0">
+                                <img src="../../public/ikoner/english-flag.png" class="img-underline-menu" alt="Language">
                                 <img :class="{'rotate': toggleLan}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                             </button>
-                            <div class="dropdown" v-if="toggleLan" ref="dropdown">
+                            <div class="dropdown" v-if="toggleLan" ref="dropdown" tabindex="0">
                                 <ul class="dropdown-content-icon">
-                                    <li class="img-underline">
+                                    <li class="img-underline" tabindex="0">
                                         <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
                                     </li>
-                                    <li class="img-underline">
+                                    <li class="img-underline" tabindex="0">
                                         <img src="../../public/ikoner/german-flag.png" alt="German" >
                                     </li>
-                                    <li class="img-underline">
+                                    <li class="img-underline" tabindex="0">
                                         <img src="../../public/ikoner/french-flag.png" alt="French" >
                                     </li>
                                 </ul>
@@ -266,13 +299,13 @@ onBeforeUnmount( () => {
                         
                         <div>
                             <button @click="toggleProfile" class="menu-item nav-icon-item" ref="menuItemPro">
-                                <img src="../../public/ikoner/header-login-ikon.svg" class="img-underline-menu" alt="Profile" tabindex="0">
+                                <img src="../../public/ikoner/header-login-ikon.svg" class="img-underline-menu" alt="Profile">
                                 <img :class="{'rotate': togglePro}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                             </button>
                             <div class="dropdown" v-if="togglePro" ref="dropdown">
                                 <ul class="dropdown-content-icon">
-                                    <li>My profile</li>
-                                    <li>Sign out</li>
+                                    <li tabindex="0">My profile</li>
+                                    <li tabindex="0"> Sign out</li>
                                 </ul>
                             </div>
                         </div>
@@ -386,9 +419,7 @@ onBeforeUnmount( () => {
         padding-bottom: 30px;
         box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
         overflow-y: auto;
-        max-height: 78vh;
-
-        
+        max-height: 79vh;
 
         .thick-line-vertical {
             border: none;
@@ -422,8 +453,31 @@ onBeforeUnmount( () => {
 
         img {
             width: 30px;
-            height: 100%;
+            height: 30px;
+        }
+    }
+
+    .mobile-nav-icons {
+        max-width: 90%;
+        display: flex;
+        margin: auto;
+
+        .nav-mobile-icons-container {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mobile-icon-button {
+            background-color: #fafafa;
+            border: none;
             padding: 20px;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
         }
     }
 
@@ -441,26 +495,18 @@ onBeforeUnmount( () => {
             background-color: #fafafa;
             padding: 0;
 
-            
-            .rotate {
-                transform: rotate(180deg);
-                transition: transform 0.3s ease;
-            }
-            
-
             p {
                 font-size: 16px;
                 margin: 10px 0;
             }
-            
         }
+    }
 
-        .dropdown {
+    .dropdown {
             list-style-type: none;
             margin: 10px auto;
             width: 80%;
             padding: 0;
-
 
             li {
                 color: c.$font-color-primary;
@@ -472,7 +518,10 @@ onBeforeUnmount( () => {
                 margin: 10px 0;
             }
         }
-        
+
+    .rotate {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
     }
 
     .arrows {
@@ -599,10 +648,10 @@ onBeforeUnmount( () => {
 
             .img-underline {
                 border-bottom: 2px solid white;
-
+/*
                 img {
                     margin-right: 4px;
-                }
+                }*/
 
                 &:hover {
                     border-bottom: 2px solid black;
