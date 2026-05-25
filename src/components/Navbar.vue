@@ -251,14 +251,17 @@ onBeforeUnmount( () => {
                             </button>
                             <div class="dropdown" v-if="toggleLan" ref="dropdown">
                                 <ul class="dropdown-content-icon">
-                                    <li>
-                                        <img src="../../public/ikoner/danish-flag.png" alt="Danish">
+                                    <li class="img-underline dropdown-item-flex">
+                                        <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
+                                        Da
                                     </li>
-                                    <li>
-                                        <img src="../../public/ikoner/german-flag.png" alt="German">
+                                    <li class="img-underline dropdown-item-flex">
+                                        <img src="../../public/ikoner/german-flag.png" alt="German" >
+                                        De
                                     </li>
-                                    <li>
-                                        <img src="../../public/ikoner/french-flag.png" alt="French">
+                                    <li class="img-underline dropdown-item-flex">
+                                        <img src="../../public/ikoner/french-flag.png" alt="French" >
+                                        Fr
                                     </li>
                                 </ul>
                             </div>
@@ -421,7 +424,8 @@ onBeforeUnmount( () => {
         justify-content: center;
 
         img {
-            height: 30px;
+            width: 30px;
+            height: 100%;
             padding: 20px;
         }
     }
@@ -584,17 +588,22 @@ onBeforeUnmount( () => {
             .nav-icon-item {
                 margin: 5px;
                 padding: 0;
-/*
-                .img-underline {
-                    box-sizing: border-box;
-                }
-                
 
-                &:hover .img-underline {
-                    
-                    border-bottom: 2px solid black;
-                }*/
             }
+
+            .img-underline {
+                border-bottom: 2px solid white;
+
+                img {
+                    margin-right: 4px;
+                }
+
+                &:hover {
+                    border-bottom: 2px solid black;
+                }
+               }
+
+            
 
             .dropdown {
                 position: absolute;
@@ -610,6 +619,18 @@ onBeforeUnmount( () => {
                 .dropdown-content-icon {
                     @include dropdown-content-mixin;
                     margin: -5px 0 0 5px;
+
+                    li {
+                        &:hover {
+                            text-decoration: none;
+                        }
+                        
+                    }
+                }
+
+                .dropdown-item-flex {
+                    display: flex;
+                    align-items: end;
                 }
 
             }
