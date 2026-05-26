@@ -598,8 +598,8 @@ onMounted(() => {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 22.5px;
-                    width: 22.5px;
+                    height: 30px;
+                    width: 30px;
                     margin: 0px;
                     padding: 0px;
                     background-color: c.$font-color-secondary;
