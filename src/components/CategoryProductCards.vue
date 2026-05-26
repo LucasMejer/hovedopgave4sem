@@ -4,7 +4,7 @@ import { computed, onMounted, ref } from 'vue';
 let productArray = ref([]);
 let activeFilters = ref([]);
 
-let totalProducts = ref(15);
+let totalProducts = ref(18);
 
 let CurrentPage = ref(1);
 
@@ -31,13 +31,29 @@ try {
 
 const filteredProducts = computed(() => {
 
-    if(!activeFilters.value) return productArray.value;
-
-    return productArray.value.filter(product => {
-        return activeFilters.value.every(filter =>
-            product.ProduktTags?.[filter]
+    //Vis alle produkter bortset fra Discontinued
+    if(!activeFilters.value || activeFilters.value.length == 0){
+        return productArray.value.filter(product => 
+            !product.ProduktTags?.["Discontinued"]
         );
-    });
+    }
+    //Vis alle Discontinued Produkter
+    else if(activeFilters.value.includes("Discontinued")){
+        return productArray.value.filter(product => {
+            return activeFilters.value.every(filter =>
+            product.ProduktTags?.[filter]
+            );
+        });
+    }
+    //Vis alle produkter med valgte tags bortset fra Discontinued
+    else{
+        return productArray.value.filter(product => {
+            return activeFilters.value.every(filter =>
+            product.ProduktTags?.[filter] && !product.ProduktTags?.["Discontinued"]
+            );
+        });
+    }
+    
 });
 
 const FiltersVisible0 = computed(() => {
@@ -334,19 +350,21 @@ onMounted(() => {
                 <div v-for="(item, index) in filteredProducts" :key="item.ProduktNummer" class="AboveProductDiv">
                     <a class="ProductDiv" v-if="index > ((totalProducts * CurrentPage) - totalProducts) - 1 && index < (totalProducts * CurrentPage)" href="/product">
                         <div class="ProductTags">
+                            <p class="RecommendedText" >Recommended for:</p>
                             <span v-for="(value, key) in item.ProduktTags" >
                                     <p v-if="value && key != 'Discontinued'" :class="[key + 'Class']">
                                         {{ key }}
                                     </p>
                             </span>
-                                <p v-if="item.ProduktTags.Discontinued" class="DiscontinuedClass">
-                                        Discontinued
-                                </p>
+                                
                         </div> 
                         <img :src=item.ProduktBillede alt="">
                         <h2>
                             {{ item.ProduktTitel }}
                         </h2>
+                        <p v-if="item.ProduktTags.Discontinued" class="DiscontinuedClass">
+                            Discontinued
+                        </p>
                         <p>
                             {{item.ProduktNummer}}
                         </p>
@@ -664,7 +682,7 @@ onMounted(() => {
             border: 1px;
             border-style: solid ;
             width: 100%;
-            padding: 15px 0px;
+            padding: 15px 10px;
             gap: 10px;
             cursor: pointer;
             text-align: center;
@@ -685,11 +703,24 @@ onMounted(() => {
                 border-color: c.$font-color-primary;
                 color: c.$font-color-primary;
             }
+            .DiscontinuedClass{
+                    color: c.$font-color-secondary;
+                    background-color: #B91215;
+                    padding: 5px;
+                    //text-transform: uppercase;
+                    width: max-content;
+                }  
             
             .ProductTags{
                 align-self: flex-start;
-                margin: 0px 1.5%;
+                margin: 0px 0px;
                 position: absolute;
+                .RecommendedText{
+                    margin: 0px;
+                    padding: 0px;
+                    font-weight: 500;
+                    font-style: italic;
+                }
                 span{
                     width: auto;
                 }
@@ -715,10 +746,7 @@ onMounted(() => {
                     color: c.$font-color-secondary;
                     background-color: #2715AE;
                 }
-                .DiscontinuedClass{
-                    color: c.$font-color-secondary;
-                    background-color: #B91215;
-                }    
+                  
             }
         } 
     }
