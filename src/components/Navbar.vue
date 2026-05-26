@@ -110,41 +110,11 @@ onBeforeUnmount( () => {
                 <hr class="thick-line">
 
                 <div class="nav-icons mobile-nav-icons">
-                    <div class="nav-mobile-icons-container">
-                        <button @click="toggleLanguage" class="mobile-icon-button" ref="menuItemLan">
-                            <img src="../../public/ikoner/english-flag.png" class="img-underline-menu" alt="Language">
-                            <img :class="{'rotate': toggleLan}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                        </button>
-                        <ul class="dropdown" v-if="toggleLan">
-                            <li class="img-underline" tabindex="0">
-                                <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
-                            </li>
-                            <li class="img-underline" tabindex="0">
-                                <img src="../../public/ikoner/german-flag.png" alt="German" >
-                            </li>
-                            <li class="img-underline" tabindex="0">
-                                <img src="../../public/ikoner/french-flag.png" alt="French" >
-                            </li>
-                        </ul>
+                    <div class="nav-mobile-profile-container">
+                        <p>My profile</p>
+                        <img src="../../public/ikoner/header-login-ikon.svg" class="profile-icon-mobile" alt="Profile">
+                        <p> Sign out</p>
                     </div>
-                    
-
-                    <!--
-                    <img src="../../public/ikoner/english-flag.png" alt="Language" tabindex="0">
-                    <img src="../../public/ikoner/header-login-ikon.svg" alt="Profile" tabindex="0">
-                    -->
-                    
-                    <div class="nav-mobile-icons-container">
-                        <button @click="toggleProfile" class="mobile-icon-button" ref="menuItemPro">
-                            <img src="../../public/ikoner/header-login-ikon.svg" class="img-underline-menu" alt="Profile">
-                            <img :class="{'rotate': togglePro}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
-                        </button>
-                        <ul class="dropdown" v-if="togglePro">
-                            <li tabindex="0">My profile</li>
-                            <li tabindex="0"> Sign out</li>
-                        </ul>
-                    </div>
-                    
                 </div>
 
                 <div class="nav-menu-items">
@@ -166,8 +136,6 @@ onBeforeUnmount( () => {
                         <li>Spare parts</li>
                         <hr>
                         <li>Campaign products</li>
-                        <hr>
-                        <li>Discontinued products</li>
                     </ul>
                     <hr v-if="togglePI">
                     <button @click="toggleMarketingItems" class="menu-item">
@@ -176,39 +144,62 @@ onBeforeUnmount( () => {
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="toggleMI">
-                        <li>Prices and product data</li>
+                        <li class="bold">Branding</li>
                         <hr>
-                        <li>Sales guides</li>
+                        <ul class="list">
+                            <li>Brand book</li>
+                            <hr>
+                            <li>Brand pictures</li>
+                            <hr>
+                            <li>Company profile</li>
+                            <hr>
+                            <li>Customized logo engraving</li>
+                            <hr>
+                            <li>Logos and symbols</li>
+                        </ul>
+
+                        <li class="bold">Media</li>
                         <hr>
-                        <li>Campaign material</li>
+                        <ul class="list">
+                            <li>Pictures</li>
+                            <hr>
+                            <li>Press releases</li>
+                            <hr>
+                            <li>Social media</li>
+                            <hr>
+                            <li>Videos</li>
+                        </ul>
+
+                        <li class="bold">Sales material</li>
                         <hr>
-                        <li>Videos</li>
-                        <hr>
-                        <li>Points of sales</li>
-                        <hr>
-                        <li>Branding</li>
-                        <hr>
-                        <li>Social media</li>
-                        <hr>
-                        <li>Pictures</li>
-                        <hr>
-                        <li>Energy labels</li>
-                        <hr>
-                        <li>Brochures</li>
-                        <hr>
-                        <li>Company profile</li>
-                        <hr>
-                        <li>Logos and symbols</li>
-                        <hr>
-                        <li>Customized logo engraving</li>
-                        <hr>
-                        <li>Press releases</li>
+                        <ul class="list">
+                            <li>Brochures</li>
+                            <hr>
+                            <li>Campaign material</li>
+                            <hr>
+                            <li>Energy labels</li>
+                            <hr>
+                            <li>Points of sales</li>
+                            <hr>
+                            <li>Prices and product data</li>
+                            <hr>
+                            <li>Sales guides</li>
+                        </ul>
                     </ul>
                     <hr v-if="toggleMI">
                     <router-link to="/info" class="menu-item link">
                         <p>Info and guides</p>
                     </router-link>
                     <hr>
+                </div>
+
+                <div class="nav-icons mobile-nav-icons">
+                    <div class="nav-mobile-languages-container">
+                        <img src="../../public/ikoner/english-flag.png" alt="English" class="img-underline-mobile">
+                        <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
+                        <img src="../../public/ikoner/german-flag.png" alt="German" >
+                        <img src="../../public/ikoner/french-flag.png" alt="French" >
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,7 +232,6 @@ onBeforeUnmount( () => {
                                 <li>Accessories</li>
                                 <li>Spare parts</li>
                                 <li>Campaign products</li>
-                                <li>Discontinued products</li>
                             </ul>
                         </div>
                     </div>
@@ -252,20 +242,32 @@ onBeforeUnmount( () => {
                         </button>
                         <div class="dropdown" v-if="toggleMI" ref="dropdown">
                             <ul class="dropdown-content">
-                                <li>Prices and product data</li>
-                                <li>Sales guides</li>
-                                <li>Campaign material</li>
-                                <li>Videos</li>
-                                <li>Points of sales</li>
-                                <li>Branding</li>
-                                <li>Social media</li>
-                                <li>Pictures</li>
-                                <li>Energy labels</li>
-                                <li>Brochures</li>
-                                <li>Company profile</li>
-                                <li>Logos and symbols</li>
-                                <li>Customized logo engraving</li>
-                                <li>Press releases</li>
+                                <li class="bold">Branding</li>
+                                <ul>
+                                    <li>Brand book</li>
+                                    <li>Brand pictures</li>
+                                    <li>Company profile</li>
+                                    <li>Customized logo engraving</li>
+                                    <li>Logos and symbols</li>
+                                </ul>
+
+                                <li class="bold">Media</li>
+                                <ul>
+                                    <li>Pictures</li>
+                                    <li>Press releases</li>
+                                    <li>Social media</li>
+                                    <li>Videos</li>
+                                </ul>
+
+                                <li class="bold">Sales material</li>
+                                <ul>
+                                    <li>Brochures</li>
+                                    <li>Campaign material</li>
+                                    <li>Energy labels</li>
+                                    <li>Points of sales</li>
+                                    <li>Prices and product data</li>
+                                    <li>Sales guides</li>
+                                </ul>
                             </ul>
                         </div>
                     </div>
@@ -346,7 +348,6 @@ onBeforeUnmount( () => {
         box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
         transition: 0.3s ease;
         max-height: 100vh;
-
     }
 
     .desktop-nav {
@@ -416,7 +417,7 @@ onBeforeUnmount( () => {
         z-index: 5;
         width: 100vw;
         background-color: #fafafa;
-        padding-bottom: 30px;
+        padding-bottom: 10px;
         box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
         overflow-y: auto;
         max-height: 79vh;
@@ -460,13 +461,47 @@ onBeforeUnmount( () => {
     .mobile-nav-icons {
         max-width: 90%;
         display: flex;
+        flex-direction: column;
         margin: auto;
 
-        .nav-mobile-icons-container {
-            width: 50%;
+        .nav-mobile-profile-container {
             display: flex;
             justify-content: center;
-            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+
+            img {
+                margin-right: 5px;
+            }
+
+            p {
+                margin-bottom: -4px;
+                font-size: 16px;
+            }
+
+            .profile-icon-mobile {
+                margin: 0 5%;
+                width: 40px;
+                height: 40px;
+
+            }
+        }
+
+        .nav-mobile-languages-container {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 40px;
+                height: 40px;
+                margin: 30px 5%;
+                display: block;
+            }
+
+            .img-underline-mobile {
+                border: 2px solid black;
+                padding: 0 4px;
+            }
         }
 
         .mobile-icon-button {
@@ -517,6 +552,16 @@ onBeforeUnmount( () => {
                 text-decoration: none;
                 margin: 10px 0;
             }
+
+            .bold {
+                font-size: 15px;
+            }
+
+            .list {
+                list-style: none;
+                padding-left: 15px;
+                margin-bottom: 20px
+            }
         }
 
     .rotate {
@@ -543,7 +588,7 @@ onBeforeUnmount( () => {
 
             li {
                 font-size: 16px;
-                margin: 15px 15px;
+                margin: 12px 15px;
                 cursor: pointer;
 
                 &:hover {
@@ -648,16 +693,14 @@ onBeforeUnmount( () => {
 
             .img-underline {
                 border-bottom: 2px solid white;
-                
 
                 img {
                     display: block;
                 }
-
                 &:hover {
                     border-bottom: 2px solid black;
                 }
-               }
+            }
 
             
 
@@ -670,6 +713,25 @@ onBeforeUnmount( () => {
                 .dropdown-content {
                     @include dropdown-content-mixin;
                     margin: -5px 0 0 15px;
+
+                    .bold {
+                        font-weight: 500;
+                        font-size: 18px;
+
+                        &:hover {
+                            cursor: auto;
+                            text-decoration: none
+                        }
+                    }
+
+                    ul {
+                        list-style: none;
+                        padding-left: 15px;
+                        margin-bottom: 20px
+                    }
+                    
+                        
+                    
                 }
 
                 .dropdown-content-icon {
