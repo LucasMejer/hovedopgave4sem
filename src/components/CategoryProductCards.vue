@@ -41,7 +41,7 @@ const filteredProducts = computed(() => {
 });
 
 const FiltersVisible0 = computed(() => {
-    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Work Lights' || filter == 'UV curing' || filter == 'Detailing and colour match' || filter == 'Ex-proof')
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Work Lights' || filter == 'UV curing' || filter == 'Detailing and colour match' || filter == 'Ex-proof' || filter == 'CONNECT')
 
     if(tempArray.filter(Boolean).length == 0){
         return '';
@@ -168,7 +168,7 @@ onMounted(() => {
 
     <div class="CategoryHeading">
         <h1>
-            WORK LIGHTS
+            ALL LIGHTS
         </h1>
     </div>
 
@@ -191,7 +191,7 @@ onMounted(() => {
                 <hr>
                 <h3 @click="OpenFilterDropDown('productline')" tabindex="0" @keydown.enter="OpenFilterDropDown('productline')">
                     Product line {{FiltersVisible0}}
-                    <img class="ArrowDown" :class="{'rotate': filterToggles.producttype}" src="/ikoner/arrow-down.png" alt="">
+                    <img class="ArrowDown" :class="{'rotate': filterToggles.productline}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.productline">
                     <label for="WorklightsBox">
@@ -212,6 +212,11 @@ onMounted(() => {
                     <label for="ExproofBox">
                         <p class="ExproofFilter">Ex-proof</p>
                     <input type="checkbox" id="ExproofBox" value="Ex-proof" v-model="activeFilters" @click="resetPages()">
+                    </label>
+
+                    <label for="CONNECTBox">
+                        <p class="CONNECTFilter">CONNECT</p>
+                    <input type="checkbox" id="CONNECTBox" value="CONNECT" v-model="activeFilters" @click="resetPages()">
                     </label>
 
                 </div>
@@ -311,8 +316,8 @@ onMounted(() => {
                 <h3>Results: {{filteredProducts.length}}</h3>
                 <div class="VisningDiv">
                     <h3>View:</h3>
-                    <img src="/public/ikoner/grid-hvid.png" alt="Change to grid layout" class="ProductGridIcon">
-                    <img src="/public/ikoner/list-sort.png" alt="Change to list layout" class="ProductListIcon">
+                    <img src="/ikoner/grid-hvid.png" alt="Change to grid layout" class="ProductGridIcon">
+                    <img src="/ikoner/list-sort.png" alt="Change to list layout" class="ProductListIcon">
                 </div>
             </div>
 
@@ -321,7 +326,7 @@ onMounted(() => {
                     <p>
                         {{value}}
                     </p>
-                    <img src="/public/ikoner/close.png" alt="Close">
+                    <img src="/ikoner/close.png" alt="Close">
                 </button>
             </div>
 
