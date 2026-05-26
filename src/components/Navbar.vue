@@ -155,7 +155,7 @@ onBeforeUnmount( () => {
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="togglePI">
-                        <li><router-link to="/category" class="link">All lights</router-link></li>
+                        <router-link to="/category" class="link"><li>Work lights</li></router-link>
                         <hr>
                         <li>Vice jaws</li>
                         <hr>
@@ -235,7 +235,7 @@ onBeforeUnmount( () => {
                         </button>
                         <div class="dropdown" v-if="togglePI" ref="dropdown">
                             <ul class="dropdown-content">
-                                <li><router-link to="/category" class="link">All lights</router-link></li>
+                                <li><router-link to="/category" class="link">Work lights</router-link></li>
                                 <li>Vice jaws</li>
                                 <li>Coil spring compressors</li>
                                 <li>Accessories</li>
@@ -648,10 +648,11 @@ onBeforeUnmount( () => {
 
             .img-underline {
                 border-bottom: 2px solid white;
-/*
+                
+
                 img {
-                    margin-right: 4px;
-                }*/
+                    display: block;
+                }
 
                 &:hover {
                     border-bottom: 2px solid black;

@@ -168,7 +168,7 @@ onMounted(() => {
 
     <div class="CategoryHeading">
         <h1>
-            ALL LIGHTS
+            WORK LIGHTS
         </h1>
     </div>
 
