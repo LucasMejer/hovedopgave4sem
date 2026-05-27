@@ -151,6 +151,8 @@ onBeforeUnmount( () => {
                         <li>Spare parts</li>
                         <hr>
                         <li>Campaign products</li>
+                        <hr>
+                        <li>Discontinued products</li>
                     </ul>
                     <hr v-if="togglePI">
                     <button @click="toggleMarketingItems" class="menu-item">
@@ -264,6 +266,7 @@ onBeforeUnmount( () => {
                                 <li>Accessories</li>
                                 <li>Spare parts</li>
                                 <li>Campaign products</li>
+                                <li>Discontinued products</li>
                             </ul>
                         </div>
                     </div>
