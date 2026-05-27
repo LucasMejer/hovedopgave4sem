@@ -61,11 +61,6 @@ a{
     margin: auto;
 }
 
-/*h3{
-    margin: 20px 0px;
-    font-weight: normal;
-}*/
-
     h1{
         margin: 0px;
         font-weight: normal;

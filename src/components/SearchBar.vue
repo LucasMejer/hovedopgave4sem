@@ -162,14 +162,14 @@ onBeforeUnmount( () => {
                 height: 30px;
                 width: 100%;
                 min-width: 200px;
-                border: 1px solid #afafaf;
+                border: 1px solid c.$font-color-primary;
                 padding: 5px 10px;
                 font-family: f.$font-primary;
                 font-size: 13px;
             }
 
             ::placeholder {
-                color: #c5c5c5;
+                color: c.$hover-state-active;
             }
 
             .icon-container {
@@ -187,7 +187,7 @@ onBeforeUnmount( () => {
             .clear-icon {
                 @include icon;
                 margin-right: 50px;
-                color: #c5c5c5;
+                color: c.$hover-state-active;
                 &:focus:not(:focus-visible) {
                     outline: none;
                 }
@@ -203,7 +203,7 @@ onBeforeUnmount( () => {
             .searched-dropdown {
                 position: relative;
                 background-color: c.$background-color-primary;
-                border: 1px solid #afafaf;
+                border: 1px solid c.$hover-grey;
                 list-style-type: none;
                 width: 100%;
                 box-sizing: border-box;
@@ -217,7 +217,7 @@ onBeforeUnmount( () => {
                 .searched-product {
                     display: flex;
                     padding: 20px 10px;
-                    border: 1px solid #afafaf;
+                    border: 1px solid c.$hover-grey;
                     text-decoration: none;
 
 
@@ -346,7 +346,7 @@ onBeforeUnmount( () => {
                         .searched-product {
 
                             &:hover {
-                                background-color: #DADADA;
+                                background-color: c.$hover-grey;
                                 cursor: pointer;
                             }
 

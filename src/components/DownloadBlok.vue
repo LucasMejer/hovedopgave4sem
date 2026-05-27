@@ -340,8 +340,8 @@ img{
 }
 
 button{
-    border: solid 0.1px rgba(218, 218, 218, 1);;
-    background-color: rgba(218, 218, 218, 1);
+    border: solid 0.1px c.$section-color-background;
+    background-color: c.$section-color-background;
     align-items: baseline;
     font-size: 18px;
     padding: 10px;
@@ -388,14 +388,14 @@ button{
     padding: 10px;
     background-color: c.$font-color-secondary;
     max-width: 135px;
-    border: solid 2px white;
+    border: solid 2px c.$font-color-secondary;
     box-sizing: border-box;
     outline: solid 0.1px c.$font-color-primary;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     &:focus-visible{
-        outline: 3px solid black;
+        outline: 3px solid c.$font-color-primary;
         outline-offset: 2px;
     }
 }
@@ -441,7 +441,7 @@ button{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(218, 218, 218, 1);
+    background-color: c.$section-color-background;
     border-top: solid 0.1px c.$font-color-primary;
     padding: 10px;
 }
@@ -484,7 +484,7 @@ button{
         right: 0%;
         top: 0%;
         bottom: 0%;
-        background-color: rgba(0, 0, 0, 0.404);
+        background-color: rgba(0, 0, 0, 0.4);
             img{
             width: auto;
             height: 80vh;
@@ -514,14 +514,14 @@ button{
         flex-direction: column;
         width: 125px;
         &:hover{
-            border-color: grey;
+            border-color: c.$hover-grey;
             cursor: pointer;
         }
     }
 
     .blok-card-valgt{
          &:hover{
-            border-color: rgb(0, 0, 0);
+            border-color: c.$font-color-primary;
             cursor: pointer;
         }
     }

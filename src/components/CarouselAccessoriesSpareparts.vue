@@ -108,7 +108,7 @@ const prev = () => {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  background: rgb(255, 255, 255);
+  background: c.$font-color-secondary;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -133,7 +133,7 @@ const prev = () => {
 
 .carousel-card{
   background-color: c.$font-color-secondary;
-  border: solid 1px black;
+  border: solid 1px c.$font-color-primary;
   display: flex;
   flex-direction: column;
   justify-content: center;

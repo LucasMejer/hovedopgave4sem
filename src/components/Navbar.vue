@@ -441,14 +441,14 @@ onBeforeUnmount( () => {
     .thick-line {
         border: none;
         height: 1px;
-        background-color: #000;
+        background-color: c.$font-color-primary;
     }
 
     .nav-burgermenu {
         position: absolute;
         z-index: 5;
         width: 100vw;
-        background-color: #fafafa;
+        background-color: c.$background-color-primary;
         padding-bottom: 10px;
         box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
         overflow-y: auto;
@@ -457,7 +457,7 @@ onBeforeUnmount( () => {
         .thick-line-vertical {
             border: none;
             width: 1px;
-            background-color: #000;
+            background-color: c.$font-color-primary;
         }
     }
 
@@ -531,14 +531,14 @@ onBeforeUnmount( () => {
             }
 
             .img-underline-mobile {
-                border: 1px solid black;
+                border: 1px solid c.$font-color-primary;
                 padding: 0 4px;
-                background-color: #e7e7e7;
+                background-color: c.$font-color-secondary;
             }
         }
 
         .mobile-icon-button {
-            background-color: #fafafa;
+            background-color: c.$font-color-secondary;
             border: none;
             padding: 20px;
         }
@@ -560,7 +560,7 @@ onBeforeUnmount( () => {
             justify-content: space-between;
             align-items: center;
             border: none;
-            background-color: #fafafa;
+            background-color: c.$font-color-secondary;
             padding: 0;
 
             p {
@@ -603,7 +603,7 @@ onBeforeUnmount( () => {
                 justify-content: space-between;
                 align-items: center;
                 border: none;
-                background-color: #fafafa;
+                background-color: c.$font-color-secondary;
                 padding: 0;
                 width: 100%;
 
@@ -658,7 +658,7 @@ onBeforeUnmount( () => {
         .desktop-nav {
             display: flex;
             flex-direction: column;
-            border-bottom: 1px solid #afafaf;
+            border-bottom: 1px solid c.$hover-grey;
 
             .partner-logo {
                 padding: 0;
@@ -733,7 +733,7 @@ onBeforeUnmount( () => {
                     border-bottom: 2px solid c.$background-color-primary;
                 }
                 &:hover .img-underline-menu {
-                    border-bottom: 2px solid black;
+                    border-bottom: 2px solid  c.$font-color-primary;
                 }
 
             }
@@ -747,7 +747,7 @@ onBeforeUnmount( () => {
                     display: block;
                 }
                 &:hover {
-                    border-bottom: 2px solid black;
+                    border-bottom: 2px solid c.$font-color-primary;
                 }
             }
 
@@ -786,20 +786,7 @@ onBeforeUnmount( () => {
                 .dropdown-content-icon {
                     @include dropdown-content-mixin;
                     margin: -8px 0 0 5px;
-/*
-                    li {
-                        &:hover {
-                            text-decoration: none;
-                        }
-                        
-                    }*/
                 }
-/*
-                .dropdown-item-flex {
-                    display: flex;
-                    align-items: end;
-                }
-*/
             }
 
             .nav-icons {

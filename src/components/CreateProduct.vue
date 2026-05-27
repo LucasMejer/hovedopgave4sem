@@ -627,18 +627,18 @@ function ConfirmDelete(){
         }
         .DeleteButton{
             border-style: solid;
-            border-color: #c20000;
-            background-color: #c20000;
+            border-color: c.$red-color-logo;
+            background-color: c.$red-color-logo;
             &:hover{
-                border-color: #7c0013;
-                background-color: #7c0013;
+                border-color: c.$red-hover-state;
+                background-color: c.$red-hover-state;
             }
             &:active{
-                border-color: #360008;
-                background-color: #360008;
+                border-color: c.$red-active-state;
+                background-color: c.$red-active-state;
             }
             p{
-                color: #ffffff;
+                color: c.$font-color-secondary;
             }
         }
     }
@@ -662,8 +662,8 @@ function ConfirmDelete(){
         text-align: center;
         gap: 20%;
         margin: auto;
-        background-color: #ffffff;
-        border-color: black;
+        background-color: c.$background-color-primary;
+        border-color: c.$font-color-primary;
         border-style: solid;
         border-width: 1px;
         height: 45%;

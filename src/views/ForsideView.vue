@@ -52,20 +52,14 @@ import BackToTop from '@/components/BackToTop.vue';
 .LargeIndexCardsDiv{
     display: flex;
     flex-direction: column;
-    background-color: rgb(247, 247, 247);
-
-    /*a {
-        text-decoration: none;
-        color: black;
-    }*/
+    background-color: c.$index-section-background;
 }
-/*
+
 .clickable {
     &:hover {
         cursor: pointer;
-        border: 1px solid black;
     }
-}*/
+}
 
 
 @media only screen and (min-width: 768px){

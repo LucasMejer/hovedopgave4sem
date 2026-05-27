@@ -48,6 +48,8 @@
 
 <style lang="scss" scoped>
 
+@use '../assets/colors.scss' as c;
+
     .HeadingsDiv{
         display: flex;
         flex-direction: row;
@@ -113,7 +115,7 @@
                 border-style: none;
                 border-width: 0px;
                 p{
-                    color: #ffffff;
+                    color: c.$font-color-secondary;
                 }
             }
             img{

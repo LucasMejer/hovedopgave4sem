@@ -131,7 +131,7 @@ button.carousel-btn {
   transform: translateY(-50%);
   z-index: 2;
   border: none;
-  background: rgb(255, 255, 255);
+  background: c.$background-color-primary;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -204,7 +204,7 @@ button.carousel-btn {
 
   .thumbnail-btn.active {
     opacity: 1;
-    border: 2px solid black;
+    border: 2px solid c.$font-color-primary;
   }
 
   .thumbnail-btn:hover {
@@ -213,7 +213,7 @@ button.carousel-btn {
 
   .thumbnail-btn:focus-visible,
   .carousel-btn:focus-visible {
-    outline: 3px solid black;
+    outline: 3px solid c.$font-color-primary;
     outline-offset: 2px;
   }
 }

@@ -52,7 +52,7 @@
         text-underline-offset: 2px;
         cursor: pointer;
         display: inline;
-        color: rgb(0, 0, 0);
+        color: c.$font-color-primary;
         font-weight: 500;
     }
 

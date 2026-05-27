@@ -88,7 +88,7 @@
     text-align: center;
     margin: 30px auto;
     text-decoration: none;
-    color: black;
+    color: c.$font-color-primary;
 
     h3 {
         margin-bottom: 8px;

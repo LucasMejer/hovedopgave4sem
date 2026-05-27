@@ -308,9 +308,9 @@ const toggleAccordion = (clickedValue) => {
 
 .content{
     background-color: c.$font-color-secondary;
-    border-right: solid #1a1a1a 0.1px;
-    border-left: solid #1a1a1a 0.1px;
-    border-bottom: solid #1a1a1a 0.1px;
+    border-right: solid c.$font-color-primary 0.1px;
+    border-left: solid c.$font-color-primary 0.1px;
+    border-bottom: solid c.$font-color-primary 0.1px;
     
     h3{
         padding-bottom: 0px;
@@ -335,9 +335,9 @@ h2{
     cursor: pointer;
     font-weight: normal;
         &.open{
-            border-right: solid #1a1a1a 0.1px;
-            border-left: solid #1a1a1a 0.1px;
-            border-top: solid #1a1a1a 0.1px;
+            border-right: solid c.$font-color-primary 0.1px;
+            border-left: solid c.$font-color-primary 0.1px;
+            border-top: solid c.$font-color-primary 0.1px;
             background-color: c.$font-color-secondary;
         }
         img{
@@ -458,7 +458,7 @@ p{
             &.open{
                 border-bottom:0.1px solid c.$font-color-primary;
                 background-color: c.$font-color-secondary;
-                box-shadow: 0 5px 0 -0.5px rgb(255, 255, 255);
+                box-shadow: 0 5px 0 -0.5px c.$font-color-secondary;
             }
             img{
                 height: 30px;
