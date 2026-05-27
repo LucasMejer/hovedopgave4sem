@@ -2,9 +2,9 @@
 import { ref } from "vue"
 
 const CarouselImages = [
-    {scr:"index-carousel-billede1.Jpg", text:"NEW LED ROPE LIGHTS" },
-    {scr:"index-carousel-billede2.Jpg", text:"LIGHT + BUILDING 2026" },
-    {scr:"index-carousel-billede3.Jpg", text:"ATTRACTIVE PROMOTION PACKAGES" }
+    {scr:"index-carousel-billede1.Jpg", subheading:"Introducing our 2025 LED Rope Light, perfect for convenient and versatile illumination.", text:"NEW LED ROPE LIGHTS" },
+    {scr:"index-carousel-billede2.Jpg", subheading:"We are heading to Frankfurt for the international trade fair Light + Building 2026.",text:"LIGHT + BUILDING 2026" },
+    {scr:"index-carousel-billede3.Jpg", subheading:"Boost sales with our versatile work lights promotions - order now for the upcoming ligthing season.",text:"ATTRACTIVE PROMOTION PACKAGES" }
 ]
 
 let currentImage = ref(0);
@@ -107,6 +107,7 @@ function autoScrollFunction() {
         </div>
         <div class="CarouselTextDiv">
             <h1>{{ CarouselImages[currentImage].text }}</h1>
+            <h3>{{ CarouselImages[currentImage].subheading }}</h3>
             <button class="ReadmoreButton">
                 <h3>
                     Read more
@@ -172,6 +173,11 @@ function autoScrollFunction() {
                 line-height: 1;
                 margin: 15px auto;
             }
+
+            h3{
+                color: c.$font-color-secondary;
+                padding: 10px 0px;
+            }
             .ReadmoreButton{
                 width: 30%;
                 height: 50px;
@@ -184,6 +190,7 @@ function autoScrollFunction() {
                 h3{
                     text-align: center;
                     margin-bottom: -4px;
+                    color: c.$font-color-primary;
                 }
             }
         }
