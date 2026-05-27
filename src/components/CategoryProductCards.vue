@@ -387,7 +387,7 @@ onMounted(() => {
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.discontinued">
                     <label for="DiscontinuedBox">
-                        <p class="DiscontinuedFilter">Discontinued</p>
+                        <p class="DiscontinuedFilter">Only show discontinued products</p>
                     <input type="checkbox" id="DiscontinuedBox" value="Discontinued" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>

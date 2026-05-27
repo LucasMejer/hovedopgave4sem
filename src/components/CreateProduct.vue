@@ -122,14 +122,14 @@ function ConfirmDelete(){
         <div class="Popup" v-if="PopupActive">
             <div class="PopupInner">
                 <h2>
-                    Are you sure you want to delete {{ TempDeleteNumber }}?
+                    Er du sikker på at du vil slette {{ TempDeleteNumber }}?
                 </h2>
                 <div class="PopupButtonDiv">
                     <button @click="CloseDeletePopup()">
-                        No
+                        Nej
                     </button>
                     <button @click="ConfirmDelete()">
-                        Yes
+                        Ja
                     </button>
                 </div>
             </div>
@@ -283,7 +283,7 @@ function ConfirmDelete(){
                         </label>
                         <button>
                             <p>
-                                Add new tag+
+                                Tilføj nyt tag +
                             </p>
                         </button>
                     </div>
@@ -301,7 +301,7 @@ function ConfirmDelete(){
                         </label>
                         <button>
                             <p>
-                                Add new tag+
+                                Tilføj nyt tag +
                             </p>
                         </button>
                     </div>
@@ -313,7 +313,7 @@ function ConfirmDelete(){
                         NyBeskrivelse != null ? item.ProduktBeskrivelse = NyBeskrivelse : item.ProduktBeskrivelse = item.ProduktBeskrivelse,
                         item.active = false, 
                         UpdateProducts()">
-                    Save
+                    Gem
                 </button>
             </div>
         </div>
@@ -433,7 +433,7 @@ function ConfirmDelete(){
                         </label>
                         <button>
                             <p>
-                                Add new tag+
+                                Tilføj nyt tag +
                             </p>
                         </button>
                     </div>
@@ -451,7 +451,7 @@ function ConfirmDelete(){
                         </label>
                         <button>
                             <p>
-                                Add new tag+
+                                Tilføj nyt tag +
                             </p>
                         </button>
                     </div>
@@ -645,11 +645,11 @@ function ConfirmDelete(){
 
     .Popup{
         position: fixed;
+        left: 0;
+        top: 0;
         z-index: 3;
         width: 100%;
-        height: 120%;
-        margin-left: -5%;
-        margin-top: -25%;
+        height: 100%;
         display: flex;
         background-color: #00000090;
     }
