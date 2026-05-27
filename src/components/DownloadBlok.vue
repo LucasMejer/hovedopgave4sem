@@ -513,6 +513,7 @@ button{
         display: flex;
         flex-direction: column;
         width: 125px;
+        max-height: 250px;
         &:hover{
             border-color: c.$hover-grey;
             cursor: pointer;
