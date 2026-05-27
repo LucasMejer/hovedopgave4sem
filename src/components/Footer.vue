@@ -20,7 +20,7 @@
             <div class="footer-content">
                 <h2>PARTNER SUPPORT</h2>
                 <router-link to="/info"><p class="clickable">Info and guides</p></router-link>
-                <p class="clickable">Business partner Support folder</p>
+                <p class="clickable">Business partner support folder</p>
                 <p class="clickable">Privacy policy</p>
                 <p class="clickable">Cookie policy</p>
                 <p class="clickable">Accessibility statement</p>

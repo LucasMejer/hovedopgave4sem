@@ -119,6 +119,7 @@ dropshadow på accessories
                             <h3 class="text"> {{item.ProduktTitel}} </h3>
                             <p class="text number"> {{ item.ProduktNummer }} </p>
                         </div>
+                        <p class="italic">Recommended for:</p>
                         <div class="product-tags">
                             <span v-for="(value, key) in item.ProduktTags">
                                 <p v-if="value" class="tag" :class="[key + 'Class']">
@@ -195,7 +196,7 @@ dropshadow på accessories
 
             .clear-icon {
                 @include icon;
-                margin-right: 45px;
+                margin-right: 50px;
                 color: #c5c5c5;
                 &:focus:not(:focus-visible) {
                     outline: none;
@@ -252,6 +253,12 @@ dropshadow på accessories
                                 margin-bottom: 3px;
                                 margin-left: 5px;
                             }
+                        }
+
+                        .italic {
+                            font-style: italic;
+                            font-weight: 400;
+                            font-size: 14px;
                         }
 
                         .product-tags {
@@ -320,6 +327,7 @@ dropshadow på accessories
                     .clear-icon {
                         width: 16px;
                         height: 16px;
+                        margin-right: 45px;
                         &:hover {
                             cursor: pointer;
                         }
@@ -347,19 +355,30 @@ dropshadow på accessories
                                 background-color: #DADADA;
                                 cursor: pointer;
                             }
-                            /*
+
                             .product-image {
-                                width: 50px;
-                                height: 50px;
-                            }*/
+                                height: 75px;
+                                width: 75px;
+                            }
+
+                            .product-content {
+
+                                .italic {
+                                    font-size: 14px;
+                                }
+                            }
                         }
 
+                        
 
+                        
 
                     }
                 }
                 
             }
+
+            
     }
 
 
