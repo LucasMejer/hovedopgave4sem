@@ -66,7 +66,7 @@ const FiltersVisible0 = computed(() => {
 });
 
 const FiltersVisible1 = computed(() => {
-    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Flashlight')
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Flashlight' || filter == 'Floodlight' || filter == 'Hand lamp' || filter == 'Head lamp' || filter == 'Kit' || filter == 'Pen light' || filter == 'Tube light')
 
     if(tempArray.filter(Boolean).length == 0){
         return '';
@@ -75,7 +75,7 @@ const FiltersVisible1 = computed(() => {
 });
 
 const FiltersVisible2 = computed(() => {
-    let tempArray = Array.from(activeFilters.value, (filter) => filter == '24V')
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == '24V' || filter == 'Alkaline battery' || filter == 'Cable' || filter == 'Cable & Rechargeable' || filter == 'Rechargeable battery')
 
     if(tempArray.filter(Boolean).length == 0){
         return '';
@@ -84,7 +84,7 @@ const FiltersVisible2 = computed(() => {
 });
 
 const FiltersVisible3 = computed(() => {
-    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'TypeA')
+    let tempArray = Array.from(activeFilters.value, (filter) => filter == 'Type A (US plug)' || filter == 'Type C (Euro plug)' || filter == 'Type F (Shucko plug)' || filter == 'Type G (Shucko plug w/Swiss Adapter)' || filter == 'Type G (UK plug)' || filter == 'Type I (AU plug)' || filter == 'Type J (Shucko plug w/Swiss Adapter)' || filter == 'Type J (Swiss plug)')
 
     if(tempArray.filter(Boolean).length == 0){
         return '';
@@ -245,9 +245,33 @@ onMounted(() => {
                     <img class="ArrowDown" :class="{'rotate': filterToggles.producttype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllProductTypeFilter" id="MainDropdown" v-if="filterToggles.producttype">
-                    <label for="ProductTypeBox">
+                    <label for="FlashlightBox">
                         <p class="FlashlightFilter">Flashlight</p>
-                    <input type="checkbox" id="ProductTypeBox" value="Flashlight" v-model="activeFilters" @click="resetPages()">
+                    <input type="checkbox" id="FlashlightBox" value="Flashlight" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="FloodlightBox">
+                        <p class="FloodlightFilter">Floodlight</p>
+                    <input type="checkbox" id="FloodlightBox" value="Floodlight" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="HandlampBox">
+                        <p class="HandlampFilter">Hand lamp</p>
+                    <input type="checkbox" id="HandlampBox" value="Hand lamp" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="HeadlampBox">
+                        <p class="HeadlampFilter">Head lamp</p>
+                    <input type="checkbox" id="HeadlampBox" value="Head lamp" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="KitBox">
+                        <p class="KitFilter">Kit</p>
+                    <input type="checkbox" id="KitBox" value="Kit" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="PenlightBox">
+                        <p class="PenlightFilter">Pen light</p>
+                    <input type="checkbox" id="PenlightBox" value="Pen light" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TubelightBox">
+                        <p class="TubelightFilter">Tube light</p>
+                    <input type="checkbox" id="TubelightBox" value="Tube light" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>
             </button>
@@ -260,9 +284,25 @@ onMounted(() => {
                     <img class="ArrowDown" :class="{'rotate': filterToggles.powersource}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.powersource">
-                    <label for="PowerSourceBox">
+                    <label for="24VBox">
                         <p class="24VFilter">24 V</p>
-                    <input type="checkbox" id="PowerSourceBox" value="24V" v-model="activeFilters" @click="resetPages()">
+                    <input type="checkbox" id="24VBox" value="24V" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="AlkalineBox">
+                        <p class="AlkalineFilter">Alkaline battery</p>
+                    <input type="checkbox" id="AlkalineBox" value="Alkaline battery" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="CableBox">
+                        <p class="CableFilter">Cable</p>
+                    <input type="checkbox" id="CableBox" value="Cable" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="CableRechargeBox">
+                        <p class="CableRechargeFilter">Cable & Rechargeable</p>
+                    <input type="checkbox" id="CableRechargeBox" value="Cable & Rechargeable" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="RechargeablebatteryBox">
+                        <p class="RechargeablebatteryFilter">Rechargeable battery</p>
+                    <input type="checkbox" id="RechargeablebatteryBox" value="Rechargeable battery" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>
             </button>
@@ -274,9 +314,37 @@ onMounted(() => {
                     <img class="ArrowDown" :class="{'rotate': filterToggles.plugtype}" src="/ikoner/arrow-down.png" alt="">
                 </h3>
                 <div class="AllDiscontinuedFilter" id="MainDropdown" v-if="filterToggles.plugtype">
-                    <label for="PlugTypeBox">
+                    <label for="TypeABox">
                         <p class="TypeAFilter">Type A (US plug)</p>
-                    <input type="checkbox" id="PlugTypeBox" value="TypeA" v-model="activeFilters" @click="resetPages()">
+                    <input type="checkbox" id="TypeABox" value="Type A (US plug)" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TypeCBox">
+                        <p class="TypeCFilter">Type C (Euro plug)</p>
+                    <input type="checkbox" id="TypeCBox" value="Type C (Euro plug)" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TypeFBox">
+                        <p class="TypeFFilter">Type F (Shucko plug)</p>
+                    <input type="checkbox" id="TypeFBox" value="Type F (Shucko plug)" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TypeGBox">
+                        <p class="TypeGFilter">Type G (Shucko plug w/Swiss Adapter)</p>
+                    <input type="checkbox" id="TypeGBox" value="Type G (Shucko plug w/Swiss Adapter)" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TypeGUKBox">
+                        <p class="TypeGUKFilter">Type G (UK plug)</p>
+                    <input type="checkbox" id="TypeGUKBox" value="Type G (UK plug)" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TypeIBox">
+                        <p class="TypeIFilter">Type I (AU plug)</p>
+                    <input type="checkbox" id="TypeIBox" value="Type I (AU plug)" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TypeJBox">
+                        <p class="TypeJFilter">Type J (Shucko plug w/Swiss Adapter)</p>
+                    <input type="checkbox" id="TypeJBox" value="Type J (Shucko plug w/Swiss Adapter)" v-model="activeFilters" @click="resetPages()">
+                    </label>
+                    <label for="TypeJSBox">
+                        <p class="TypeJSFilter">Type J (Swiss plug)</p>
+                    <input type="checkbox" id="TypeJSBox" value="Type J (Swiss plug)" v-model="activeFilters" @click="resetPages()">
                     </label>
                 </div>
             </button>
@@ -415,7 +483,9 @@ onMounted(() => {
         width: 90%;
         justify-content: left;
         margin: auto;
-        
+        h1{
+            margin: 35px 35px 35px 0px;
+        }
     }
 
 
@@ -553,6 +623,9 @@ onMounted(() => {
             position: absolute;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            overflow: auto;
+            z-index: 1;
             gap: 15px;
             padding: 10px;
             background-color: c.$background-color-primary;
@@ -763,7 +836,9 @@ onMounted(() => {
         .CategoryHeading{
             justify-content: center;
             text-align: center;
-            
+            h1{
+            margin: 35px 35px 35px 35px;
+            }
         }
 
         .FullProductsDiv{
