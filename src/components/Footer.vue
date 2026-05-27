@@ -19,9 +19,6 @@
             </div>
             <div class="footer-content">
                 <h2>PARTNER SUPPORT</h2>
-                <p class="clickable">Master data</p>
-                <p class="clickable">Media file</p>
-                <p class="clickable">Price list</p>
                 <p class="clickable">Info and guides</p>
                 <p class="clickable">Business partner Support folder</p>
                 <p class="clickable">Privacy policy</p>
