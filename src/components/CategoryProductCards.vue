@@ -532,7 +532,7 @@ onMounted(() => {
                 filter: invert(1);
             }
             border-color: c.$font-color-secondary;
-            background-color: c.$font-color-primary;
+            background-color: c.$tag-color-construction;
         }
         .ElectricianTag{
             p{
@@ -542,7 +542,7 @@ onMounted(() => {
                 filter: invert(1);
             }
             border-color: c.$font-color-secondary;
-            background-color: #07775B;
+            background-color: c.$tag-color-electrician;
         }
         .PaintingTag{
             p{
@@ -552,7 +552,7 @@ onMounted(() => {
                 filter: invert(1);
             }
             border-color: c.$font-color-secondary;
-            background-color: #6c793e;
+            background-color: c.$tag-color-painting;
         }
         .AutomotiveTag{
             p{
@@ -562,7 +562,7 @@ onMounted(() => {
                 filter: invert(1);
             }
             border-color: c.$font-color-secondary;
-            background-color: #2715AE;
+            background-color: c.$tag-color-automotive;
         }
         .DiscontinuedTag{
             p{
@@ -572,7 +572,7 @@ onMounted(() => {
                 filter: invert(1);
             }
             border-color: c.$font-color-secondary;
-            background-color: #B91215;
+            background-color: c.$tag-color-discontinued;
         }  
         }
         
@@ -778,7 +778,7 @@ onMounted(() => {
             }
             .DiscontinuedClass{
                     color: c.$font-color-secondary;
-                    background-color: #B91215;
+                    background-color: c.$tag-color-discontinued;
                     padding: 5px;
                     //text-transform: uppercase;
                     width: max-content;
@@ -805,19 +805,19 @@ onMounted(() => {
                 }
                 .ConstructionClass{
                     color: c.$font-color-secondary;
-                    background-color: c.$font-color-primary;
+                    background-color: c.$tag-color-construction;
                 }
                 .ElectricianClass{
                     color: c.$font-color-secondary;
-                    background-color: #07775B;
+                    background-color: c.$tag-color-electrician;
                 }
                 .PaintingClass{
                     color: c.$font-color-secondary;
-                    background-color: #88964E;
+                    background-color: c.$tag-color-painting;
                 }
                 .AutomotiveClass{
                     color: c.$font-color-secondary;
-                    background-color: #2715AE;
+                    background-color: c.$tag-color-automotive;
                 }
                   
             }
