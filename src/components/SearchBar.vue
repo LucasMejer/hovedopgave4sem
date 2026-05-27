@@ -86,7 +86,8 @@ onBeforeUnmount( () => {
         <div class="search-input-container" ref="searchInput">
             <input 
                 class="search-input" 
-                type="text" 
+                type="text"
+                name="searchbar"
                 placeholder="Search..." 
                 v-model="search"
                 @input="showSearches"

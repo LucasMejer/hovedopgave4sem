@@ -227,10 +227,10 @@ onBeforeUnmount( () => {
 
                 <div class="nav-icons mobile-nav-icons">
                     <div class="nav-mobile-languages-container">
-                        <img src="../../public/ikoner/english-flag.png" alt="English" class="img-underline-mobile">
-                        <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
-                        <img src="../../public/ikoner/german-flag.png" alt="German" >
-                        <img src="../../public/ikoner/french-flag.png" alt="French" >
+                        <img src="../../public/ikoner/english-flag.png" alt="English" class="img-underline-mobile" tabindex="0">
+                        <img src="../../public/ikoner/danish-flag.png" alt="Danish" tabindex="0">
+                        <img src="../../public/ikoner/german-flag.png" alt="German" tabindex="0">
+                        <img src="../../public/ikoner/french-flag.png" alt="French" tabindex="0">
                     </div>
                 </div>
             </div>
