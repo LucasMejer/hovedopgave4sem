@@ -19,14 +19,14 @@
             </div>
             <div class="footer-content">
                 <h2>PARTNER SUPPORT</h2>
-                <p class="clickable">Product Information</p>
-                <p class="clickable">Brochures</p>
-                <p class="clickable">Price List</p>
-                <p class="clickable">Sales Guides</p>
-                <p class="clickable">Campaigns</p>
-                <p class="clickable">Business Partner Support Folder</p>
+                <p class="clickable">Master data</p>
+                <p class="clickable">Media file</p>
+                <p class="clickable">Price list</p>
+                <p class="clickable">Info and guides</p>
+                <p class="clickable">Business partner Support folder</p>
                 <p class="clickable">Privacy policy</p>
                 <p class="clickable">Cookie policy</p>
+                <p class="clickable">Accessibility statement</p>
             </div>
             <div class="footer-content">
                 <h2>MAILING LIST</h2>
