@@ -8,7 +8,7 @@
             <div class="image-container">
                 <img class="red" src="/public/ikoner/index-salesguide-ikon.svg" alt="">
             </div>
-            <h3>Sales Guide</h3>
+            <h3>Sales guides</h3>
             <div class="text-container">
                 <p>Discover our sales guides for industry-specific work light products</p>
             </div>
@@ -49,7 +49,7 @@
                     <path d="M5.54201 4.68517L3.01467 13.5308C2.91732 13.8716 3.13381 14.2193 3.48494 14.267C4.60966 14.4197 6.94347 14.6455 8.49967 14.1667C9.40051 13.8895 10.5733 13.2123 11.0808 12.9056C11.2411 12.8087 11.3421 12.6404 11.3577 12.4538L12.0413 4.25H6.11892C5.85103 4.25 5.6156 4.42759 5.54201 4.68517Z" stroke="currentColor"/>
                 </svg>
             </div>
-            <h3>POS-materials</h3>
+            <h3>Point of sales</h3>
             <div class="text-container">
                 <p>Explore our exhibition material, merchandise, and in-store displays</p>
             </div>
@@ -58,9 +58,9 @@
             <div class="image-container">
                 <img class="red" src="/public/ikoner/index-brand-ikon.svg" alt="">
             </div>  
-            <h3>Branding</h3>
+            <h3>Brand book</h3>
             <div class="text-container">
-                <p>Check out our brand book and download captivating branding images</p>
+                <p>Download our brand book containing SCANGRIPs design guidelines</p>
             </div>
         </div>
     </div>

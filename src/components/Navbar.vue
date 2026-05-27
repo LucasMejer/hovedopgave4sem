@@ -9,6 +9,9 @@ const togglePI = ref(false);
 const toggleMI = ref(false);
 const toggleLan = ref(false);
 const togglePro = ref(false);
+const toggleBr = ref(false);
+const toggleMe = ref(false);
+const toggleSM = ref(false);
 const burgerMenu = ref(null);
 const mobileNav = ref(null);
 const menuItemPI = ref(null);
@@ -27,6 +30,18 @@ const toggleProductInformation = () => {
 
 const toggleMarketingItems = () => {
     toggleMI.value = !toggleMI.value;
+};
+
+const toggleBranding = () => {
+    toggleBr.value = !toggleBr.value;
+};
+
+const toggleMedia = () => {
+    toggleMe.value = !toggleMe.value;
+};
+
+const toggleSalesM = () => {
+    toggleSM.value = !toggleSM.value;
 };
 
 const toggleProfile = () => {
@@ -144,9 +159,14 @@ onBeforeUnmount( () => {
                     </button>
                     <hr>
                     <ul class="dropdown" v-if="toggleMI">
-                        <li class="bold">Branding</li>
+                        <li class="bold">
+                            <button @click="toggleBranding">
+                                <p>Branding</p>
+                                <img :class="{'rotate': toggleBr}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                            </button>                            
+                        </li>
                         <hr>
-                        <ul class="list">
+                        <ul class="list" v-if="toggleBr">
                             <li>Brand book</li>
                             <hr>
                             <li>Brand pictures</li>
@@ -157,10 +177,16 @@ onBeforeUnmount( () => {
                             <hr>
                             <li>Logos and symbols</li>
                         </ul>
+                        <hr v-if="toggleBr">
 
-                        <li class="bold">Media</li>
+                        <li class="bold">
+                            <button @click="toggleMedia">
+                                <p>Media</p>
+                                <img :class="{'rotate': toggleMe}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                            </button>                            
+                        </li>
                         <hr>
-                        <ul class="list">
+                        <ul class="list" v-if="toggleMe">
                             <li>Pictures</li>
                             <hr>
                             <li>Press releases</li>
@@ -169,17 +195,23 @@ onBeforeUnmount( () => {
                             <hr>
                             <li>Videos</li>
                         </ul>
+                        <hr v-if="toggleMe">
 
-                        <li class="bold">Sales material</li>
-                        <hr>
-                        <ul class="list">
+                        <li class="bold">
+                            <button @click="toggleSalesM">
+                                <p>Sales material</p>
+                                <img :class="{'rotate': toggleSM}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
+                            </button>                            
+                        </li>
+                        <hr v-if="toggleSM">
+                        <ul class="list" v-if="toggleSM">
                             <li>Brochures</li>
                             <hr>
                             <li>Campaign material</li>
                             <hr>
                             <li>Energy labels</li>
                             <hr>
-                            <li>Points of sales</li>
+                            <li>Point of sales</li>
                             <hr>
                             <li>Prices and product data</li>
                             <hr>
@@ -264,7 +296,7 @@ onBeforeUnmount( () => {
                                     <li>Brochures</li>
                                     <li>Campaign material</li>
                                     <li>Energy labels</li>
-                                    <li>Points of sales</li>
+                                    <li>Point of sales</li>
                                     <li>Prices and product data</li>
                                     <li>Sales guides</li>
                                 </ul>
@@ -499,8 +531,9 @@ onBeforeUnmount( () => {
             }
 
             .img-underline-mobile {
-                border: 2px solid black;
+                border: 1px solid black;
                 padding: 0 4px;
+                background-color: #e7e7e7;
             }
         }
 
@@ -555,12 +588,27 @@ onBeforeUnmount( () => {
 
             .bold {
                 font-size: 15px;
+                margin: 0;
             }
 
             .list {
                 list-style: none;
                 padding-left: 15px;
                 margin-bottom: 20px
+            }
+
+            button {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: none;
+                background-color: #fafafa;
+                padding: 0;
+                width: 100%;
+
+                p {
+                    font-size: 15px;
+                }
             }
         }
 
