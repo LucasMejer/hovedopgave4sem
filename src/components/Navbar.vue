@@ -375,7 +375,7 @@ onBeforeUnmount( () => {
         position: fixed;
         top: 0;
         z-index: 5;
-        background-color: #fff;
+        background-color: c.$background-color-primary;
         width: 100vw;
         box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
         transition: 0.3s ease;
@@ -766,6 +766,7 @@ onBeforeUnmount( () => {
                     .bold {
                         font-weight: 400;
                         font-size: 18px;
+                        
 
                         &:hover {
                             cursor: auto;
@@ -785,7 +786,7 @@ onBeforeUnmount( () => {
 
                 .dropdown-content-icon {
                     @include dropdown-content-mixin;
-                    margin: -5px 0 0 5px;
+                    margin: -8px 0 0 5px;
 /*
                     li {
                         &:hover {

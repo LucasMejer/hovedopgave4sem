@@ -78,16 +78,6 @@ onBeforeUnmount( () => {
 });
 
 
-
-/*
-andet
-flere tags?
-klik på largeindex?
-info ikoner ikke samme stil og meget store og tykke
-store pile
-dropshadow på accessories
-*/
-
 </script>
 
 <template>
@@ -117,7 +107,7 @@ dropshadow på accessories
                     <div class="product-content">
                         <div class="product-text">
                             <h3 class="text"> {{item.ProduktTitel}} </h3>
-                            <p class="text number"> {{ item.ProduktNummer }} </p>
+                            <p class="number"> {{ item.ProduktNummer }} </p>
                         </div>
                         <p class="italic">Recommended for:</p>
                         <div class="product-tags">
@@ -212,7 +202,7 @@ dropshadow på accessories
 
             .searched-dropdown {
                 position: relative;
-                background-color: #fff;
+                background-color: c.$background-color-primary;
                 border: 1px solid #afafaf;
                 list-style-type: none;
                 width: 100%;
@@ -246,12 +236,16 @@ dropshadow på accessories
                         .product-text {
                             display: flex;
                             align-items: flex-end;
-                            
+                            flex-wrap: wrap;
+
+                            .text {
+                                margin-right: 5px;
+                                margin-bottom: 4px;
+                            }
 
                             .number {
                                 color: c.$hover-state-active;
-                                margin-bottom: 3px;
-                                margin-left: 5px;
+                                margin-bottom: 7px;
                             }
                         }
 
@@ -273,23 +267,23 @@ dropshadow på accessories
 
                             .ConstructionClass{
                                 color: c.$font-color-secondary;
-                                background-color: c.$font-color-primary;
+                                background-color: c.$tag-color-construction;
                             }
                             .ElectricianClass{
                                 color: c.$font-color-secondary;
-                                background-color: #07775B;
+                                background-color: c.$tag-color-electrician;
                             }
                             .PaintingClass{
                                 color: c.$font-color-secondary;
-                                background-color: #6c793e;
+                                background-color: c.$tag-color-painting;
                             }
                             .AutomotiveClass{
                                 color: c.$font-color-secondary;
-                                background-color: #2715AE;
+                                background-color: c.$tag-color-automotive;
                             }
                             .DiscontinuedClass{
                                 color: c.$font-color-secondary;
-                                background-color: #B91215;
+                                background-color: c.$tag-color-discontinued;
                             }    
                             
                         }

@@ -133,8 +133,7 @@ const prev = () => {
 
 .carousel-card{
   background-color: c.$font-color-secondary;
-  border: solid 0.01px rgba(26, 26, 26, 0.25);
-  filter: drop-shadow(0px 2px 4px rgba(26, 26, 26, 0.25));
+  border: solid 1px black;
   display: flex;
   flex-direction: column;
   justify-content: center;
