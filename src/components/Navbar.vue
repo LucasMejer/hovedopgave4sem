@@ -375,7 +375,7 @@ onBeforeUnmount( () => {
         position: fixed;
         top: 0;
         z-index: 5;
-        background-color: #fff;
+        background-color: c.$background-color-primary;
         width: 100vw;
         box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
         transition: 0.3s ease;
@@ -404,7 +404,7 @@ onBeforeUnmount( () => {
     #burgermenu {
         padding: 0;
         border: none;
-        background-color: #fff;
+        background-color: c.$background-color-primary;
         padding-right: 10px;
         
 
@@ -629,7 +629,7 @@ onBeforeUnmount( () => {
         @mixin dropdown-content-mixin {
             position: absolute;
             box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
-            background-color: #fff;
+            background-color: c.$background-color-primary;
             list-style-type: none;
             width: auto;
             white-space: nowrap;
@@ -711,7 +711,7 @@ onBeforeUnmount( () => {
                 padding-left: 15px;
                 margin: 0 0;
                 cursor: pointer;
-                background-color: #fff;
+                background-color: c.$background-color-primary;
 
                 &:hover {
                     text-decoration: underline 1.5px;
@@ -730,7 +730,7 @@ onBeforeUnmount( () => {
                 padding: 0;
 
                 .img-underline-menu {
-                    border-bottom: 2px solid white;
+                    border-bottom: 2px solid c.$background-color-primary;
                 }
                 &:hover .img-underline-menu {
                     border-bottom: 2px solid black;
@@ -741,7 +741,7 @@ onBeforeUnmount( () => {
 
 
             .img-underline {
-                border-bottom: 2px solid white;
+                border-bottom: 2px solid c.$background-color-primary;
 
                 img {
                     display: block;
@@ -764,7 +764,7 @@ onBeforeUnmount( () => {
                     margin: -5px 0 0 15px;
 
                     .bold {
-                        font-weight: 400;
+                        font-weight: 500;
                         font-size: 18px;
 
                         &:hover {
@@ -785,7 +785,7 @@ onBeforeUnmount( () => {
 
                 .dropdown-content-icon {
                     @include dropdown-content-mixin;
-                    margin: -5px 0 0 5px;
+                    margin: -8px 0 0 5px;
 /*
                     li {
                         &:hover {
