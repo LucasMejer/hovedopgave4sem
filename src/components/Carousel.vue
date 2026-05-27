@@ -171,12 +171,12 @@ function autoScrollFunction() {
                 color: c.$font-color-secondary;
                 width: 85%;
                 line-height: 1;
-                margin: 15px auto;
+                margin: 15px auto 5px auto;
             }
 
             h3{
                 color: c.$font-color-secondary;
-                padding: 10px 0px;
+                padding: 0px 0px 20px 0px;
             }
             .ReadmoreButton{
                 width: 30%;
@@ -191,6 +191,7 @@ function autoScrollFunction() {
                     text-align: center;
                     margin-bottom: -4px;
                     color: c.$font-color-primary;
+                    padding: 0px;
                 }
             }
         }
