@@ -15,7 +15,7 @@ import BackToTop from '@/components/BackToTop.vue';
                 <p>Home</p>
             </router-link>
             <p>></p>
-            <p>Info and guides</p>
+            <p>Info and Guides</p>
         </li>
     </div>
     <h1>INFO AND GUIDES</h1>

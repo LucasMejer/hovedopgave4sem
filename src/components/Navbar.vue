@@ -222,7 +222,7 @@ onBeforeUnmount( () => {
                     </ul>
                     <hr v-if="toggleMI">
                     <router-link to="/info" class="menu-item link">
-                        <p>Info and guides</p>
+                        <p>Info and Guides</p>
                     </router-link>
                     <hr>
                 </div>
@@ -308,7 +308,7 @@ onBeforeUnmount( () => {
                     </div>
 
                     <router-link to="/info" class="menu-item link">
-                        <p>Info and guides</p>
+                        <p>Info and Guides</p>
                     </router-link>  
 
                     <SearchBar/>
