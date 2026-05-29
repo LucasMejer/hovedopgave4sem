@@ -542,6 +542,7 @@ function ConfirmDelete(){
     .ProductTags{
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
 
     .ProductTagsText{
