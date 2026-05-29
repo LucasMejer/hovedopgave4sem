@@ -3,12 +3,12 @@
 <template>
     <div class="backgroundcolor">
         <div class="videosection">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/4PwKkvaiVkQ?si=jra_fdldP_jmjeHB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="columntext">
                 <h2>Unsure how to use the Business Partner Site?</h2>
                 <h3>Learn how to navigate through the Business Partner Site by watching our guide video.</h3>
                 <h3>You can find more information and guides&nbsp;<router-link to="/info" class="info-link" aria-label="Link to Info and guides">here</router-link>.</h3>
             </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4PwKkvaiVkQ?si=jra_fdldP_jmjeHB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 </template>
@@ -28,7 +28,7 @@
     iframe{
         aspect-ratio: 16/9;
         width: 100%;
-        margin: 0 auto 20px 0;
+        margin: 40px auto 20px 0;
         height: auto;
     }
     .columntext{
@@ -63,7 +63,7 @@
         width: 90%;
         margin: 0 auto;
         padding: 0px;
-        flex-direction: row-reverse;
+        flex-direction: row;
         background-color: none;
         .columntext {
             width: 50%;
