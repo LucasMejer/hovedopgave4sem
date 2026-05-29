@@ -140,6 +140,33 @@ onBeforeUnmount(() => {
             }
 
         }
+
+        &:focus {
+            background-color: c.$red-color-logo;
+            border: 1px solid c.$red-color-logo;
+
+            p {
+                display: inline;
+                width: 100%;
+                right: 0;
+                padding: 5px 0 5px 10px;
+            }
+
+            img {
+                background-color: c.$red-color-logo;
+            }
+
+            .overlay {
+                left: 0;
+                width: auto;
+                height: auto;
+            }
+
+            button {
+                background-color: c.$red-color-logo;
+            }
+
+        }
     }
 
     .button-hidden {

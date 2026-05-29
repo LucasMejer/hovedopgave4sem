@@ -360,7 +360,7 @@ img{
 }
 
 button{
-    border: solid 0.1px c.$section-color-background;
+    border: solid 1px c.$section-color-background;
     background-color: c.$section-color-background;
     align-items: baseline;
     font-size: 18px;
@@ -396,9 +396,9 @@ button{
     object-fit: cover;
     padding: 10px auto;
     grid-gap: 0px 15px;
-    border-top: solid 0.1px c.$font-color-primary;
-    border-left: solid 0.1px c.$font-color-primary;
-    border-right: solid 0.1px c.$font-color-primary;
+    border-top: solid 1px c.$font-color-primary;
+    border-left: solid 1px c.$font-color-primary;
+    border-right: solid 1px c.$font-color-primary;
 
 }
 
@@ -410,7 +410,7 @@ button{
     max-width: 135px;
     border: solid 2px c.$font-color-secondary;
     box-sizing: border-box;
-    outline: solid 0.1px c.$font-color-primary;
+    outline: solid 1px c.$font-color-primary;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -445,7 +445,7 @@ button{
 .blok-card-valgt{
     box-sizing: border-box;
     border: solid 2px c.$font-color-primary;
-    outline: solid 0.1px c.$font-color-primary;
+    outline: solid 1px c.$font-color-primary;
     .checkmark {
     position: absolute;
     top: -20px;
@@ -462,7 +462,7 @@ button{
     justify-content: space-between;
     align-items: center;
     background-color: c.$section-color-background;
-    border-top: solid 0.1px c.$font-color-primary;
+    border-top: solid 1px c.$font-color-primary;
     padding: 10px;
 }
 
@@ -470,10 +470,10 @@ button{
     font-weight: 600;
     background-color: c.$font-color-secondary;
     border-color: c.$font-color-secondary;
-    border-top: solid 0.1px c.$font-color-primary;
-    border-left: solid 0.1px c.$font-color-primary;
-    border-right: solid 0.1px c.$font-color-primary;
-    /*outline-bottom: solid 0.1px c.$font-color-secondary;*/
+    border-top: solid 1px c.$font-color-primary;
+    border-left: solid 1px c.$font-color-primary;
+    border-right: solid 1px c.$font-color-primary;
+    /*outline-bottom: solid 1px c.$font-color-secondary;*/
     box-shadow: 0 5px 0 -0.5px c.$font-color-secondary;
     
     /*outline-top: c.$font-color-primary;*/

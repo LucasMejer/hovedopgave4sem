@@ -43,29 +43,36 @@ const slides = ref([
 const currentIndex = ref(0)
 
 const next = () => {
-  currentIndex.value = (currentIndex.value + 1) % slides.value.length
+  currentIndex.value = (currentIndex.value + 1) % 3
 }
 
 const prev = () => {
-  currentIndex.value = currentIndex.value === 0 ? slides.value.length - 1 : currentIndex.value - 1
+  currentIndex.value = currentIndex.value === 0 ? 3 - 1 : currentIndex.value - 1
 }
 </script>
 <template>
 <div class='carousel'>
   <h2>Accessories for NOVA MINI</h2>
-  <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 32}%)` }'>
-    <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
-      <div class="carousel-card">
-        <img :src='slide.image' alt=''>
-          <h3>
-            {{ slide.produkttitle }}
-          </h3>
-          <p>
-            {{ slide.produktnr}}
-          </p>
+  <div class="carousel-outer">
+    <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 23.67}%)` }'>
+      <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
+        <div class="carousel-card">
+          <div class="image">
+            <img :src='slide.image' alt=''>
+          </div>
+          <div class="text">
+            <h3>
+              {{ slide.produkttitle }}
+            </h3>
+            <p>
+              {{ slide.produktnr}}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  
   <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt="" aria-label="go previous"></button>
   <button @click='next' class='carousel-btn next'><img src="/public/ikoner/arrow-right.svg" alt="" aria-label="go to next"></button>
 </div>
@@ -76,7 +83,7 @@ const prev = () => {
 
 .carousel {
   position: relative;
-  width: 90%;
+  width: 50%;
   margin: 100px auto;
   padding: 10px 0px;
   overflow: hidden;
@@ -94,19 +101,30 @@ const prev = () => {
   gap: 20px;
 }
 
+.carousel-outer {
+  width: 90%;
+  overflow: hidden;
+  margin: auto;
+}
+
 .carousel-slide {
   max-width: 50%;
   margin: auto;
   cursor: pointer;
   img{
-    width: 100%;
+    height: 100%;
+    width: auto;
+    margin-bottom: 10px;
+  }
+  h3 {
+    margin-bottom: 10px;
   }
 }
 
 .carousel-btn {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 55%;
+  transform: translateY(-55%);
   z-index: 2;
   background: c.$font-color-secondary;
   align-items: center;
@@ -126,10 +144,6 @@ const prev = () => {
 .prev { left: 10px; }
 .next { right: 10px; }
 
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-}
 
 .carousel-card{
   background-color: c.$font-color-secondary;
@@ -138,11 +152,22 @@ const prev = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
+  height: 250px;
   min-height: 205px;
+  text-align: center;
+  overflow: hidden;
   img{
-    width: 100%;
-    object-fit: cover;
+    width: auto;
+  }
+  .image {
+    display: flex;
+    align-items: flex-end;
+    height: 65%;
+
+  }
+  .text {
+    height: 35%;
   }
 }
 
@@ -160,11 +185,11 @@ const prev = () => {
     }
   }
 .carousel-card{
-  min-height: 556px;
-  min-width: 300px;
+  padding: 20px;
+  height: 330px;
+  min-width: 230px;
   img{
-    height: 250px;
-    width: 75%;
+    height: 180px;
     
   }
 }

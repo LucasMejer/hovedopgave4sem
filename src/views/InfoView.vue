@@ -78,6 +78,23 @@ import BackToTop from '@/components/BackToTop.vue';
     <Footer/>
     <BackToTop/>
 </template>
+<style lang="scss">
+
+
+.LargeIndexCardsDiv{ 
+
+    .CardDiv {
+
+        .DownloadButton {
+            
+            img {
+                margin-bottom: 3px;
+            }
+        }
+    }
+}
+
+</style>
 <style lang="scss" scoped>
 @use '../assets/colors.scss' as c;
 
