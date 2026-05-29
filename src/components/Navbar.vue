@@ -319,7 +319,7 @@ onBeforeUnmount( () => {
                                 <img src="../../public/ikoner/english-flag.png" class="img-underline-menu" alt="Language">
                                 <img :class="{'rotate': toggleLan}" class="arrows" src="../../public/ikoner/arrow-down.png" alt="">
                             </button>
-                            <div class="dropdown" v-if="toggleLan" ref="dropdown" tabindex="0">
+                            <div class="dropdown" v-if="toggleLan" ref="dropdown">
                                 <ul class="dropdown-content-icon">
                                     <li class="img-underline" tabindex="0">
                                         <img src="../../public/ikoner/danish-flag.png" alt="Danish" >
