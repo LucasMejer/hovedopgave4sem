@@ -83,7 +83,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }" :aria-pressed="selected.includes('safetydata')" aria-label="Select NOVA MINI safetydata PDF" tabindex="0" @keydown.enter="toggleSelection('saftydata')">
+            <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }" :aria-pressed="selected.includes('safetydata')" aria-label="Select NOVA MINI safetydata PDF" tabindex="0" @keydown.enter="toggleSelection('safetydata')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-safety-data.jpg" alt="">
@@ -123,7 +123,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-              <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }" :aria-pressed="selected.includes('declaration')" aria-label="Select NOVA MINI declaration eu PDF" tabindex="0" @keydown.enter="toggleSelection('declaration')">
+            <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }" :aria-pressed="selected.includes('declaration')" aria-label="Select NOVA MINI declaration eu PDF" tabindex="0" @keydown.enter="toggleSelection('declaration')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-eu-declaration.jpg" alt="">
@@ -139,6 +139,26 @@ function activateOverlay(link) {
                         <img src="/public/ikoner/eye-icon.svg" alt="">
                     </button>
                     <button type="button" class="download" aria-label="Download NOVA MINI declaration eu PDF" @click.stop="downloadFunction('NOVA MINI Declaration of Conformity (PDF)')">
+                        <img src="/public/ikoner/download-ikon.svg" alt="">
+                    </button>
+                </div>
+            </div>
+             <div class="scroll-blok-card" @click="toggleSelection('certification')" :class="{ 'blok-card-valgt': selected.includes('certification') }" :aria-pressed="selected.includes('certification')" aria-label="Select NOVA MINI certification un PDF" tabindex="0" @keydown.enter="toggleSelection('certification')">
+                <div class="scroll-blok-image-text">
+                    <div class="scroll-blok-image-container">
+                        <img src="/public/download/novamini-un-certification-rapport.webp" alt="">
+                    </div>
+                    <p>NOVA MINI Certification UN (PDF)</p>
+                    <img v-if="selected.includes('certification')" 
+                    src="/public/ikoner/check.svg"
+                    alt="" 
+                    class="checkmark"> 
+                </div>
+                <div class="scroll-blok-card-blok">
+                    <button class="preview" @click.stop="activateOverlay('/download/novamini-un-certification-rapport.webp')" type="button" aria-label="Preview NOVA MINI certification un PDF">
+                        <img src="/public/ikoner/eye-icon.svg" alt="">
+                    </button>
+                    <button type="button" class="download" aria-label="Download NOVA MINI certification un PDF" @click.stop="downloadFunction('NOVA MINI certification un (PDF)')">
                         <img src="/public/ikoner/download-ikon.svg" alt="">
                     </button>
                 </div>
