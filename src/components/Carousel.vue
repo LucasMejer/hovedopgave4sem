@@ -84,6 +84,17 @@ function autoScrollFunction() {
 <template>
     <div class="CarouselDiv" aria-label="Nyhed Karrusel" CarouselData>
         <button class="CarouselButtonPrev NavButtons" @click="prev"><img src="/ikoner/index-carousel-arrowleft.svg" alt="Previous carousel image"></button>
+        
+        <div class="CarouselTextDiv">
+            <h1>{{ CarouselImages[currentImage].text }}</h1>
+            <h3>{{ CarouselImages[currentImage].subheading }}</h3>
+            <button class="ReadmoreButton">
+                <h3>
+                    Read more
+                </h3>
+            </button>
+        </div>
+
         <button class="CarouselButtonNext NavButtons" @click="next"><img src="/ikoner/index-carousel-arrowright.svg" alt="Next carousel image"></button>
         <div class="CarouselItem" >
             <Transition>
@@ -104,15 +115,6 @@ function autoScrollFunction() {
                 </span>
             </Transition>
 
-        </div>
-        <div class="CarouselTextDiv">
-            <h1>{{ CarouselImages[currentImage].text }}</h1>
-            <h3>{{ CarouselImages[currentImage].subheading }}</h3>
-            <button class="ReadmoreButton">
-                <h3>
-                    Read more
-                </h3>
-            </button>
         </div>
         
         <div class="CarouselBottomNav">
