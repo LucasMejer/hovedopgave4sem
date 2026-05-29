@@ -140,7 +140,7 @@ function autoScrollFunction() {
         position: relative;
         display: flex;
         width: 100%;
-        height: 300px;
+        height: 50vh;
         justify-content: center;
         align-items: center;
         background-color: c.$font-color-primary;
@@ -180,7 +180,7 @@ function autoScrollFunction() {
                 line-height: 1;
             }
             .ReadmoreButton{
-                width: 30%;
+                width: 50%;
                 height: 50px;
                 margin: auto;
                 background-color: c.$font-color-secondary;
@@ -260,6 +260,14 @@ function autoScrollFunction() {
                     height: 18px;
                 }
             }
+
+            .CarouselTextDiv{
+            
+                .ReadmoreButton{
+                    width: 30%;
+                }
+            }
+
         }
         
     }

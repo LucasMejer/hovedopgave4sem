@@ -48,7 +48,7 @@ const cardInfo = defineProps({
         .DownloadButton{
             display: flex;
             margin: 25px 0px;
-            padding: 10px;
+            padding: 13px 10px 10px 10px;
             align-items: center;
             text-align: center;
             text-decoration: none;
@@ -69,6 +69,7 @@ const cardInfo = defineProps({
             img {
                 width: 25px;
                 height: 25px;
+                margin-bottom: 5px;
             }
         }
     }

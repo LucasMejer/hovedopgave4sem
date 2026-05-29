@@ -59,6 +59,14 @@ footer{
 .footer-content{
 margin: 20px auto 10px auto;
 max-width: 90%;
+address{
+    a{
+        font-style: normal;
+    }
+    p{
+        font-style: normal;
+    }
+}
 button{
     display: flex;
     align-items: center;
