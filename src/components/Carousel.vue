@@ -177,6 +177,7 @@ function autoScrollFunction() {
             h3{
                 color: c.$font-color-secondary;
                 padding: 0px 0px 20px 0px;
+                line-height: 1;
             }
             .ReadmoreButton{
                 width: 30%;
