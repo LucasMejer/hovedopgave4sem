@@ -109,11 +109,16 @@ onBeforeUnmount( () => {
                         <div class="product-text">
                             <h3 class="text"> {{item.ProduktTitel}} </h3>
                             <p class="number"> {{ item.ProduktNummer }} </p>
+                            <span v-for="(value, key) in item.ProduktTags">
+                                <p v-if="value && key === 'Discontinued'" class="tag" :class="[key + 'Class']">
+                                    {{ key }}
+                                </p>
+                            </span>
                         </div>
                         <p class="italic">Recommended for:</p>
                         <div class="product-tags">
                             <span v-for="(value, key) in item.ProduktTags">
-                                <p v-if="value" class="tag" :class="[key + 'Class']">
+                                <p v-if="value && key != 'Discontinued'" class="tag" :class="[key + 'Class']">
                                     {{ key }}
                                 </p>
                             </span>
@@ -247,7 +252,16 @@ onBeforeUnmount( () => {
                             .number {
                                 color: c.$hover-state-active;
                                 margin-bottom: 7px;
+                                margin-right: 5px;
                             }
+
+                            .DiscontinuedClass{
+                                color: c.$font-color-secondary;
+                                background-color: c.$tag-color-discontinued;
+                                margin: 0 0 6px 0;
+                                padding: 5px;
+                                font-size: 13px;
+                            } 
                         }
 
                         .italic {

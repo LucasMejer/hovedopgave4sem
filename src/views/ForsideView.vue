@@ -11,7 +11,6 @@ import BackToTop from '@/components/BackToTop.vue';
 
 <template>
     <Navbar/>
-    <BackToTop/>
     <SmallIndexCard/>
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
@@ -45,6 +44,7 @@ import BackToTop from '@/components/BackToTop.vue';
     <Carousel />
     <VideoSection/>
     <Footer/>
+    <BackToTop/>
 </template>
 <style lang="scss" scoped>
 @use '../assets/_colors.scss' as c;
