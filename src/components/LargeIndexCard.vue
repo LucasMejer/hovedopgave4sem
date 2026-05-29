@@ -59,17 +59,21 @@ const cardInfo = defineProps({
             h3{
                 margin: 0px 5px;
                 color: c.$font-color-secondary;
-                &:hover{
-                    color: c.$hover-state-active;
-                }
             }
             &:hover{
                 border-color: c.$hover-state-active;
+                h3{
+                    color: c.$hover-state-active;
+                }
+                img{
+                    filter: contrast(0) brightness(0.85);
+                }
             }
             img {
                 width: 25px;
                 height: 25px;
                 margin-bottom: 5px;
+                filter: contrast(0) brightness(100);
             }
         }
     }
