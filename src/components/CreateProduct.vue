@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 
+document.title = "Scangrip Database";
+
 let productArray = ref([]);
 let IndustryOpen = ref(false);
 let DiscontinuedOpen = ref(false);
@@ -118,7 +120,6 @@ function ConfirmDelete(){
 
 <template>
     <main>
-    <body>
         <div class="Popup" v-if="PopupActive">
             <div class="PopupInner">
                 <h2>
@@ -488,7 +489,6 @@ function ConfirmDelete(){
                 </button>
             </div>
         </div>
-    </body>
     </main>
 </template>
 
@@ -496,7 +496,7 @@ function ConfirmDelete(){
 
     @use '../assets/colors' as c;
 
-    body{
+    main{
         margin: 2% 5%;
     }
 
