@@ -113,6 +113,7 @@ const FiltersVisible5 = computed(() => {
 const filterToggles = ref({
     industry: false,
     discontinued: false,
+    productline: false,
     producttype: false,
     powersource: false,
     plugtype: false
