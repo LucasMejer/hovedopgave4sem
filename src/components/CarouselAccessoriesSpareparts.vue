@@ -43,18 +43,19 @@ const slides = ref([
 const currentIndex = ref(0)
 
 const next = () => {
-  currentIndex.value = (currentIndex.value + 1) % 3
+  currentIndex.value = currentIndex.value >= slides.value.length - 5 ? 0 : currentIndex.value + 1
 }
 
 const prev = () => {
-  currentIndex.value = currentIndex.value === 0 ? 3 - 1 : currentIndex.value - 1
+  currentIndex.value = currentIndex.value === 0 ? slides.value.length - 5 : currentIndex.value - 1
 }
 </script>
 <template>
 <div class='carousel'>
   <h2>Accessories for NOVA MINI</h2>
   <div class="carousel-outer">
-    <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 23.67}%)` }'>
+
+    <div class='carousel-inner' :style='{ transform: `translateX(-${currentIndex * 100}%)` }'>
       <div v-for='(slide, index) in slides' :key='index' class='carousel-slide'>
         <div class="carousel-card">
           <div class="image">
@@ -71,6 +72,7 @@ const prev = () => {
         </div>
       </div>
     </div>
+    
   </div>
   
   <button @click='prev' class='carousel-btn prev'><img src="/public/ikoner/arrow-left.svg" alt="" aria-label="go previous"></button>
@@ -83,7 +85,7 @@ const prev = () => {
 
 .carousel {
   position: relative;
-  width: 50%;
+  width: 90%;
   margin: 100px auto;
   padding: 10px 0px;
   overflow: hidden;
@@ -98,7 +100,7 @@ const prev = () => {
   z-index: 1;
   width: 100%;
   margin: auto;
-  gap: 20px;
+  /*transition: transform 0.3s ease;*/
 }
 
 .carousel-outer {
@@ -108,7 +110,8 @@ const prev = () => {
 }
 
 .carousel-slide {
-  max-width: 50%;
+  width: 50%;
+  padding: 10px;
   margin: auto;
   cursor: pointer;
   img{
@@ -171,11 +174,11 @@ const prev = () => {
   }
 }
 
-
+/*
 .carousel-slide {
-  flex: 0 0 48%;
+  flex: 0 0 50%;
   margin: auto;
-}
+}*/
 
 @media only screen and (min-width: 768px){
   .carousel{
@@ -193,10 +196,10 @@ const prev = () => {
     
   }
 }
-
+/*
 .carousel-slide {
-    flex: 30%;
-  }
+    flex: 25%;
+  }*/
 
 }
 </style>
