@@ -740,7 +740,7 @@ onMounted(() => {
         
         img{
             width: 90%;
-            margin: 10px 0px;
+            margin: 30px 0px 0px 0px;;
         }
 
 
@@ -935,6 +935,9 @@ onMounted(() => {
 
         .ProductGrid{
             margin: 0px 0px 5% 0px;
+            img{
+                margin: 10px 0px;
+            }
         }
 
         .ProductGrid{
