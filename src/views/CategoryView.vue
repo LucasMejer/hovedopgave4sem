@@ -7,7 +7,6 @@ import BackToTop from '@/components/BackToTop.vue';
 </script>
 <template>
     <Navbar/>
-    <BackToTop/>
     <div class="breadcrumb">
             <li>
                 <router-link to="/">
@@ -19,6 +18,7 @@ import BackToTop from '@/components/BackToTop.vue';
         </div>
     <CategoryProductCards/>
     <Footer/>
+    <BackToTop/>
 </template>
 <style lang="scss" scoped>
 @use '../assets/colors.scss' as c;

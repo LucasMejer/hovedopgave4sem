@@ -10,7 +10,6 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
 </script>
 <template>
     <Navbar/>
-    <BackToTop/>
     <div class="view-width">
         <div class="breadcrumb">
             <li>
@@ -43,6 +42,7 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
         <CarouselAccessoriesSpareparts/>
     </div>
     <Footer/>
+    <BackToTop/>
 </template>
 <style lang="scss" scoped>
 @use '../assets/colors.scss' as c;
