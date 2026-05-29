@@ -32,7 +32,7 @@
             <div class="TrashDiv">
                 <div>
                     <p>
-                    Seneste slettet produkter:
+                    Seneste slettede produkter:
                     </p>
                     <img src="/ikoner/trash-ikon.svg" alt="">
                 </div>

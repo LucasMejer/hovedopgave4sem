@@ -38,7 +38,7 @@ async function FetchProducts(){
     //Product array skal være i alfabetisk rækkefølge
     productArray.value.sort((a, b) => a.ProduktTitel.localeCompare(b.ProduktTitel));
 
-    console.log(productArray.value);
+    //console.log(productArray.value);
     
   } catch (error) {
       console.error(error);
@@ -137,26 +137,32 @@ function ConfirmDelete(){
 
         <div v-for="item in productArray" :key="item.ProduktNummer">
             <div class="ProductDiv">
-                <label for="CheckProduct">
+                <label :for="'CheckProduct' + item.ProduktNummer">
                     <p>
                     Vælg produkt
                     </p>
                 </label>
-                <input type="checkbox" class="ProductCheckbox" id="CheckProduct">
+                <input type="checkbox" class="ProductCheckbox" :id="'CheckProduct' + item.ProduktNummer">
                 <img class="ProductImg" :src=item.ProduktBillede alt="Product Billede">
                 <div class="ProductInfoDiv">
                     <h3>
                         {{ item.ProduktTitel }}
                     </h3>
-                    <p>
-                        {{ item.ProduktNummer }}
-                    </p>
+                    <div class="ProduktNummerDiv">
+                        <p>
+                            {{ item.ProduktNummer }}
+                        </p>
+                        <p v-if="item.ProduktTags.Discontinued" class="DiscontinuedTag">
+                            Discontinued
+                        </p>
+                    </div>
+                    
                     <p>
                         {{ item.ProduktBeskrivelse }}
                     </p>
                     <div class="ProductTags">
                         <p v-for="(value, key) in item.ProduktTags">
-                            <p v-if="value" class="ProductTagsText">
+                            <p v-if="value && key != 'Discontinued'" :class="[key + 'Tag']" class="ProductTagsText">
                                 {{ key }}
                             </p>
                         </p>
@@ -179,11 +185,11 @@ function ConfirmDelete(){
             </div>
             <div class="EditProductDiv" v-if="item.active == true">
                 <h2>
-                    Produkt Titel:
+                    Produkttitel:
                     <input class="TextInput" type="text" v-model="NyTitel" :placeholder="item.ProduktTitel">
                 </h2>
                 <h2>
-                    Billede Link(s):
+                    Billede(r):
                     <input class="TextInput" type="text" v-model="NytBillede" :placeholder="item.ProduktBillede">
                     <button style="margin-left: 10px;">
                         <p>
@@ -192,48 +198,48 @@ function ConfirmDelete(){
                     </button>
                 </h2>
                 <h2>
-                    Produkt Beskrivelse:
+                    Produktbeskrivelse:
                     <input class="TextInput" type="text" v-model="NyBeskrivelse" :placeholder="item.ProduktBeskrivelse">
                 </h2>
                 <hr>
                 <h2>
-                    Produktside Information:
+                    Produktinformation:
                 </h2>
                 <button class="OpenTagsButton">
                         <h3>
                         Description
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk beskrivelse pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk beskrivelse pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Video
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk video pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk video pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Details
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk details pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk details pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Main Light
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk main light pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk main light pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Electrical
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk electrical pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk electrical pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Operation
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk operation pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk operation pil">
                 </button>
                 <hr>
                 <h2>
@@ -244,25 +250,25 @@ function ConfirmDelete(){
                         <h3>
                         Product type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk product type tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk product type tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Power source tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk power source tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk power source tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Plug type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk plug type tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk plug type tags pil">
                     </button>
                     <button class="OpenTagsButton" @click="IndustryOpen = !IndustryOpen">
                         <h3>
                         Industry tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk industry tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk industry tags pil">
                     </button>
                     <div class="DropDownTags" v-if="IndustryOpen">
                         <label :for="'AutomotiveBox' + item.ProduktNummer">
@@ -292,7 +298,7 @@ function ConfirmDelete(){
                         <h3>
                             Discontinued tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk discontinued pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk discontinued pil">
                     </button>
                     <div class="DropDownTags" v-if="DiscontinuedOpen">
                         <label :for="'DiscontinuedBox' + item.ProduktNummer">
@@ -325,12 +331,12 @@ function ConfirmDelete(){
             </button>
             <div class="NewProductInfoDiv" v-if="NewProductActive == true">
                 <h2>
-                    Produkt Titel:
-                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktTitel" placeholder="NOVA MINI">
+                    Produkttitel:
+                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktTitel" placeholder="f.eks. NOVA MINI">
                 </h2>
                 <h2>
                     Billede(r):
-                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktBillede" placeholder="https://www.scangrip.com/Admin/Public/GetImage.ashx?width=620&height=496&image=%2fFiles%2fImages%2f03.6202-nova-4%2f03.6202-nova-4-0-0.jpg">
+                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktBillede" placeholder="Indsæt link her">
                     <button style="margin-left: 10px;">
                         <p>
                             +
@@ -338,52 +344,52 @@ function ConfirmDelete(){
                     </button>
                 </h2>
                 <h2>
-                    Produkt Beskrivelse:
-                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktBeskrivelse" placeholder="Dette er et produkt">
+                    Produktbeskrivelse:
+                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktBeskrivelse" placeholder="Indsæt beskrivelse her">
                 </h2>
                 <h2>
-                    Produkt Nummer:
-                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktNummer" placeholder="03.6010">
+                    Produktnummer:
+                    <input class="TextInput NytProduktInput" type="text" v-model="NytProduktNummer" placeholder="f.eks. 03.6010">
                 </h2>
                 <hr>
                 <h2>
-                    Produktside Information:
+                    Produktinformation:
                 </h2>
                 <button class="OpenTagsButton">
                         <h3>
                         Description
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk beskrivelse pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk beskrivelse pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Video
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk video pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk video pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Details
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk details pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk details pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Main Light
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk main light pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk main light pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Electrical
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk electrical pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk electrical pil">
                 </button>
                 <button class="OpenTagsButton">
                         <h3>
                         Operation
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk operation pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk operation pil">
                 </button>
                 <hr>
                 <h2>
@@ -394,25 +400,25 @@ function ConfirmDelete(){
                         <h3>
                         Product type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk product type tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk product type tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Power source tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk power source tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk power source tags pil">
                     </button>
                     <button class="OpenTagsButton">
                         <h3>
                         Plug type tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk plug type tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk plug type tags pil">
                     </button>
                     <button class="OpenTagsButton" @click="IndustryOpen = !IndustryOpen">
                         <h3>
                         Industry tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk industry tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk industry tags pil">
                     </button>
                     <div class="DropDownTags" v-if="IndustryOpen">
                         <label for="NewAutomotiveBox">
@@ -442,7 +448,7 @@ function ConfirmDelete(){
                         <h3>
                             Discontinued tags
                         </h3>
-                        <img class="arrow" src="../../public/ikoner/arrow-down.png" alt="Åben & luk discontinued tags pil">
+                        <img class="arrow" src="/ikoner/arrow-down.png" alt="Åben & luk discontinued tags pil">
                     </button>
                     <div class="DropDownTags" v-if="DiscontinuedOpen">
                         <label for="NewDiscontinuedBox">
@@ -507,12 +513,14 @@ function ConfirmDelete(){
             position: absolute;
             height: 25px;
             width: 25px;
+            cursor: pointer;
         }
         label{
             position: absolute;
             margin-left: 30px;
             height: 25px;
             width: 150px;
+            cursor: pointer;
         }
     }
 
@@ -523,12 +531,17 @@ function ConfirmDelete(){
         gap: 15px;
         align-content: center;
         text-align: center;
+        .ProduktNummerDiv{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+        }
     }
 
     .ProductTags{
         display: flex;
         flex-direction: row;
-        font-style: italic;
     }
 
     .ProductTagsText{
@@ -546,11 +559,15 @@ function ConfirmDelete(){
         flex-direction: column;
         padding: 10px;
         gap: 25px;
+        button{
+            cursor: pointer;
+        }
         .SaveButton{
             width: 25%;
             margin: 0px auto 0px auto;
             height: 35px;
             align-self: flex-end;
+            cursor: pointer;
         }
     }
 
@@ -562,6 +579,10 @@ function ConfirmDelete(){
         label{
             display: flex;
             gap: 5px;
+            cursor: pointer;
+        }
+        button{
+            cursor: pointer;
         }
     }
 
@@ -606,11 +627,18 @@ function ConfirmDelete(){
             width: 250px;
             height: 100px;
             margin-bottom: 50px;
+            cursor: pointer;
         }
         .NewProductInfoDiv{
             display: flex;
             flex-direction: column;
             gap: 25px;
+            .SaveButton{
+                height: 35px;
+            }
+        }
+        button{
+            cursor: pointer;
         }
     }
 
@@ -624,6 +652,7 @@ function ConfirmDelete(){
         button{
             width: 100%;
             height: 100%;
+            cursor: pointer;
         }
         .DeleteButton{
             border-style: solid;
@@ -676,7 +705,40 @@ function ConfirmDelete(){
         Button{
             width: 100px;
             height: 35px;
+            cursor: pointer;
         }
     }
 
+
+
+    .ConstructionTag{
+        padding: 5px;
+        color: c.$font-color-secondary;
+        border-color: c.$font-color-secondary;
+        background-color: c.$tag-color-construction;
+    }
+    .ElectricianTag{
+        padding: 5px;
+        color: c.$font-color-secondary;
+        border-color: c.$font-color-secondary;
+        background-color: c.$tag-color-electrician;
+    }
+    .PaintingTag{
+        padding: 5px;
+        color: c.$font-color-secondary;
+        border-color: c.$font-color-secondary;
+        background-color: c.$tag-color-painting;
+    }
+    .AutomotiveTag{
+        padding: 5px;
+        color: c.$font-color-secondary;
+        border-color: c.$font-color-secondary;
+        background-color: c.$tag-color-automotive;
+    }
+    .DiscontinuedTag{
+        padding: 5px;
+        color: c.$font-color-secondary;
+        border-color: c.$font-color-secondary;
+        background-color: c.$tag-color-discontinued;
+    }  
 </style>
