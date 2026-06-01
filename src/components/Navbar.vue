@@ -118,7 +118,7 @@ onBeforeUnmount( () => {
             
             <div class="nav-burgermenu" v-if="toggleBM">
                 <div class="partnersite">
-                    <p><a href="https://www.scangrip.com/da-dk">Scangrip.com</a></p>
+                    <p class="left"><a href="https://www.scangrip.com/da-dk">Scangrip.com</a></p>
                     <hr class="thick-line-vertical">
                     <p class="marked">Partner</p>
                 </div>
@@ -126,7 +126,7 @@ onBeforeUnmount( () => {
 
                 <div class="nav-icons mobile-nav-icons">
                     <div class="nav-mobile-profile-container">
-                        <p>My profile</p>
+                        <p class="left">My profile</p>
                         <img src="../../public/ikoner/header-login-ikon.svg" class="profile-icon-mobile" alt="Profile">
                         <p> Sign out</p>
                     </div>
@@ -465,8 +465,8 @@ onBeforeUnmount( () => {
     }
 
     .partnersite {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
         margin: 10px;
 
         p {
@@ -481,7 +481,11 @@ onBeforeUnmount( () => {
         .marked {
             font-weight: 600;
         }
-    }   
+
+    }
+    .left {
+            justify-self: end;
+        }
 
     .nav-icons {
         display: flex;
@@ -500,7 +504,8 @@ onBeforeUnmount( () => {
         margin: auto;
 
         .nav-mobile-profile-container {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             justify-content: center;
             align-items: center;
             margin: 30px 0;
@@ -510,12 +515,12 @@ onBeforeUnmount( () => {
             }
 
             p {
-                margin-bottom: -4px;
+                margin: 0 5% -4px 5%;
                 font-size: 16px;
             }
 
             .profile-icon-mobile {
-                margin: 0 5%;
+                margin: 0;
                 width: 40px;
                 height: 40px;
 
@@ -670,6 +675,7 @@ onBeforeUnmount( () => {
 
             .partnersite {
                 width: 90%;
+                display: flex;
                 justify-content: flex-start;
                 margin: 10px auto;
 
