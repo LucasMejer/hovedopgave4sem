@@ -102,7 +102,7 @@ function checkScreenSize() {
 
 .carousel {
   position: relative;
-  width: 90%;
+  width: 100%;
   margin: 100px auto;
   padding: 10px 0px;
   overflow: hidden;
@@ -128,7 +128,7 @@ function checkScreenSize() {
 
 .carousel-slide {
   width: 50%;
-  padding: 3vw;
+  padding: 4vw;
   margin: auto;
   cursor: pointer;
   img{
@@ -177,6 +177,7 @@ function checkScreenSize() {
   min-height: 205px;
   text-align: center;
   overflow: hidden;
+  width: 25vw;
   img{
     width: auto;
   }

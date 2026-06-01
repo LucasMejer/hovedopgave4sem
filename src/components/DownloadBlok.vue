@@ -60,8 +60,8 @@ function activateOverlay(link) {
     <img :src="overlayImage" alt="">
 </div>
  <div class="downloadblok" @keydown.esc="openOverlay = false">
-        <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }">Files</button>
-        <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }">Media</button>
+        <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }" class="DownloadCategoryButtons">Files</button>
+        <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }" class="DownloadCategoryButtons">Media</button>
         <div class="scroll" v-if="filesshown">
             <div class="scroll-blok-card" @click="toggleSelection('manual')" :class="{ 'blok-card-valgt': selected.includes('manual') }" :aria-pressed="selected.includes('manual')" aria-label="Select NOVA MINI Manual PDF" tabindex="0" @keydown.enter="toggleSelection('manual')">
                 <div class="scroll-blok-image-text">
@@ -351,6 +351,9 @@ function activateOverlay(link) {
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .downloadblok{
     margin: 40px auto;
+    .DownloadCategoryButtons{
+        color: c.$font-color-primary;
+    }
 }
 
 img{
