@@ -400,9 +400,17 @@ onMounted(() => {
             <div class="ProductGridHeadings">
                 <h3>Results: {{filteredProducts.length}}</h3>
                 <div class="VisningDiv">
-                    <h3>View:</h3>
-                    <img src="/ikoner/grid-hvid.png" alt="Change to grid layout" class="ProductGridIcon">
-                    <img src="/ikoner/list-sort.png" alt="Change to list layout" class="ProductListIcon">
+                    <div class="SortDiv">
+                        <h3>
+                            Sort by
+                        </h3>
+                        <img src="/ikoner/arrow-down.png" alt="">
+                    </div>
+                    <div class="ViewDiv">
+                        <h3>View:</h3>
+                        <img src="/ikoner/grid-hvid.png" alt="Change to grid layout" class="ProductGridIcon">
+                        <img src="/ikoner/list-sort.png" alt="Change to list layout" class="ProductListIcon">
+                    </div>
                 </div>
             </div>
 
@@ -497,13 +505,52 @@ onMounted(() => {
         margin: auto;
 
         .ProductGridHeadings{
-            display: none;
+            margin: 5% 0% 0% 0%;
+            display: flex;
+            justify-content: space-between;
+            .VisningDiv{
+                    display: flex;
+                    align-items: center;
+                    .SortDiv{
+                        display: flex;
+                        h3{
+                            margin-top: 4px;
+                            cursor: pointer;
+                        }
+                        img{
+                        height: 30px;
+                        transition: transform 0.3s ease;
+                        cursor: pointer;
+                        margin-right: 15px;
+                        } 
+                    }
+                    .ViewDiv{
+                        display: flex;
+                    }
+                    .ProductGridIcon{
+                    height: 1.5rem;
+                    margin: auto 0.25rem auto 0.5rem;
+                    border-style: solid;
+                    border-width: 2px;
+                    border-color: c.$font-color-primary;
+                    background-color: c.$font-color-primary;
+                    cursor: pointer;
+                    }
+                    .ProductListIcon{
+                        height: 1.5rem;
+                        margin: auto 0.25rem;
+                        border-style: solid;
+                        border-width: 2px;
+                        border-color: c.$font-color-primary;
+                        background-color: c.$font-color-secondary;
+                        cursor: pointer;
+                    }
+                }
         }
 
-        
         .ActiveFiltersDiv{
             display: flex;
-            margin-bottom: 25px;
+            margin-bottom: -25px;
             flex-wrap: wrap;
 
             .ActiveFiltersButton{
@@ -846,6 +893,10 @@ onMounted(() => {
             display: grid;
             grid-template-columns: 25% auto;
 
+
+            .ActiveFiltersDiv{
+                margin-bottom: 25px;
+            }
             .ProductGridHeadings{
                 margin-bottom: 10px;
                 display: flex;
@@ -853,6 +904,24 @@ onMounted(() => {
                 align-items: center;
                 .VisningDiv{
                     display: flex;
+                    align-items: center;
+                    .SortDiv{
+                        display: flex;
+                        h3{
+                            margin-top: 4px;
+                            cursor: pointer;
+                        }
+                        img{
+                        height: 30px;
+                        transition: transform 0.3s ease;
+                        cursor: pointer;
+                        margin-right: 15px;
+                        }
+                        
+                    }
+                    .ViewDiv{
+                        display: flex;
+                    }
                     .ProductGridIcon{
                     height: 1.5rem;
                     margin: auto 0.25rem auto 0.5rem;
