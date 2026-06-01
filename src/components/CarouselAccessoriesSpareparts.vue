@@ -1,5 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+
+let carouselLength = ref()
 
 const slides = ref([
   { 
@@ -43,12 +45,27 @@ const slides = ref([
 const currentIndex = ref(0)
 
 const next = () => {
-  currentIndex.value = currentIndex.value >= slides.value.length - 5 ? 0 : currentIndex.value + 1
+  currentIndex.value = currentIndex.value >= carouselLength.value ? 0 : currentIndex.value + 1
 }
 
 const prev = () => {
-  currentIndex.value = currentIndex.value === 0 ? slides.value.length - 5 : currentIndex.value - 1
+  currentIndex.value = currentIndex.value === 0 ? carouselLength.value : currentIndex.value - 1
 }
+
+onMounted(() => {
+  checkScreenSize();
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+  mediaQuery.addEventListener("change", checkScreenSize);
+})
+
+function checkScreenSize() {
+  if (window.matchMedia("(max-width: 768px)").matches){
+    carouselLength.value = 2
+  }else if(window.matchMedia("(min-width: 768px)").matches){
+    carouselLength.value = 1
+  }
+}
+
 </script>
 <template>
 <div class='carousel'>
@@ -104,14 +121,14 @@ const prev = () => {
 }
 
 .carousel-outer {
-  width: 90%;
+  width: 80%;
   overflow: hidden;
   margin: auto;
 }
 
 .carousel-slide {
   width: 50%;
-  padding: 10px;
+  padding: 3vw;
   margin: auto;
   cursor: pointer;
   img{
@@ -155,7 +172,7 @@ const prev = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 1.5vw;
   height: 250px;
   min-height: 205px;
   text-align: center;
@@ -188,13 +205,22 @@ const prev = () => {
     }
   }
 .carousel-card{
-  padding: 20px;
+  padding: 1.5vw;
   height: 330px;
-  min-width: 230px;
+  width: 12.5vw;
   img{
     height: 180px;
     
   }
+}
+
+.carousel-outer {
+  width: 90%;
+}
+
+.carousel-slide {
+  width: 50%;
+  padding: 2.20vw;
 }
 /*
 .carousel-slide {
