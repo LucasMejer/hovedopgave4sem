@@ -130,7 +130,6 @@ function checkScreenSize() {
   width: 50%;
   padding: 4vw;
   margin: auto;
-  cursor: pointer;
   img{
     height: 100%;
     width: auto;
@@ -178,6 +177,7 @@ function checkScreenSize() {
   text-align: center;
   overflow: hidden;
   width: 25vw;
+  cursor: pointer;
   img{
     width: auto;
   }
