@@ -4,6 +4,7 @@
 
 <template>
     <header>
+    <h1 class="OverskriftCreate">SCANGRIP BUSINESS PARTNERSITE DATABASE</h1>
         <div class="HeadingsDiv">
             <h2 class="HeadingOn">
                 Product Information
@@ -43,12 +44,16 @@
                 </button>
             </div>
         </div>
-    </header>
+        </header>
 </template>
 
 <style lang="scss" scoped>
 
 @use '../assets/colors.scss' as c;
+
+.OverskriftCreate{
+    text-align: center;
+}
 
     .HeadingsDiv{
         display: flex;

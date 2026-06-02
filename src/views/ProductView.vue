@@ -10,6 +10,7 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
 </script>
 <template>
     <Navbar/>
+    <main>
     <div class="view-width">
         <div class="breadcrumb">
             <li>
@@ -41,6 +42,7 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
         <DescriptionProduct/>
         <CarouselAccessoriesSpareparts/>
     </div>
+    </main>
     <Footer/>
     <BackToTop/>
 </template>

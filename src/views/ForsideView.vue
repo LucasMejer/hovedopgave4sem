@@ -11,6 +11,7 @@ import BackToTop from '@/components/BackToTop.vue';
 
 <template>
     <Navbar/>
+    <main>
     <SmallIndexCard/>
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
@@ -43,6 +44,7 @@ import BackToTop from '@/components/BackToTop.vue';
     </div>
     <Carousel />
     <VideoSection/>
+    </main>
     <Footer/>
     <BackToTop/>
 </template>

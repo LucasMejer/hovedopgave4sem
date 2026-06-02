@@ -8,6 +8,7 @@ import BackToTop from '@/components/BackToTop.vue';
 </script>
 <template>
     <Navbar/>
+    <main>
         <div class="breadcrumb">
         <li>
             <router-link to="/">
@@ -75,6 +76,7 @@ import BackToTop from '@/components/BackToTop.vue';
         skjulttekst="You can find the EAN number of a product right under the products name. The number has the following structure: 00.0000"
         />
     </div>
+    </main>
     <Footer/>
     <BackToTop/>
 </template>

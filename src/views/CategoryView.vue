@@ -7,6 +7,7 @@ import BackToTop from '@/components/BackToTop.vue';
 </script>
 <template>
     <Navbar/>
+    <main>
     <div class="breadcrumb">
             <li>
                 <router-link to="/">
@@ -17,6 +18,7 @@ import BackToTop from '@/components/BackToTop.vue';
             </li>
         </div>
     <CategoryProductCards/>
+    </main>
     <Footer/>
     <BackToTop/>
 </template>

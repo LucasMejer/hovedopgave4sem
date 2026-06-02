@@ -10,9 +10,9 @@
                     <p>Scangrip A/S</p>
                     <p>Rytterhaven 9</p>
                     <p>DK-5700 Svendborg</p>
-                    <a href="tel:+4563206320">TEL:(+45)63206320</a><br>
-                    <a href="mailto:scangrip.com"><b>scangrip@scangrip.com</b></a><br>
-                    <a href="https://www.scangrip.com/da-dk"><b>scangrip.com</b></a><br>
+                    <a href="tel:+4563206320">TEL:(+45)63206320</a>
+                    <a href="mailto:scangrip.com"><b>scangrip@scangrip.com</b></a>
+                    <a href="https://www.scangrip.com/da-dk"><b>scangrip.com</b></a>
                     <p>Delivery address: Rytterskoven 12,</p>
                     <p>DK5700 Svendborg</p>
                 </address>
@@ -62,6 +62,8 @@ max-width: 90%;
 address{
     a{
         font-style: normal;
+        display: block;
+        margin: 5px 0px 5px 0px;
     }
     p{
         font-style: normal;
@@ -90,6 +92,7 @@ a{
     font-family: h.$font-primary;
     font-weight: 400;
     font-size: 14px;
+    
 }
 
 button{

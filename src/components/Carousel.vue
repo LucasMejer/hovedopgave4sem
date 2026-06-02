@@ -87,7 +87,7 @@ function autoScrollFunction() {
         
         <div class="CarouselTextDiv">
             <h1>{{ CarouselImages[currentImage].text }}</h1>
-            <h3>{{ CarouselImages[currentImage].subheading }}</h3>
+            <h2>{{ CarouselImages[currentImage].subheading }}</h2>
             <button class="ReadmoreButton">
                 <h3>
                     Read more
@@ -176,7 +176,7 @@ function autoScrollFunction() {
                 margin: 15px auto 5px auto;
             }
 
-            h3{
+            h2{
                 color: c.$font-color-secondary;
                 padding: 0px 0px 20px 0px;
                 line-height: 1;
