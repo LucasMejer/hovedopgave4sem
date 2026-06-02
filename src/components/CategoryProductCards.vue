@@ -898,7 +898,7 @@ onMounted(() => {
                 margin-bottom: 25px;
             }
             .ProductGridHeadings{
-                margin-bottom: 10px;
+                margin: 0 0 10px 0;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
