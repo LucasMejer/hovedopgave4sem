@@ -63,7 +63,8 @@ address{
     a{
         font-style: normal;
         display: block;
-        margin: 5px 0px 5px 0px;
+        width: fit-content;
+        margin: 7.5px 0px;
     }
     p{
         font-style: normal;
@@ -83,7 +84,7 @@ h2{
 
 p{
     color: c.$font-color-secondary;
-    margin: 5px 0px 5px 0px;
+    margin: 7.5px 0px
 }
 
 a{
