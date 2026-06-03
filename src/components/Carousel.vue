@@ -246,7 +246,7 @@ function autoScrollFunction() {
         .CarouselDiv{
             width: 100%;
             margin: 0px;
-            height: 350px;
+            height: 55vh;
             .CarouselButtonPrev{
                 display: block;
                 left: 1rem; 

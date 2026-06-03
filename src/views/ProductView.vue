@@ -13,17 +13,15 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
     <main>
     <div class="view-width">
         <div class="breadcrumb">
-            <li>
-                <router-link to="/">
-                    <p>Home</p>
-                </router-link>
-                <p>></p>
-                <router-link to="/category">
-                    <p>Worklights</p>
-                </router-link>
-                <p>></p>
-                <p>NOVA MINI</p>
-            </li>
+            <router-link to="/">
+                <p>Home</p>
+            </router-link>
+            <p>></p>
+            <router-link to="/category">
+                <p>Worklights</p>
+            </router-link>
+            <p>></p>
+            <p>NOVA MINI</p>
         </div>
         <div class="desktopview">
             <div class="mobile-heading">
@@ -65,25 +63,32 @@ a{
 
     h1{
         margin: 0px;
-        font-weight: normal;
+
     }
     h3{
         margin: 0px 0px 20px 0px;
         font-weight: normal;
     }
 
+    .mobile-heading {
+        h1 {
+            margin: 35px 35px 10px 0px;
+        }
+
+        h3{
+            margin: 0px 0px 35px 0px;
+        }
+    }
 
 
 p{
     margin: 10px 0px;
-}
-
-li p{
     list-style: none;
     padding: 10px 10px 0px 0px;
 }
 
-.breadcrumb li{
+.breadcrumb {
+    margin: 0 auto 35px auto;
     display: flex;
     align-items: center;
 }
@@ -118,7 +123,7 @@ img{
         }
     
         h3{
-            margin: 0px 0px 5px 0px;
+            margin: 0px 0px 20px 0px;
         }
     }
     .breadcrumb li{

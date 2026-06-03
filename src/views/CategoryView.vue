@@ -9,13 +9,11 @@ import BackToTop from '@/components/BackToTop.vue';
     <Navbar/>
     <main>
     <div class="breadcrumb">
-            <li>
-                <router-link to="/">
-                    <p>Home</p>
-                </router-link>
-                <p>></p>
-                <p class="Active">Worklights</p>
-            </li>
+            <router-link to="/">
+                <p>Home</p>
+            </router-link>
+            <p>></p>
+            <p class="Active">Worklights</p>
         </div>
     <CategoryProductCards/>
     </main>
@@ -33,25 +31,16 @@ a{
     }
 }
 
-
-
 p{
     margin: 10px 0px;
-}
-
-li p{
     list-style: none;
     padding: 10px 10px 0px 0px;
-    
 }
 
 .breadcrumb {
     width: 90%;
     margin: auto;
-    
-li{
     display: flex;
     align-items: center;
-    
-}}
+}
 </style>

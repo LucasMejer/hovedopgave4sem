@@ -307,17 +307,18 @@ const toggleAccordion = (clickedValue) => {
 }
 
 .content{
+    padding-left: 10px;
     background-color: c.$font-color-secondary;
     border-right: solid c.$font-color-primary 1px;
     border-left: solid c.$font-color-primary 1px;
     border-bottom: solid c.$font-color-primary 1px;
     
     h3{
-        padding-bottom: 0px;
+        padding: 0 20px 10px 12px;
     }
 
     p{
-        padding: 8px 0px 20px 12px;
+        padding: 8px 0px 25px 12px;
     }
     
     iframe{
@@ -443,7 +444,7 @@ p{
     }
 
     .content p{
-        padding: 12px 12px;
+        padding: 12px 20px 12px 12px;
     }
 
     .content.full-width {

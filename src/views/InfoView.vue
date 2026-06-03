@@ -10,15 +10,15 @@ import BackToTop from '@/components/BackToTop.vue';
     <Navbar/>
     <main>
         <div class="breadcrumb">
-        <li>
-            <router-link to="/">
-                <p>Home</p>
-            </router-link>
-            <p>></p>
-            <p>Info and Guides</p>
-        </li>
+        <router-link to="/">
+            <p>Home</p>
+        </router-link>
+        <p>></p>
+        <p>Info and Guides</p>
     </div>
-    <h1>INFO AND GUIDES</h1>
+    <div class="info-heading">
+        <h1>INFO AND GUIDES</h1>
+    </div>
     <div class="LargeIndexCardsDiv">
         <LargeIndexCard 
             CardHeading="Product data and prices" 
@@ -53,7 +53,9 @@ import BackToTop from '@/components/BackToTop.vue';
             CardButtonIcon="/ikoner/arrow-right2.png"
         />
     </div>
-    <h1>FAQ</h1>
+    <div class="info-heading">
+        <h1>FAQ</h1>
+    </div>
         <div class="FAQAccordioncard">
         <FAQAccordion 
         overskrift="Where can I find how many lumen the lamps illuminate?" 
@@ -100,9 +102,11 @@ import BackToTop from '@/components/BackToTop.vue';
 <style lang="scss" scoped>
 @use '../assets/colors.scss' as c;
 
-h1{
+.info-heading {
     display: flex;
-    justify-content: center;
+    width: 90%;
+    justify-content: left;
+    margin: auto;
 }
 
 .LargeIndexCardsDiv{
@@ -129,9 +133,6 @@ a{
 
 p{
     margin: 10px 0px;
-}
-
-li p{
     list-style: none;
     padding: 10px 10px 0px 0px;
 }
@@ -139,13 +140,16 @@ li p{
 .breadcrumb {
     width: 90%;
     margin: auto;
-    
-li{
     display: flex;
     align-items: center;
-}}
+}
 
 @media only screen and (min-width: 768px){
+
+    .info-heading {
+        justify-content: center;
+    }
+
     .LargeIndexCardsDiv{
         display: grid;
         grid-template-columns: 1fr 1fr;

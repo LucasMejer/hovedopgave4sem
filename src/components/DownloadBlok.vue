@@ -393,16 +393,15 @@ button{
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: auto;
-    height: 200px;
+    height: 50vh;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(auto-fit, 145px);
     object-fit: cover;
-    padding: 10px auto;
     grid-gap: 0px 15px;
     border-top: solid 1px c.$font-color-primary;
     border-left: solid 1px c.$font-color-primary;
     border-right: solid 1px c.$font-color-primary;
-
+    justify-content: space-around;
 }
 
 .scroll-blok-card{
@@ -439,9 +438,17 @@ button{
 }
 
 .scroll-blok-card-blok{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     button{
         background-color: c.$font-color-secondary;
         border: none;
+    }
+    img {
+        max-width: 25px;
+        filter: brightness(0);
+        object-fit: contain;
     }
 }
 
@@ -522,10 +529,7 @@ button{
 @media only screen and (min-width: 768px){
     .scroll{
         height: 25vw;
-        grid-template-columns: repeat(auto-fit, 145px);
-        justify-content: space-around;
         width: auto;
-        padding-right: 2.5%;
     }
 
     .downloadblok{
