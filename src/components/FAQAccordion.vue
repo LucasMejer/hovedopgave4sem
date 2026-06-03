@@ -14,9 +14,9 @@ function toggleAccordion() {
 <template>
     <div class="accordion">
         <button @click="toggleAccordion" :aria-expanded="isOpen">
-            <h3>
+            <h2>
                 {{ overskrift }}
-            </h3>
+            </h2>
             <img src="/ikoner/arrow-down.png" alt="" class="arrows" :class="{open:isOpen}">
         </button>
         <div v-show="isOpen" class="content">
@@ -39,8 +39,9 @@ function toggleAccordion() {
     padding: 10px 10px;
     height: fit-content;
 }
-h3{
+h2{
     text-align: left;
+    font-size: 20px;
 }
 
 p{
@@ -72,5 +73,9 @@ button{
         justify-content: space-between;
         align-items: center;
     }
+
+    h2{
+    font-size: 24px;
+}
     }
 </style>

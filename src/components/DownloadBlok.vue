@@ -63,7 +63,7 @@ function activateOverlay(link) {
         <button @click="filesshown = true, imagesshown = false" :class="{ valgt: filesshown }" class="DownloadCategoryButtons">Files</button>
         <button @click="imagesshown = true, filesshown = false" :class="{ valgt: imagesshown }" class="DownloadCategoryButtons">Media</button>
         <div class="scroll" v-if="filesshown">
-            <div class="scroll-blok-card" @click="toggleSelection('manual')" :class="{ 'blok-card-valgt': selected.includes('manual') }" :aria-pressed="selected.includes('manual')" aria-label="Select NOVA MINI Manual PDF" tabindex="0" @keydown.enter="toggleSelection('manual')">
+            <div class="scroll-blok-card" @click="toggleSelection('manual')" :class="{ 'blok-card-valgt': selected.includes('manual') }" tabindex="0" @keydown.enter="toggleSelection('manual')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-manual.jpg" alt="">
@@ -83,7 +83,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }" :aria-pressed="selected.includes('safetydata')" aria-label="Select NOVA MINI safetydata PDF" tabindex="0" @keydown.enter="toggleSelection('safetydata')">
+            <div class="scroll-blok-card" @click="toggleSelection('safetydata')" :class="{ 'blok-card-valgt': selected.includes('safetydata') }" tabindex="0" @keydown.enter="toggleSelection('safetydata')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-safety-data.jpg" alt="">
@@ -103,7 +103,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('productsheet')" :class="{ 'blok-card-valgt': selected.includes('productsheet') }" :aria-pressed="selected.includes('productsheet')" aria-label="Select NOVA MINI productsheet uk PDF" tabindex="0" @keydown.enter="toggleSelection('productsheet')">
+            <div class="scroll-blok-card" @click="toggleSelection('productsheet')" :class="{ 'blok-card-valgt': selected.includes('productsheet') }" tabindex="0" @keydown.enter="toggleSelection('productsheet')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-productsheet-uk.jpg" alt="">
@@ -123,7 +123,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }" :aria-pressed="selected.includes('declaration')" aria-label="Select NOVA MINI declaration eu PDF" tabindex="0" @keydown.enter="toggleSelection('declaration')">
+            <div class="scroll-blok-card" @click="toggleSelection('declaration')" :class="{ 'blok-card-valgt': selected.includes('declaration') }" tabindex="0" @keydown.enter="toggleSelection('declaration')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-eu-declaration.jpg" alt="">
@@ -143,7 +143,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-             <div class="scroll-blok-card" @click="toggleSelection('certification')" :class="{ 'blok-card-valgt': selected.includes('certification') }" :aria-pressed="selected.includes('certification')" aria-label="Select NOVA MINI certification un PDF" tabindex="0" @keydown.enter="toggleSelection('certification')">
+             <div class="scroll-blok-card" @click="toggleSelection('certification')" :class="{ 'blok-card-valgt': selected.includes('certification') }" tabindex="0" @keydown.enter="toggleSelection('certification')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-un-certification-rapport.webp" alt="">
@@ -165,7 +165,7 @@ function activateOverlay(link) {
             </div>
         </div>
          <div class="scroll" v-if="imagesshown">
-            <div class="scroll-blok-card" @click="toggleSelection('productimage')" :class="{ 'blok-card-valgt': selected.includes('productimage') }" :aria-pressed="selected.includes('productimage')" aria-label="Select NOVA MINI productimage" tabindex="0" @keydown.enter="toggleSelection('productimage')">
+            <div class="scroll-blok-card" @click="toggleSelection('productimage')" :class="{ 'blok-card-valgt': selected.includes('productimage') }" tabindex="0" @keydown.enter="toggleSelection('productimage')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/novamini.png" alt="">
@@ -185,7 +185,7 @@ function activateOverlay(link) {
                     </button>
                 </div> 
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('pocketuse')" :class="{ 'blok-card-valgt': selected.includes('pocketuse') }" :aria-pressed="selected.includes('pocketuse')" aria-label="Select NOVA MINI pocketuse productimage" tabindex="0" @keydown.enter="toggleSelection('pocketuse')">
+            <div class="scroll-blok-card" @click="toggleSelection('pocketuse')" :class="{ 'blok-card-valgt': selected.includes('pocketuse') }" tabindex="0" @keydown.enter="toggleSelection('pocketuse')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/novamini-i-brug.jpg" alt="">
@@ -205,7 +205,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('nineteenthdegree')" :class="{ 'blok-card-valgt': selected.includes('nineteenthdegree') }" :aria-pressed="selected.includes('nineteenthdegree')" aria-label="Select NOVA MINI ninetheenth degree product angle productimage" tabindex="0" @keydown.enter="toggleSelection('nineteenthdegree')">
+            <div class="scroll-blok-card" @click="toggleSelection('nineteenthdegree')" :class="{ 'blok-card-valgt': selected.includes('nineteenthdegree') }" tabindex="0" @keydown.enter="toggleSelection('nineteenthdegree')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/novamini-nineteenth-degree-angle.jpg" alt="">
@@ -225,7 +225,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('magnetattachment')" :class="{ 'blok-card-valgt': selected.includes('magnetattachment') }" :aria-pressed="selected.includes('magnetattachment')" aria-label="Select NOVA MINI magnet attachment productimage" tabindex="0" @keydown.enter="toggleSelection('magnetattachment')">
+            <div class="scroll-blok-card" @click="toggleSelection('magnetattachment')" :class="{ 'blok-card-valgt': selected.includes('magnetattachment') }" tabindex="0" @keydown.enter="toggleSelection('magnetattachment')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/novamini-magnet-attachment.jpg" alt="">
@@ -245,7 +245,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('onmiddlefinger')" :class="{ 'blok-card-valgt': selected.includes('onmiddlefinger') }" :aria-pressed="selected.includes('onmiddlefinger')" aria-label="Select NOVA MINI on middlefinger productimage" tabindex="0" @keydown.enter="toggleSelection('onmiddlefinger')">
+            <div class="scroll-blok-card" @click="toggleSelection('onmiddlefinger')" :class="{ 'blok-card-valgt': selected.includes('onmiddlefinger') }" tabindex="0" @keydown.enter="toggleSelection('onmiddlefinger')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/novamini-on-middlefinger.jpg" alt="">
@@ -265,7 +265,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('optilight')" :class="{ 'blok-card-valgt': selected.includes('optilight') }" :aria-pressed="selected.includes('optilight')" aria-label="Select NOVA MINI optilight settings productimage" tabindex="0" @keydown.enter="toggleSelection('optilight')">
+            <div class="scroll-blok-card" @click="toggleSelection('optilight')" :class="{ 'blok-card-valgt': selected.includes('optilight') }" tabindex="0" @keydown.enter="toggleSelection('optilight')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/novamini-opti-light.jpg" alt="">
@@ -285,7 +285,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('sparepartsoverview')" :class="{ 'blok-card-valgt': selected.includes('sparepartsoverview') }" :aria-pressed="selected.includes('sparepartsoverview')" aria-label="Select NOVA MINI spareparts overview productimage" tabindex="0" @keydown.enter="toggleSelection('sparepartsoverview')">
+            <div class="scroll-blok-card" @click="toggleSelection('sparepartsoverview')" :class="{ 'blok-card-valgt': selected.includes('sparepartsoverview') }" tabindex="0" @keydown.enter="toggleSelection('sparepartsoverview')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/novamini-spareparts.jpg" alt="">
@@ -305,7 +305,7 @@ function activateOverlay(link) {
                     </button>
                 </div>
             </div>
-            <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }" :aria-pressed="selected.includes('productvideo')" aria-label="Select NOVA MINI mp4" tabindex="0" @keydown.enter="toggleSelection('productvideo')">
+            <div class="scroll-blok-card" @click="toggleSelection('productvideo')" :class="{ 'blok-card-valgt': selected.includes('productvideo') }" tabindex="0" @keydown.enter="toggleSelection('productvideo')">
                 <div class="scroll-blok-image-text">
                     <div class="scroll-blok-image-container">
                         <img src="/public/download/novamini-mp4.png" alt="">
@@ -491,12 +491,9 @@ button{
 
 .clearAll{
     &:hover {
-        color: c.$font-color-secondary;
         cursor: pointer;
         text-decoration: underline;
-        p{
-            color: c.$font-color-secondary;
-        }
+        text-underline-offset: 2px;
     }
 }
 

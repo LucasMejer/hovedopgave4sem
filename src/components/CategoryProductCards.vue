@@ -193,14 +193,16 @@ onMounted(() => {
         
         <div class="FilterMainDiv">
 
-            <h3 class="FiltersHeading">
-                Filters
+            <div class="FiltersHeading">
+                <h3>
+                    Filters
+                </h3>
                 <button class="NulstilButton" @click="resetFilters">
                     <p>
                         Reset
                     </p>
                 </button>
-            </h3>
+            </div>
             
             <div class="AllFilterDropdowns">
 

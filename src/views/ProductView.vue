@@ -26,13 +26,13 @@ import CarouselAccessoriesSpareparts from '@/components/CarouselAccessoriesSpare
         <div class="desktopview">
             <div class="mobile-heading">
                 <h1>NOVA MINI</h1>
-                <h3>03.6200</h3>
+                <p>03.6200</p>
             </div>
             <CarouselProduct/>
             <div class="download-div">
                 <div class="desktop-heading">
                     <h1>NOVA MINI</h1>
-                    <h3>03.6200</h3>
+                    <p>03.6200</p>
                 </div>
                 <DownloadBlok/>
             </div>
@@ -75,8 +75,11 @@ a{
             margin: 35px 35px 10px 0px;
         }
 
-        h3{
+        p{
             margin: 0px 0px 35px 0px;
+            padding: 0;
+            font-weight: normal;
+            font-size: 20px;
         }
     }
 
@@ -114,6 +117,11 @@ img{
         }
         .desktop-heading{
             display: block;
+            p{
+            margin: 0px 0px 20px 0px;
+            padding: 0;
+            font-size: 24px;
+        }
         }
         .download-div{
             display: flex;
@@ -122,13 +130,8 @@ img{
             width: 40%;
         }
     
-        h3{
-            margin: 0px 0px 20px 0px;
-        }
+        
     }
-    .breadcrumb li{
-            margin-bottom: 20px;
-        }
 
     }
 </style>
