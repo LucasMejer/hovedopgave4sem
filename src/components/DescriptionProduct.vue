@@ -225,7 +225,13 @@ const accordionarray = ref([
 const toggleAccordion = (clickedValue) => {
     const wasOpen = clickedValue.is_open
     accordionarray.value.forEach(item => item.is_open = false)
-    clickedValue.is_open = !wasOpen
+
+    if(wasOpen == true && window.innerWidth >= 768){
+        clickedValue.is_open = true
+    }else{
+        clickedValue.is_open = !wasOpen
+    }
+    
 }
 </script>
 <template>
